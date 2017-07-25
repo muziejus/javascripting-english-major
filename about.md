@@ -3,14 +3,20 @@ title: About
 permalink: /about/
 ---
 
-Here is some extra text.
+*The JavaScripting English Major* is created by [Moacir P. de Sá
+Pereira](http://moacir.com) to be used, initially, in the 2017 course “[Novel
+Maps of New York](https://muziejus.github.io/novel-maps-of-ny-2017/),” taught
+as part of the Digital Literary Studies sequence in the [English Department at
+NYU](http://english.fas.nyu.edu).
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+This course owes its greatest debt to Marijn Haverbeke’s book [*Eloquent
+JavaScript*](http://eloquentjavascript.net/), which is available both online
+for free and in an elegant paperback. The title is a nod to [*The Programming
+Historian*](https://programminghistorian.org/). The scope here is much
+smaller, of course, but I have tried to use that site as a model.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+More information about the project in general is available in the [zeroth
+chapter](/0-introduction/).
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+The website is created using {% include icon-github.html username="jekyll" %} /
+[jekyll](https://github.com/jekyll/jekyll), and it is hosted on GitHub Pages.
