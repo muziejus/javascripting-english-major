@@ -8,7 +8,7 @@ permalink: /0-introduction/
 Welcome! This is a sort of introduction to this course with a few FAQs that
 help explain the motivation behind this project. If you’re already committed
 to following through, you can skip this section and jump straight to the
-[first chapter](/1-environment/), on setting up your environment. 
+[first chapter]({{ site.baseurl }}/1-environment/), on setting up your environment. 
 
 The goals here are straightforward: at the end of 15 sessions, you should be
 able to host a web project that investigates an academic topic of your
@@ -187,4 +187,4 @@ will have already taught this course, making adjustments where necessary. And
 I hope to keep teaching it. JavaScript and the web are going nowhere, and the
 humanities are as important now as they have ever been.
 
-So happy JavaScripting, and I’ll see you in [Chapter 1](/1-environment/)!
+So happy JavaScripting, and I’ll see you in [Chapter 1]({{ site.baseurl }}/1-environment/)!
