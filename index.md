@@ -12,7 +12,9 @@ online and in paperback.
 
 Prerequisites / Why JavaScript? / Goals / etc.
 
-## 1. Setting up the Environment
+## [1. Setting up the Environment](/1-environment)
+
+Atom / Git / Browser
 
 ## 2. JavaScript Calculator (Values Types Operators *EJS*)
 
