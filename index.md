@@ -8,7 +8,9 @@ In its current iteration, this course sits alongside Marijn Haverbeke’s
 [*Eloquent JavaScript*](http://eloquentjavascript.net/), which is available
 online and in paperback.
 
-## 0. Introduction & FAQs
+## [0. Introduction & FAQs](/0-introduction/)
+
+Prerequisites / Why JavaScript? / Goals / etc.
 
 ## 1. Setting up the Environment
 
