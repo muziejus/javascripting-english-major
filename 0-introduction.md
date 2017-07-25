@@ -5,10 +5,11 @@ permalink: /0-introduction/
 
 # 0. Introduction & FAQs
 
-Welcome! This is a sort of introduction to this course with a few FAQs that
-help explain the motivation behind this project. If you’re already committed
-to following through, you can skip this section and jump straight to the
-[first chapter]({{ site.baseurl }}/1-environment/), on setting up your environment. 
+Welcome! This is an introduction to my “The JavaScripting English Major”
+course with a few FAQs that help explain my motivation.
+If you’re already committed to learning, you can skip this chapter
+and jump straight to the [first chapter]({{ site.baseurl }}/1-environment/),
+on setting up your environment. 
 
 The goals here are straightforward: at the end of 15 sessions, you should be
 able to host a web project that investigates an academic topic of your
