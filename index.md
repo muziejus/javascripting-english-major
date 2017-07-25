@@ -8,11 +8,11 @@ In its current iteration, this course sits alongside Marijn Haverbeke’s
 [*Eloquent JavaScript*](http://eloquentjavascript.net/), which is available
 online and in paperback.
 
-## [0. Introduction & FAQs](/0-introduction/)
+## [0. Introduction & FAQs]({{ site.baseurl }}/0-introduction/)
 
 Prerequisites / Why JavaScript? / Goals / etc.
 
-## [1. Setting up the Environment](/1-environment)
+## [1. Setting up the Environment]({{ site.baseurl }}/1-environment)
 
 Atom / Git / Browser
 
