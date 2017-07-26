@@ -394,17 +394,25 @@ console. I recommend against using Internet Explorer in this course for a
 number of reasons, so I’ll only give directions for Firefox, Chrome, and
 Safari.
 
-* In Firefox, the console is hidden the “Tools” menu, under “Web Developer”
-and “Web Console.” 
+* In
+[Firefox](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console), the console is hidden the “Tools” menu, under “Web Developer”
+and “Web Console” on the Mac. On Windows/Linux, it is in the “Web Developer”
+submenu of the “Firefox” menu. Or, type control-shift-k for Windows/Linux or
+command-option-k for Mac.
 
-* In Chrome, it’s in the Chrome menu, under “More Tools” and “Developer
-Tools.” Once the Developer Tools palette opens, you can click on the “Console”
-tab.
+* In
+[Chrome](https://developers.google.com/web/tools/chrome-devtools/console/),
+open the DevTools palette either by typing control-shift-j (Windows/Linux) or
+command-option-j (Mac). Or, find the tools in the Chrome menu (upper right,
+beside the address bar), under “More Tools” and “Developer Tools.” Once the
+DevTools palette opens, you can click on the “Console” tab.
 
 * In Safari, look in the “Develop” menu and choose “Show JavaScript Console.”
+Or type command-option-c.
 
-Newer browsers, such as Brave, also let you get to the console after just a
-click or two. 
+Newer browsers will behave similarly. Brave, for example, is based on Chrome,
+so the keyboard shortcut is the same. Incidentally [Brave](https://brave.com)
+was co-founded by Brendan Eich, the man who invented JavaScript.
 
 Whichever browser you’re using, the console looks more or less the same. It’s
 a large empty window with a `>` at the
