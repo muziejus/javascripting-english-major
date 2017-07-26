@@ -158,11 +158,233 @@ make charts or insert clip art. We won’t be changing fonts willy-nilly. And we
 definitely aren’t creating something that lives only to be printed out. We are
 creating, again, a *project*, not a document. 
 
-What we need, then, is a “plain text editor.” Something that just writes text.
-You’ve probably used a plain text editor before, most notably the Notes
-application on your smartphone. G
+Furthermore, we will be writing code in addition to text. We will be
+programming functions and writing paragraphs. The former requires simple text
+files that can be read by the JavaScript interpreter (also known as the
+browser). The latter will be styled with HTML, which means it has to be
+written in plain text that can be fed to the HTML renderer (also known as the
+browser). Instead of one `.docx` file, we will have `.js` files for our
+JavaScript programming and `.html` files for our HTML webpages. Finally, Git
+is much friendlier with regular text files (like `.js` or `.html` files) than
+it is with `.docx` files. You can use Git with Word, but then you’re basically
+just using it as a backup system, not as a version control system. 
 
+What we need, then, is a “plain text editor.” Something that just writes text
+agnostically. Though it’d be nice if maybe it colored the text certain ways
+when writing JavaScript or HTML. But let’s not jump ahead. You’ve probably
+used a plain text editor before, most notably the Notes application on your
+smartphone. Every personal computer has some kind of plain text editor
+installed, but we’ll install one that runs on nearly any personal computer,
+Atom.
 
+#### Enter Atom
+
+[Atom](http://atom.io) is a fully-featured text editor that can also serve as
+an IDE. It also has Git (and GitHub) support built in. This makes sense; it’s
+part of the GitHub ecosystem. Atom is a serious program with lots and lots of
+features. I’ll only be teaching a few here, but I’ll also teach a few more as
+the course goes on. It also does not behave like Word, which will take a bit
+of getting used to. Still, I hope that, for project-based work, you will see
+that it works much better than Word or a similar word processor.
+
+You can download the software from the [Atom page](http://atom.io), and
+installation should be rather straightforward. Once you install it, if you
+open it, you will be greeted with a welcome tab and the welcome guide tab in a
+separate pane. Atom works on the visual metaphor of panes with tabs. You can
+change the widths of the panes and show and hide them with your mouse.
+Similarly, the tabs work like the tabs do in Chrome, for good
+reason.[^atom-is-chrome] 
+
+#### Start Customizing with Packages
+
+From the Welcome Guide, I recommend immediately clicking on “Install a
+Package.” Ben Balter has come up with a [list of useful atom packages for
+writing prose](https://ben.balter.com/2016/12/23/atom-for-prose/), but I’ll
+mention the absolutely vital ones here. Once you click on “Install a
+Package,” you can click on “Open Installer” and start installing packages by
+searching for them and then clicking the “Install” button.
+
+* [`wordcount`](https://atom.io/packages/wordcount): creates a wordcounter
+along the bottom of your Atom window.
+
+* [`file-icons`](https://atom.io/packages/file-icons): this gives you pretty
+icons in the Atom sidebar and tabs. These visual cues are, in my experience,
+more useful than file name extensions.
+
+* [`zen`](https://atom.io/packages/zen): creates a distraction-free,
+full-screen Atom experience.
+
+* [`linter-js-standard`](https://atom.io/packages/linter-js-standard): adds a
+“linter” for JavaScript, meaning the app will warn you when the JavaScript you
+write has problems.
+
+* [`linter-write-good`](https://atom.io/packages/linter-write-good) and
+[`linter-just-say-no`](https://atom.io/packages/linter-just-say-no): both of
+these are style or grammar linters to help with your writing. Of course, as
+with any programmatic grammar or style checker, sometimes their advice is
+nonsense. I find that these get in the way, but they might be useful for you,
+especially if you’re worried about how well you write English.
+
+For each of these, you have to type the name into the little search bar in the
+Install Packages part of the Settings tab. The linters may ask you to add some
+other packages to fulfill dependencies. That’s ok.
+
+#### Continue Customizing by Enabling Autosave
+
+Atom ships with autosave disabled by default. That’s probably not behavior
+you’re expecting, so you should enable it! After you’re done installing
+packages, you’ll be on the Settings tab, which has a few subcategories, like
+Core, Editor, and so on. Choose Packages. This gives a list of all the
+packages you have installed, as well as giving you a chance to configure them.
+Type `autosave` into the filter box at the top, and then click on “Settings”
+once the autosave package shows up under “Core Packages.” 
+
+Tick the box beside “Enabled” under settings, and now Atom will autosave any
+file as soon as you click away from its tab, even if you go to another
+application.
+
+While the Settings tab is still open, click on Core and Editor and change
+these if you like. The defaults are pretty good, but you may want to change
+the “Font Family” in Editor. Type in the name of your preferred font, provided
+that it is installed! You can make the default text larger or smaller, and so
+on. One more setting to consider in Editor is “Soft Wrap.” With it off, your
+text will keep running off the side of the window as you type. Soft Wrap, like
+in Word or Notes, breaks lines so that everything fits inside the window.
+
+Finally, under Themes, you can do some basic changing of the UI (user
+interface) theme and the syntax theme for the editor. Pick a light one or a
+dark one, whichever you think fits your personality. I personally use the
+solarized themes, based on Ethan Schoonover’s
+[Solarized](http://ethanschoonover.com/solarized) precision color project.
+
+#### Link Atom to GitHub
+
+Atom is written by the people at GitHub, so it’s pretty easy to link the two
+together. In fact, that’s the main reason I encourage you to install Atom.
+
+First, we need to get the web address of the repository you created on GitHub.
+Back in the browser, look at that window you had set up earlier in chapter. If
+you’ve lost it, just go to [GitHub.com](http://github.com), click on your
+profile icon in the top right corner, click on “Your profile,” and then on
+“Repositories” on the profile page that opens. Then click on the repository
+you created for this class.
+
+Now, click on the “Clone or download” button, and it will give you a
+webaddress that looks like
+`https://github.com/YOURUSERNAME/YOURREPOSITORYNAME.git`. Select that and copy
+it.
+
+Second, return to Atom. Here, open up the command palette by going to the
+“Packages” menu, choosing “Command Palette” and then “Toggle.” In the little
+box that opens, type “git” and choose the option labeled “GitHub: Clone.” For
+“Clone from,” paste in the web address you copied in the previous step. Atom
+will automatically save it to a github folder it creates in your home folder,
+but you can change this location if you like.
+
+Now, if you have the file-icons package installed, in the Projects pane, you
+should see a small book icon with your repository name beside it, and,
+underneath it, you should see a folder called `.git` and a file called
+`README.md`.
+
+Third, let’s make an explicit connection between GitHub and Atom. Open up the
+GitHub pane (“Packages” > “GitHub” > “Toggle GitHub Tab”), and you should now
+see a button asking you to log in or a message encouraging you to go to the
+[GitHub Atom login page](http://github.atom.io/login). Click on “Login” and
+then click on the web address, which will open a new page in your browser
+asking you for permission to have Atom talk to your GitHub account. Click on
+“Authorize atom” and then copy the extremely long code that appears. Paste it
+back into the GitHub pane back on Atom.
+
+You should get a message saying “No pull request could be found for the
+branch master” and so on. You’ve made the connection.
+
+#### Make a Change, Stage a File, Commit, and Push
+
+We’re in the homestretch now, but this section is the most important, because
+it’s a description of what you will be doing with Git in Atom most of the
+time. 
+
+Let’s create a new file, called `index.html`. In Atom, right-click (or
+control-click) on your repository’s icon in the Projects panel and choose “New
+File” from the dropdown menu. A little window will show up asking you to
+“Enter the path for the new file.” Type in `index.html`. A new file, with that
+name, should join the `README.md` and `.git` already there.
+
+In the new blank tab, type in the following (or copy and paste it):
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Project</title>
+  </head>
+  <body>
+    <h1>This is my project!</h1>
+  </body>
+</html>
+```
+
+Just clicking away from the window should autosave the document, which you do
+by now opening the Git tab (“Packages” > “GitHub” > “Toggle Git Tab”). You
+will use this tab much more often than the GitHub tab, so it might be
+worthwhile to remember the keyboard shortcut, control-shift-9 on a Mac. 
+
+The Git tab is split into three horizontal sections, Unstaged, Staged, and
+Commit. Unstaged lists all the files you have saved but have not yet
+committed. If the icon beside the file is a green cross, that means it is a
+new file, never before saved to the repository. That will be the case for
+`index.html`. If you were to double click on `README.md` in the Projects tab
+and add a short paragraph about your goals for this project, then `README.md`
+would appear in unstaged changes with a yellow box with a dot. That means that
+the file is in the repository, but changes have been made to it that have not
+yet been committed. Finally, if you were to delete a file, it would show up
+there with a red minus sign. Yes, in Git, a file is never truly deleted,
+remember.
+
+If you click on one of the files in the Unstaged area, a new tab will open
+with a lot of green (and maybe some red) text. That shows everything you have
+added or removed from the file since its last commit. With `index.html`, it
+will be all green, because it’s all new stuff you are adding.
+
+Click on the “Stage All” button at the top of the Unstaged area to move all
+the files to the Staged area. Or, if you like, you can only move one file at a
+time. I usually try to commit things thematically. So if I make some changes
+on one file and totally unrelated changes to another file, I will make two
+separate commits. But if both are related (say I change the name of something
+in both places), then it can be one commit. There’s no right way to
+committing. Do what feels like a good balance between often enough to be
+useful yet infrequent enough so that you actually get work done.
+
+Once files are in the Staged area, you can commit. That will take the files in
+the Staged area and make log the changes to the files in the Git time machine.
+Any changes you make backwards or forwards between commits doesn’t matter. Git
+only tracks commits, not individual saves.
+
+Type in a useful commit message (like `create barebones index.html`) in the
+Commit box and press “Commit.” The changes have been recorded.
+
+The final step is pushing the changes up to GitHub. Once you have a commit,
+the up arrow at the bottom right corner of the Atom window will have a little
+1 appear next to it. If you make another commit, that 1 will become a 2. Once
+  you’ve got enough commits and want to push, click on that arrow, and Atom
+  will ask you for your GitHub username and password. Type them in, wait a
+  minute, and then if you go to GitHub and refresh your repository, you will
+  see the changes that you’ve made.[^overpushing]
+
+#### Parting Atom Thoughts
+
+There’s a whole lot going on in this section, but it’s mostly stuff you just
+have to do once to set up the environment. As I wrote above, Atom is a very
+heavy duty program that can do a whole lot more than what we will use it for.
+Whenever you get frustrated with Atom’s menus and the like, always remember
+that you can launch the command palette by typing command-shift-p on a Mac or
+control-shift-p on Windows. That brings up a small window that lets you type
+in whatever command you want to execute.
+
+Also, Atom will be frustrating the first few times. Any new piece of software
+is. By the end of this course, though, I hope that you’ll see why I insisted
+on this unpleasantness at the beginning.
 
 ## Browser
 
@@ -170,9 +392,10 @@ application on your smartphone. G
 
 1. Create a GitHub account.
 
-1. Create a repository on GitHub for your project.
+1. Create a repository on GitHub for your project. Don’t forget to name it
+   something you won’t be ashamed to show me.
 
-1. Install Atom on your computer.
+1. Install Atom on your computer with some useful packages.
 
 1. Link Atom to your GitHub account.
 
@@ -180,7 +403,10 @@ application on your smartphone. G
 
 1. Create a file called `index.html` in your repository and commit it.
 
-1. Push your commit from your computer up to GitHub.
+1. Flesh out your hopes for your project in the `README.md` file and commit
+   the changes.
+
+1. Push your commit(s) from your computer up to GitHub.
 
 ## Footnotes
 
@@ -189,3 +415,7 @@ application on your smartphone. G
 [^form-vs-content]: Of course, whether a text still means the same thing when it looks different is an unsettled question in literary study. 
 
 [^a4]: Or A4 paper, if you’re outside the United States.
+
+[^atom-is-chrome]: Atom is, basically, a very customized version of Chrome that talks to a JavaScript server that you run in the background when you launch the application.
+
+[^overpushing]: I, personally, overpush. I usually commit and immediately push, which is generally fine, but it can be embarrassing sometimes. Also, since the default means by which Atom pushes to GitHub asks you for your username and password, it makes sense to push only every few commits or so.  Find a balance that works for you, but remember to always finish your work before a break with a commit and a push, just in case!
