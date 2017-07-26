@@ -138,19 +138,19 @@ However, all of these languages require more initial setup than JavaScript
 does, which thwarts my students from making web projects as quickly as
 possible while also understanding every line of code they type.
 
-JavaScript’s peculiar origin story, in how it was written in a ten-day frenzy
-by Brendan Eich and then was named “JavaScript,” so that it would always sound
-like Java’s little brother, despite having nothing to do with Java, has meant
-that JavaScript has been considered a “toy” language for much of its life.  In
-the past decade or so, however, JavaScript has emerged as a vital language for
-doing anything web-based, both on the client (browser) side and on the server
-side. 
+JavaScript has a peculiar origin story. It was written in a ten-day frenzy by
+Brendan Eich, and then Netscape decided to name it “JavaScript,” which makes
+it sound like Java’s little brother, even though JavaScript has nothing to do
+with Java. Nevertheless, these peculiarities have contributed to JavaScript’s
+reputation as a “toy” language, a reputation that persisted for over a
+decade.[^js-history] More recently, however, JavaScript has emerged as a vital
+language for doing anything web-based, both on the client (browser) side and
+on the server side. 
 
-Even when writing web applications in Python or Ruby, moments will still arise
-more often than not where the developer has to write a little JavaScript to
-glue some aspect of the user experience together. Why not learn the language
-that is unavoidable, then use that as a springboard to learning more “serious”
-languages? Why not, indeed.
+Because of its importance to the web, JavaScript will appear even when writing
+web applications in Python or Ruby. So why not learn the language that is
+unavoidable? After all, once you have learned the basics of programming in one
+language, jumping to another becomes easier.
 
 ## Atom!?! But vim Is the One True Editor!
 
@@ -228,3 +228,7 @@ humanities are as important now as they have ever been.
 
 So happy JavaScripting, and I’ll see you in [Chapter 1]({{ site.baseurl
 }}/1-environment/)!
+
+## Footnotes
+
+[^js-history]: I discuss the history of JavaScript in a bit more detail in [Chapter 2]({{ site.baseurl }}/2-calculator/).
