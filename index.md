@@ -10,11 +10,12 @@ online and in paperback.
 
 ## [0. Introduction & FAQs]({{ site.baseurl }}/0-introduction/)
 
-Prerequisites / Why JavaScript? / Goals / etc.
+Prerequisites / Why JavaScript? / More Esoteric Concerns, etc.
 
 ## [1. Setting up the Environment]({{ site.baseurl }}/1-environment)
 
-Atom / Git / Browser
+Version Control with Git / Editing Plain Text with Atom / Getting the Browser
+Up / First Homework Problem Set
 
 ## 2. JavaScript Calculator (Values Types Operators *EJS*)
 
