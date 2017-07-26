@@ -214,16 +214,17 @@ more useful than file name extensions.
 * [`zen`](https://atom.io/packages/zen): creates a distraction-free,
 full-screen Atom experience.
 
-* [`linter-js-standard`](https://atom.io/packages/linter-js-standard): adds a
-“linter” for JavaScript, meaning the app will warn you when the JavaScript you
-write has problems.
-
 * [`linter-write-good`](https://atom.io/packages/linter-write-good) and
 [`linter-just-say-no`](https://atom.io/packages/linter-just-say-no): both of
 these are style or grammar linters to help with your writing. Of course, as
 with any programmatic grammar or style checker, sometimes their advice is
 nonsense. I find that these get in the way, but they might be useful for you,
 especially if you’re worried about how well you write English.
+
+* [`linter-eslint`](https://atom.io/packages/linter-eslint): adds a
+“linter” for JavaScript, meaning the app will warn you when the JavaScript you
+write has problems. This will require some configuration, which we’ll tackle
+later.
 
 For each of these, you have to type the name into the little search bar in the
 Install Packages part of the Settings tab. The linters may ask you to add some
