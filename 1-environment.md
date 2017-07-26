@@ -310,7 +310,7 @@ File” from the dropdown menu. A little window will show up asking you to
 “Enter the path for the new file.” Type in `index.html`. A new file, with that
 name, should join the `README.md` and `.git` already there.
 
-In the new blank tab, type in the following (or copy and paste it):
+In the new blank tab, type in the following (or copy and paste it):[^html]
 
 ```html
 <!doctype html>
@@ -388,6 +388,40 @@ on this unpleasantness at the beginning.
 
 ## Browser
 
+Our last step in this chapter is making sure your browser has a JavaScript
+console. I recommend against using Internet Explorer in this course for a
+number of reasons, so I’ll only give directions for Firefox, Chrome, and
+Safari.
+
+* In Firefox, the console is hidden the “Tools” menu, under “Web Developer”
+and “Web Console.” 
+
+* In Chrome, it’s in the Chrome menu, under “More Tools” and “Developer
+Tools.” Once the Developer Tools palette opens, you can click on the “Console”
+tab.
+
+* In Safari, look in the “Develop” menu and choose “Show JavaScript Console.”
+
+Newer browsers, such as Brave, also let you get to the console after just a
+click or two. 
+
+Whichever browser you’re using, the console looks more or less the same. It’s
+a large empty window with a `>` at the
+bottom. This `>` is called the “prompt.” Beside the prompt, type:
+
+```javascript
+console.log('Hello, World!');
+```
+
+Hit return. The console should respond with `Hello, World!`
+Throughout the rest of this course, when something needs to be typed at the
+prompt, I will include the `>`. This time I skipped it, to make things a bit
+clearer.
+
+By typing the above, you’ve written your first bit of JavaScript. In other
+words, you’re ready for the [next chapter]({{ site.baseurl }}/2-calculator/)
+after completing the exercises below.
+
 ## Exercises
 
 1. Create a GitHub account.
@@ -417,5 +451,7 @@ on this unpleasantness at the beginning.
 [^a4]: Or A4 paper, if you’re outside the United States.
 
 [^atom-is-chrome]: Atom is, basically, a very customized version of Chrome that talks to a JavaScript server that you run in the background when you launch the application.
+
+[^html]: Yes, you are now writing HTML without learning how to do it. The key grammar of the markup is clear from this example, though. HTML is made up of nested tags that look like this, for example: `<h1>` to open and `</h1>` to close. Some tags, like the `<meta>` and `<!doctype>` tags don’t need to be closed, but most do.  
 
 [^overpushing]: I, personally, overpush. I usually commit and immediately push, which is generally fine, but it can be embarrassing sometimes. Also, since the default means by which Atom pushes to GitHub asks you for your username and password, it makes sense to push only every few commits or so.  Find a balance that works for you, but remember to always finish your work before a break with a commit and a push, just in case!
