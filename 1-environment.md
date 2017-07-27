@@ -329,7 +329,7 @@ In the new blank tab, type in the following (or copy and paste it):[^html]
 Just clicking away from the window should autosave the document, which you do
 by now opening the Git tab (“Packages” > “GitHub” > “Toggle Git Tab”). You
 will use this tab much more often than the GitHub tab, so it might be
-worthwhile to remember the keyboard shortcut, control-shift-9 on a Mac. 
+worthwhile to remember the keyboard shortcut, control-shift-9. 
 
 The Git tab is split into three horizontal sections, Unstaged, Staged, and
 Commit. Unstaged lists all the files you have saved but have not yet
