@@ -12,12 +12,15 @@ online and in paperback.
 
 Prerequisites / Why JavaScript? / More Esoteric Concerns, etc.
 
-## [1. Setting up the Environment]({{ site.baseurl }}/1-environment)
+## [1. Setting up the Environment]({{ site.baseurl }}/1-environment/)
 
-Version Control with Git / Editing Plain Text with Atom / Getting the Browser
-Up / First Homework Problem Set
+Version Control with Git / Editing Plain Text with Atom / Launching a
+JavaScript Console from the Browser
 
-## 2. JavaScript Calculator (Values Types Operators *EJS*)
+## [2. JavaScript Calculator]({{ site.baseurl }}/2-calculator/) 
+
+Introduction to JavaScript / Basic Data Types / Using JavaScript as a
+Calculator
 
 ## 3. (Program Structure *EJS*)
 
@@ -45,4 +48,6 @@ Up / First Homework Problem Set
 
 ## 15. Time to Go Live
 
-## Appendix A. Further Resources
+## [Appendix A. Further Resources]({{ site.baseurl }}/a-resources/)
+
+Books / Websites / Videos
