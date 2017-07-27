@@ -45,9 +45,10 @@ to organize information is, not coincidentally, the first part of programming
 that we will learn in this chapter.
 
 Speaking a few decades later, Douglas Crockford picks up the thread from where
-Burke ended it (punchcards) and moves us all the way up to JavaScript in the
-first two of his *Crockford on JavaScript* lectures, “[The Early
-Years](https://www.youtube.com/embed/JxAXlJEmNMg)” and “[And Then There Was
+Burke ended it (punchcards) and moves us all the way up to JavaScript in two
+of his *Crockford on JavaScript* lectures, “[The Early
+Years](https://www.youtube.com/embed/JxAXlJEmNMg)” and the first 20 minutes of
+“[And Then There Was
 JavaScript](https://www.youtube.com/watch?v=RO1Wnu-xKoY).” Although the
 lectures are aimed at people with some programming knowledge, meaning that
 they get pretty geeky, what Crockford does well is hammer home two key points
