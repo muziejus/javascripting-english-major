@@ -37,7 +37,10 @@ book.
 JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)”.
 A concise refresher on JavaScript that also acts as a handy reference.
 
-Elliott, Eric. “[Master the JavaScript Interview: What Is Functional
+* [*The Programming Historian*](https://programminghistorian.org/). A set of
+tutorials that help humanists tackle digital questions.
+
+* Elliott, Eric. “[Master the JavaScript Interview: What Is Functional
 Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0).”
 Far beyond the goals of this course, but a tantalizing look at a future for
 JavaScript.

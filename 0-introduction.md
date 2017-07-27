@@ -99,7 +99,7 @@ There are books that are more in the vein of this course, such as Matthew
 Jockers’s [*Text Analysis with* R *for Students of
 Literature*](http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/).
 Similarly, the title of the course is taken from [*The Programming
-Historian*](http://programminghistorian.net), a set of online tutorials that
+Historian*](https://programminghistorian.org/), a set of online tutorials that
 teach basics of programming and digital historical methods to historians with
 little or no programming background. In other words, if this course can be
 considered “Jockers, but for JavaScript,” I think I will be very satisfied,
