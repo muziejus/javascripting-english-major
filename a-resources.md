@@ -46,21 +46,21 @@ JavaScript.
 
 * Crockford, Douglas. “[The Early
 Years](https://www.youtube.com/embed/JxAXlJEmNMg).” *Crockford on JavaScript*.
-Crockford takes us on a walk through the history of computer programming up to
-the birth of JavaScript. In a talk that often veers to the far too technical
-for our audience, he nevertheless drives two important insights home: that
-programmers, the very people who would benefit most from innovation, are often
-those least receptive to it, and that obsolete technologies fade away slowly,
-making innovation difficult.
+2010.  Crockford takes us on a walk through the history of computer
+programming up to the birth of JavaScript. In a talk that often veers to the
+far too technical for our audience, he nevertheless drives two important
+insights home: that programmers, the very people who would benefit most from
+innovation, are often those least receptive to it, and that obsolete
+technologies fade away slowly, making innovation difficult.
 
 * Crockford, Douglas. “[And Then There Was
 JavaScript](https://www.youtube.com/watch?v=RO1Wnu-xKoY).” *Crockford on
-JavaScript*. Crockford continues the history, moving now through the first,
-wild years of JavaScript.
+JavaScript*. 2010. Crockford continues the history, moving now through the
+first, wild years of JavaScript.
 
 * Burke, James. “[Faith in
-Numbers](http://www.dailymotion.com/video/x3dvbkg).” *Connections*. In his
-classic, causal way, Burke draws a line from Roman-era water wheels to
+Numbers](http://www.dailymotion.com/video/x3dvbkg).” *Connections*. 1978. In
+his classic, causal way, Burke draws a line from Roman-era water wheels to
 computer programming, the prehistory to Crockford’s lectures.
 
 ## Software
