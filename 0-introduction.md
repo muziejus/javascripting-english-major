@@ -215,11 +215,12 @@ product that considers students of literature first and programming second.
 
 At the same time, I have been programming for three decades—so longer than I
 have been an English major. I moved from writing fantasy games in BASIC on an
-Apple IIe to programming my TI-81 to learning Perl and PHP to program for the
-web to having a part-time student job as a Ruby developer. I find programming
-to be a rewarding exercise because there’s always at least something that
-almost sort of works at the other end.  Programming is, of course, also
-frustrating. Irritating. Infuriating. But then it is also, again, so rewarding.
+Apple IIe to writing HyperCard on my Mac to programming my TI-81 to learning
+Perl and PHP for web applications to having a part-time student job as a Ruby
+developer. I find programming to be a rewarding exercise because there’s
+always at least something that almost sort of works at the other end.
+Programming is, of course, also frustrating. Irritating. Infuriating. But then
+it is also, again, so rewarding.
 
 But the main reason you should trust me is that, by the time you read this, I
 will have already taught this course, making adjustments where necessary. And
