@@ -211,6 +211,24 @@ calculator, but one type remains.
 
 ### Null/Undefined
 
+Sometimes we deal with a lack of information, instead of information we
+understand as a datum. There are two main reasons JavaScript understands that
+lack, through an object called “null” and a data type called “undefined.”
+
+Null is an object that indicates the lack of information. Say you’re filling
+out a questionnaire online and you left the last few questions unanswered but
+still pressed “Submit.” The answered questions would be strings or numbers,
+probably. But how should the computer understand the unanswered questions? The number zero doesn’t
+seem right.  Nor does a blank string. In this case, it makes sense to register
+that lack of answers with null.
+
+Undefined, on the other hand, is for information that we do not yet have.
+Using the questionnaire example again, all of the answers are undefined until
+you press “Submit” and send them to the computer, where it can then decide
+what to do with them, by turning them into strings, numbers, or just null.
+
+But now you’re definitely ready to start add up some numbers in JavaScript.
+
 ## Using JavaScript as a Calculator
 
 You learned a comparison operator in the previous section, `===`, and you’ll
@@ -318,6 +336,11 @@ number 10, but then it becomes assigned to the number 11.
 Let’s play a bit more with assigning variables:
 
 ```
+> let tipRate = 0.20;
+> let bill = 10.00;
+> let billPlusTip = bill + (tipRate * bill);
+> console.log(billPlusTip);
+12
 > let question = "What is the best food around?\n";
 > let burritos = "Delicious burritos";
 > let answer = burritos + " are clearly the best!";
@@ -353,7 +376,6 @@ As you can see, this example makes use of variables we declared in earlier
 exercises, but it also refers to variable that has not yet been assigned (or
 even declared).
 
-
 ## Exercises
 
 1. Get `console.log()` to log a string that includes a backslash.
@@ -374,7 +396,8 @@ even declared).
 6. What happens when you add a string to a number? What about the reverse?
    Why?
 
-
+7. Use the statements to find `billPlusTip` above but have the response from
+   `console.log()` be “You should pay $12 because the service was good.”
 
 ## Footnotes
 
