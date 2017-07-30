@@ -6,11 +6,11 @@ know how to publish a JavaScript-enriched website with some maps.
 
 In its current iteration, this course sits alongside Marijn Haverbeke’s
 [*Eloquent JavaScript*](http://eloquentjavascript.net/), which is available
-online and in paperback.
+online (for free) and in paperback.
 
 ## [0. Introduction & FAQs]({{ site.baseurl }}/0-introduction/)
 
-Prerequisites / Why JavaScript? / More Esoteric Concerns, etc.
+Prerequisites / Why this course? / Why JavaScript? / More Esoteric Concerns, etc.
 
 ## [1. Setting up the Environment]({{ site.baseurl }}/1-environment/)
 
@@ -20,7 +20,7 @@ JavaScript Console from the Browser
 ## [2. JavaScript Calculator]({{ site.baseurl }}/2-calculator/) 
 
 Introduction to JavaScript / Basic Data Types / Using JavaScript as a
-Calculator
+Calculator / Assigning Variabls
 
 ## 3. (Program Structure *EJS*)
 
