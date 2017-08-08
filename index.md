@@ -20,9 +20,11 @@ JavaScript Console from the Browser
 ## [2. JavaScript Calculator]({{ site.baseurl }}/2-calculator/) 
 
 Introduction to JavaScript / Basic Data Types / Using JavaScript as a
-Calculator / Assigning Variabls
+Calculator / Assigning Variables
 
-## 3. (Program Structure *EJS*)
+## [3. Programming]({{ site.baseurl }}/3-programming/)
+
+Control Flow / If statements / Embedding JavaScript in a Webpage / While and For loops
 
 ## 4. (Functions *EJS*)
 
