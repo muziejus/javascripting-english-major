@@ -503,5 +503,11 @@ browser.)
    >3 is odd.<br>
 1. Building on the previous program, have it print the same, except without
    that ugly “This is the div.” line.
+1. Recalling the `typeof` operator, can you write the program so that it
+   scolds you if you enter in something other than a number? This is a
+   difficult (maybe even trick) question.
+1. Can you think of a way to complete the previous problem without using
+   `typeof`? This isn’t a trick question, but some of your work in the
+   previous chapter might help.
 1. Write down what seem to be common mistakes you are making. Are you
    forgetting to add some aspect of the JavaScript syntax?
