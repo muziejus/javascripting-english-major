@@ -8,21 +8,21 @@ In its current iteration, this course sits alongside Marijn Haverbeke’s
 [*Eloquent JavaScript*](http://eloquentjavascript.net/), which is available
 online (for free) and in paperback.
 
-## [0. Introduction & FAQs]({{ site.baseurl }}/0-introduction/)
+## [0. Introduction & FAQs](/0-introduction/)
 
 Prerequisites / Why this course? / Why JavaScript? / More Esoteric Concerns, etc.
 
-## [1. Setting up the Environment]({{ site.baseurl }}/1-environment/)
+## [1. Setting up the Environment](/1-environment/)
 
 Version Control with Git / Editing Plain Text with Atom / Launching a
 JavaScript Console from the Browser
 
-## [2. JavaScript Calculator]({{ site.baseurl }}/2-calculator/) 
+## [2. JavaScript Calculator](/2-calculator/) 
 
 Introduction to JavaScript / Basic Data Types / Using JavaScript as a
 Calculator / Assigning Variables
 
-## [3. Programming]({{ site.baseurl }}/3-programming/)
+## [3. Programming](/3-programming/)
 
 Control Flow / If statements / Embedding JavaScript in a Webpage / While and For loops
 
@@ -50,6 +50,6 @@ Control Flow / If statements / Embedding JavaScript in a Webpage / While and For
 
 ## 15. Time to Go Live
 
-## [Appendix A. Further Resources]({{ site.baseurl }}/a-resources/)
+## [Appendix A. Further Resources](/a-resources/)
 
 Books / Websites / Videos

@@ -154,7 +154,7 @@ tedious to have to retype everything every time. Additionally, if you close
 the window (or reload your browser), you lose everything you’ve already done.
 There must be a better way to write JavaScript, right? Of course there is.
 
-Back in [chapter one]({{ site.baseurl }}/1-environment/), I had you create and
+Back in [chapter one](/1-environment/), I had you create and
 commit a file in Atom called `index.html`. Now it’s time to return to Atom and
 open up that file. To do that, launch Atom, and then look to your Projects
 pane on the left. Your GitHub repository should be in that list, and

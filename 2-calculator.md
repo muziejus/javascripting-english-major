@@ -5,7 +5,7 @@ permalink: /2-calculator/
 
 # JavaScript Calculator
 
-The [last chapter]({{ site.baseurl }}/1-environment/) ended with the
+The [last chapter](/1-environment/) ended with the
 following, in the console:
 
 ```
@@ -98,7 +98,7 @@ with it.[^language-type]
 
 Now that we’ve got a bit of an introduction to the language’s history and
 context out of the way, we can go back to the JavaScript console you learned
-to open in the [last chapter]({{ site.baseurl }}/1-environment/) and start
+to open in the [last chapter](/1-environment/) and start
 learning the language itself.
 
 ## Basic Data Types

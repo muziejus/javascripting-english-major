@@ -428,7 +428,7 @@ prompt, I will include the `>`. This time I skipped it, to make things a bit
 clearer.
 
 By typing the above, you’ve written your first bit of JavaScript. In other
-words, you’re ready for the [next chapter]({{ site.baseurl }}/2-calculator/)
+words, you’re ready for the [next chapter](/2-calculator/)
 after completing the exercises below.
 
 ## Exercises

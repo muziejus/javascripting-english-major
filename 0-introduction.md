@@ -7,7 +7,7 @@ permalink: /0-introduction/
 
 Welcome! This is an introduction to my “The JavaScripting English Major”
 course with a few FAQs that help explain how I approach the design of the
-course. If you look at the [About]({{ site.baseurl }}/about/) page, you can
+course. If you look at the [About](/about/) page, you can
 learn even more about the foundations of the course.
 
 If you’re already committed to becoming a JavaScripting English major, you can
@@ -232,4 +232,4 @@ So happy JavaScripting, and I’ll see you in [Chapter 1]({{ site.baseurl
 
 ## Footnotes
 
-[^js-history]: I discuss the history of JavaScript in a bit more detail in [Chapter 2]({{ site.baseurl }}/2-calculator/).
+[^js-history]: I discuss the history of JavaScript in a bit more detail in [Chapter 2](/2-calculator/).
