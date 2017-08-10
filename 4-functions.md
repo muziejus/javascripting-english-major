@@ -27,29 +27,39 @@ teeny step the next time we want one.
 
 Of course, I don’t think computers can make good burritos, but stick with me.
 
-All those burrito-making instructions can be collapsed into a function. In
-JavaScripty pseudocode, that might look something like:
+All those burrito-making instructions can be collapsed into a function. That
+might look something like:
 
-```
+```javascript
 let makeABurrito = function(){
   prepareTortilla();
-  addBeans();
-  [ ... ]
+  addOnionsAndCilantro();
+  // etc.
   rollUpTortilla();
 }
 ```
 
-As you can see, the `makeABurrito()` function even has functions inside of it
-that get more and more specific. But with the function in place, you just have
-to execute `makeABurrito()` once and be done with it. The internals of the
-function take care of everything else.
+As you can see, there are syntactic similarities between functions and loops.
+Both use blocks with braces, and both have parentheses. In fact, this snippet
+of code is perfectly fine JavaScript. That’s because the `makeABurrito()`
+function does nothing but **call** other functions. We can imagine that a
+function like `prepareTortilla()` has even more specific steps inside it. But
+with the function in place, you just have to execute `makeABurrito()` once and
+be done with it. The internals of the function take care of everything else.
+
+Quickly before moving on, that line `// etc.` is a **comment**. Comments are
+very useful in programming because they can serve as little messages to
+yourself (or to other programmers) about what is going on in your program.
+In JavaScript, everything after two slashes (`//`) to the end of the line is
+commented. If you want to comment out a whole section of multiple lines, begin
+it with `/*` and close it with `/*`. Or, put a `//` in front of every line.
 
 ## Parameters
 
-Now notice the parentheses that follow the function name. Where have you seen this
-kind of of syntax before? We’ve already gone over `prompt()`, for example, in
-the [previous chapter](/3-programming/), and that is, of course, a
-function.[^console] But recall how we typed it:
+Back to the function. Did you notice the parentheses that follow the function
+name? Where have you seen this kind of of syntax before? We’ve already gone
+over `prompt()`, for example, in the [previous chapter](/3-programming/), and
+that is, of course, a function.[^console] But recall how we typed it:
 
 ```javascript
 let userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
