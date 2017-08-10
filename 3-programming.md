@@ -3,7 +3,7 @@ title: Programming
 permalink: /3-programming/
 ---
 
-# Control Flow
+# Programming
 
 It’s time to stop playing around with calculator effects in JavaScript.
 We’ve skipped over a lot to get to here, but it’s important to start thinking
@@ -11,12 +11,16 @@ We’ve skipped over a lot to get to here, but it’s important to start thinkin
 frustrations set in. Remember, programming is puzzle solving, and in this part
 of the process we’ll start thinking of the puzzle as a journey.
 
-“Control Flow” is an idea you’ve probably seen before in a flow chart. They’re
-all over social media and often funny. You start from some position and answer
-questions. Depending on the answers to those questions, you end up in a
-certain location. Other answers lead you somewhere else. But the idea is that
-you are interacting with information, in that you are being provided a prompt
-for some input, and your input directs what happens.
+
+## Control Flow
+
+“Control flow” is an idea you’ve probably seen before, like in flow charts.
+They’re all over social media and often funny. In a flow chart, you start from
+some position and answer questions. Depending on the answers to those
+questions, you end up in a certain location. Other answers lead you somewhere
+else. But the idea is that you are interacting with information, in that you
+are being provided a prompt for some input, and your input directs what
+happens.
 
 Let’s sketch out a toy program to begin.
 
@@ -55,7 +59,7 @@ inverse.
 And that’s it. We have our program. The JavaScript, as we’ll see, isn’t so
 terribly different from this code we already have.
 
-# If statements
+## If statements
 
 An if statement is an example of “conditional statement.” That means that it
 behaves in a certain way depending on a condition. From the example above, we
@@ -147,7 +151,7 @@ So far so good, but we still have the first line of the pseudocode, `let
 userInput = prompt_the_user_for_what_they_want_for_dinner;`. Getting that part
 to work requires writing some html.
 
-# Embedding JavaScript in a Webpage
+## Embedding JavaScript in a Webpage
 
 Typing things into the console can get boring after a while, because it’s
 tedious to have to retype everything every time. Additionally, if you close
@@ -323,7 +327,7 @@ You’ve written a full program. It takes in input, feeds it through control
 flow (in this case, a conditional statement), and delivers output appropriate
 to the input. Of course, it’s still pretty basic, but baby steps. Baby steps. 
 
-# While and For loops
+## While and For loops
 
 If you’ve got conditionals down, we can now move to looping. Remember, in
 JavaScript, a conditional statement takes the form of:
@@ -346,7 +350,7 @@ for ( complicated_stuff_we’ll_get_to ) {
 }
 ```
 
-## While loops
+### While loops
 
 While loops keep executing over and over until the truth test becomes false.
 As a result, something like:
@@ -453,7 +457,7 @@ operator is the same as ≤, or less-than-or-equal-to.
 It’s important to understand why this looping works the way it does, so it’s
 useful to loop over (as it were) this section until it’s clear. 
 
-## For loops
+### For loops
 
 For loops are just like while loops, except the truth test is replaced by a
 three part expression relating to a “control variable.” The three parts are:
@@ -487,7 +491,7 @@ loop.
 Loops are tricky, but they’re vital to understanding how programming works.
 Try out the exercises to see how well you understand them.
 
-# Exercises
+## Exercises
 
 (These are all to be written and tested using your project and the web
 browser.)

@@ -26,7 +26,9 @@ Calculator / Assigning Variables
 
 Control Flow / If statements / Embedding JavaScript in a Webpage / While and For loops
 
-## 4. (Functions *EJS*)
+## [4. Functions](/4-functions)
+
+Parameters / Scope / Recursion
 
 ## 5. (Objects and Arrays *EJS*)
 
