@@ -85,6 +85,4 @@ functions parameters
 
 ## Footnotes
 
-[^console]: `console.log()` also looks like a function, but as I mentioned
-back in [chapter 2](2-calculator/#fn:consolelog), `.log()` is a method
-belonging to the `console` object. 
+[^console]: `console.log()` also looks like a function, but as I mentioned back in [chapter 2](2-calculator/#fn:consolelog), `.log()` is a method belonging to the `console` object. 
