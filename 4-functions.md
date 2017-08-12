@@ -54,7 +54,7 @@ very useful in programming because they can serve as little messages to
 yourself (or to other programmers) about what is going on in your program.
 In JavaScript, everything after two slashes (`//`) to the end of the line is
 commented. If you want to comment out a whole section of multiple lines, begin
-it with `/*` and close it with `/*`. Or you can put a `//` in front of every line.
+it with `/*` and close it with `*/`. Or you can put a `//` in front of every line.
 
 ## Parameters
 
