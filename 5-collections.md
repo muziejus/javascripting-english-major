@@ -112,38 +112,88 @@ object, that means that a property can even be a function. For example, to
 return to `myBurritoObject`, let’s add a new property:
 
 ```javascript
+// first, let’s define a variable for how spicy our burrito is:
+let myHabaneroSauceSquirts = 3;
 let myBurritoObject = {
   tortilla: "wheat",
   guacamole: true,
   beans: "pinto",
-  habaneroSauceSquirts: 3,
-  // new property
+  // now we’ll use the variable above:
+  habaneroSauceSquirts: myHabaneroSauceSquirts,
+  // and now let’s use the variable again in a function
   spiciness: function(){
-    alert("This is a spicy burrito!");
+    if (myHabaneroSauceSquirts > 0 ){
+      alert("This is a spicy burrito!");
+    } else {
+      alert("This is a mild burrito.");
     }
-  };
-// and let’s call the new property
+  }
+};
 $("#response").text(myBurritoObject.spiciness);
 ```
 
-Try this out and see what happens. 
+Save, commit, reload, and see what happens. There are two new things going on
+here.  First, I am making use of an *anonymous function*. We’ll see more of
+these later, but they’re functions no different from the functions in the
+previous chapter, but they are ephemeral. They exist just to complete a
+specific task on the fly, and then they disappear. Writing anonymous functions
+is just like writing regular functions, but without the `let functionName =`
+part at the beginning.
 
+The anonymous function in this object is calling a function we haven’t yet seen,
+`alert()`, which, like `prompt()`, throws up a little dialog box in the
+browser. What the `alert()` box says depends on whether the variable
+`myHabaneroSauceSquirts` is greater than 0 or not. 
 
+When properties are functions, they are called **methods**. Methods are built
+into the object. To use an example we’ve already seen, every `console` object
+has the `.log()` method built in. Arrays also have a series of useful methods:
 
+```javascript
+let turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
+let sortedTurtles = turtles.sort();
+// sortedTurtles is ["Donatello", "Leonardo", "Michelangelo", "Raphael"]
+let reversedTurtles = turtles.reverse();
+// reversedTurtles is ["Michelangelo", "Raphael", "Michelangelo", "Donatello", "Leonardo"]
+let turtleNames = turtles.join(" ");
+// turtleNames is "Leonardo Donatello Raphael Michelangelo"
+turtles.push("Splinter");
+// turtles is now ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"]
+turtles.pop();
+// back to ["Leonardo", "Donatello", "Raphael", "Michelangelo"]
+```
+
+Note that `.sort()`, `.reverse()`, and `.join()` do not change the value of
+`turtles`. Instead, we define new variables, `sortedTurtles`, `reversedTurtles`, and `turtleNames`. Then we assign to those variables two new arrays and a string. `.pop()` and `.push()`, however, *do* change `turtles`. 
+
+## Strings as Arrays
+
+Because everything is an object, that includes strings. Strings can behave a
+bit like arrays, but they also, as objects, have properties and methods. I’ll
+mention a few here, because manipulating strings (or “text”) is a vital
+feature of writing web pages.
+
+```javascript
+let string = "This is a string.";
+// strings have indices and lengths, just like arrays:
+let firstLetter = string[0];
+// firstLetter is "T"
+let stringLength = string.length;
+// stringLength is 17
+//
+// strings also have methods, just like arrays:
+let upperCaseString = string.toUpperCase();
+// upperCaseString is "THIS IS A STRING."
+let replacedString = string.replace("string", "pipe");
+// replacedString is "This is a pipe."
+```
 
 ## Exercises
 
 1. Write a function that always returns the last item in whatever array you
    pass it.
-
-
-The third value of the array is “c,” but its index
-
-built-in
-functions, called **methods**, that expose a lot of power. I’ll only mention a
-few here.
-
-## Footnotes
+1. Why might `.push()` and `.pop()` change the array, while `sort()` and `.reverse()` do not? Try seeing what happens when you to something like `let popResult = someArray.pop()`.
+1. Numbers also have methods and properties. Look them up at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) and change your webpage so that it asks for a number and tells you if it is an integer or not.
 
 [^dot-notation]: Dot-notation does not work, however, for index values. `arrayOfStrings.1` will cause an error.
 
