@@ -104,12 +104,12 @@ place name and its coordinates.
 
 ## Methods
 
-JavaScript, like Ruby, is famous because everything is an object in it.
-Objects are objects, arrays are objects, strings are objects (in that they
-have properties, as we’ll see below), and even functions are objects. Since a
-property of an object can be any other kind of object, that means that a
-property can even be a function. For example, to return to `myBurritoObject`,
-let’s add a new property:
+JavaScript, like Ruby, is famous because in both languages, *everything* is an
+object. Objects are objects, arrays are objects, strings are objects (in that
+they have properties, as we’ll see below), `null` is an objects, and even
+functions are objects. Since a property of an object can be any other kind of
+object, that means that a property can even be a function. For example, to
+return to `myBurritoObject`, let’s add a new property:
 
 ```javascript
 let myBurritoObject = {
@@ -145,6 +145,5 @@ few here.
 
 ## Footnotes
 
-[^dot-notation]: Dot-notation does not work, however, for index values.
-`arrayOfStrings.1` will cause an error.
+[^dot-notation]: Dot-notation does not work, however, for index values. `arrayOfStrings.1` will cause an error.
 
