@@ -425,7 +425,7 @@ included.
    the filter step? Something like:
   ```javascript
   if ( turtle.name.includes("o") ){ 
-    return turtle.name; 
+      return turtle.name; 
   }
   ```
   Why is this not a good idea?
