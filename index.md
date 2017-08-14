@@ -30,11 +30,13 @@ Control Flow / If statements / Embedding JavaScript in a Webpage / While and For
 
 Parameters / Scope / Recursion
 
-## [5. Collections of information](/5-collections/)
+## [5. Collections of Information](/5-collections/)
 
-Arrays / Objects / Methods / Strings as Arrays
+Arrays / Objects / Methods / Strings as Arraylike Things
 
-## 6. (Higher-Order Functions *EJS*)
+## [6. Abstraction](/6-abstraction)
+
+Returning / Iterating / Arrays of Objects / Mapping and Filtering
 
 ## 7. (Error Handling *EJS*)
 

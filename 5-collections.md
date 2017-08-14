@@ -3,7 +3,7 @@ title: Collections
 permalink: /5-collections/
 ---
 
-# Collections
+# Collections of Information
 
 “Data,” you may recall, is a plural. Just like “bacteria” is a collection of
 many instances of a single “bacterium,” so it is with data. Data is a
@@ -166,7 +166,7 @@ turtles.pop();
 Note that `.sort()`, `.reverse()`, and `.join()` do not change the value of
 `turtles`. Instead, we define new variables, `sortedTurtles`, `reversedTurtles`, and `turtleNames`. Then we assign to those variables two new arrays and a string. `.pop()` and `.push()`, however, *do* change `turtles`. 
 
-## Strings as Arrays
+## Strings as Arraylike Things
 
 Because everything is an object, that includes strings. Strings can behave a
 bit like arrays, but they also, as objects, have properties and methods. I’ll
