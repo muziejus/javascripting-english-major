@@ -158,32 +158,15 @@ tedious to have to retype everything every time. Additionally, if you close
 the window (or reload your browser), you lose everything you’ve already done.
 There must be a better way to write JavaScript, right? Of course there is.
 
-Back in [chapter one](/1-environment/), I had you create and
-commit a file in Atom called `index.html`. Now it’s time to return to Atom and
-open up that file. To do that, launch Atom, and then look to your Projects
-pane on the left. Your GitHub repository should be in that list, and
-underneath it there should be file `index.html`. Double click on it.
-
-It should look like this:
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My Project</title>
-  </head>
-  <body>
-    <h1>This is my project!</h1>
-  </body>
-</html>
-```
-
-Now, we need to open this file in a browser, as well. This is a bit tricky,
-but if you look at the title bar for Atom, it should say something like
-“Project — ~/github/YOURREPOSITORYNAME.” That means the file is in a folder,
-called `YOURREPOSITORYNAME`. That folder, in turn, is in a folder called
-`github`, which is in your home folder. On Windows, it’s saved somewhere else.
+Back in [chapter one](/1-environment/), I had you clone a project with Atom,
+and that project included a file called `index.html`. Open that file up in
+Atom by double clicking on it in the Projects tab on the left of the Atom
+window.  Now we need to open this file in a browser, as well. This is a bit
+tricky, but if you look at the title bar for Atom, it should say something
+like “Project — ~/github/javascripting-english-major-project.” That means the
+file is in a folder, called `javascripting-english-major-project`. That
+folder, in turn, is in a folder called `github`, which is in your home folder.
+On Windows, it’s saved somewhere else.
 
 Open up your home folder, like you would to open up any kind of regular
 document, and you should see the `github` folder. Open that up, and you should
@@ -197,7 +180,7 @@ so it’s time to get used to having both open at once. Back in Atom, change the
 text “This is my project” to something else and save your change. Switch over
 to the browser and press the reload button. The text should change.
 
-Congratulations, you are now a web editor. Let’s make you a web developer,
+Congratulations, you are now a web editor.[^html] Let’s make you a web developer,
 though. That involves adding a few lines to `index.html`, so go back to Atom.
 
 Inside the `body` tags, add:
@@ -216,7 +199,7 @@ should look like this:
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My Project</title>
+    <title>My JavaScripting English Major Project</title>
   </head>
   <body>
     <h1>This is my project!</h1>
@@ -515,3 +498,7 @@ browser.)
    previous chapter might help.
 1. Write down what seem to be common mistakes you are making. Are you
    forgetting to add some aspect of the JavaScript syntax?
+
+## Footnotes
+
+[^html]: Yes, you are now writing HTML without learning how to do it. The key grammar of the markup is clear from this example, though. HTML is made up of nested tags that look like this, for example: `<h1>` to open and `</h1>` to close. Some tags, like the `<meta>` and `<!doctype>` tags don’t need to be closed, but most do.  

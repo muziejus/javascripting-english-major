@@ -101,28 +101,33 @@ If you’re a current student, you can
 GitHub. That discount entitles you to a limited number of private
 repositories.
 
-#### Start a Project
+#### Fork the Course Repository
 
-Now you can create a repository. Either click on the “Start a project” button
-or visit the [new repository page](https://github.com/new) on GitHub. For the
-repository name, pick something short yet descriptive. Remember that this will
-be public. Furthermore, it will be part of your project’s web address. 
+In GitHub, anyone can access anyone else’s (public) repositories, or
+projects. And, what’s more, anyone can make an identical copy of that
+repository for their own use. This is called **forking**, and the next step is
+to fork the repository I have already made for this course.
 
-Fill in the description as you like, and tick the “Initialize this repository
-with a README” box. Leave the rest as it is, and click “Create repository.”
+While logged into GitHub, point your browser to:
 
-You’ve created your first repository! 
+[`https://github.com/muziejus/javascripting-english-major-project`](https://github.com/muziejus/javascripting-english-major-project)
 
-Congratulations, and now pause for a moment to enjoy the look of your own
-project on GitHub. There’s a lot on this page, but just let it be for now.
-We’ll come back to it in a bit.
+Once that page loads, there should be a “Fork” button in the top-right corner.
+Click on that. If it asks you where to fork it, click on your user, and now
+the repository should appear in your account under this url:
+
+`https://github.com/YOURUSERNAME/javascripting-english-major-project`
+
+Where it reads `YOURUSERNAME`, it should read, of course, the GitHub username
+you chose for yourself. Make a not of this url, as you’ll need it in a few
+steps.
 
 ## Atom
 
 You’re probably used to writing your English homework in Microsoft Word or,
 maybe, Pages. Or maybe you use Google Docs. They are all fine word processors,
 and I’ve used them all. Actually, I’ve been using Microsoft Word since well
-before you were born, probably. But they each make two conceptual assumptions
+before you were born, probably. But they all make two conceptual assumptions
 that go against the work we are doing in this course.
 
 First, they deal with documents, not projects. Remember, in this course you
@@ -131,24 +136,23 @@ Something like Word is great for a single document, like a business letter or
 five page paper. When it comes to something with lots of moving parts, like a
 project, it starts to creak.
 
-Second, the big advance Word
-brought to the computing world was fusing what a document says along with how
-it looks.[^form-vs-content] In Word, whatever the document looks like on your screen is a pretty
-good approximation of what it will look like in your printer.[^wysiwyg] You can change
-fonts, fontsizes, margins, and so on, for a single document, and when you
-print it, it will follow your instructions as closely as possible as it prints
-to a US Letter sheet of paper.[^a4] This is, of
-course, because of the first assumption: you’re writing a document that is
-going to get printed.
+Second, the big advance Word brought to the computing world was fusing what a
+document says along with how it looks.[^form-vs-content] In Word, whatever the
+document looks like on your screen is a pretty good approximation of what it
+will look like in your printer.[^wysiwyg] You can change fonts, font sizes,
+margins, and so on, for a single document, and when you print it, it will
+follow your instructions as closely as possible as it prints to a US Letter
+sheet of paper.[^a4] This is, of course, because of the first assumption:
+you’re writing a document that is going to get printed.
 
 We’re writing a website, however. And who knows what kind of device will be
 used to view it. Imagine if you write a page with 2-inch margins and visit it
 on a smartphone. You’ll see nothing but margins! When you’re writing for the
-web, you’re forfeiting a lot of how the content will look to the user, who
-could be using a giant monitor or a teeny smartphone to view your site. Of
-course, you still have *some* control over how things look. A lot, in fact.
-But in order to do that, you have to rethink the basics of writing. You now
-have to focus on the content much more than the look.
+web, you’re handing off a lot of decisions regarding how the content will look
+to the user, who could be using a giant monitor or a teeny smartphone to view
+your site. Of course, you still have *some* control over how things look. A
+lot, in fact.  But in order to do that, you have to rethink the basics of
+writing. You now have to focus on the content much more than the look.
 
 #### A Plain Text Editor
 
@@ -221,10 +225,10 @@ with any programmatic grammar or style checker, sometimes their advice is
 nonsense. I find that these get in the way, but they might be useful for you,
 especially if you’re worried about how well you write English.
 
-* [`linter-eslint`](https://atom.io/packages/linter-eslint): adds a
-“linter” for JavaScript, meaning the app will warn you when the JavaScript you
-write has problems. This will require some configuration, which we’ll tackle
-later.
+* [`linter-jshint`](https://atom.io/packages/linter-jshint): adds a “linter”
+based on [JSHint](http://jshint.com/docs/) for JavaScript, meaning the app
+will warn you when the JavaScript you write has problems. This will require
+some configuration, which we’ll tackle later.
 
 For each of these, you have to type the name into the little search bar in the
 Install Packages part of the Settings tab. The linters may ask you to add some
@@ -263,24 +267,23 @@ solarized themes, based on Ethan Schoonover’s
 Atom is written by the people at GitHub, so it’s pretty easy to link the two
 together. In fact, that’s the main reason I encourage you to install Atom.
 
-First, we need to get the web address of the repository you created on GitHub.
-Back in the browser, look at that window you had set up earlier in chapter. If
-you’ve lost it, just go to [GitHub.com](http://github.com), click on your
-profile icon in the top right corner, click on “Your profile,” and then on
-“Repositories” on the profile page that opens. Then click on the repository
-you created for this class.
+First, you have to get the url of the repository you forked a few steps ago:
 
-Now, click on the “Clone or download” button, and it will give you a
-webaddress that looks like
-`https://github.com/YOURUSERNAME/YOURREPOSITORYNAME.git`. Select that and copy
-it.
+`https://github.com/YOURUSERNAME/javascripting-english-major-project`
+
+Again, `YOURUSERNAME` should be replaced with your own GitHub username. Now
+add `.git` to the end of it, so you have:
+
+`https://github.com/YOURUSERNAME/javascripting-english-major-project.git`
+
+This is the url you will need for cloning.
 
 Second, return to Atom. Here, open up the command palette by going to the
 “Packages” menu, choosing “Command Palette” and then “Toggle.” In the little
 box that opens, type “git” and choose the option labeled “GitHub: Clone.” For
-“Clone from,” paste in the web address you copied in the previous step. Atom
-will automatically save it to a github folder it creates in your home folder,
-but you can change this location if you like.
+“Clone from,” paste or type in the url above ending in `.git` with your
+username. Atom will automatically save it to a GitHub folder it creates in
+your home folder, but you can change this location if you like.
 
 Now, if you have the file-icons package installed, in the Projects pane, you
 should see a small book icon with your repository name beside it, and,
@@ -303,28 +306,13 @@ branch master” and so on. You’ve made the connection.
 
 We’re in the homestretch now, but this section is the most important, because
 it’s a description of what you will be doing with Git in Atom most of the
-time. 
+time. In the Projects tab, there should be a file called `README.md`. Double
+click on it, and it should open in a new tab. You should see some text that
+I’ve written. Go ahead and delete it all and type in something of your own,
+like your name and your goals for your project (it’s ok if they’re vague for
+now).
 
-Let’s create a new file, called `index.html`. In Atom, right-click (or
-control-click) on your repository’s icon in the Projects panel and choose “New
-File” from the dropdown menu. A little window will show up asking you to
-“Enter the path for the new file.” Type in `index.html`. A new file, with that
-name, should join the `README.md` and `.git` already there.
-
-In the new blank tab, type in the following (or copy and paste it):[^html]
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My Project</title>
-  </head>
-  <body>
-    <h1>This is my project!</h1>
-  </body>
-</html>
-```
+`index.html`
 
 Just clicking away from the window should autosave the document, which you do
 by now opening the Git tab (“Packages” > “GitHub” > “Toggle Git Tab”). You
@@ -334,19 +322,17 @@ worthwhile to remember the keyboard shortcut, control-shift-9.
 The Git tab is split into three horizontal sections, Unstaged, Staged, and
 Commit. Unstaged lists all the files you have saved but have not yet
 committed. If the icon beside the file is a green cross, that means it is a
-new file, never before saved to the repository. That will be the case for
-`index.html`. If you were to double click on `README.md` in the Projects tab
-and add a short paragraph about your goals for this project, then `README.md`
-would appear in unstaged changes with a yellow box with a dot. That means that
-the file is in the repository, but changes have been made to it that have not
-yet been committed. Finally, if you were to delete a file, it would show up
-there with a red minus sign. Yes, in Git, a file is never truly deleted,
-remember.
+new file, never before saved to the repository. `README.md`, on the other
+hand, should appear in unstaged changes with a yellow box with a dot. That
+means that the file is in the repository, but changes have been made to it
+that have not yet been committed. Finally, if you were to delete a file, it
+would show up there with a red minus sign. Yes, in Git, a file is never truly
+deleted, remember.
 
 If you click on one of the files in the Unstaged area, a new tab will open
 with a lot of green (and maybe some red) text. That shows everything you have
-added or removed from the file since its last commit. With `index.html`, it
-will be all green, because it’s all new stuff you are adding.
+added or removed from the file since its last commit. With `README.md`, it
+will be a lot of red and hopefully a lot of green.
 
 Click on the “Stage All” button at the top of the Unstaged area to move all
 the files to the Staged area. Or, if you like, you can only move one file at a
@@ -362,16 +348,16 @@ the Staged area and make log the changes to the files in the Git time machine.
 Any changes you make backwards or forwards between commits doesn’t matter. Git
 only tracks commits, not individual saves.
 
-Type in a useful commit message (like `create barebones index.html`) in the
-Commit box and press “Commit.” The changes have been recorded.
+Type in a useful commit message (like `Edit README`) in the Commit box and
+press “Commit.” The changes have been recorded.
 
 The final step is pushing the changes up to GitHub. Once you have a commit,
 the up arrow at the bottom right corner of the Atom window will have a little
-1 appear next to it. If you make another commit, that 1 will become a 2. Once
-  you’ve got enough commits and want to push, click on that arrow, and Atom
-  will ask you for your GitHub username and password. Type them in, wait a
-  minute, and then if you go to GitHub and refresh your repository, you will
-  see the changes that you’ve made.[^overpushing]
+“1” appear next to it. If you make another commit, that “1” will become a “2.”
+Once you’ve got enough commits and want to push, click on that arrow, and Atom
+will ask you for your GitHub username and password. Type them in, wait a
+minute, and then if you go to GitHub and refresh your repository, you will see
+the changes that you’ve made.[^overpushing]
 
 #### Parting Atom Thoughts
 
@@ -460,7 +446,5 @@ after completing the exercises below.
 [^a4]: Or A4 paper, if you’re outside the United States.
 
 [^atom-is-chrome]: Atom is, basically, a very customized version of Chrome that talks to a JavaScript server that you run in the background when you launch the application.
-
-[^html]: Yes, you are now writing HTML without learning how to do it. The key grammar of the markup is clear from this example, though. HTML is made up of nested tags that look like this, for example: `<h1>` to open and `</h1>` to close. Some tags, like the `<meta>` and `<!doctype>` tags don’t need to be closed, but most do.  
 
 [^overpushing]: I, personally, overpush. I usually commit and immediately push, which is generally fine, but it can be embarrassing sometimes. Also, since the default means by which Atom pushes to GitHub asks you for your username and password, it makes sense to push only every few commits or so.  Find a balance that works for you, but remember to always finish your work before a break with a commit and a push, just in case!
