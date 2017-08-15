@@ -93,14 +93,14 @@ arrays, leaving the original array unchanged. Since we know this, we can even
 ```javascript
 let turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
 let sortedReversedTurtles = turtles.sort().reverse();
-// ["Raphael", "Michelangelo", "Leonardo", "Donatello"]
+//--> ["Raphael", "Michelangelo", "Leonardo", "Donatello"]
 ```
 
 Say we accidentally included Splinter in the list of turtles, and decided to
 `.pop()` him off before reversing:
 
 ```javascript
-let turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"]
+let turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
 // oops. let's pop() Splinter off before reversing…
 let reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
 ```
