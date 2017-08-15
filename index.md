@@ -38,7 +38,9 @@ Arrays / Objects / Methods / Strings as Arraylike Things
 
 Returning / Iterating / Arrays of Objects / Mapping and Filtering
 
-## 7. (Error Handling *EJS*)
+## [7. Oops!](/7-errors)
+
+JSHint / Mistakes / Exceptions
 
 ## 8. (JS and the Browser *EJS*)
 
