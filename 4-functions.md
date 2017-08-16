@@ -32,7 +32,8 @@ All those burrito-making instructions can be collapsed into a function. That
 might look something like:
 
 ```javascript
-let makeABurrito = function(){
+let makeABurrito;
+makeABurrito = function(){
   prepareTortilla();
   addBeans();
   addOnionsAndCilantro();
@@ -64,7 +65,8 @@ over `prompt()`, for example, in the [previous chapter](/3-programming/), and
 that is, of course, a function.[^console] But recall how we typed it:
 
 ```javascript
-let userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
+let userInput;
+userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
 ```
 
 The parentheses aren’t empty. Instead, they have two strings in them. From
@@ -76,9 +78,10 @@ fact, if we were to rewrite the above as:
 
 
 ```javascript
-let promptText = "What do you want to have for dinner?";
-let defaultText = "Type your answer here.";
-let userInput = prompt(promptText, defaultText);
+let promptText, defaultText, userInput;
+promptText = "What do you want to have for dinner?";
+defaultText = "Type your answer here.";
+userInput = prompt(promptText, defaultText);
 ```
 
 It would work in exactly the same way. These two variables, `promptText` and
@@ -89,11 +92,13 @@ and sometimes I want pinto beans. Let’s add a parameter to `makeABurrito()` to
 let us specify which beans to use on the fly:
 
 ```javascript
-let makeABurrito = function(beansVariable){
+let makeABurrito;
+makeABurrito = function(beansVariable){
+  let beansResponse;
   prepareTortilla();
   addBeans();
   addOnionsAndCilantro();
-  let beansResponse = "You ordered " + beansVariable + " beans. Good choice!";
+  beansResponse = "You ordered " + beansVariable + " beans. Good choice!";
   $("#response").text(beansResponse);
   // etc.
   rollUpTortilla();
@@ -103,7 +108,8 @@ let makeABurrito = function(beansVariable){
 If we were to execute:
 
 ```javascript
-  let blackBeans = "black";
+  let blackBeans;
+  blackBeans = "black";
   makeABurrito(blackBeans);
 ```
 
@@ -116,8 +122,8 @@ that has the value “black,” which it then prints in the `<div>`, like we did
 chapter.
 
 But where did `beansVariable` come from? And how did it get set to “black”?
-There’s no `let beansVariable = "black"`, after all. The answer is that the
-variable is defined at the same time as the function is. `let makeABurrito =
+There’s no `beansVariable = "black"`, after all. The answer is that the
+variable is defined at the same time as the function is. `makeABurrito =
 function(beansVariable){}` defines both the function, `makeABurrito()`, and
 the parameter, `beansVariable`, which can be used as a variable inside the
 function.
@@ -127,7 +133,8 @@ different kinds of tortillas, like whole wheat and regular wheat. You can
 redefine the function as:
 
 ```javascript
-let makeABurrito = function(beansVariable, tortillaVariable){
+let makeABurrito;
+makeABurrito = function(beansVariable, tortillaVariable){
   prepareTortilla(tortillaVariable);
   addBeans(beansVariable);
   addOnionsAndCilantro();
@@ -151,7 +158,8 @@ to know the `total` and the `tipRate`, which is a percentage, like 15 or 20%.
 The barebones function looks like this, then:
 
 ```javascript
-let tipCalculator = function(total, tipRate){
+let tipCalculator;
+tipCalculator = function(total, tipRate){
   // 1. calculate the percentage of the total 
   // as a variable “tipAmount”
   //
@@ -167,9 +175,11 @@ math—an easy calculation. In the second step, it will tell us what the result
 of the calculation is.
 
 ```javascript
-let tipCalculator = function(total, tipRate){
+let tipCalculator;
+tipCalculator = function(total, tipRate){
   // step 1:
-  let tipAmount = tipRate * total;
+  let tipAmount;
+  tipAmount = tipRate * total;
   // and step 2:
   $("#response").text("Your tip is $" + tipAmount);
 } 
@@ -188,16 +198,18 @@ In the exercises, we’ll expand on this function.
 Alongside the idea of a function block, that is, the set of curly braces, we
 also have the idea of scope. Beginner programmers often get tripped up by
 scope, but that’s ok, so do veteran programmers. Note that though conditionals
-and loops also use blocks, they don’t use scope in the same way.
+and loops also use blocks, they don’t affect scope in the same way.
 
 Just like a “scope” is used to see things that are far away (tele*scope*) or
 are really tiny (micro*scope*), in JavaScript, scope also has to do with
 visbility. Consider this snippet:
 
 ```javascript
-let alice = "Alice";
-let friendOfBob = function(friend){
-  let chuck = "Chuck";
+let alice, friendOfBob;
+alice = "Alice";
+friendOfBob = function(friend){
+  let chuck;
+  chuck = "Chuck";
   console.log("Bob has a friend named " + friend);
 }
 
@@ -230,7 +242,8 @@ equivalent of 5 &times; 4 &times; 3 &times; 2 &times; 1. Here’s the completed
 function, with a `prompt()` so you can see it in action on your page:
 
 ```javascript
-let factorial = function(integer, result){
+let factorial;
+factorial = function(integer, result){
   while (integer > 0) {
     result = result * integer;
     integer = integer - 1;
@@ -238,7 +251,8 @@ let factorial = function(integer, result){
   }
   $("#response").text("The result is: " + result);
 }
-let initialInteger = prompt("Factorial", "Initial integer");
+let initialInteger;
+initialInteger = prompt("Factorial", "Initial integer");
 factorial(initialInteger, 1);
 ```
 

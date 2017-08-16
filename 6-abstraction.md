@@ -42,7 +42,7 @@ asked you to think about why `.push()` and `.pop()` change the array, while
 (and hopefully was already discussed in class), but now we have to think about
 the *how*.
 
-Open up the JavaScript console, and type in `let one = 1;`. When you hit
+Open up the JavaScript console, and type in `let one; one = 1;`. When you hit
 return, the console should read `undefined`. But now just type `one;` and hit
 return. Now the console responds with `1`, which is what we assigned to the
 variable `one`. 
@@ -54,7 +54,8 @@ return value using the `return` keyword. For example, we have been using
 `console.log()` to write to the console so far, but try this in the console:
 
 ```javascript
-let f = function(){ return "I am a return value." };
+let f;
+f = function(){ return "I am a return value." };
 f();
 ```
 
@@ -64,10 +65,11 @@ by writing a function that combines someone’s first and last names into a full
 name with a space between them:
 
 ```javascript
-let makeFullName = function(firstName, lastName){
+let makeFullName, eichsFullName;
+makeFullName = function(firstName, lastName){
   firstName + " " + lastName;
 }
-let eichsFullName = makeFullName("Brendan" "Eich");
+eichsFullName = makeFullName("Brendan" "Eich");
 console.log("Is your name " + eichsFullName + "?");
 ```
 
@@ -78,10 +80,11 @@ we want, instead, for that variable to hold the value `"Brendan Eich"`. We do
 this by telling the function to return the string.
 
 ```javascript
-let makeFullName = function(firstName, lastName){
+let makeFullName, eichsFullName;
+makeFullName = function(firstName, lastName){
   return firstName + " " + lastName;
 }
-let eichsFullName = makeFullName("Brendan" "Eich");
+eichsFullName = makeFullName("Brendan" "Eich");
 console.log("Is your name " + eichsFullName + "?");
 ```
 
@@ -91,8 +94,9 @@ arrays, leaving the original array unchanged. Since we know this, we can even
 **chain** the two methods:
 
 ```javascript
-let turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
-let sortedReversedTurtles = turtles.sort().reverse();
+let turtles, sortedReversedTurtles;
+turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
+sortedReversedTurtles = turtles.sort().reverse();
 //--> ["Raphael", "Michelangelo", "Leonardo", "Donatello"]
 ```
 
@@ -100,9 +104,10 @@ Say we accidentally included Splinter in the list of turtles, and decided to
 `.pop()` him off before reversing:
 
 ```javascript
-let turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
+let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
+turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
 // oops. let's pop() Splinter off before reversing…
-let reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
+reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
 ```
 
 Uh-oh. This causes an error. Why does this happen? After all, we're just
@@ -127,13 +132,14 @@ console for now and work this out in Atom:
 
 ```javascript
 // First, we need a string from the user
-let userString = prompt("What do you want to UPPeRCASe?");
-// Second, we need to define our function.
-let upperCaseMinusE = function(string){
+let userString, upperCaseMinusE, upperCasedString;
+userString = prompt("What do you want to UPPeRCASe?");
+// Second, we need to create our function.
+upperCaseMinusE = function(string){
   // Something will happen here
 }
 // Third, we need to pass the user’s string to the function
-let upperCasedString = upperCaseMinusE(userString);
+upperCasedString = upperCaseMinusE(userString);
 // And we can then print the string to the webpage.
 $("#response").text(upperCasedString);
 ```
@@ -147,7 +153,8 @@ while skipping the letter whenever it is “e.” That should be easy enough to
 write:
 
 ```javascript
-let upperCaseMinusE = function(string){
+let upperCaseMinusE;
+upperCaseMinusE = function(string){
   if ( letter === "e" ) {
     result = letter;
   } else {
@@ -164,7 +171,8 @@ for loop. Remember, a for loop takes three parameters: the initialization, the
 condition, and the afterthought. So let’s add a for loop to our function:
 
 ```javascript
-let upperCaseMinusE = function(string){
+let upperCaseMinusE;
+upperCaseMinusE = function(string){
   for ( let i = 0; i < string.length ; i = i + 1 ) {
     if ( letter === "e" ) {
       result = letter;
@@ -185,9 +193,11 @@ need to ask it for `string[0]`. So the first time through the loop, we want
 the string. And that’s how we’ll define `letter`!
 
 ```javascript
-let upperCaseMinusE = function(string){
+let upperCaseMinusE;
+upperCaseMinusE = function(string){
   for ( let i = 0; i < string.length ; i = i + 1 ) {
-    let letter = string[i];
+    let letter;
+    letter = string[i];
     if ( letter === "e" ) {
       result = letter;
     } else {
@@ -206,10 +216,13 @@ And we know that what we return will be a string, so let’s define `result` at
 the beginning of the function and assign it to a blank string:
 
 ```javascript
-let upperCaseMinusE = function(string){
-  let result = ""; 
+let upperCaseMinusE;
+upperCase MinusE = function(string){
+  let result;
+  result = ""; 
   for ( let i = 0; i < string.length ; i = i + 1 ) {
-    let letter = string[i];
+    let letter
+    letter = string[i];
     if ( letter === "e" ) {
       result = letter;
     } else {
@@ -227,10 +240,13 @@ to the `result` variable every time we step through the loop, so we simply
 have to change two lines:
 
 ```javascript
-let upperCaseMinusE = function(string){
-  let result = ""; 
+let upperCaseMinusE;
+upperCaseMinusE = function(string){
+  let result;
+  result = ""; 
   for ( let i = 0; i < string.length ; i = i + 1 ) {
-    let letter = string[i];
+    let letter;
+    letter = string[i];
     if ( letter === "e" ) {
       result = result + letter;
     } else {
@@ -257,11 +273,13 @@ method, `forEach()`, for iterating over arrays. We could rewrite the function
 in the previous section this way:
 
 ```javascript
-let upperCaseMinusE = function(string){
-  let result = ""; 
+let upperCaseMinusE;
+upperCaseMinusE = function(string){
+  let result, stringArray;
+  result = ""; 
   // Since forEach() only works on arrays, we have 
   // to convert the string to an array:
-  let stringArray = string.split("");
+  stringArray = string.split("");
   // now we call forEach() on stringArray:
   stringArray.forEach(function(letter){
     if ( letter === "e" ) {
@@ -282,11 +300,12 @@ card, we see the turtle’s name, his favorite color, and his weapon of choice.
 We can create these cards as JavaScript objects:
 
 ```javascript
-let leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
-let donatello = {name: "Donatello", color: "purple", weapon: "bo"};
-let raphael = {name: "Raphael", color: "red", weapon: "sai"};
-let michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
-let turtles = [leonardo, donatello, raphael, michelangelo];
+let leonardo, donatello, raphael, michelangelo, turtles;
+leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
+donatello = {name: "Donatello", color: "purple", weapon: "bo"};
+raphael = {name: "Raphael", color: "red", weapon: "sai"};
+michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
+turtles = [leonardo, donatello, raphael, michelangelo];
 ```
 
 Each turtle has three properties, `.name`, `.color`, and `.weapon`. And then
@@ -294,12 +313,13 @@ we put all four turtles into an array, `turtles`. Now let’s say we want a list
 of their weapons on the webpage. In Atom, type out:
 
 ```javascript
-let leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
-let donatello = {name: "Donatello", color: "purple", weapon: "bo"};
-let raphael = {name: "Raphael", color: "red", weapon: "sai"};
-let michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
-let turtles = [leonardo, donatello, raphael, michelangelo];
-let weapons = ""; // a list of weapons.
+let leonardo, donatello, raphael, michelangelo, turtles, weapons;
+leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
+donatello = {name: "Donatello", color: "purple", weapon: "bo"};
+raphael = {name: "Raphael", color: "red", weapon: "sai"};
+michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
+turtles = [leonardo, donatello, raphael, michelangelo];
+weapons = ""; // a list of weapons.
 $("#response").text(weapons);
 ```
 
@@ -307,7 +327,7 @@ Of course, `weapons` is blank for the time being, so our `<div>` on the
 webpage will just be blank. How can we get the list of weapons, though? We
 need to iterate over the list of turtles and get each turtle’s individual
 weapon. Then we can put those together into the `weapons` string and be on our
-way. Under `let weapons = "";`, we can add:
+way. Under `weapons = "";`, we can add:
 
 ```javascript
 turtles.forEach(function(turtle){
@@ -333,12 +353,13 @@ the same way. You write an anonymous function that takes as its first
 parameter the current array item over which you’re iterating.
 
 ```javascript
-let leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
-let donatello = {name: "Donatello", color: "purple", weapon: "bo"};
-let raphael = {name: "Raphael", color: "red", weapon: "sai"};
-let michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
-let turtles = [leonardo, donatello, raphael, michelangelo];
-let weapons = turtles.map(function(turtle){
+let leonardo, donatello, raphael, michelangelo, turtles, weapons;
+leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
+donatello = {name: "Donatello", color: "purple", weapon: "bo"};
+raphael = {name: "Raphael", color: "red", weapon: "sai"};
+michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
+turtles = [leonardo, donatello, raphael, michelangelo];
+weapons = turtles.map(function(turtle){
   return turtle.weapon;
 });
 // weapons is now ["katana", "bo", "sai", "nunchaku"]
@@ -349,12 +370,13 @@ Now that `weapons` is an array instead of a string, that means we can also run
 `.sort()` on it:
 
 ```javascript
-let leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
-let donatello = {name: "Donatello", color: "purple", weapon: "bo"};
-let raphael = {name: "Raphael", color: "red", weapon: "sai"};
-let michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
-let turtles = [leonardo, donatello, raphael, michelangelo];
-let weapons = turtles.map(function(turtle){
+let leonardo, donatello, raphael, michelangelo, turtles, weapons;
+leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
+donatello = {name: "Donatello", color: "purple", weapon: "bo"};
+raphael = {name: "Raphael", color: "red", weapon: "sai"};
+michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
+turtles = [leonardo, donatello, raphael, michelangelo];
+weapons = turtles.map(function(turtle){
   return turtle.weapon;
 }).sort();
 // weapons is now ["bo", "katana", "nunchaku", "sai"]. Sorted!
@@ -365,7 +387,7 @@ And the webpage is printing “bo,katana,nunchaku,sai”, which isn’t bad, but
 looks a bit weird. Let’s replace those commas with commas and spaces:
 
 ```javascript
-let weapons = turtles.map(function(turtle){
+weapons = turtles.map(function(turtle){
   return turtle.weapon;
 }).sort().join(", ");
 // weapons is now "bo, katana, nunchaku, sai". Sorted, with commas.
@@ -387,7 +409,8 @@ letter “o.” Getting the names is easy; it’s no different than getting the
 weapons:
 
 ```javascript
-let names = turtles.map(function(turtle){
+let names;
+names = turtles.map(function(turtle){
   return turtle.name;
 }).sort().join(", ");
 $("#response").text(names);
@@ -401,10 +424,11 @@ that returns `true` if the string includes whatever the parameter is. Let’s
 add some code, then.
 
 ```javascript
-let names = turtles.map(function(turtle){
+let names, namesWithO;
+names = turtles.map(function(turtle){
   return turtle.name;
 }).sort();
-let namesWithO = names.filter(function(name){
+namesWithO = names.filter(function(name){
   return name.includes("o");
 }).join(", ");
 $("#response").text(namesWithO);

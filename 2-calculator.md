@@ -293,28 +293,30 @@ boolean?), of course, as that is a good way to understand the assumptions the
 language is making. But we’re building websites, not calculators.
 
 Nevertheless, getting a bit of flexibility with the console is useful. Let’s
-expand on that, then, with the `let` statement, which lets us assign variables.
+expand on that, then, with the `let` statement, which lets us define variables.
 
 ```
-> let burrito = "Basically the best food around.";
+> let burrito;
+> burrito = "Basically the best food around.";
 > console.log(burrito);
 Basically the best food around.
 ```
 
-I have declared a variable, `burrito`, and then I have assigned to it the
-string, “Basically the best food around.” Read that first line out loud, and
-its meaning becomes clear: let burrito equal the string “Basically the best
-food around.”[^let]
+In the first line, I declared a variable, `burrito`. In the second, assigned
+to the variable the string, “Basically the best food around.”[^let]
 
 Then I tell the console to log the variable burrito, and it logs its value,
 “Basically the best food around.”
 
 Any of the data types we have learned about already we can assign to a
-variable. 
+variable, and we can define multiple variables at once. It’s generally good
+practice to define all your variables at the top, so you know what you will be
+working with in the future.
 
 ```
-> let magicNumber = 9;
-> let secretNumber = 10;
+> let magicNumber, secretNumber;
+> magicNumber = 9;
+> secretNumber = 10;
 > secretNumber + magicNumber;
 19
 > secretNumber === magicNumber;
@@ -327,23 +329,24 @@ true
 11
 ```
 
-Variables persist for the duration of your scope. Scope is tricky, and you’ll
-learn more about it later, but in this case the scope is the console. If you
-close the console, then you’ll lose these variables. But the variables are
-also mutable, as you can see. `secretNumber` starts out as assigned to the
-number 10, but then it becomes assigned to the number 11.
+These variables persist only for the duration of the console. If you close the
+console, then you’ll lose these variables. But the variables are also mutable,
+as you can see. `secretNumber` starts out as assigned to the number 10, but
+then it becomes assigned to the number 11.
 
 Let’s play a bit more with assigning variables:
 
 ```
-> let tipRate = 0.20;
-> let bill = 10.00;
-> let billPlusTip = bill + (tipRate * bill);
+> let tipRate, bill, billPlusTip;
+> tipRate = 0.20;
+> bill = 10.00;
+> billPlusTip = bill + (tipRate * bill);
 > console.log(billPlusTip);
 12
-> let question = "What is the best food around?\n";
-> let burritos = "Delicious burritos";
-> let answer = burritos + " are clearly the best!";
+> let question, burritos, answer;
+> question = "What is the best food around?\n";
+> burritos = "Delicious burritos";
+> answer = burritos + " are clearly the best!";
 > console.log(question, answer);
 What is the best food around?
 Delicious burritos are clearly the best!
@@ -365,7 +368,8 @@ differently depending on the data.
 "number"
 > typeof 2;
 "number"
-> let isItTrue = 1 === 1;
+> let isItTrue;
+> isItTrue = 1 === 1;
 > typeof isItTrue;
 "boolean"
 > typeof badTastingBurrito;

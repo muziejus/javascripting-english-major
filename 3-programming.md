@@ -35,7 +35,8 @@ First, the program needs to get the information from you, so we need some kind
 of input. Let’s save that as a variable.
 
 ```
-  let userInput = prompt_the_user_for_what_they_want_for_dinner;
+  let userInput;
+  userInput = prompt_the_user_for_what_they_want_for_dinner;
 ```
 
 We have a variable now, `userInput`, that has whatever you’ve input. Now let’s
@@ -110,7 +111,8 @@ should get “Brilliant choice!” logged to your console. Now replace `true` wi
 Now let’s add a layer, this time using the variable `userInput`:
 
 ```javascript
-let userInput = "burrito";
+let userInput;
+userInput = "burrito";
 if ( userInput === "burrito" ) {
   console.log("Brilliant choice!");
 }
@@ -119,13 +121,14 @@ if ( userInput === "burrito" ) {
 Notice where you have to use `=` (which *assigns* a value to a variable) and
 where you have to use `===` (which *tests* whether something is true). If you
 type this in the console, again it should congratulate you. If you replace the
-first line with `let userInput = "samosa";`, what happens? Why?
+second line with `userInput = "samosa";`, what happens? Why?
 
 In our program, we had a second condition, which to scold the user if they
 didn’t want a burrito. That’s pretty straightforward to write:
 
 ```javascript
-let userInput = "samosa";
+let userInput;
+userInput = "samosa";
 if ( userInput !== "burrito" ) {
   console.log("Don’t you want a burrito?");
 }
@@ -134,7 +137,8 @@ if ( userInput !== "burrito" ) {
 However, we can *join* both truth tests using `else`:
 
 ```javascript
-let userInput = "samosa";
+let userInput;
+userInput = "samosa";
 if ( userInput === "burrito" ) {
   console.log("Brilliant choice!");
 } else {
@@ -147,9 +151,9 @@ choice!’ Otherwise, log ‘Don’t you want a burrito?’” Less typing! If y
 this snippet into your console, you’ll see that it scolds you. What do you
 have to change so that it congratulates you?
 
-So far so good, but we still have the first line of the pseudocode, `let
-userInput = prompt_the_user_for_what_they_want_for_dinner;`. Getting that part
-to work requires writing some html.
+So far so good, but we still have the line of the pseudocode, `userInput =
+prompt_the_user_for_what_they_want_for_dinner;`. Getting that part to work
+requires writing some html.
 
 ## Embedding JavaScript in a Webpage
 
@@ -271,7 +275,8 @@ the toy program from the previous section, though, and update the
 `scripts.js` file look like this:
 
 ```javascript
-let userInput = "samosa";
+let userInput;
+userInput = "samosa";
 if ( userInput === "burrito" ) {
   $("#response").text("Brilliant choice!");
 } else {
@@ -287,18 +292,18 @@ logging information to the console, we’re changing text on the webpage. But
 there’s still that little detail about how to ask you what you want for
 dinner. 
 
-In other words, we want to change `let userInput = "samosa";` in `scripts.js`
-to `let userInput = prompt_the_user_for_what_they_want_for_dinner;`, but in
+In other words, we want to change `userInput = "samosa";` in `scripts.js`
+to `userInput = prompt_the_user_for_what_they_want_for_dinner;`, but in
 JavaScript, not pseudocode.
 
 There are a lot of ways to get information from the user, and we’ll learn some
 of them as we move along, but for now we can use JavaScript’s `prompt()`
 function, which asks the user to type something in. This works on all
-browsers, but some (like Brave) might have it disabled. Change the first line
+browsers, but some (like Brave) might have it disabled. Change the second line
 of `scripts.js` to:
 
 ```javascript
-let userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
+userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
 ```
 
 Save and commit. If all goes well, when you reload the page in the browser,
@@ -353,7 +358,8 @@ Yet it’s possible to use while loops with a bit of discretion. For example,
 replace the contents of `scripts.js` with this:
 
 ```javascript
-let i = 1;
+let i;
+i = 1;
 while ( i < 4 ) {
   $("#response").append("<br />" + i);
   i = i + 1;
@@ -366,7 +372,8 @@ looping already makes sense to you, and you’re a step ahead. If no, I’ll wal
 through what’s going on here step by step:
 
 ```javascript
-let i = 1;
+let i;
+i = 1;
 ```
 
 First we define a variable `i` and assign it the number 1. It’s tradition in
@@ -406,7 +413,8 @@ But in programming, this is allowed. And, in fact, it’s super useful.
 Let’s look at the program in its entirety again:
 
 ```javascript
-let i = 1;
+let i;
+i = 1;
 while ( i < 4 ) {
   $("#response").append("<br />" + i);
   i = i + 1;
@@ -453,7 +461,7 @@ three part expression relating to a “control variable.” The three parts are:
 
 If we look back at our while loop and consider `i` to be the control variable,
 we can see that a for loop is just a fancier version of a while loop. After
-all, `let i = 1;` sets the **initial** state of the control variable before the
+all, `i = 1;` sets the **initial** state of the control variable before the
 loop begins. Next, `i < 4` is the **condition** that the control variable has to
 pass in order for the loop to continue. Finally, `i = i + 1;` is the **afterthought**,
 or the change the control variable undergoes each time through the loop. In
@@ -465,7 +473,16 @@ for (let i = 1; i < 4; i = i + 1 ) {
 }
 ```
 
-(note the semicolon placement!)
+Note where the semicolons are place, and also note that the two lines
+
+```javascript
+let i;
+i = 1;
+``` 
+
+are collapsed into one statement, `let i = 1;`. This works fine even outside
+the while loop, but it’s tidier to define your variables and assign them
+separately.
 
 In addition to being terser, this syntax limits the control variable (`i`) to
 the loop itself, instead of defining it outside of the loop, like in a while
