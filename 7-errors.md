@@ -44,13 +44,14 @@ style to your programming. For example, the linter can complain whenever you
 are using single quotes instead of double quotes to quote a string. But the
 linter can also catch syntax errors, that is, errors that will simply break
 JavaScript. Open up the `scripts.js` file in Atom, and type this in the last
-line:
+two lines:
 
 ```javascript
-let broken variable = "This will be broken';
+let brokenVariable;
+brokenVariable = "This will be broken';
 ```
 
-Little red dots will appear near that line, complaining about an “Unclosed
+Little red dots will appear near that last line, complaining about an “Unclosed
 string” and a “Missing semicolon.” That is because you typed a single quote
 when JavaScript was expecting a double quote.
 
@@ -68,9 +69,10 @@ complicated mistakes. Let’s revisit the `.pop().reverse()` error from last
 chapter. Go ahead and make sure your `scripts.js` file looks like this:
 
 ```javascript
-let turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
+let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
+turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
 // oops. let's pop() Splinter off before reversing…
-let reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
+reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
 $("#response").text(reversedTurtlesWithoutSplinter);
 ```
 
@@ -105,11 +107,12 @@ Here the assumptions start causing problems. We assume in step three that
 a separate step, comment out the line that is creating the error and the jQuery line, and have the console tell us what `turtlesWithoutSplinter` equals:
 
 ```javascript
-let turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
+let turtlesWithSplinter, turtlesWithoutSplinter, reversedTurtlesWithoutSplinter;
+turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
 // oops. let's pop() Splinter off before reversing…
-let turtlesWithoutSplinter = turtlesWithSplinter.pop();
+turtlesWithoutSplinter = turtlesWithSplinter.pop();
 console.log(turtlesWithoutSplinter);
-//let reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
+//reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
 //$("#response").text(reversedTurtlesWithoutSplinter);
 ```
 
@@ -123,12 +126,13 @@ techniques work here. The first is to `.pop()` the array, and then create a
 new array that is the popped array, but reversed:
 
 ```javascript
-let turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
+let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
+turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
 // oops. let's pop() Splinter off before reversing…
 turtlesWithSplinter.pop();
 // turtlesWithSplinter is now, paradoxically, without Splinter.
 // Now define a new array that is reversed.
-let reversedTurtlesWithoutSplinter = turtlesWithSplinter.reverse();
+reversedTurtlesWithoutSplinter = turtlesWithSplinter.reverse();
 $("#response").text(reversedTurtlesWithoutSplinter);
 ```
 
@@ -136,9 +140,10 @@ We get the result we want. However, there is another way to do this, by
 avoiding `.pop()` entirely:
 
 ```javascript
-let turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
+let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
+turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
 // Use .filter() instead of .pop().
-let reversedTurtlesWithoutSplinter = turtlesWithSplinter.filter(function(turtle){
+reversedTurtlesWithoutSplinter = turtlesWithSplinter.filter(function(turtle){
   // What is the value of turtle?
   console.log(turtle);
   return turtle !== "Splinter";
@@ -162,7 +167,73 @@ development](https://en.wikipedia.org/wiki/Test-driven_development), where you
 write the tests first, and then only write code that makes the tests pass. But
 that takes us to the final part, exceptions and dealing with users.
 
-## Exceptions and Users
+## Users and Exceptions
 
 Part of programming with testing in mind is that it encourages you to think of
-the edge cases, when something happens that you couldn’t prepare for. 
+the edge cases, when something happens that you couldn’t prepare for. Let’s
+write a tiny program in `scripts.js` that asks for two numbers from the user,
+divides them, and squares the result:
+
+```javascript
+let dividend, divisor, result;
+dividend = prompt("What is the dividend?", "Enter dividend here:");
+divisor = prompt("What is the dividend?", "Enter dividend here:");
+result = dividend / divisor;
+result = result * result;
+$("#response").text(result);
+```
+
+Save and reload the page. Enter your favorite two integers, and see how
+everything works perfectly. Great. But what happens if you enter 0 for both
+numbers? You get `NaN`, the infamous not especially useful type “Not a
+Number.” Now say you were relying on `result` to do some calculations down the
+line. You would just get `NaN` over and over, because once it shows up, it
+poisons everything downstream. 
+
+So how can we make sure `result` is a number and not `NaN`? The initial
+suspicion is to use the `typeof` operator we learned back in [chapter
+2](/2-calculator/). But if you try this in the console:
+
+```javascript
+typeof NaN;
+//--> "number"
+```
+
+In other words, to JavaScript, even though you can’t do anything useful with
+it, `NaN` is a number. It’s probably better to use an if statement along with
+the `isNaN()` function, which returns `true` if the parameter is `NaN`.
+
+```javascript
+let dividend, divisor, result;
+dividend = prompt("What is the dividend?", "Enter dividend here:");
+divisor = prompt("What is the dividend?", "Enter dividend here:");
+result = dividend / divisor;
+if (isNaN(result)){
+  result  = "The division did not produce a usable number.";
+}
+result = result * result;
+$("#response").text(result);
+```
+
+But the response is still `NaN`. Can you see why? The second to last line is
+trying multiply a string, `"The division did not produce a usable number"`,
+times itself. Of course that will not yield a number. Better to do
+something like this:
+
+```javascript
+let dividend, divisor, result;
+dividend = prompt("What is the dividend?", "Enter dividend here:");
+divisor = prompt("What is the dividend?", "Enter dividend here:");
+result = dividend / divisor;
+if (isNaN(result)){
+  $("#response").text("The division did not produce a usable number.");
+} else {
+  result = result * result;
+  $("#response").text(result);
+}
+```
+
+This branching lets us only do multiplication on things we know are numbers.
+Try entering `0` and `0` now.
+
+Now try typing in words instead of numbers.
