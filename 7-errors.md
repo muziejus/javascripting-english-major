@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Oops!
 permalink: /7-errors/
 ---

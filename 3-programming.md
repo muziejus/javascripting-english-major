@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Programming
 permalink: /3-programming/
 ---

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Abstraction
 permalink: /6-abstraction/
 ---

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: JavaScript Calculator
 permalink: /2-calculator/
 ---

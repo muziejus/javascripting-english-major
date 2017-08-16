@@ -1,3 +1,9 @@
+---
+layout: default
+title: The JavaScripting English Major
+permalink: /
+---
+
 # *The JavaScripting English Major*
 
 This is a 15-session course in learning to program in JavaScript. Its target

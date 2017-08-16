@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Appendix A. Additional Resources
 permalink: /a-resources/
 ---

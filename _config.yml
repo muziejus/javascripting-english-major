@@ -27,9 +27,8 @@ title: The JavaScripting English Major
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-leap-day
+# theme: jekyll-theme-leap-day
 # baseurl: /javascripting-english-major
-baseurl: /
 # theme: minima
 # gems:
 #   - jekyll-feed

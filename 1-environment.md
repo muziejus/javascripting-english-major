@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Setting up the Environment
 permalink: /1-environment/
 ---
