@@ -67,8 +67,15 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $base2;
 
   p {
+    text-align: center;
     margin-bottom: 0;
-    padding-left: 2rem;
+  }
+  
+  @media (min-width: 576px){
+    p {
+      text-align: left;
+      padding-left: 2rem;
+    }
   }
 }
 
