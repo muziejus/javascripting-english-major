@@ -166,75 +166,96 @@ actually good practice. In fact, if this were a more rigorous course, I would
 be teaching [test-driven
 development](https://en.wikipedia.org/wiki/Test-driven_development), where you
 write the tests first, and then only write code that makes the tests pass. But
-that takes us to the final part, exceptions and dealing with users.
+that takes us to the final part, dealing with users.
 
 ## Users and Exceptions
 
 Part of programming with testing in mind is that it encourages you to think of
-the edge cases, when something happens that you couldn’t prepare for. Let’s
-write a tiny program in `scripts.js` that asks for two numbers from the user,
-divides them, and squares the result:
+the edge cases, when something happens that you couldn’t prepare for. Back in
+[chapter 2](/2-calculator), one of the homework assignments asked you to add a
+string to a number. It clearly doesn’t work, but it also doesn’t cause
+JavaScript to break, like a syntax error would. But let’s revisit that
+question by working in the console, with a twist:
 
 ```javascript
-let dividend, divisor, result;
-dividend = prompt("What is the dividend?", "Enter dividend here:");
-divisor = prompt("What is the dividend?", "Enter dividend here:");
-result = dividend / divisor;
-result = result * result;
-$("#response").text(result);
+> let x, y, z;
+> x = "string";
+//<-- "string"
+> y = x + 3;
+//<-- "string3"
+> z = x * 3;
+//<-- NaN
 ```
 
-Save and reload the page. Enter your favorite two integers, and see how
-everything works perfectly. Great. But what happens if you enter 0 for both
-numbers? You get `NaN`, the infamous not especially useful type “Not a
-Number.” Now say you were relying on `result` to do some calculations down the
-line. You would just get `NaN` over and over, because once it shows up, it
-poisons everything downstream. 
+There’s that confusing `NaN` type, the “Not a Number.” Instead of breaking and
+saying something like “cannot multiply a string!” JavaScript instead just
+quietly fails, sets the response to `NaN` and moves on. This level of
+forgiveness can cause trouble, because finding what, precisely, caused your
+expected number to become not a number can be difficult.
 
-So how can we make sure `result` is a number and not `NaN`? The initial
-suspicion is to use the `typeof` operator we learned back in [chapter
-2](/2-calculator/). But if you try this in the console:
+In fact, we’ve already used (and benefited from) JavaScript’s forgiveness.
+Remember the `tipCalculator()` function in [chapter 4](/4-functions)? It
+relied on `prompt()` to get numbers from the user in order to calculate a tip.
+Let’s revisit that part, too, in the console:
 
 ```javascript
-typeof NaN;
-//--> "number"
+> let promptValue;
+> promptValue = prompt("Type in a number, please.");
+//<-- "2"
+> typeof promptValue;
+//<-- "string"
+> promptValue = promptValue + 3;
+//<-- "23"
+> promptValue = promptValue * 3;
+//<-- 69
+> typeof promptValue;
+//<-- "number"
 ```
 
-In other words, to JavaScript, even though you can’t do anything useful with
-it, `NaN` is a number. It’s probably better to use an if statement along with
-the `isNaN()` function, which returns `true` if the parameter is `NaN`.
+Wait, what? Let’s follow what happens to our variable `promptValue`. When the
+user types it in, it’s a string. This makes sense, the user could type in `2`
+as easily as `burrito`. But the user can only type, so assuming the result is
+a string is a good one. Next, because `promptValue` is a string, when we add
+three to it, it’s just like adding `"string" + 3` and getting `"string3"`, so
+we get `"23"`. A little bit weird, but, remember, `promptValue` is a *string*.
+
+Then we multiply it by 3, which in the above example returned `NaN`. Instead
+we get the number (not the string) `69`. In other words, the result of
+multiplying a number (`23`) times another number (`3`). What on earth
+happened? Why did `promptValue` suddenly start behaving like a number? And
+then how does `promptValue` start out as a string but end as a number?
+
+The answer, in non-technical terms, is that JavaScript will look at a string,
+when it’s being asked to behave like a number, and if it can turn into a
+number, it does so. We get the value `"23"`, however, because strings *can*
+use the `+` operator. So it stays a string. Confusing, I know. But this shows
+that we have to make sure we know what we’re dealing with when we receive data
+from a user.
+
+For numbers, one trick is to use the function `isNaN()` on any data we receive
+from a user that *must* be a number, so our function could look something like
+this:
 
 ```javascript
-let dividend, divisor, result;
-dividend = prompt("What is the dividend?", "Enter dividend here:");
-divisor = prompt("What is the dividend?", "Enter dividend here:");
-result = dividend / divisor;
-if (isNaN(result)){
-  result  = "The division did not produce a usable number.";
-}
-result = result * result;
-$("#response").text(result);
-```
-
-But the response is still `NaN`. Can you see why? The second to last line is
-trying multiply a string, `"The division did not produce a usable number"`,
-times itself. Of course that will not yield a number. Better to do
-something like this:
-
-```javascript
-let dividend, divisor, result;
-dividend = prompt("What is the dividend?", "Enter dividend here:");
-divisor = prompt("What is the dividend?", "Enter dividend here:");
-result = dividend / divisor;
-if (isNaN(result)){
-  $("#response").text("The division did not produce a usable number.");
+let promptValue;
+promptValue = prompt("Type in a number, please");
+if (isNaN(promptValue) === true) {
+	alert("The value you submitted is not a number");
 } else {
-  result = result * result;
-  $("#response").text(result);
+	// do the calculations on promptValue knowing it
+	// will behave like a number and move on from here.
 }
 ```
 
-This branching lets us only do multiplication on things we know are numbers.
-Try entering `0` and `0` now.
+`alert()` makes that little box appear on your browser, similar to `prompt()`.
 
-Now try typing in words instead of numbers.
+Of course, over the rest of this course, you will be creating a project where
+you, yourself, are the sole source of data. In other words, you will be your
+worst enemy. But keep in mind the sorts of valves JavaScript offers, like
+`isNaN()`, while also knowing the limitations of things like `typeof`.
+Remember, you can always check your sanity in the console.
+
+## Exercises
+
+1. No homework this time. Enjoy the halfway point. When you come back, it will
+   be time to start creating!
