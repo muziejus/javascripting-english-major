@@ -422,16 +422,13 @@ after completing the exercises below.
 
 1. Create a GitHub account.
 
-1. Create a repository on GitHub for your project. Don’t forget to name it
-   something you won’t be ashamed to show me.
+1. Fork the blank repository for this course from [`https://github.com/muziejus/javascripting-english-major-project`](https://github.com/muziejus/javascripting-english-major-project).
 
 1. Install Atom on your computer with some useful packages.
 
 1. Link Atom to your GitHub account.
 
-1. Use Atom to clone your repository.
-
-1. Create a file called `index.html` in your repository and commit it.
+1. Use Atom to clone the repository you forked.
 
 1. Flesh out your hopes for your project in the `README.md` file and commit
    the changes.
