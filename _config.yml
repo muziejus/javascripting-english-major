@@ -35,3 +35,4 @@ markdown: kramdown
 # exclude:
 #   - Gemfile
 #   - Gemfile.lock
+google-code: UA-592475-7
