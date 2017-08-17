@@ -44,7 +44,7 @@ a:focus, a:hover {
   color: $cyan;
 }
 
-h2, h3, h4, h5, h6, p > em, p > strong {
+h2, h3, h4, h5, h6, .lead, p > em, p > strong {
   color: $base01;
 }
 
@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Ubuntu", "Helvetica", sans-serif;
   color: $blue;
 }
+
+.bg-base2 {
+  background-color: $base2;
+}
+
 
 .footer {
   position: absolute;
@@ -63,8 +68,10 @@ h1, h2, h3, h4, h5, h6 {
 
   p {
     margin-bottom: 0;
+    padding-left: 2rem;
   }
 }
 
 
+@import "index";
 @import "navbar";

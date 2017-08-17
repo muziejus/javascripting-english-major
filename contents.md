@@ -1,18 +1,10 @@
 ---
 layout: default
 title: The JavaScripting English Major
-permalink: /
+permalink: /contents
 ---
 
-# *The JavaScripting English Major*
-
-This is a 15-session course in learning to program in JavaScript. Its target
-audience is humanities undergrads. At the end of this course, the student will
-know how to publish a JavaScript-enriched website with some maps.
-
-In its current iteration, this course sits alongside Marijn Haverbeke’s
-[*Eloquent JavaScript*](http://eloquentjavascript.net/), which is available
-online (for free) and in paperback.
+# Contents
 
 ## [0. Introduction & FAQs](/0-introduction/)
 

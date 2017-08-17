@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+# About
+
 *The JavaScripting English Major* is created by [Moacir P. de Sá
 Pereira](http://moacir.com) to be used, initially, in the 2017 course “[Novel
 Maps of New York](https://muziejus.github.io/novel-maps-of-ny-2017/),” taught
@@ -21,3 +23,8 @@ chapter](/0-introduction/).
 
 The website is created using {% include icon-github.html username="jekyll" %} /
 [jekyll](https://github.com/jekyll/jekyll), and it is hosted on GitHub Pages.
+
+The theme is a customized version of [Bootstrap](http://getbootstrap.com), and
+the colors scheme is [Solarized](http://ethanschoonover.com/solarized).
+
+The project was written mostly in markdown using vim, the One True Editor.

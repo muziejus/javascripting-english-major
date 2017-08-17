@@ -1,0 +1,26 @@
+.jumbotron {
+  background-color: $base3;
+}
+
+.btn-primary {
+  color: $base3;
+  background-color: $blue;
+  border-color: $cyan;
+}
+
+.btn-primary:hover {
+  background-color: $cyan;
+  border-color: $green;
+}
+
+h1 {
+  font-family: "EB Garamond", "Times New Roman", serif;
+  font-size: 3.5rem;
+}
+
+@media (min-width: 576px){
+  .jumbotron {
+    max-width: 675px;
+  }
+}
+
