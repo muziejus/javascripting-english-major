@@ -6,6 +6,7 @@
   .navbar-brand {
     color: rgba($base01, 0.9);
     font-weight: normal;
+
   }
 
   .navbar-brand:focus, .navbar-brand:hover {
@@ -23,3 +24,19 @@
   }
 }
 
+#brand-name-small {
+  display: inline-block;
+}
+
+#brand-name-big {
+  display: none;
+}
+
+@media (min-width: 576px){
+  #brand-name-small {
+    display: none;
+  }
+  #brand-name-big {
+    display: inline-block;
+  }
+}
