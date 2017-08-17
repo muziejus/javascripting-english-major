@@ -1,0 +1,25 @@
+.bg-faded {
+  background-color: $base2;
+}
+
+.navbar-light {
+  .navbar-brand {
+    color: rgba($base01, 0.9);
+    font-weight: normal;
+  }
+
+  .navbar-brand:focus, .navbar-brand:hover {
+    color: rgba($green, 0.8);
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: rgba($base01, 0.5);
+    }
+
+    .nav-link:focus, .nav-link:hover {
+      color: rgba($base01, 0.9);
+    }
+  }
+}
+

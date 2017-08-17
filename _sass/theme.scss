@@ -3,10 +3,68 @@
 @import "fonts";
 @import "solarized-dark";
 
+// Solarized light:
+
+$base00:   #657b83; // primary content
+$base01:   #586e75; // emphasized content
+$base1:    #93a1a1; // comments / secondary content
+$base3:    #fdf6e3; // background
+$base2:    #eee8d5; // secondary background
+// orange    #cb4b16  constants
+// red       #dc322f  regex, special keywords
+// blue      #268bd2  reserved keywords
+// cyan      #2aa198  strings, numbers
+// green     #859900  operators, other keywords
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: "EB Garamond", "Times New Roman", serif;
+  color: $base00;
+  background-color: $base3;
+  padding-top: 4rem;
+  margin-bottom: 4rem;
 } 
 
 code {
-  font-family: "Ubuntu", Monaco, Terminal;
+  font-family: "Ubuntu Mono", Monaco, Terminal;
+  color: $red;
+  background-color: $base2;
 }
+
+a {
+  color: $green;
+  font-weight: bold;
+}
+
+a:focus, a:hover {
+  color: $cyan;
+}
+
+h2, h3, h4, h5, h6, p > em, p > strong {
+  color: $base01;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Ubuntu", "Helvetica", sans-serif;
+  color: $blue;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem; /* Vertically center the text there */
+  background-color: $base2;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+@import "navbar";
