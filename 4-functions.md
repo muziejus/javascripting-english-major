@@ -1,10 +1,8 @@
 ---
 layout: default
 title: Functions
-permalink: /4-functions/
+permalink: /4-functions
 ---
-
-# Functions
 
 The [previous chapter](/3-programming) was very conceptual. Loops are tricky
 to get a hang of, but once you visualize how looping can solve problems,

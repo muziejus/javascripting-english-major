@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Collections
-permalink: /5-collections/
+title: Collections of Data
+permalink: /5-collections
 ---
 
-# Collections of Information
 
 “Data,” you may recall, is a plural. Just like “bacteria” is a collection of
 many instances of a single “bacterium,” so it is with data. Data is a

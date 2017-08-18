@@ -4,8 +4,6 @@ title: Setting up the Environment
 permalink: /1-environment
 ---
 
-# Setting up the Environment
-
 It’s possible to start JavaScripting just by opening your browser, but for the
 purposes of this course, we’re going to introduce two new pieces of software
 that work to make your programming life easier.

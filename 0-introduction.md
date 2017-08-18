@@ -1,10 +1,8 @@
 ---
 layout: default
 title: 0. Introduction & FAQs
-permalink: /0-introduction/
+permalink: /0-introduction
 ---
-
-# Introduction & FAQs
 
 Welcome! This is an introduction to *The JavaScripting
 English Major*, a course written by me, [Moacir P. de Sá

@@ -4,8 +4,6 @@ title: Writing a Webpage
 permalink: /8-webpage
 ---
 
-# Writing a Webpage
-
 The second half of this course begins with an introduction to the foundation
 of a web site, the actual web “page.” Twenty-five years ago, writing for the
 web involved precisely that: writing documents that included links to each

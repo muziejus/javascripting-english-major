@@ -44,7 +44,9 @@ permalink: /contents
 
 ### HTML / CSS / JQuery
 
-## 9. (DOM? *EJS*)
+## [9. Building a Dataset](/9-dataset)
+
+### Digital *Canterbury Tales* / JSON
 
 ## 10. Leaflet
 

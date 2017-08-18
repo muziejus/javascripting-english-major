@@ -1,10 +1,8 @@
 ---
 layout: default
 title: Programming
-permalink: /3-programming/
+permalink: /3-programming
 ---
-
-# Programming
 
 It’s time to stop playing around with calculator effects in JavaScript.
 We’ve skipped over a lot to get to here, but it’s important to start thinking

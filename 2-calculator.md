@@ -1,10 +1,9 @@
 ---
 layout: default
 title: JavaScript Calculator
-permalink: /2-calculator/
+permalink: /2-calculator
 ---
 
-# JavaScript Calculator
 
 The [last chapter](/1-environment/) ended with the
 following, in the console:

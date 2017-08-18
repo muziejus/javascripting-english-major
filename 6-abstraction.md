@@ -1,10 +1,8 @@
 ---
 layout: default
 title: Abstraction
-permalink: /6-abstraction/
+permalink: /6-abstraction
 ---
-
-# Abstraction
 
 Between strings, numbers, booleans, functions, arrays, and objects, we have
 the fundamentals of JavaScript down. These are the pieces that build together

@@ -1,9 +1,6 @@
 // create sidebar
-$("aside").html(function(){
-  let h1, sidebar;
-  h1 = $("h1").html();
-  $("h1").remove();
-  sidebar = "<h1>" + h1 + "</h1>\n<hr>\n";
+$("aside").append(function(){
+  let sidebar ="" ;
   if ($("article").has("section").length ){
     sidebar = sidebar + "<h3>Sections</h3>\n<ul class='nav flex-column'>";
     $("section").each(function() {
@@ -22,6 +19,7 @@ $("aside").html(function(){
     });
     sidebar = sidebar + "</ul>\n<hr>\n";
   }
+  $(".fa-spinner").remove();
   return sidebar;
 });
 

@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Oops!
-permalink: /7-errors/
+permalink: /7-errors
 ---
 
-# Oops!
 
 Typically in an introduction to programming course, about here is where we
 would start drilling down deeper into how objects work, the idea being that
