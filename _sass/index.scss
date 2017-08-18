@@ -1,27 +1,35 @@
 #splash {
   background-color: $base3;
 
+  a {
+    color: $blue;
+  }
+
+  a:hover, a:focus {
+    color: $cyan;
+  }
+
   h2, h3 {
     font-family: "EB Garamond", "Times New Roman", serif;
     color: $base01;
   }
-}
 
-.btn-primary {
-  color: $base3;
-  background-color: $blue;
-  border-color: $cyan;
-}
+  .btn-primary {
+    color: $base3;
+    background-color: $blue;
+    border-color: $cyan;
+  }
 
-.btn-primary:hover {
-  background-color: $cyan;
-  border-color: $green;
-}
+  .btn-primary:hover, .btn-primary:focus {
+    color: $base3;
+    background-color: $cyan;
+    border-color: $green;
+  }
 
+}
 
 @media (min-width: 576px){
   #splash {
     max-width: 675px;
   }
 }
-
