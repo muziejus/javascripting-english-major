@@ -50,9 +50,9 @@ permalink: /contents
 
 ## 10. Leaflet
 
-## 11. (Events *EJS*)
+## 11. GeoJSON
 
-## 12. GeoJSON and Data
+## 12. 
 
 ## 13.
 
