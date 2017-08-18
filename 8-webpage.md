@@ -141,7 +141,7 @@ framework I prefer, and the one that we’ll be using now, is
 [Bootstrap](http://getbootstrap.com), designed by the people at Twitter. We’ll
 be using version 4 of Bootstrap, which isn’t even out yet. 
 
-We can load Bootstrap by putting two lines of HTML in our `<head>` tag in
+We can load Bootstrap styles by putting two lines of HTML in our `<head>` tag in
 `index.html`:
 
 ```html
@@ -154,7 +154,14 @@ We can load Bootstrap by putting two lines of HTML in our `<head>` tag in
 ```
 
 Those two `<link>` tags tell the browser to load the Bootstrap styles (first
-line), and your personal styles (second line). 
+line), and your personal styles (second line). We also need to add two more
+`<script>` tags to load Bootstrap’s special JavaScript, so put these two in
+just above `<script src="scripts.js"></script>`.
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+```
 
 Let’s also wrap our content inside a container `<div>`, which is a `<div>`
 with a class of “container”. You can see it opened on line 2 below and closed
@@ -167,6 +174,8 @@ on line 5:
     <div id="response">This is the div.</div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="scripts.js"></script>
 </body>
 ```
@@ -201,6 +210,8 @@ like this:
 		<p id="third-paragraph">This is the third paragraph. Do you want three sentences? Lucky you, because here they are.</p>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="scripts.js"></script>
 </body>
 ```
