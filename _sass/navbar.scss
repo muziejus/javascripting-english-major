@@ -27,6 +27,27 @@
     font-size: 1rem;
     color: rgba($base01, 0.9);
   }
+
+  .dropdown-menu {
+    background-color: $base3;
+    color: $base00;
+    border-color: rgba($base00, .5);
+
+    .dropdown-item {
+      color: base00;
+    }
+
+    .dropdown-item:focus, .dropdown-item:hover {
+      color: $base01;
+      background-color: $base2;
+    }
+
+    .dropdown-item:active {
+      color: $blue;
+      background-color: $base2;
+    }
+  }
+
 }
 
 #brand-name-small {
