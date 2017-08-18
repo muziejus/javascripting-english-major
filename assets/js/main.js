@@ -20,7 +20,7 @@ $("aside").html(function(){
       }
       sidebar = sidebar + "</li>\n";
     });
-    sidebar = sidebar + "</ul>\n";
+    sidebar = sidebar + "</ul>\n<hr>\n";
   }
   return sidebar;
 });
