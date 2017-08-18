@@ -6,10 +6,10 @@ permalink: /0-introduction/
 
 # 0. Introduction & FAQs
 
-Welcome! This is an introduction to my “The JavaScripting English Major”
-course with a few FAQs that help explain how I approach the design of the
-course. If you look at the [About](/about/) page, you can
-learn even more about the foundations of the course.
+<p class="lead"> Welcome! This is an introduction to my “The JavaScripting
+English Major” course with a few FAQs that help explain how I approach the
+design of the course. If you look at the [About](/about/) page, you can learn
+even more about the foundations of the course.  </p>
 
 If you’re already committed to becoming a JavaScripting English major, you can
 skip this chapter and jump straight to the [first chapter]({{ site.baseurl
@@ -20,22 +20,17 @@ able to
 
 * host a web project that investigates an academic topic of your
 choosing,
-
 * consider means by which you can present the topic to a public larger than
 the class,
-
 * write HTML and JavaScript,
-
 * use Atom as a development environment for your project,
-
 * create and manipulate Leaflet maps,
-
 * manage GeoJSON data,
-
 * use Git to keep track of your project, and
-
 * think about your literary study as a process that changes over time, leading
 to a project.
+
+<section id="prerequisites">
 
 ## What Are the Prerequisites?
 
@@ -58,6 +53,10 @@ way to learn HTML is to see how others use it and retool that for your own
 purposes. That kind of copy-paste pedagogy won’t work for JavaScript, but it’s
 a classic method for learning HTML. “View Source” has been a useful, if hidden,
 command on the browser for two decades for just this reason.
+
+</section>
+
+<section id="not-english-major">
 
 ## What if I’m not an English Major?
 
@@ -106,6 +105,9 @@ little or no programming background. In other words, if this course can be
 considered “Jockers, but for JavaScript,” I think I will be very satisfied,
 and I suspect the same will be true for my students.
 
+</section>
+<section id="why-javascript">
+
 ## Why JavaScript?
 
 The previous question notes that Matthew Jockers has already written a
@@ -131,6 +133,9 @@ excitement of engaging in a creative process is sharing the results of that
 process with others. And progamming is, believe it or not, a very creative
 process.
 
+</section>
+
+<section id="not-python">
 ## Why not Python or R?
 
 Python is great. R is great. Ruby is my favorite language. And so on. If you
@@ -153,6 +158,8 @@ web applications in Python or Ruby. So why not learn the language that is
 unavoidable? After all, once you have learned the basics of programming in one
 language, jumping to another becomes easier.
 
+</section>
+<section id="why-atom">
 ## Atom!?! But vim Is the One True Editor!
 
 Any text editor in the world can be used to write JavaScript. TextEdit,
@@ -179,6 +186,8 @@ If you would like to take this course using vim and Git from the command line,
 that is entirely up to you. Of course, if you’re already using vim, then you
 might be too advanced for this course, anyway.
 
+</section>
+<section id="exploitation">
 ## Teaching People How to Code Is Just a Silicon Valley Ploy to Drive Down Developer Wages.
 
 Of course. However, the goal of this course is not to teach
@@ -196,12 +205,16 @@ with programming is a bonus for their plans to make the world a better place.
 English majors have roles in Silicon Valley, but it won’t be among the pool of
 engineers.
 
+</section>
+<section id="neoliberalism">
 ## But Isn’t Digital Humanities a Neoliberal Scheme?
 
 Please see the multiple volumes of [*Debates in the Digital
 Humanities*](http://dhdebates.gc.cuny.edu/). However, it’s likely that even
 those books won’t convince you otherwise.
 
+</section>
+<section id="trusting-the-author">
 ## Why Should I Trust You?
 
 This course is called “The JavaScripting English Major.” I was an English
@@ -230,7 +243,10 @@ humanities are as important now as they have ever been.
 
 So happy JavaScripting, and I’ll see you in [Chapter 1]({{ site.baseurl
 }}/1-environment/)!
+</section>
 
+<section id="footnotes">
 ## Footnotes
 
 [^js-history]: I discuss the history of JavaScript in a bit more detail in [Chapter 2](/2-calculator/).
+</section>
