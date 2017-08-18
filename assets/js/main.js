@@ -1,3 +1,4 @@
+// create sidebar
 $("aside").html(function(){
   let h1, sidebar;
   h1 = $("h1").html();
@@ -5,7 +6,7 @@ $("aside").html(function(){
   sidebar = "<h1>" + h1 + "</h1>\n<hr>\n<h3>Sections</h3>\n<ul class='nav flex-column'>";
   $("section").each(function() {
     sidebar = sidebar + "<li class='nav-item'>\n";
-    sidebar = sidebar + "<a clas='nav-link' href='#" + $( this ).attr("id") + "'>" + $( this ).contents()[1].innerHTML + "</a>\n";
+    sidebar = sidebar + "<a clas='nav-link' href='#" + $( this ).attr("id") + "'>" + $( this ).find("h2").html() + "</a>\n";
     if ( $( this ).has("h3").length ){
       sidebar = sidebar + "<ul>\n";
       $( this ).find("h3").each(function(){
@@ -19,3 +20,6 @@ $("aside").html(function(){
   });
   return sidebar + "</ul>\n";
 });
+
+// add lead to first paragraph.
+$("article p").first().addClass("lead");
