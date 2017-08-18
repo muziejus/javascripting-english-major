@@ -22,6 +22,7 @@ friends to a party, and you want to send “personalized” invitations. You cou
 iterate over (loop over) your list of friends, get their first names, and then
 use that name in an email that opens “Dear FIRST_NAME.” 
 
+<section id="arrays">
 ## Arrays
 
 In JavaScript, the simplest list data structure is called an **array**. Arrays
@@ -60,6 +61,8 @@ value. Again, I know this is confusing, but you will get the hang of it with
 practice, and then you can join that exclusive club who make jokes about
 zero-based numbering.
 
+</section>
+<section id="objects">
 ## Objects
 
 Above, when I mentioned that arrays are a bit peculiar in JavaScript, that is
@@ -106,6 +109,8 @@ we build arrays of objects. Those points on a map I mentioned before? They
 will be an array of objects, where each object has properties that give its
 place name and its coordinates. 
 
+</section>
+<section id="methods">
 ## Methods
 
 JavaScript, like Ruby, is famous because in both languages, *everything* is an
@@ -172,6 +177,8 @@ turtles.pop();
 Note that `.sort()`, `.reverse()`, and `.join()` do not change the value of
 `turtles`. Instead, we define new variables, `sortedTurtles`, `reversedTurtles`, and `turtleNames`. Then we assign to those variables two new arrays and a string. `.pop()` and `.push()`, however, *do* change `turtles`. 
 
+</section>
+<section id="strings-like-arrays">
 ## Strings as Arraylike Things
 
 Because everything is an object, that includes strings. Strings can behave a
@@ -196,12 +203,18 @@ replacedString = string.replace("string", "pipe");
 // replacedString is "This is a pipe."
 ```
 
+</section>
+<section id="exercises">
 ## Exercises
 
 1. Write a function that always returns the last item in whatever array you
    pass it.
 1. Why might `.push()` and `.pop()` change the array, while `sort()` and `.reverse()` do not? Try seeing what happens when you to something like `popResult = someArray.pop()`.
 1. Numbers also have methods and properties. Look them up at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) and change your webpage so that it asks for a number and tells you if it is an integer or not.
+
+</section>
+
+## Footnotes
 
 [^dot-notation]: Dot-notation does not work, however, for index values. `arrayOfStrings.1` will cause an error.
 

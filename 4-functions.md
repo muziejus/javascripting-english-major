@@ -58,6 +58,7 @@ In JavaScript, everything after two slashes (`//`) to the end of the line is
 commented. If you want to comment out a whole section of multiple lines, begin
 it with `/*` and close it with `*/`. Or you can put a `//` in front of every line.
 
+<section id="parameters">
 ## Parameters
 
 Back to the function. Did you notice the parentheses that follow the function
@@ -147,6 +148,8 @@ makeABurrito = function(beansVariable, tortillaVariable){
 What would happen if you executed `makeABurrito("black", "whole wheat")`?
 Notice how this looks rather similar to `prompt(promptText, defaultText);`?
 
+</section>
+<section id="back-to-numbers">
 ## Back to Numbers
 
 `makeABurrito()` is a great function, and it’s making me hungry, so let’s
@@ -194,6 +197,8 @@ tipCalculator(50.00, 0.2);
 Save, commit, reload, and the webpage should now inform you that you owe $10.
 In the exercises, we’ll expand on this function.
 
+</section>
+<section id="scope">
 ## Scope
 
 Alongside the idea of a function block, that is, the set of curly braces, we
@@ -233,6 +238,8 @@ scope.[^main-scope]
 Scope helps you keep your code tidy, because there is less risk of variables
 being accessed where they shouldn’t be.
 
+</section>
+<section id="recursion">
 ## Recursion
 
 One last bit on functions is that they are recursive. That means they can call
@@ -290,6 +297,8 @@ If we started with five, we’d have these steps:
 Functions are powerful things, as we can see, and we’ll be seeing a lot more
 from them over the rest of this course.
 
+</section>
+<section id="exercises">
 ## Exercises
 
 1. Add functionality to the tip calculator so that you can enter “20” *or*
@@ -299,6 +308,8 @@ from them over the rest of this course.
 1. Add functionality so the factorial function so that if the user enters a
    negative number, it makes the number positive and calculates the factorial
    as before.
+
+</section>
 
 ## Footnotes
 

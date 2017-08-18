@@ -13,6 +13,7 @@ frustrations set in. Remember, programming is puzzle solving, and in this part
 of the process we’ll start thinking of the puzzle as a journey.
 
 
+<section id="control-flow">
 ## Control Flow
 
 “Control flow” is an idea you’ve probably seen before, like in flow charts.
@@ -61,6 +62,8 @@ inverse.
 And that’s it. We have our program. The JavaScript, as we’ll see, isn’t so
 terribly different from this code we already have.
 
+</section>
+<section id="if-statements">
 ## If statements
 
 An if statement is an example of “conditional statement.” That means that it
@@ -156,6 +159,8 @@ So far so good, but we still have the line of the pseudocode, `userInput =
 prompt_the_user_for_what_they_want_for_dinner;`. Getting that part to work
 requires writing some html.
 
+</section>
+<section id="embedding-javascript">
 ## Embedding JavaScript in a Webpage
 
 Typing things into the console can get boring after a while, because it’s
@@ -316,6 +321,8 @@ You’ve written a full program. It takes in input, feeds it through control
 flow (in this case, a conditional statement), and delivers output appropriate
 to the input. Of course, it’s still pretty basic, but baby steps. Baby steps. 
 
+</section>
+<section id="while-for-loops">
 ## While and For loops
 
 If you’ve got conditionals down, we can now move to looping. Remember, in
@@ -492,6 +499,8 @@ loop.
 Loops are tricky, but they’re vital to understanding how programming works.
 Try out the exercises to see how well you understand them.
 
+</section>
+<section id="exercises">
 ## Exercises
 
 (These are all to be written and tested using your project and the web
@@ -517,6 +526,7 @@ browser.)
 1. Write down what seem to be common mistakes you are making. Are you
    forgetting to add some aspect of the JavaScript syntax?
 
+</section>
 ## Footnotes
 
 [^html]: Yes, you are now writing HTML without learning how to do it. The key grammar of the markup is clear from this example, though. HTML is made up of nested tags that look like this, for example: `<h1>` to open and `</h1>` to close. Some tags, like the `<meta>` and `<!doctype>` tags don’t need to be closed, but most do.  

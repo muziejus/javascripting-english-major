@@ -22,6 +22,7 @@ something.[^consolelog] Before we get too carried away with writing
 JavaScript, however, I think it might be useful to learn a bit about
 JavaScript’s history.
 
+<section id="hello-world">
 ## Hello, World! Hello, JavaScript!
 
 I mentioned a few details about JavaScript’s history in the [FAQs]({{
@@ -102,6 +103,8 @@ context out of the way, we can go back to the JavaScript console you learned
 to open in the [last chapter](/1-environment/) and start
 learning the language itself.
 
+</section>
+<section id="data-types">
 ## Basic Data Types
 
 We hear the word “data,” but what, precisely, does it mean? If you
@@ -230,6 +233,8 @@ what to do with them, by turning them into strings, numbers, or just null.
 
 But now you’re definitely ready to start add up some numbers in JavaScript.
 
+</section>
+<section id="javascript-as-a-calculator">
 ## Using JavaScript as a Calculator
 
 You learned a comparison operator in the previous section, `===`, and you’ll
@@ -286,6 +291,8 @@ string? Why?
 A JavaScript calculator doesn’t sound terribly interesting, so let’s add one
 more wrinkle to it by introducing variables.
 
+</section>
+<section id="calculator-understood-variables">
 ## What if the Calculator Understood Variables?
 
 Everything we have been doing above is fun for about three seconds. It is
@@ -381,6 +388,8 @@ As you can see, this example makes use of variables we declared in earlier
 exercises, but it also refers to variable that has not yet been assigned (or
 even declared).
 
+</section>
+<section id="exercises">
 ## Exercises
 
 1. Get `console.log()` to log a string that includes a backslash.
@@ -403,6 +412,7 @@ even declared).
 
 7. Use the statements to find `billPlusTip` above but have the response from
    `console.log()` be “You should pay $12 because the service was good.”
+</section>
 
 ## Footnotes
 

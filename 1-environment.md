@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Setting up the Environment
-permalink: /1-environment/
+permalink: /1-environment
 ---
 
 # Setting up the Environment
@@ -38,6 +38,7 @@ leap for you to make. What we are building in this course is a website that is
 a project. As such, you will have a folder for your project, and everything in
 that folder will be under version control.
 
+<section id="git">
 ## Git
 
 The version control system we will use in this course is called
@@ -75,7 +76,9 @@ not only a time machine, but it’s also an interdimensional portal leading you
 to alternate universes. In one universe, your text could be written full of
 jokes. In another, the writing can be very serious. 
 
-### GitHub
+</section>
+<section id="github">
+## GitHub
 
 For the purposes of this course, we will be using Git via the website
 [GitHub](http://github.com). GitHub will serve the remote point to which you
@@ -91,7 +94,7 @@ public by default**. Keep this in mind when you’re typing commit messages or
 working on your project: it’s all visible to anyone who has a look at your
 repository. Don’t let that scare you from using GitHub. Just keep it in mind.
 
-#### Create Yourself a GitHub User
+### Create Yourself a GitHub User
 
 The first step with GitHub is easy. Go to [GitHub.com](http://github.com) and
 create an account. Choose the free plan. You should get an email, and once you
@@ -102,7 +105,7 @@ If you’re a current student, you can
 GitHub. That discount entitles you to a limited number of private
 repositories.
 
-#### Fork the Course Repository
+### Fork the Course Repository
 
 In GitHub, anyone can access anyone else’s (public) repositories, or
 projects. And, what’s more, anyone can make an identical copy of that
@@ -123,6 +126,8 @@ Where it reads `YOURUSERNAME`, it should read, of course, the GitHub username
 you chose for yourself. Make a not of this url, as you’ll need it in a few
 steps.
 
+</section>
+<section id="Atom">
 ## Atom
 
 You’re probably used to writing your English homework in Microsoft Word or,
@@ -155,7 +160,7 @@ your site. Of course, you still have *some* control over how things look. A
 lot, in fact.  But in order to do that, you have to rethink the basics of
 writing. You now have to focus on the content much more than the look.
 
-#### A Plain Text Editor
+### A Plain Text Editor
 
 One way of “focusing on the content” is by stripping away a lot of the
 frippery that a program like Word provides. We won’t need something that can
@@ -182,7 +187,7 @@ smartphone. Every personal computer has some kind of plain text editor
 installed, but we’ll install one that runs on nearly any personal computer,
 Atom.
 
-#### Enter Atom
+### Enter Atom
 
 [Atom](http://atom.io) is a fully-featured text editor that can also serve as
 an IDE. It also has Git (and GitHub) support built in. This makes sense; it’s
@@ -200,7 +205,7 @@ change the widths of the panes and show and hide them with your mouse.
 Similarly, the tabs work like the tabs do in Chrome, for good
 reason.[^atom-is-chrome] 
 
-#### Start Customizing with Packages
+### Start Customizing with Packages
 
 From the Welcome Guide, I recommend immediately clicking on “Install a
 Package.” Ben Balter has come up with a [list of useful atom packages for
@@ -235,7 +240,7 @@ For each of these, you have to type the name into the little search bar in the
 Install Packages part of the Settings tab. The linters may ask you to add some
 other packages to fulfill dependencies. That’s ok.
 
-#### Continue Customizing by Enabling Autosave
+### Continue Customizing by Enabling Autosave
 
 Atom ships with autosave disabled by default. That’s probably not behavior
 you’re expecting, so you should enable it! After you’re done installing
@@ -263,7 +268,7 @@ dark one, whichever you think fits your personality. I personally use the
 solarized themes, based on Ethan Schoonover’s
 [Solarized](http://ethanschoonover.com/solarized) precision color project.
 
-#### Link Atom to GitHub
+### Link Atom to GitHub
 
 Atom is written by the people at GitHub, so it’s pretty easy to link the two
 together. In fact, that’s the main reason I encourage you to install Atom.
@@ -303,7 +308,7 @@ back into the GitHub pane back on Atom.
 You should get a message saying “No pull request could be found for the
 branch master” and so on. You’ve made the connection.
 
-#### Make a Change, Stage a File, Commit, and Push
+### Make a Change, Stage a File, Commit, and Push
 
 We’re in the homestretch now, but this section is the most important, because
 it’s a description of what you will be doing with Git in Atom most of the
@@ -360,7 +365,7 @@ will ask you for your GitHub username and password. Type them in, wait a
 minute, and then if you go to GitHub and refresh your repository, you will see
 the changes that you’ve made.[^overpushing]
 
-#### Parting Atom Thoughts
+### Parting Atom Thoughts
 
 There’s a whole lot going on in this section, but it’s mostly stuff you just
 have to do once to set up the environment. As I wrote above, Atom is a very
@@ -374,6 +379,8 @@ Also, Atom will be frustrating the first few times. Any new piece of software
 is. By the end of this course, though, I hope that you’ll see why I insisted
 on this unpleasantness at the beginning.
 
+</section>
+<section id="browser">
 ## Browser
 
 Our last step in this chapter is making sure your browser has a JavaScript
@@ -418,23 +425,20 @@ By typing the above, you’ve written your first bit of JavaScript. In other
 words, you’re ready for the [next chapter](/2-calculator/)
 after completing the exercises below.
 
+</section>
+<section id="exercises">
 ## Exercises
 
 1. Create a GitHub account.
-
 1. Fork the blank repository for this course from [`https://github.com/muziejus/javascripting-english-major-project`](https://github.com/muziejus/javascripting-english-major-project).
-
 1. Install Atom on your computer with some useful packages.
-
 1. Link Atom to your GitHub account.
-
 1. Use Atom to clone the repository you forked.
-
 1. Flesh out your hopes for your project in the `README.md` file and commit
    the changes.
-
 1. Push your commit(s) from your computer up to GitHub.
 
+</section>
 ## Footnotes
 
 [^wysiwyg]: Microsoft Word was not, of course, the first “WYSIWYG” (“What You See Is What You Get”) word processor. It appeared around the same time as MacWrite did, and both of those applications were building on ideas established years earlier at Xerox. Nevertheless, as Windows began to gain dominance on the PC market, Word became ubiquitous, leaving it as the “default” example of a WYSIWYG word processor to this day.  

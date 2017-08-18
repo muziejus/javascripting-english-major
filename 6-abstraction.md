@@ -35,6 +35,7 @@ If this all sounds abstract (as it were), we’ll get to some details in a bit.
 However, first we need to look back at functions and methods and learn an
 important detail I left out.
 
+<section id="returning">
 ## Returning
 
 In the [previous chapter](/5-collections/), when working with array methods, I
@@ -123,6 +124,8 @@ Return values encourage programmers to think in terms of the effect of the way
 their functions manipulate data. This is valuable when we start to talk about
 iteration.
 
+</section>
+<section id="iterating">
 ## Iterating
 
 We know that strings can behave a bit like arrays, in that they have a
@@ -266,6 +269,8 @@ certain you understand what is going on in every line. For the for loop, try
 writing out the values of `result`, `letter`, `i`, and `string` for every step
 through with a made up value for string, like “uppErcase me!”
 
+</section>
+<section id="arrays-of-objects">
 ## Arrays of Objects
 
 I hope you enjoyed your break. Iterating over arrays is a vitally important
@@ -341,6 +346,8 @@ it gets its previous value, plus the value of the turtle’s `.weapon` property,
 plus a space. If you save, commit, and reload, you should now get a list of
 all the turtles’ weapons. This is great, but we can do better.
 
+</section>
+<section id="mapping-and-filtering">
 ## Mapping and Filtering
 
 Let’s say we wanted not only the list of weapons, but we also wanted it in
@@ -439,6 +446,8 @@ Because `"Leonardo".includes("o")` returns `true`, that name is included in
 the list. Because `"Raphael".includes("o")` returns `false`, it is not
 included.
 
+</section>
+<section id="exercises">
 ## Exercises
 
 1. Write a function that takes an array of integers and, using `.map()`,
@@ -454,4 +463,6 @@ included.
   }
   ```
   Why is this not a good idea?
+
+</section>
 

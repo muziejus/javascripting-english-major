@@ -6,13 +6,13 @@ permalink: /0-introduction/
 
 # Introduction & FAQs
 
-<p class="lead"> Welcome! This is an introduction to *The JavaScripting
+Welcome! This is an introduction to *The JavaScripting
 English Major*, a course written by me, [Moacir P. de Sá
 Pereira](http://moacir.com), on teaching humanities undergraduates to write
 web projects. In this introduction, I provide a few FAQs that help explain how
 I approach the design of this course. If you look at the [About](/about)
 page, you can learn even more about the origins and technical foundations of
-the course.</p>
+the course.
 
 If you’re already committed to becoming a JavaScripting English major, you can
 skip this chapter and jump straight to the [first chapter](/1-environment),

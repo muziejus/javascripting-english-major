@@ -35,6 +35,7 @@ attuned to the wide variety of the world around them is nothing new. Anyway…
 
 Let’s look at the first line of defense, typing errors.
 
+<section id="jshint">
 ## JSHint
 
 Back in [chapter 1](/1-environment/), I had you install the
@@ -62,6 +63,8 @@ It’s hard to believe there was a time when writing code didn’t benefit from
 linters, and you could spend hours looking at your code trying to figure out
 why it didn’t run. Not didn’t *work*, mind, but didn’t even *run*.
 
+</section>
+<section id="mistakes">
 ## Mistakes
 
 Since the linter handles syntax errors, we’re not as likely to run into those
@@ -168,7 +171,9 @@ development](https://en.wikipedia.org/wiki/Test-driven_development), where you
 write the tests first, and then only write code that makes the tests pass. But
 that takes us to the final part, dealing with users.
 
-## Users and Exceptions
+</section>
+<section id="users">
+## Users and their mistakes
 
 Part of programming with testing in mind is that it encourages you to think of
 the edge cases, when something happens that you couldn’t prepare for. Back in
@@ -255,6 +260,8 @@ worst enemy. But keep in mind the sorts of valves JavaScript offers, like
 `isNaN()`, while also knowing the limitations of things like `typeof`.
 Remember, you can always check your sanity in the console.
 
+</section>
+<section id="exercises">
 ## Exercises
 
 1. No homework this time. Enjoy the halfway point. When you come back, it will
