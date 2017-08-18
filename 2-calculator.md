@@ -58,7 +58,6 @@ in the way computing has evolved over time:
 
 * The people who should be the first to recognize the value of an innovation
 [like programmers] are often the last.
-
 * Obsolete technologies fade away slowly.
 
 The implications of both points reveal why JavaScript has its quirks and why
