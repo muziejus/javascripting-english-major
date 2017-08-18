@@ -36,15 +36,11 @@ book.
 
 * “[A Re-Introduction to
 JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)”.
-A concise refresher on JavaScript that also acts as a handy reference.
-
 * [*The Programming Historian*](https://programminghistorian.org/). A set of
-tutorials that help humanists tackle digital questions.
-
 * Elliott, Eric. “[Master the JavaScript Interview: What Is Functional
 Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0).”
 Far beyond the goals of this course, but a tantalizing look at a future for
-JavaScript.
+* [jQuery tutorial](https://learn.jquery.com/about-jquery/).
 
 ## Videos
 
@@ -56,12 +52,10 @@ far too technical for our audience, he nevertheless drives two important
 insights home: that programmers, the very people who would benefit most from
 innovation, are often those least receptive to it, and that obsolete
 technologies fade away slowly, making innovation difficult.
-
 * Crockford, Douglas. “[And Then There Was
 JavaScript](https://www.youtube.com/watch?v=RO1Wnu-xKoY).” *Crockford on
 JavaScript*. 2010. Crockford continues the history, moving now through the
 first, wild years of JavaScript.
-
 * Burke, James. “[Faith in
 Numbers](http://www.dailymotion.com/video/x3dvbkg).” *Connections*. 1978. In
 his classic, causal way, Burke draws a line from Roman-era water wheels to
@@ -70,18 +64,12 @@ computer programming, the prehistory to Crockford’s lectures.
 ## Software
 
 * [Atom](http://atom.io).
-
 * [Git](https://git-scm.com/).
-
 * [Leaflet](http://leafletjs.com). A JavaScript map maker.
-
-* [JQuery](http://jquery.com). A JavaScript library to simplify writing
+* [jQuery](http://jquery.com). A JavaScript library to simplify writing
 JavaScript for the browser.
-
 * [Bootstrap](http://getbootstrap.com).
-
 * Brave
-
 * [Vim](http://www.vim.org). Despite this course’s dependence on Atom, the
 actual course was written with vim. Originally released 25 years ago, vim is a
 text editor that requires enormous patience at first. In my opinion, the steep
