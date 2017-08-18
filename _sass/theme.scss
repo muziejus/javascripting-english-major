@@ -67,6 +67,7 @@ a:focus, a:hover {
 
 h1 {
   color: $blue;
+  font-size: 3.5rem;
 }
 
 h2, h3, h4, h5, h6 {
@@ -107,3 +108,4 @@ h2, h3, h4, h5, h6 {
 @import "index";
 @import "navbar";
 @import "code";
+@import "aside";
