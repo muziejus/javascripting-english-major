@@ -38,7 +38,7 @@ markdown: kramdown
 google-code: UA-592475-7
 kramdown:
   input: GFM
-  auto_id_prefix: kram-
+  auto_id_prefix: s-
   parse_block_html: true
   syntax_highlighter: rouge
   .syntax_highlighter_opts:
