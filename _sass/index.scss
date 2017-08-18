@@ -1,4 +1,4 @@
-.jumbotron {
+#splash {
   background-color: $base3;
 }
 
@@ -19,7 +19,7 @@ h1 {
 }
 
 @media (min-width: 576px){
-  .jumbotron {
+  #splash {
     max-width: 675px;
   }
 }
