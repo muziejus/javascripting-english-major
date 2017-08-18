@@ -16,6 +16,10 @@ $base2:    #eee8d5; // secondary background
 // cyan      #2aa198  strings, numbers
 // green     #859900  operators, other keywords
 
+$magenta:  #d33682;
+$violet:   #6c71c4;
+$yellow:   #b58900;
+
 html {
   position: relative;
   min-height: 100%;
@@ -25,7 +29,7 @@ body {
   font-family: "EB Garamond", "Times New Roman", serif;
   color: $base00;
   background-color: $base3;
-  padding-top: 4rem;
+  padding-top: 4.25rem;
   margin-bottom: 4rem;
 } 
 
@@ -41,7 +45,7 @@ code {
 }
 
 a {
-  color: $green;
+  color: $magenta;
   font-weight: bold;
 }
 
@@ -49,19 +53,34 @@ a:focus, a:hover {
   color: $cyan;
 }
 
-h2, h3, h4, h5, h6, .lead, p > em, p > strong {
+.lead, p > em, p > strong {
   color: $base01;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Ubuntu", "Helvetica", sans-serif;
+.lead:first-letter {
+  color: $yellow;
+  float: left;
+  font-size: 5rem;
+  line-height: 3rem;
+  padding: 0 .25rem 0 0 ;
+}
+
+h1 {
   color: $blue;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "Ubuntu", "Helvetica", sans-serif;
+  color: $yellow;
 }
 
 .bg-base2 {
   background-color: $base2;
 }
 
+.yellow {
+  color: $yellow;
+}
 
 .footer {
   position: absolute;

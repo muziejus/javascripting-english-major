@@ -4,13 +4,13 @@
 
 .navbar-light {
   .navbar-brand {
-    color: rgba($base01, 0.9);
+    color: rgba($blue, 0.9);
     font-weight: normal;
 
   }
 
   .navbar-brand:focus, .navbar-brand:hover {
-    color: rgba($green, 0.8);
+    color: rgba($magenta, 0.8);
   }
 
   .navbar-nav {
