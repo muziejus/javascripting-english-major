@@ -29,6 +29,11 @@ body {
   margin-bottom: 4rem;
 } 
 
+section {
+  padding-top: 4rem;
+  margin-top: -4rem;
+}
+
 code {
   font-family: "Ubuntu Mono", Monaco, Terminal;
   color: $red;
