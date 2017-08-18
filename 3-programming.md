@@ -103,9 +103,10 @@ it out with some of our toy program. We know that `do_things…` is actually
 `truth_test`, let’s just put in `true` for now.
 
 ```javascript
-if ( true ) {
-  console.log("Brilliant choice!");
-}
+> if ( true ) {
+    console.log("Brilliant choice!");
+  }
+//--> Brilliant choice!
 ```
 
 Type this into the console (pressing the return key where appropriate). You
@@ -115,11 +116,12 @@ should get “Brilliant choice!” logged to your console. Now replace `true` wi
 Now let’s add a layer, this time using the variable `userInput`:
 
 ```javascript
-let userInput;
-userInput = "burrito";
-if ( userInput === "burrito" ) {
-  console.log("Brilliant choice!");
-}
+> let userInput;
+> userInput = "burrito";
+> if ( userInput === "burrito" ) {
+    console.log("Brilliant choice!");
+  }
+//--> Brilliant choice!
 ```
 
 Notice where you have to use `=` (which *assigns* a value to a variable) and
@@ -131,23 +133,25 @@ In our program, we had a second condition, which to scold the user if they
 didn’t want a burrito. That’s pretty straightforward to write:
 
 ```javascript
-let userInput;
-userInput = "samosa";
-if ( userInput !== "burrito" ) {
-  console.log("Don’t you want a burrito?");
-}
+> let userInput;
+> userInput = "samosa";
+> if ( userInput !== "burrito" ) {
+    console.log("Don’t you want a burrito?");
+  }
+//--> Don’t you want a burrito?
 ```
 
 However, we can *join* both truth tests using `else`:
 
 ```javascript
-let userInput;
-userInput = "samosa";
-if ( userInput === "burrito" ) {
-  console.log("Brilliant choice!");
-} else {
-  console.log("Don’t you want a burrito?");
-}
+> let userInput;
+> userInput = "samosa";
+> if ( userInput === "burrito" ) {
+    console.log("Brilliant choice!");
+  } else {
+    console.log("Don’t you want a burrito?");
+  }
+//--> Don’t you want a burrito?
 ```
 
 Now, we can see this as “if the truth test is true, then log ‘Brilliant
@@ -196,7 +200,7 @@ though. That involves adding a few lines to `index.html`, so go back to Atom.
 Inside the `body` tags, add:
 
 ```html
-<div id="response">This is the div</div>
+<div id="response">This is the div.</div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="scripts.js"></script>
 ```
@@ -242,8 +246,8 @@ alert("scripts.js has loaded!");
 
 Save and commit. A good commit message now would be “Create scripts.js.” In
 the project window, you should see `scripts.js` alongside `index.html`. When
-you reload your page in your browser, you should get an annoying alert,
-telling you that “scripts.js has been loaded!”
+you reload your page in your browser, you should get an alert, telling you
+that “scripts.js has been loaded!”
 
 That’s obviously pretty annoying, so change `alert` in `scripts.js` to
 `console.log`. Now open up the console on the browser and reload the page. As
@@ -256,7 +260,7 @@ There are a lot of ways to do that, but that line about “jquery” above will
 make things a bit easier. [JQuery](http://jquery.com) is a powerful JavaScript
 library. A library is a set of tools that make programming easier. You don’t
 have to keep rewriting code, say. Or you can write code more succinctly.
-eeplace your single line in `scripts.js` with this, then:
+Replace your single line in `scripts.js` with this, then:
 
 ```javascript
 $("#response").text("scripts.js has loaded!");
@@ -517,12 +521,6 @@ browser.)
    >3 is odd.<br>
 1. Building on the previous program, have it print the same, except without
    that ugly “This is the div.” line.
-1. Recalling the `typeof` operator, can you write the program so that it
-   scolds you if you enter in something other than a number? This is a
-   difficult (maybe even trick) question.
-1. Can you think of a way to complete the previous problem without using
-   `typeof`? This isn’t a trick question, but some of your work in the
-   previous chapter might help.
 1. Write down what seem to be common mistakes you are making. Are you
    forgetting to add some aspect of the JavaScript syntax?
 

@@ -9,15 +9,15 @@ permalink: /2-calculator/
 The [last chapter](/1-environment/) ended with the
 following, in the console:
 
-```
+```javascript
 > console.log("Hello, World!");
-Hello, World!
+//--> Hello, World!
 ```
 
-Note that I have included the `>` prompt in this example, along with the
-“return value,” or how the console responded to your single line of
-JavaScript. There’s a lot going on in just this one example, but, briefly,
-`console.log()` is a way of using JavaScript to tell the console to output
+Note that I have included the `>` prompt in this example, along with the how
+the console responded to your single line of JavaScript, after the `//-->`.
+There’s a lot going on in just this one example, but, briefly, `console.log()`
+is a way of using JavaScript to tell the console to output
 something.[^consolelog] Before we get too carried away with writing
 JavaScript, however, I think it might be useful to learn a bit about
 JavaScript’s history.
@@ -133,13 +133,13 @@ to use numbers, because you just type them as numbers. Numbers can have
 decimal points if they’re not integers. Try typing numbers into the console
 and see what happens:
 
-```
+```javascript
 > 9;
-9
+//--> 9
 > 1.5;
-1.5
+//--> 1.5
 > console.log(9);
-9
+//--> 9
 ```
 
 Your console may look a bit different in what it returns (including
@@ -159,15 +159,15 @@ already in this course? Yes, `"Hello, World!"` is a string containing the
 characters `Hello, World!`. We can issue statements with strings in much the
 same way we did with numbers:
 
-```
+```javascript
 > "Hello, World!";
-"Hello, World!"
+//--> "Hello, World!"
 > console.log("Hello, World!");
-Hello, World!
+//--> Hello, World!
 > "World, I just wanted to say \"Hi!\" 9 times!";
-"World, I just wanted to say \"Hi!\" 9 times!"
+//--> "World, I just wanted to say \"Hi!\" 9 times!"
 > console.log("World, I just wanted to say \"Hi!\" 9 times!");
-World, I just wanted to say "Hi!" 9 times!
+//--> World, I just wanted to say "Hi!" 9 times!
 ```
 
 Notice how strings can have double quotes inside of them, as long as you use a
@@ -190,15 +190,15 @@ answer is “yes” (`true`), then you go to the falafel joint. If the answer is
 Since booleans are only ever true or false, you refer to them in JavaScript
 using those two words:
 
-```
+```javascript
 > true;
-true
+//--> true
 > false;
-false
+//--> false
 > 9 === 9;
-true
+//--> true
 > 9 === "Hello, World!";
-false
+//--> false
 ```
 
 Notice that `true` and `false` do *not* have double quotes around them. What
@@ -241,17 +241,17 @@ You learned a comparison operator in the previous section, `===`, and you’ll
 learn a few more in this section. You’ll also learn all five arithmetic
 operators. In fact, let’s start with them:
 
-```
+```javascript
 > 2 + 3;
-5
+//--> 5
 > 2 - 3;
--1
+//--> -1
 > 2 * 3;
-6
+//--> 6
 > 2 / 3;
-0.6666666666666666
+//--> 0.6666666666666666
 > 3 % 2;
-1
+//--> 1
 ```
 
 These should be pretty straightforward, except for the last one. If I tell you
@@ -260,19 +260,19 @@ it’s called the “remainder operator,” is its meaning clearer?
 As you can see, the arithmetic operators return numbers as answers. The
 comparison operators, like `===`, return `true` or `false`:
 
-```
+```javascript
 > 2 + 3 * 6 === (2 + 3) * 6;
-false
+//--> false
 > 2 + 3 * 6 < (2 + 3) * 6;
-true
+//--> true
 > 2 > 2;
-false
+//--> false
 > 2 >= 2;
-true
+//--> true
 > 2 < 2;
-false
+//--> false
 > 2 <= 2;
-true
+//--> true
 ```
 
 Programmers have figured out nifty ways to get around the difficulty of typing
@@ -280,9 +280,9 @@ Programmers have figured out nifty ways to get around the difficulty of typing
 
 Strings also have an operator `+`. It comes in very handy in web development:
 
-```
+```javascript
 > "I had a thought, but… " + "Oh yeah, I remember. Falafel on Fridays!";
-"I had a thought, but… Oh yeah, I remember. Falafel on Fridays!"
+//--> "I had a thought, but… Oh yeah, I remember. Falafel on Fridays!"
 ```
 
 What happens when you add a string to a number? How about a number to a
@@ -303,11 +303,11 @@ language is making. But we’re building websites, not calculators.
 Nevertheless, getting a bit of flexibility with the console is useful. Let’s
 expand on that, then, with the `let` statement, which lets us define variables.
 
-```
+```javascript
 > let burrito;
 > burrito = "Basically the best food around.";
 > console.log(burrito);
-Basically the best food around.
+//--> Basically the best food around.
 ```
 
 In the first line, I declared a variable, `burrito`. In the second, assigned
@@ -321,20 +321,20 @@ variable, and we can define multiple variables at once. It’s generally good
 practice to define all your variables at the top, so you know what you will be
 working with in the future.
 
-```
+```javascript
 > let magicNumber, secretNumber;
 > magicNumber = 9;
 > secretNumber = 10;
 > secretNumber + magicNumber;
-19
+//--> 19
 > secretNumber === magicNumber;
-false
+//--> false
 > secretNumber > magicNumber;
-true
+//--> true
 > secretNumber = secretNumber + 1;
-11
+//--> 11
 > console.log(secretNumber);
-11
+//--> 11
 ```
 
 These variables persist only for the duration of the console. If you close the
@@ -344,20 +344,20 @@ then it becomes assigned to the number 11.
 
 Let’s play a bit more with assigning variables:
 
-```
+```javascript
 > let tipRate, bill, billPlusTip;
 > tipRate = 0.20;
 > bill = 10.00;
 > billPlusTip = bill + (tipRate * bill);
 > console.log(billPlusTip);
-12
+//--> 12
 > let question, burritos, answer;
 > question = "What is the best food around?\n";
 > burritos = "Delicious burritos";
 > answer = burritos + " are clearly the best!";
 > console.log(question, answer);
-What is the best food around?
-Delicious burritos are clearly the best!
+//--> What is the best food around?
+//--> Delicious burritos are clearly the best!
 ```
 
 I did two new things in this example: I used `\n` to make a new line, and I
@@ -369,19 +369,19 @@ operator, the typeof operator. If you get a variable, sometimes you don’t know
 what kind of data type it is. Yet as we have seen with `+`, it behaves
 differently depending on the data. 
 
-```
+```javascript
 > typeof question;
-"string"
+//--> "string"
 > typeof magicNumber;
-"number"
+//--> "number"
 > typeof 2;
-"number"
+//--> "number"
 > let isItTrue;
 > isItTrue = 1 === 1;
 > typeof isItTrue;
-"boolean"
+//--> "boolean"
 > typeof badTastingBurrito;
-"undefined"
+//--> "undefined"
 ```
 
 As you can see, this example makes use of variables we declared in earlier
