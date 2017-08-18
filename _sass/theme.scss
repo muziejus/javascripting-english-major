@@ -53,7 +53,7 @@ a:focus, a:hover {
   color: $cyan;
 }
 
-.lead, p > em, p > strong {
+h4, h5, h6, .lead, p > em, p > strong {
   color: $base01;
 }
 
@@ -70,9 +70,12 @@ h1 {
   font-size: 3.5rem;
 }
 
+h2, h3 {
+  color: $yellow;
+}
+
 h2, h3, h4, h5, h6 {
   font-family: "Ubuntu", "Helvetica", sans-serif;
-  color: $yellow;
 }
 
 .bg-base2 {
@@ -102,6 +105,11 @@ h2, h3, h4, h5, h6 {
       padding-left: 2rem;
     }
   }
+}
+
+.contents h3 {
+  font-family: "EB Garamond", "Times New Roman", serif;
+  color: $base01;
 }
 
 
