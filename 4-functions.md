@@ -101,7 +101,7 @@ makeABurrito = function(beansVariable){
   addBeans();
   addOnionsAndCilantro();
   beansResponse = "You ordered " + beansVariable + " beans. Good choice!";
-  $("#response").text(beansResponse);
+  $("#response").html(beansResponse);
   // etc.
   rollUpTortilla();
 }
@@ -185,7 +185,7 @@ tipCalculator = function(total, tipRate){
   let tipAmount;
   tipAmount = tipRate * total;
   // and step 2:
-  $("#response").text("Your tip is $" + tipAmount);
+  $("#response").html("Your tip is $" + tipAmount);
 } 
 
 // now execute the function, passing a total of $50.00
@@ -257,7 +257,7 @@ factorial = function(integer, result){
     integer = integer - 1;
     factorial(integer, result)
   }
-  $("#response").text("The result is: " + result);
+  $("#response").html("The result is: " + result);
 }
 let initialInteger;
 initialInteger = prompt("Factorial", "Initial integer");

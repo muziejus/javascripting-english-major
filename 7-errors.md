@@ -77,7 +77,7 @@ let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
 turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
 // oops. let's pop() Splinter off before reversing…
 reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
-$("#response").text(reversedTurtlesWithoutSplinter);
+$("#response").html(reversedTurtlesWithoutSplinter);
 ```
 
 How could we have debugged this? It turns out, in fact, that `console.log()`
@@ -117,7 +117,7 @@ turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Spli
 turtlesWithoutSplinter = turtlesWithSplinter.pop();
 console.log(turtlesWithoutSplinter);
 //reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
-//$("#response").text(reversedTurtlesWithoutSplinter);
+//$("#response").html(reversedTurtlesWithoutSplinter);
 ```
 
 Save, reload, and the console now reads `"Splinter"`. At least it’s not
@@ -137,7 +137,7 @@ turtlesWithSplinter.pop();
 // turtlesWithSplinter is now, paradoxically, without Splinter.
 // Now define a new array that is reversed.
 reversedTurtlesWithoutSplinter = turtlesWithSplinter.reverse();
-$("#response").text(reversedTurtlesWithoutSplinter);
+$("#response").html(reversedTurtlesWithoutSplinter);
 ```
 
 We get the result we want. However, there is another way to do this, by
@@ -152,7 +152,7 @@ reversedTurtlesWithoutSplinter = turtlesWithSplinter.filter(function(turtle){
   console.log(turtle);
   return turtle !== "Splinter";
 }).reverse();
-$("#response").text(reversedTurtlesWithoutSplinter);
+$("#response").html(reversedTurtlesWithoutSplinter);
 ```
 
 This is much tidier because it does not make the assumption, as `.pop()` does,

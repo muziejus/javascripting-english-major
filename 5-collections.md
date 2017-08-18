@@ -51,12 +51,12 @@ The index begins with 0, which is confusing for beginners. So if we add to the
 above:
 
 ```javascript
-$("#response").text(arrayOfStrings[2]);
+$("#response").html(arrayOfStrings[2]);
 ```
 
 The `<div>` will read “c.” The third value of the array is “c,” but its index
 is 2, because the index begins with 0. So to get “a,” we would call
-`$("#response").text(arrayOfStrings[0]);`. We are interested in the zeroth
+`$("#response").html(arrayOfStrings[0]);`. We are interested in the zeroth
 value. Again, I know this is confusing, but you will get the hang of it with
 practice, and then you can join that exclusive club who make jokes about
 zero-based numbering.
@@ -80,14 +80,14 @@ myBurritoObject = {
   habaneroSauceSquirts: 3
   };
 // and let’s call a property
-$("#response").text(myBurritoObject["tortilla"]);
+$("#response").html(myBurritoObject["tortilla"]);
 ```
 
 With an array, we call it using the syntax `arrayName[indexNumber]`. With an
 object, we replace the index with a property. But, even better:
 
 ```javascript
-$("#response").text(myBurritoObject.tortilla);
+$("#response").html(myBurritoObject.tortilla);
 ```
 
 It’s much more succinct to use **dot-notation** to access
@@ -97,7 +97,7 @@ too, like `.length`:
 ```javascript
 let arrayOfStrings;
 arrayOfStrings = ["a", "b", "c"];
-$("#response").text(arrayOfStrings.length);
+$("#response").html(arrayOfStrings.length);
 ```
 
 This will print “3,” because the value of that array’s `.length` property, or
@@ -139,7 +139,7 @@ myBurritoObject = {
     }
   }
 };
-$("#response").text(myBurritoObject.spiciness);
+$("#response").html(myBurritoObject.spiciness);
 ```
 
 Save, commit, reload, and see what happens. There are two new things going on

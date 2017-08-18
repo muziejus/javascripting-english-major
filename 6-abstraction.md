@@ -145,7 +145,7 @@ upperCaseMinusE = function(string){
 // Third, we need to pass the user’s string to the function
 upperCasedString = upperCaseMinusE(userString);
 // And we can then print the string to the webpage.
-$("#response").text(upperCasedString);
+$("#response").html(upperCasedString);
 ```
 
 Perhaps the easiest way to write the function would be to have it upper case
@@ -326,7 +326,7 @@ raphael = {name: "Raphael", color: "red", weapon: "sai"};
 michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchaku"};
 turtles = [leonardo, donatello, raphael, michelangelo];
 weapons = ""; // a list of weapons.
-$("#response").text(weapons);
+$("#response").html(weapons);
 ```
 
 Of course, `weapons` is blank for the time being, so our `<div>` on the
@@ -371,7 +371,7 @@ weapons = turtles.map(function(turtle){
   return turtle.weapon;
 });
 // weapons is now ["katana", "bo", "sai", "nunchaku"]
-$("#response").text(weapons);
+$("#response").html(weapons);
 ```
 
 Now that `weapons` is an array instead of a string, that means we can also run
@@ -388,7 +388,7 @@ weapons = turtles.map(function(turtle){
   return turtle.weapon;
 }).sort();
 // weapons is now ["bo", "katana", "nunchaku", "sai"]. Sorted!
-$("#response").text(weapons);
+$("#response").html(weapons);
 ```
 
 And the webpage is printing “bo,katana,nunchaku,sai”, which isn’t bad, but it
@@ -399,7 +399,7 @@ weapons = turtles.map(function(turtle){
   return turtle.weapon;
 }).sort().join(", ");
 // weapons is now "bo, katana, nunchaku, sai". Sorted, with commas.
-$("#response").text(weapons);
+$("#response").html(weapons);
 ```
 
 Notice that `weapons` is no longer an array. It is now a string. That is because
@@ -421,7 +421,7 @@ let names;
 names = turtles.map(function(turtle){
   return turtle.name;
 }).sort().join(", ");
-$("#response").text(names);
+$("#response").html(names);
 ```
 
 This gets us most of the way there, but Raphael is in the list, and we want
@@ -439,7 +439,7 @@ names = turtles.map(function(turtle){
 namesWithO = names.filter(function(name){
   return name.includes("o");
 }).join(", ");
-$("#response").text(namesWithO);
+$("#response").html(namesWithO);
 ```
 
 Because `"Leonardo".includes("o")` returns `true`, that name is included in

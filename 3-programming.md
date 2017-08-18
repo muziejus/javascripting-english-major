@@ -263,7 +263,7 @@ have to keep rewriting code, say. Or you can write code more succinctly.
 Replace your single line in `scripts.js` with this, then:
 
 ```javascript
-$("#response").text("scripts.js has loaded!");
+$("#response").html("scripts.js has loaded!");
 ```
 
 Now reload the page in the browser. That earlier text, that read “This is the
@@ -273,8 +273,8 @@ but that one line of JavaScript does this:
 * `$(`: Select something in the webpage with JQuery.
 * `"#response")`: In fact, select the html element with the `id` of `response`. (The
 `#` means are looking for something with a specific `id`.)
-* `.text(`: Change the text that is inside the html element we selected.
-* `"scripts.js has loaded!");`: Change the text with this new text.
+* `.html(`: Change the HTML that is inside the HTML element we selected.
+* `"scripts.js has loaded!");`: Change the HTML with this new HTML.
 
 The [JQuery selector](https://api.jquery.com/category/selectors/), `$("")`, is
 one of the most important bits of code on the web. 
@@ -288,9 +288,9 @@ the toy program from the previous section, though, and update the
 let userInput;
 userInput = "samosa";
 if ( userInput === "burrito" ) {
-  $("#response").text("Brilliant choice!");
+  $("#response").html("Brilliant choice!");
 } else {
-  $("#response").text("Don’t you want a burrito?");
+  $("#response").html("Don’t you want a burrito?");
 }
 ```
 
@@ -403,7 +403,7 @@ the program will loop.
   $("#response").append("<br />" + i);
 ```
 
-This line is a bit sneaky. First, it uses `append()` instead of `text()`. That
+This line is a bit sneaky. First, it uses `append()` instead of `html()`. That
 just means that it adds the text to the end instead of replacing all of it.
 Next, it uses `<br />`, which is the html tag for making a line break. But
 note that little `i` at the end. We’ll come back to it in a second, but for
