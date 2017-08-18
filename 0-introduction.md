@@ -4,16 +4,19 @@ title: 0. Introduction & FAQs
 permalink: /0-introduction/
 ---
 
-# 0. Introduction & FAQs
+# Introduction & FAQs
 
-<p class="lead"> Welcome! This is an introduction to my “The JavaScripting
-English Major” course with a few FAQs that help explain how I approach the
-design of the course. If you look at the [About](/about/) page, you can learn
-even more about the foundations of the course.  </p>
+<p class="lead"> Welcome! This is an introduction to *The JavaScripting
+English Major*, a course written by me, [Moacir P. de Sá
+Pereira](http://moacir.com), on teaching humanities undergraduates to write
+web projects. In this introduction, I provide a few FAQs that help explain how
+I approach the design of this course. If you look at the [About](/about)
+page, you can learn even more about the origins and technical foundations of
+the course.</p>
 
 If you’re already committed to becoming a JavaScripting English major, you can
-skip this chapter and jump straight to the [first chapter]({{ site.baseurl
-}}/1-environment/), which walks you through setting up your environment. 
+skip this chapter and jump straight to the [first chapter](/1-environment),
+which walks you through setting up your environment. 
 
 My goals here are straightforward; at the end of 15 sessions, you should be
 able to
@@ -241,12 +244,9 @@ will have already taught this course, making adjustments where necessary. And
 I hope to keep teaching it. JavaScript and the web are going nowhere, and the
 humanities are as important now as they have ever been.
 
-So happy JavaScripting, and I’ll see you in [Chapter 1]({{ site.baseurl
-}}/1-environment/)!
+So happy JavaScripting, and I’ll see you in [Chapter 1](/1-environment)!
 </section>
 
-<section id="footnotes">
 ## Footnotes
 
-[^js-history]: I discuss the history of JavaScript in a bit more detail in [Chapter 2](/2-calculator/).
-</section>
+[^js-history]: I discuss the history of JavaScript in a bit more detail in [Chapter 2](/2-calculator).
