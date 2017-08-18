@@ -2,7 +2,16 @@
   <body>
     {% include navbar.html %}
     <div class="container">
-      {{ content }}
+      <div class="row">
+        <aside class="col-md-4">
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          {{ content }}
+        </article>
+      </div>
     </div>
     {% include footer.html %}
     {% include scripts.html %}
