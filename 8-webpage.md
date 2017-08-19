@@ -141,22 +141,27 @@ framework I prefer, and the one that we’ll be using now, is
 [Bootstrap](http://getbootstrap.com), designed by the people at Twitter. We’ll
 be using version 4 of Bootstrap, which isn’t even out yet. 
 
-We can load Bootstrap styles by putting two lines of HTML in our `<head>` tag in
-`index.html`:
+We can load Bootstrap styles by putting three lines of HTML in our `<head>`
+tag in `index.html`:
 
 ```html
 <head>
   <meta charset="utf-8">
   <title>My JavaScripting English Major Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
 ```
 
 Those two `<link>` tags tell the browser to load the Bootstrap styles (first
-line), and your personal styles (second line). We also need to add two more
-`<script>` tags to load Bootstrap’s special JavaScript, so put these two in
-just above `<script src="scripts.js"></script>`.
+line), and your personal styles (second line). The new `<meta>` tag lets
+Bootstrap change its look based on whether we are using a computer or a
+telephone to view the page. 
+
+We also need to add two more `<script>` tags to load Bootstrap’s special
+JavaScript, so put these two in just above `<script
+src="scripts.js"></script>`.
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
