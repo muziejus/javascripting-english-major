@@ -199,7 +199,7 @@ Inside the `body` tags, add:
 
 ```html
 <div id="response">This is the div.</div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="scripts.js"></script>
 ```
 
@@ -216,7 +216,7 @@ should look like this:
   <body>
     <h1>This is my project!</h1>
     <div id="response">This is the div.</div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
@@ -230,7 +230,7 @@ generic tag that lets you mark off a part of a page with an id, in this case
 “response.” The second tells the webpage to look for files indicated by the
 `src`, or “source,” attribute. In other words, first it goes to a webserver
 called “code.jquery.com” and downloads a source file from there, called
-`jquery-3.2.1.slim.min.js`. Then it looks for a local file, called
+`jquery-3.2.1.min.js`. Then it looks for a local file, called
 `scripts.js`. But that file does not yet exist. So let’s make it.
 
 Back in Atom, right-click (or control-click) on your project icon and choose
