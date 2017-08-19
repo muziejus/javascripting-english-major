@@ -384,26 +384,209 @@ As you can imagine, having to type that out would be a nightmare. Luckily,
 I’ve already done it for you. Open up [this file](/prologue.json) in a new tab
 and look at it. You can see that it looks like a regular JavaScript object
 except that the properties are strings, as well. That is, instead of `{text:
-"that"}`, we get `{"text": "that"}`.
-
-Create a new, blank file in Atom called `prologue.json` and paste in the
-contents of the JSON file you just navigated to. Now we have to let our
-`prologue.js` file know about it.
+"that"}`, we get `{"text": "that"}`. Now we have to let `prologue.js` know
+about it.
 
 </section>
 <section id="async">
 
 ## Async
 
-Much of the work we do with JavaScript is **asynchronous**, or **async** for
-short.
+Much of the work we do with JavaScript is **asynchronous**, or **async**, for
+short. So far, all of our programming has been step-by-step. Do this, then do
+that, then do this, then do that. But the real world doesn’t really work that
+way, and the real world includes dealing with the internet. Maybe the server
+that is hosting our JSON file is slow. Maybe the file is so huge it takes a
+while to download it. Do we really want to wait while the whole file
+downloads, leaving our webpage unresponsive?
 
+You already know I love burritos, but let’s think of this in terms of making
+pasta. There are three big steps to making pasta: making the sauce, boiling
+the pasta, and mixing them together. So let’s imagine a function:
 
+```javascript
+let makeAPastaDinner;
+makeAPastaDinner = function (){
+  makeTheSauce(); // includes chopping vegetables and simmering
+  boilThePasta(); // includes heating up the water
+  mixTheSauceAndPasta();
+}
+```
+
+By the time we got to `mixTheSauceAndPasta()`, the sauce would be cold!
+Imagine if we had to *finish* simmering the pasta sauce before we could start
+on the pasta itself. Tragedy! Disaster! Worse, we could invert them, so that
+we add cold, soggy pasta to sauce. Garbage!
+
+Instead, it’d be better if we could somehow write the function so that we can
+start `makeTheSauce()` but, while it’s still happening (say, the sauce is
+simmering), we start `boilThePasta()`. 
+
+That’s cooking async. And we do stuff async constantly in our daily lives.
+Software should be similar. In JavaScript, some functions and methods are
+async, which means they do their thing, while, in the meantime, the rest of
+the functions happen. This asynchronous activity is done via **callback
+functions**, which are functions that happen only once the calling function is
+done. To continue with the pasta analogy, let’s get a bit more discrete:
+
+```javascript
+let makeAPastaDinner;
+makeAPastaDinner = function (){
+  prepareSauceIngredients(function(){ // This function is the callback
+    simmerSauce(function(){  // another callback
+      mixTheSauceAndPasta();
+    });
+    boilThePasta();
+  });
+}
+```
+
+The first step is `prepareSauceIngredients()`. When that finishes, it executes
+its callback, which executes `simmerSauce()` *and* `boilThePasta()`, meaning
+that the boiling and simmering are happening at the same time. Only once the
+simmering is done does it call *its* callback, to `mixTheSauceAndPasta()`.
+
+In short, dealing with asynchronous functions means that sometimes the order
+things are written in your JavaScript file are not the order in which they are
+done. And jQuery’s method to get JSON objects from the internet can be
+confusing in its asynchronicity. 
+
+</section>
+<section id="finishing-the-prologue">
+
+## Finishing up by combining async JSON with the General Prologue.
+
+Let’s make sure we’re all on the same page as we turn into this last quarter
+lap. Your `prologue.js` file should look like this, more or less. I’ve taken
+out the comments and added three new ones.
+
+```javascript
+// 1. Set the content of #glosses.
+$("#glosses").html("<p>The glosses will go here.</p>");
+// 2. Set the content of #prologue.
+let line1, line1Text;
+line1 = [{text: "Whan", modern: "When"}, {text: "that"}, {text: "Aprill,",
+        modern: "April,"}, {text: "with"}, {text: "his"}, {text: "shoures",
+        modern: "showers"}, {text: "soote", modern: "sweet"}];
+line1Text = "<blockquote><p>";
+line1.forEach(function(word){
+  let wordString;
+  wordString = word.text;
+  if (word.modern){
+    wordString = "<a href='#' data-modern='" + word.modern + "'>" + wordString + "</a>";
+  }
+  line1Text = line1Text + wordString + " ";
+});
+line1Text = line1Text + "<br />(line 2 would go here)</p></blockquote>";
+$("#prologue").html(line1Text);
+// 3. Wait around for the user to click on an <a> tag inside #prologue
+// and then change the content of #glosses.
+$("#prologue a").click(function(){
+  let glossText, clickedWord, modernWord;
+  clickedWord = $( this ).text();
+  modernWord = $( this ).data("modern");
+  glossText = "<h2>You clicked on " + clickedWord + ", which means " + modernWord +"</h2>";
+  $("#glosses").html(glossText);
+});
+```
+
+This works; it loads a line of text, and everything runs like we expect it to.
+But I want to underscore the fact that this code is actually doing three big
+things, as I’ve noted with the comments. Steps 1 and 3 stay the same. They
+don’t care about the actual text of the Prologue. Step 1 only concerns
+`#glosses`, and step 3 is just hanging out, waiting for the user to click. In
+other words, the action will happen in step 2. Now, the jQuery method to get a
+JSON file is `$.getJSON(file, callback)`, and it takes two parameters, as you
+can see. The file part is easy, since you’ve been looking at it already:
+
+```javascript
+$.getJSON("http://the-javascripting-english-major.org/prologue.json", callback);
+```
+
+The callback is a bit trickier, but let's think it through abstractly:
+
+1. We have the JSON available to us as a variable for our callback called `data`.
+1. This `data` object has a property, `"lines"`, that is an array of lines.
+1. Each line in `"lines"` is an array of word-objects.
+1. Each word-object has a `"text"` property, and some have a `"modern"` one.
+
+Then what have we already got in that second step:
+
+1. It defines `line1`, an array of word-objects, and `line1Text`, a blank string.
+1. It iterates over `line1` and builds up `line1Text` based on the properties of 
+	 the word-objects.
+1. It closes the HTML tags in `line1Text`.
+1. It prints the value of `line1Text` in `#prologue`.
+
+Really all we need to do is two things: create a `prologueText` variable that
+holds the text of the *whole* Prologue and repeat what we’ve already got down:
+
+```javascript
+$.getJSON("prologue.json", function(data){ // Note the data variable!
+  let prologueText; // Define the variable we didn’t need before.
+  prologueText = "<blockquote><p>"; // Open the tags.
+  // Now we can iterate over the data variable’s .lines property:
+  data.lines.forEach(function(line){ // We get a variable, line.
+    // Define a blank lineText.
+    let lineText;
+    lineText = "";
+    // Now iterate over each line. This part should be familiar.
+    line.forEach(function(word){
+      let wordString;
+      wordString = word.text;
+      if (word.modern){
+        wordString = "<a href='#' data-modern='" + word.modern + "'>" + wordString + "</a>";
+      }
+      lineText = lineText + wordString + " ";
+    });
+    // Add lineText with a line break to the prologueText.
+    prologueText = prologueText + lineText + "<br/>";
+  });
+  // Close the prologueText tags.
+  prologueText = prologueText + "</p></blockquote>";
+  // Replace the content of #prologue.
+  $("#prologue").html(prologueText);
+}); // close the callback function.
+```
+
+If we replace step two with this, save and reload, huzzah! The first 18 lines
+of the General Prologue appear. But if we click on the words, they don’t work
+anymore. Nothing happens. That’s not fair! We didn’t even touch step 3. Why
+did it work before, but not now?
+
+The answer is, you probably guessed, because of async. Think of the three
+steps as three discrete functions:
+
+```javascript
+setTheDefaultGlossesValue();
+setTheDefaultPrologueValue();
+selectThePrologueLinksAndWaitForClicks();
+```
+
+Because the second functions runs asynchronously, the third function looks for
+links in `#prologue`, but *`#prologue` is still blank*. So by the time the
+second function is done, the third has already finished its business. We need
+to treat the third function as a callback to the second. We need to do
+something like this:
+
+```javascript
+setTheDefaultGlossesValue();
+setTheDefaultPrologueValue(function(){
+  selectThePrologueLinksAndWaitForClicks();
+});
+```
+
+Figuring out how to do that is for homework. But here is
+what the final page could look like: [prologue.html](/examples/prologue.html).
 </section>
 <section id="exercises">
 ## Exercises
 
 1. Why can’t we simply do `$( this ).modern` to get the `.modern` property?
+1. Fix the problem with the Prologue and get the glosses to appear.
+1. I added a `"url"` property to the JSON file. Rewrite the code for the
+   Prologue so that the gloss also suggests taking you to Wikipedia if you
+   like.
 
 ## Foonotes
 
