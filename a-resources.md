@@ -1,10 +1,8 @@
 ---
 layout: default
-title: Appendix A. Additional Resources
+title: Additional Resources
 permalink: /a-resources/
 ---
-
-# Appendix A. Additional Resources
 
 Congratulations! You’ve finished the course! Or, perhaps, you’re eager to see
 the mountain of information that went into generating this course. Either way,
