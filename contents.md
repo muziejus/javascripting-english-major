@@ -46,7 +46,7 @@ permalink: /contents
 
 ## [9. Building a Dataset](/9-dataset)
 
-### Digital *Canterbury Tales* / JSON
+### Digital *Canterbury Tales* / JSON / Async
 
 ## 10. Leaflet
 
