@@ -4,9 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# About
-
-*The JavaScripting English Major* is created by [Moacir P. de Sá
+This course, *The JavaScripting English Major*, was created by [Moacir P. de Sá
 Pereira](http://moacir.com) to be used, initially, in the 2017 course “[Novel
 Maps of New York](https://muziejus.github.io/novel-maps-of-ny-2017/),” taught
 as part of the Digital Literary Studies sequence in the [English Department at
