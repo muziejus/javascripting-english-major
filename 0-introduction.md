@@ -1,10 +1,10 @@
 ---
 layout: default
-title: 0. Introduction & FAQs
+title: Introduction & FAQs
 permalink: /0-introduction
 ---
 
-Welcome! This is an introduction to *The JavaScripting
+Welcome (again)! This is an introduction to *The JavaScripting
 English Major*, a course written by me, [Moacir P. de Sá
 Pereira](http://moacir.com), on teaching humanities undergraduates to write
 web projects. In this introduction, I provide a few FAQs that help explain how

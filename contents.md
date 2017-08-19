@@ -1,10 +1,15 @@
 ---
 layout: default
-title: The JavaScripting English Major
+title: Contents
 permalink: /contents
 ---
 
-# Contents
+Welcome to *The JavaScripting English Major*. Here is a list of this course’s
+contents, session (or chapter) by session. If you’re uncertain about the
+course, start with the [zeroth chapter](/0-introduction), which introduces the
+ideas behind the course. Skip straight to the [first chapter](/1-environment)
+if you want to zoom ahead. Finally, the technical details and other
+information regarding this course are hidden on the “[About](/about)” page.
 
 <div class="contents">
 
