@@ -31,14 +31,14 @@ century Middle English grandeur:
   That hem hath holpen, whan that they were seeke.
 
 Let’s create a webpage that glosses these first 18 lines. That is, it prints
-them, and then turns every word that might not be clear into a link the user can
-click on. And when the user does click on such a word, a gloss of that word
-appears in a box below the text.
+them, and then it turns every word that might not be clear into a link the
+user can click on. And when the user does click on such a word, a gloss of
+that word appears in a box below the text.
 
 <section id="building-a-page">
 ## Building a page for the Prologue
 
-First, let’s make a link to our new page from our old page. Open up
+First, you should make a link to the new page from your old page. Open up
 `index.html` in Atom, and add this below the `<h1>` tag:
 
 ```html
@@ -64,7 +64,7 @@ this basic structure:
       <div id="intro">
         <p>Welcome to the first 18 lines of Chaucer’s “General 
           Prologue.” If you don’t recognize a word, just click 
-          on it, and gloss will appear below.
+          on it, and a gloss will appear below.
         </p>
       </div>
       <div id="prologue">
@@ -79,18 +79,20 @@ this basic structure:
 </html>
 ```
 
-Note lines 7 and 25. They load not `styles.css` and `scripts.js`, but, rather,
-`prologue.css` and `prologue.js`. Create a new file in Atom called
-`prologue.js` and paste in these two jQuery commands that should already look
-rather familiar to you:
+Note lines 8 and 26. They load not `styles.css` and `scripts.js`, but, rather,
+`prologue.css` and `prologue.js`. If you want to create a `prologue.css` and
+populate it with your favorite styles, go ahead. `prologue.js`, however, is
+the focus of this chapter. So create a new file in Atom called `prologue.js`
+and paste in these two jQuery commands that should already look rather
+familiar to you:
 
 ```javascript
 $("#prologue").html("<p>The text of the Prologue will go here.</p>");
 $("#glosses").html("<p>The glosses will go here.</p>");
 ```
 
-Save, commit, and reload. The text in the jQuery commands should appear on
-`prologue.html`.
+Save, commit, and reload `prologue.html` in the browser. The text in the
+jQuery commands should appear on `prologue.html`.
 
 </section>
 <section id="prologue-into-data">
@@ -101,9 +103,10 @@ with links) in HTML, but that would involve a lot of repetition. Programmers
 hate repetition, so think for a moment about what the Prologue would look like
 as a dataset in JavaScript. What are our two data types for collections of
 information? Arrays and objects. Are 18 lines of poetry more like an array or
-an object?
+an object? Both would work, for different reasons, but an array will be
+simplest.
 
-In terms of arrays, we can think of the first 18 lines as an array that is 18
+We can think of the first 18 lines as an array that is 18
 elements long, with each element being its own line, something like:
 
 ```javascript
@@ -120,8 +123,8 @@ line1 = ["Whan", "that", "Aprill,", "with", "his", "shoures", "soote"];
 ```
 
 In this way, `prologueText` would be an array of arrays. That sounds like a
-good way to do things, but I don’t like line array as a line of strings. It
-would be better if it were an array of objects, like this:
+good way to do things, but I don’t like the line array as a line of strings.
+It would be better if it were an array of objects, or word-objects, like this:
 
 ```javascript
 let line1;
@@ -138,9 +141,9 @@ line1TextArray = line1.map(function(word){
 }
 ```
 
-The `.map()` creates a new array out of the array of objects, and this new
-array is just the `.text` property of each object, or, a string. Then we use
-the `.join()` method on `line1TextArray` to turn the array into one single
+The `.map()` creates a new array out of the array of word-objects, and this
+new array is just the `.text` property of each object, or, a string. Then we
+use the `.join()` method on `line1TextArray` to turn the array into one single
 string, separated by spaces. Put it all together in `prologue.js`, and:
 
 ```javascript
@@ -161,7 +164,7 @@ the page. Time to increase the complexity. Are you ready?
 
 The Wikipedia page for the General Prologue provides a word-for-word
 translation into Modern English. So let’s add a property, `modern`, to each
-word that includes gives its modern version:
+word-object that includes gives its modern version:
 
 ```javascript
 line1 = [{text: "Whan", modern: "When"}, {text: "that"}, {text: "Aprill,",
@@ -175,7 +178,7 @@ ingenuity.
 
 </section>
 <section id="events-in-javascript">
-## Events in JavaScript.
+## Events in JavaScript
 
 When talking about webpage design, whenever someone says something like “when
 a user *does something*, we want *something to happen*,” they’re usually
@@ -183,23 +186,24 @@ talking about JavaScript. JavaScript and jQuery especially are very good at
 handling these situations, which are called **events**. There are several such
 events that jQuery recognizes, but we’ll stick to one important one,
 **click**. The jQuery method associated with clicking, `$("").click()`, works
-on any visible HTML element, but we want it to work on individual words that
-have modern glosses.
+on any visible HTML element that gets selected by the jQuery selector, but we
+want it to work on individual words that have modern glosses.
 
-Conceptually, this is a bit tricky, so I’ll try to spell out the steps here
-that we’ll follow:
+Conceptually, this may be a bit tricky, so I’ll slow down and spell out the
+steps here that we’ll follow:
 
 1. As things stand now, we have a single string getting printed to `#prologue`
    that includes the first line of the Prologue.
-1. We went to break that line back up into individual words.
-1. If the word has no `.modern` property, we print it as is.
-1. If it does, we want to surround that word in `<a>` tags, so that it becomes
-   a link.
+1. We went to break that line back up into individual word-objects.
+1. If the word-object has no `.modern` property, we print its `.text` property
+   as is.
+1. If it does, we want to surround the `.text` property in `<a>` tags, so that
+   it becomes a link.
 1. When we click on the link, we want the `.modern` property to get printed in
    `#glosses`.
 
-The final step, of course, will be to do this for all 18 lines, but let’s keep
-things simple. 
+The final step, of course, will be to do this for all 18 lines, but let’s
+stick to one line for now.
 
 The first step is straightforward. Remember, we are dealing with word-size
 chunks of data to begin with, so we just have to get rid of that `.join()`
@@ -215,7 +219,7 @@ line1 = [{text: "Whan", modern: "When"}, {text: "that"}, {text: "Aprill,",
 // Create a blank string that opens two tags.
 line1Text = "<blockquote><p>";
 line1.forEach(function(word){
-  // Add in the word’s text plus a space.
+  // Add in the word-object’s .text property plus a space.
   line1Text = line1Text + word.text + " ";
 });
 // Break the line and close the two tags.
@@ -230,15 +234,15 @@ potential for an if statement. Looking just at that block:
 ```
 line1.forEach(function(word){
   // Define a variable that will be the entirety of a single
-  // word-sized chunk of information
+  // word-sized chunk of information.
   let wordString;
   wordString = word.text;
-  // Test to see if the .modern property exists
+  // Test to see if the .modern property exists.
   if (word.modern){
     // If it does, surround wordString in an <a> tag.
     wordString = "<a href='#'>" + wordString + "</a>";
   }
-  // Add in wordString plus a space
+  // Add wordString plus a space to the line1Text.
   line1Text = line1Text + wordString + " ";
 });
 ```
@@ -258,11 +262,11 @@ The jQuery selector, `$("#prologue a")`, is selecting every `<a>` tag inside
 `#prologue`. With the `click()` method, it says to execute a function whenever
 the user clicks on an `<a>` tag inside `#prologue`. And that function appends
 a string, “You clicked on a word!” to `#glosses`. Save, commit, reload, and
-start clicking on the words in the prologue.
+start clicking on the words in the Prologue.
 
 We have one more step, which is to have the gloss be printed, not “You clicked
-on a word.” But how can we tell jQuery what the value of a word’s `.modern`
-property is? This is tricky, so let’s break it up into two pieces:
+on a word.” But how can we tell jQuery what the value of a word-object’s
+`.modern` property is? This is tricky, so let’s break it up into two pieces:
 
 1. We want to send word-specific information to `#glosses`.
 1. We want that information to be the `.modern` property.
@@ -270,7 +274,7 @@ property is? This is tricky, so let’s break it up into two pieces:
 Let’s just send the word *itself* to `#glosses`, to fulfill the first part of
 this step. This requires making use of the `$( this )` selector we saw [last
 chapter](/8-webpage), that lets a jQuery method get information about the
-object that called it:
+selected object:
 
 ```javascript
 $("#prologue a").click(function(){
@@ -283,9 +287,10 @@ $("#prologue a").click(function(){
 ```
 
 Save, commit, and reload. Note that the `.text()` method, when called without
-parameters, *gets* the text. When called with parameters, it *sets* the text.
-Unfortunately, we can’t do something like `$( this ).modern` to get the
-`.modern` property, though that would be pretty cool. Can you see why? 
+parameters, *gets* the text. When called with parameters, it *sets* the text
+to the parameters.  Unfortunately, we can’t do something like `$( this
+).modern` to get the `.modern` property, though that would be pretty cool. Can
+you see why? 
 
 Instead, we have to feed the `<a>` tag some hidden data that we can then use
 jQuery to harvest. Here, we make use of **data attributes**, which are custom,
@@ -306,8 +311,8 @@ line1.forEach(function(word){
 ```
 
 Save and reload. To make sure it worked correctly, if you use the Element
-inspector (a tab near the console tab in the browser), HTML around the word
-“Whan” should look like this:
+inspector (a tab near the console tab in the browser), see if the HTML around
+the word “Whan” looks like this:
 
 ```html
 <a href="#" data-modern="When">Whan</a>
@@ -319,13 +324,14 @@ to have to find your mistakes. One possible mistake is forgetting that single
 little `'` after `word.modern`. If everything looks good, go ahead and commit.
 
 And for the final piece of the final step, we need to get the information in
-the `data-modern` attribute into jQuery. Easy. Just use the `$("").data()` method:
+the `data-modern` attribute into jQuery. Easy. Just use the `$("").data()`
+method:
 
 ```javascript
 $("#prologue a").click(function(){
   let glossText, clickedWord, modernWord;
   clickedWord = $( this ).text();
-  // .data("modern") looks for the data-modern HTML attribute
+  // .data("modern") looks for the data-modern HTML attribute.
   modernWord = $( this ).data("modern");
   glossText = "<h2>You clicked on " + clickedWord + ", which means " + modernWord +"</h2>";
   $("#glosses").html(glossText);
@@ -339,7 +345,7 @@ then go ahead and commit. We're done with this part of the chapter.
 <section id="json">
 ## JSON
 
-You've learned a lot in this chapter, but it’s remarkable how much builds on
+You've done a lot in this chapter, but it’s remarkable how much builds on
 the steps you already know. We’re not doing anything more complicated than
 using arrays, objects, and some fancier methods like `.data()`. There may be
 conceptual hurdles, however, which is why it’s worthwhile to make sure you
