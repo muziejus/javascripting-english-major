@@ -4,9 +4,9 @@ title: Building a Dataset
 permalink: /9-dataset
 ---
 
-Our excitement should be growing as finally, we stop making play pages and
-actually build a self-contained digital version of a text you may already know
-(or will see soon in your academic career), the “[General
+Your excitement should be growing as finally, you will stop making play pages
+and actually build a self-contained digital version of a text you may already
+know (or will see soon in your academic career), the “[General
 Prologue](https://en.wikipedia.org/wiki/General_Prologue)” of *The Canterbury
 Tales*—or at least the first 18 lines. Here they are, in their late 14th
 century Middle English grandeur:
@@ -30,10 +30,10 @@ century Middle English grandeur:
   The hooly blisful martir for to seke<br />
   That hem hath holpen, whan that they were seeke.
 
-Let’s create a webpage that glosses these first 18 lines. That is, it prints
-them, and then it turns every word that might not be clear into a link the
-user can click on. And when the user does click on such a word, a gloss of
-that word appears in a box below the text.
+In this chapter, you will create a webpage that glosses these first 18 lines.
+That is, it prints them, and then it turns every word that might not be clear
+into a link the user can click on. And when the user does click on such a
+word, a gloss of that word appears in a box below the text.
 
 <section id="building-a-page">
 ## Building a page for the Prologue
