@@ -194,7 +194,7 @@ continue. But now the map itself is initialized.
 
 With the map zoomed in like this, we can add a marker to [Bobst
 Library](https://en.wikipedia.org/wiki/Elmer_Holmes_Bobst_Library). For people
-unfamiliar with NYU, this library is on the edge of the park. From the
+unfamiliar with NYU, this library is on the edge of the park.[^bobst] From the
 Wikipedia article, we can get Bobst’s coordinates, 40.729444 and -73.997222.
 Initializing a marker is similar to the tile layer:
 
@@ -223,9 +223,9 @@ The [next chapter](/11-geojson) is devoted to building up data sets of
 geographical information, but in this chapter, we’ll keep using toy data so
 that you get familiar with Leaflet. Both the marker object and in the
 `.setView()` method, you saw that Leaflet demanded coordinates. Leaflet
-doesn’t know where places are, and it knows absolutely nothing about
-distances. All it knows are latitude and longitude coordinates. In fact, these
-are their own object in Leaflet:
+doesn’t know where places are, and it knows nearly nothing about
+distances.[^distance] All it knows are latitude and longitude coordinates. In
+fact, these are their own object in Leaflet:
 
 ```javascript
 let bobstCoords;
@@ -234,18 +234,135 @@ firstMap.panTo(bobstCoords);
 ```
 
 Here, `bobstCoords` becomes a `latLng` object, created by using the
-`L.latLng()` method with two parameters, a latitude and a longitude.
-Throughout Leaflet, you can either create `latLng` objects or continue using
-coordinate arrays like we did above. But note the `.panTo()` method at the
-end. That’s a method that changes your map, in this case `firstMap`. If you
-save and reload, you’ll notice that the map is now centered on the library,
-not the park.
+`L.latLng()` method with two parameters, a latitude and a longitude. Note that
+`latLng` has a capital “L” in the middle.  Throughout Leaflet, you can either
+create `latLng` objects or continue using coordinate arrays like you did
+earlier. Now consider the `.panTo()` method at the end. That’s a method that
+changes a map, in this case `firstMap`. If you save and reload, you’ll see
+that the map is now centered on the library, not the park. If you open the
+console and type in:
 
+```javascript
+> let eiffelTower;
+> eiffelTower = L.latLng(48.858222, 2.2945);
+> firstMap.panTo(eiffelTower);
+```
+
+You can watch the map swing over to the Eiffel Tower in Paris. 
+
+This much is clear, then, but *finding* coordinates can be tricky when
+creating datasets, so here are four tips:
+
+1. The coordinates I have used so far in this chapter come from Wikipedia.
+   Many places have coordinates listed in the top right corner of their
+   Wikipedia pages. If you click on them, it takes you to a GeoHack page,
+   which includes the coordinates in decimal format. Leaflet won’t understand
+   coordinates given in arc-minutes and arc-seconds.
+1. In Google Maps, if you click on a point, a little window appears at the
+   bottom with the address (if it can guess it) and the coordinates.
+1. For larger entities, like countries, sometimes they have a single
+   coordinate associated with them. You can look that up at
+   [GeoNames](http://www.geonames.org), a gazetteer. For France, for example,
+   GeoNames gives `[46, 2]`, which is more or less in the middle of
+   L’Hexagone. 
+1. Converting to decimal degrees can cause errors. You can use sites like
+   [LatLong](http://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees)
+   to do the conversion, but always do a sanity check afterward, especially
+   when you have data on both sides of the Prime Meridian, the antimeridian,
+   or the Equator.
+
+Finally, coordinates from Google Maps, then taken out to six significant
+digits, give an illusion of precision that is unwarranted. At American
+latitudes, the difference between one ten-thousandth of a degree in longitude is only a few
+meters. And the difference in latitude is not much greater, as I’ll show in
+the next section.
+
+## Beyond the marker
+
+In addition to making markers, Leaflet can also build polylines, polygons, and
+circles. The syntax for the first two is identical: you build an array of
+coordinates and feed it as a parameter to either the `L.polyline()` or
+`L.polygon()` methods. Delete everything pertaining to Bobst Library from
+`leaflet.js`, and add:
+
+```javascript
+let washingtonSquarePark, washingtonSquareParkMarker;
+let tenThousandth, tenThousandthPolygon, thousandth, thousandthPolyline;
+washingtonSquarePark = L.latLng(40.730833, -73.9975);
+washingtonSquareParkMarker = L.marker(washingtonSquarePark).addTo(firstMap);
+tenThousandth = [[40.7307, -73.9976], [40.7307, -73.9974], 
+                 [40.7309, -73.9974], [40.7309, -73.9976]];
+tenThousandthPolygon = L.polygon(tenThousandth,
+                                  {color: "#268bd2",
+                                   fillColor: "#fdf6e3"}
+                                ).addTo(firstMap);
+```
+
+Here you add a marker at the center of Washington Square Park
+(`washingtonSquareParkMarker`) and then construct an array of coordinates,
+`tenThousandth`, which is a box two ten thousandths of a degree wide and tall,
+more or less centered around the marker.
+Then you add that to the map. Notice that I’ve collapsed assigning the leaflet
+object with the `.addTo()` method. Furthermore, the `.polygon()` method can
+take an `options` object parameter as well, and, in this case, I defined the
+`tenThousandthPolygon.options.color` property as a shade of blue and the
+`.fillColor` property as a light yellow. 
+
+There are also two variables here that are not assigned, but are declared:
+`thousandth` and `thousandthPolyline`. Use them so:
+
+```javascript
+thousandth = [[washingtonSquarePark.lat + 0.001, washingtonSquarePark.lng + 0.001],
+              [washingtonSquarePark.lat + 0.001, washingtonSquarePark.lng - 0.001],
+              [washingtonSquarePark.lat - 0.001, washingtonSquarePark.lng - 0.001],
+              [washingtonSquarePark.lat - 0.001, washingtonSquarePark.lng + 0.001]];
+thousandthPolyline = L.polyline(thousandth, {color: "#d33682"}).addTo(firstMap);
+```
+
+Save and reload, and your Leaflet map should now show both a polygon and three
+line segments, or a polyline. Notice how, because I defined
+`washingtonSquarePark` as an `L.latLng` object, it now has two properties,
+`.lat` and `.lng`, corresponding to its latitude and longitude. This is one
+reason to make use of the `L.latLng` object instead of just continuously using
+arrays of coordinates. 
+
+Circles are even easier:
+
+```javascript
+let circle;
+circle = L.circle(washingtonSquarePark, {radius: 100,
+                                         color: "#859900",
+                                         fillColor: "#cb4b16",
+                                         opacity: 0.9,
+                                         fillOpacity: 0.25}).addTo(firstMap);
+```
+
+The `L.circle.options.radius` property is measured in meters. Note also that
+Leaflet provides you with control over the opacity of both the border and the
+fill. `L.circle`, `L.polygon`, and `L.polyline` all inherit these options from
+the Leaflet object `L.path`, and Leaflet provides a list of [all of that
+object’s options](http://leafletjs.com/reference-1.2.0.html#path) that you can
+look at to style your lines and polygons as you like. Similarly, there are to
+objects I don’t mention that you might like to look up. Instead of
+`L.marker`s, you can use
+[`L.circleMarker`s](http://leafletjs.com/reference-1.2.0.html#circlemarker) (I
+actually prefer them), and there is also a vanilla
+[`L.rectangle`](http://leafletjs.com/reference-1.2.0.html#rectangle) object,
+similar to what we built for the `tenThousandthPolygon` above.
 
 </section>
 
+## Exercises
+
+1. Create two new files, `derive.html` and `derive.js`. Have them include a
+   Leaflet map with your two dérives you made for class drawn on them. Or it
+   can be two walks, if you’re not in my class. The dérives should be
+   different colors. Save, commit, and push to GitHub when you’re done.
 
 ## Footnotes
 
 [^tilelayer]: In creating the tile layer, you specify the server from which Leaflet should get its tiles (in this case from `cartocdn.com`), and then add three options. The `attribution` option describes what appears in the bottom corner of the map.
 
+[^bobst]: Bobst is also where most of this course was drafted.
+
+[^distance]: There is a `.distance()` method that will calculate the distance, in meters, between a `LatLng` object and another one passed as the parameter.
