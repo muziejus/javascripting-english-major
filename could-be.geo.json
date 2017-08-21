@@ -1,0 +1,72 @@
+---
+---
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -83.0370,42.3340 ]
+    },
+    "properties": {
+    "name":"Hastings Street",
+    "mentions":2,
+    "lines":[1, 13],
+    "wikipedia":"https://en.wikipedia.org/wiki/Black_Bottom,_Detroit"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.9444,40.8094 ]
+    },
+    "properties": {
+    "name":"Lenox Avenue",
+    "mentions":2,
+    "lines":[2, 14],
+    "wikipedia":"https://en.wikipedia.org/wiki/Lenox_Avenue"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -94.5611,39.0889 ]
+    },
+    "properties": {
+    "name":"18th & Vine",
+    "mentions":1,
+    "lines":[3],
+    "wikipedia":"https://en.wikipedia.org/wiki/18th_and_Vine-Downtown_East,_Kansas_City"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -84.5240,39.1000 ]
+    },
+    "properties": {
+    "name":"5th & Mound",
+    "mentions":1,
+    "lines":[5],
+    "wikipedia":"https://en.wikipedia.org/wiki/West_End,_Cincinnati"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -90.0728,29.9557 ]
+    },
+    "properties": {
+    "name":"Rampart",
+    "mentions":1,
+    "lines":[6],
+    "wikipedia":"https://en.wikipedia.org/wiki/Rampart_Street"
+    }
+  }
+]
+}

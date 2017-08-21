@@ -11,18 +11,19 @@ important to separate data wrangling from programming logic, only to then have y
 run them together again. But the data structure for representing geographical
 objects in JavaScript, **GeoJSON**, is complex enough to warrant its own
 chapter. That is this chapter, and in it we’ll be doing a bit of detective
-work on a short poem in order to generate our data set.
+work on a short poem in order to generate our dataset. This chapter also marks
+the beginning of the end of the course, as we’ll be working on this dataset
+for the rest of the chapters. We’ve come so far in so short a time.
 
 <section id="could-be">
 ## Langston Hughes’s “Could Be”
 
-In this chapter, we’ll be working with Langston Hughes’s poem, “Could
-Be.”[^could-be] The
-complete text is available at [Song of
+The “final project” for this course is a look at Langston Hughes’s poem,
+“Could Be.”[^could-be] The complete text is available at [Song of
 America](http://www.songofamerica.net/song/could-be), so I encourage you to
-read it there. One thing jumps out at me when I look at it, namely that Hughes
-refers to geographical spaces in seven out of 16 lines of poetry, repeating
-two of them. The five distinct places are:
+read it there. In 16 lines of poetry, Hughes manages to refer to five
+different geographical spaces in the United States, with two of them being
+mentioned twice apiece. The places he mentions are:
 
 * Hastings Street
 * Lenox Avenue
@@ -30,14 +31,17 @@ two of them. The five distinct places are:
 * 5th & Mound
 * Rampart
 
-When thing about this poem recently, I decided to try and map these five
-locations and see if anything came of the mapping. Thus began a bit of
-literary investigation. But first, I have to ask myself (as do you, when
-building your own geographical dataset), what that dataset will contain,
-precisely?
+I was thinking about this poem recently and wondered if mapping it might open
+up any sort of new interpretive angles into it. It’s also a good poem for
+teaching mapping, because the amount of data is small but important to the
+text as a whole. 
+
+Yet in converting a poem into data, a scholar has to at the same time wonder
+what that data should look. Remember, data are captured, so what information
+should we capture when trying to represent this poem?
 
 </section>
-<section id="geographical-data-sctructure">
+<section id="geographical-data-structure">
 ## Geographical data structure
 
 For these five locations, clearly I need their names, so I can tell them
@@ -123,8 +127,50 @@ intermediate step.
 
 ## The GeoJSON format
 
-GeoJSON is a subset of the JSON we used when working with Chaucer’s General
-Prologue
+You learned about JSON when working with Chaucer’s General Prologue back in
+[Chapter 9](/9-dataset). A subset of it, [GeoJSON](http://geojson.org/), is a
+handy way to describe geographical data, one that Leaflet understands. In
+fact, we can describe our Hastings Street point in GeoJSON like this:
+
+```javascript
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-83.0370, 42.3340]
+  },
+  "properties": {
+    "name": "Hastings Street",
+    "mentions": 2,
+    "lines": [1, 13],
+    "wikipedia": "https://en.wikipedia.org/wiki/Black_Bottom,_Detroit"
+  }
+}
+```
+
+Our point is a `Feature` object in GeoJSON. Notice, however, that the
+coordinates are flipped. Instead of `[lat, lng]`, like in Leaflet, the
+coordinates here are `[lng, lat]`. Instead of having an endless list of
+potential properties, the `Feature` object has three, a `.type`, a
+`.geometry`, and its own `.properties` object. That object’s properties are
+where we can stash our own properties like `.wikipedia`. I made the `.lines`
+property an array by enclosing it in brackets.
+
+With as small a dataset as the one we have for “Could Be,” generating a
+GeoJSON file “by hand” would not be too difficult. However, there are online
+tools that convert spreadsheets to GeoJSON. [Convert
+CSV](http://www.convertcsv.com/csv-to-geojson.htm), for example, lets you even
+paste in the data you copy from a spreadsheet. In the second step, you note
+whether the first row is column headers (typically yes), and in the third
+step, you mark which two columns feature latitudes and longitudes. 
+
+The result is available [here](/could-be.geo.json). As you can see, the
+`Feature` objects are collected into an array that is the `.features` property
+of a `FeatureCollection` object. 
+</section>
+
+<section id="geojson-in-leaflet">
+## GeoJSON in Leaflet
 
 
 
@@ -132,6 +178,8 @@ Prologue
 <section id="exercises">
 ## Exercises
 
+1. Design the data structure of your own final project and begin collecting
+   data for it in a spreadsheet.
 
 ## Footnotes
 
