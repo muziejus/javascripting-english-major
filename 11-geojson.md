@@ -135,7 +135,4 @@ Prologue
 
 ## Footnotes
 
-[^could-be]: Alba Newmann Holmes introduced me to this poem when presenting a
-paper, “‘Could Be’: Langston Hughes as Situationist Cartographer,” at a
-special session I convened at the [MLA Convention in
-2015](https://moacir.com/talks/mla-15-geocritical-explorations-inside-the-text/).
+[^could-be]: Alba Newmann Holmes introduced me to this poem when presenting a paper, “‘Could Be’: Langston Hughes as Situationist Cartographer,” at a special session I convened at the [MLA Convention in 2015](https://moacir.com/talks/mla-15-geocritical-explorations-inside-the-text/).
