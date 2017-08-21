@@ -53,9 +53,13 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ### Digital *Canterbury Tales* / JSON / Async
 
-## 10. Leaflet
+## [10. Leaflet](/10-leaflet)
 
-## 11. GeoJSON
+### Web map structure / Tour of Leaflet / Working with coordinates
+
+## [11. GeoJSON](/11-geojson)
+
+### Geodata.
 
 ## 12. 
 
