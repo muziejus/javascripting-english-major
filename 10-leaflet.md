@@ -351,13 +351,15 @@ actually prefer them), and there is also a vanilla
 similar to what we built for the `tenThousandthPolygon` above.
 
 </section>
-
+<section id="exercises">
 ## Exercises
 
 1. Create two new files, `derive.html` and `derive.js`. Have them include a
    Leaflet map with your two dérives you made for class drawn on them. Or it
    can be two walks, if you’re not in my class. The dérives should be
    different colors. Save, commit, and push to GitHub when you’re done.
+
+</section>
 
 ## Footnotes
 
