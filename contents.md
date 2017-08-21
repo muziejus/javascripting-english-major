@@ -57,7 +57,9 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ### Web map structure / Tour of Leaflet / Working with coordinates
 
-## [11. GeoJSON](/11-geojson)
+## [11. Geographical Data](/11-geojson)
+
+### Langston Hughes and African-American urban spaces / GeoJSON / Mapping “Could Be”
 
 ### Geodata.
 
