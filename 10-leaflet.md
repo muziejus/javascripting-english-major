@@ -133,12 +133,12 @@ Create a new file in Atom called `leaflet.css`. Type in these three lines:
 
 ```css
 .map {
-  height: 300px;
+  height: 400px;
 }
 ```
 
 This means that everything that has a class `map` should have its `height`
-property set to 300 pixels. You can change this number if you like, but it
+property set to 400 pixels. You can change this number if you like, but it
 must be there. Leaflet’s one demand of CSS is that the map container have a
 defined `height`. Save and reload `leaflet.html` in the browser. Now the line
 “Above, you can see a Leaflet map.” should be separated from the `<h1>`,
@@ -164,10 +164,13 @@ layer. Define a variable `tileLayer` and assign it:
 ```javascript
 let firstMap, tileLayer;
 firstMap = L.map("first-map");
-tileLayer = L.tileLayer("http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", {
-      attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://carto.com/attributions'>Carto</a>",
+tileLayer =
+L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+      attribution: "&copy; <a
+      href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy;
+      <a href='http://carto.com/attribution'>CARTO</a>",
       subdomains: "abcd",
-      maxZoom: 19
+      maxZoom: 18
     });
 ```
 
