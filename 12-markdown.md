@@ -137,6 +137,9 @@ method we have already used. It takes an `Object` as a parameter, with a
 `.url` property and a `.success` property, which runs if the `$.ajax()` method
 runs smoothly. 
 
+And that’s it. Now you can write content in convenient Markdown and use jQuery
+to populate sections of your web project. See [this
+page](/examples/couldbe12.html) to see how far we’ve come.
 </section>
 
 ## Exercises

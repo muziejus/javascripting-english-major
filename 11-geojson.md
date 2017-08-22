@@ -248,7 +248,11 @@ smidge to make all the markers appear on the map.
 
 Save and reload. Your map should now show the whole United States and feature
 five markers, one over New York, one over Cincinnati, one over Kansas City,
-one over Detroit, and one over New Orleans. 
+one over Detroit, and one over New Orleans. Otherwise, catch up with the work
+I have done [over here](/examples/couldbe11.html) to see what the project
+looks like.
+</section>
+
 
 
 </section>
