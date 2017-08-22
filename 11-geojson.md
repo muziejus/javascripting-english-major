@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Geographical Data
+title: Starting a Geographical Data Project
 permalink: /11-geojson
 ---
 
 Typing up the coordinates for the [last homework
 assignment](/10-leaflet#exercises) was, I imagine, not a lot of fun. It’s also
-silly for me to assert, in the [previous chapter](/9-dataset), that it’s
+silly for me to assert, in the [chapter before last](/9-dataset), that it’s
 important to separate data wrangling from programming logic, only to then have you
 run them together again. But the data structure for representing geographical
 `Object`s in JavaScript, **GeoJSON**, is complex enough to warrant its own
@@ -172,6 +172,83 @@ of a `FeatureCollection` `Object`.
 <section id="geojson-in-leaflet">
 ## GeoJSON in Leaflet
 
+It’s time to start putting all this into a real project. Create a file in your
+project in Atom, called `could-be.html`, and paste in this basic structure:
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>“Could Be,” by Langston Hughes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+   crossorigin=""/>
+    <link rel="stylesheet" href="leaflet.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>“Could Be,” by Langston Hughes</h1>
+      <div id="could-be-map" class="map"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    <script src="could-be.js"></script>
+  </body>
+</html>
+```
+
+This is identical to the `leaflet.html`, except the content is a bit
+different, and it’s loading `could-be.js` instead of `leaflet.js`.
+Furthermore, the map’s `<div>` is called `#could-be-map`.
+
+Set up `could-be.js` similarly to `leaflet.js`:
+
+```javascript
+let map, tileLayer;
+map = L.map("could-be-map");
+tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+              attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://carto.com/attribution'>CARTO</a>",
+              subdomains: "abcd",
+              maxZoom: 18
+            }).addTo(map);
+map.setView([40.730833, -73.9975], 16);
+```
+
+Save and open `could-be.html` in the browser. If the map appears, go ahead and
+commit. GeoJSON gets loaded into the Leaflet by using the `L.geoJSON()` method
+that creates a `GeoJSON Layer` `Object`. You can load the GeoJSON just like we
+loaded regular JSON, using the jQuery `$.getJSON()` method. Add to
+`could-be.js`:
+
+```javascript
+$.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", function(data){
+  // Define and assign a layer.
+  let couldBeLayer;
+  couldBeLayer = L.geoJSON(data);
+  // Add the layer to the map.
+  couldBeLayer.addTo(map);
+  // Redraw the map so that all the markers are visible.
+  map.fitBounds(couldBeLayer.getBounds());
+  // Zoom out one level to give some padding.
+  map.zoomOut(1);
+});
+```
+
+Notice that all of the Leaflet work is happening inside the callback function,
+because `$.getJSON()` is async. I also introduce three new methods here.
+`.getBounds()` returns the bounding box that contains the entirety of a layer,
+in this case our GeoJSON layer. That is fed as a parameter to `.fitBounds()`,
+which changes the map `Object`’s state to a new zoom level and center
+coordinate. Then I use the map `Object`’s `.zoomOut()` method to zoom out a
+smidge to make all the markers appear on the map.
+
+Save and reload. Your map should now show the whole United States and feature
+five markers, one over New York, one over Cincinnati, one over Kansas City,
+one over Detroit, and one over New Orleans. 
 
 
 </section>
@@ -180,6 +257,8 @@ of a `FeatureCollection` `Object`.
 
 1. Design the data structure of your own final project and begin collecting
    data for it in a spreadsheet.
+1. Create new HTML and JavaScript documents for your project and get your own
+   personal GeoJSON data, or at least as much as you have, plotted.
 
 ## Footnotes
 

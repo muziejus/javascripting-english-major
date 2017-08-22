@@ -57,19 +57,19 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ### Web map structure / Tour of Leaflet / Working with coordinates
 
-## [11. Geographical Data](/11-geojson)
+## [11. Starting a Geographical Data Project](/11-geojson)
 
 ### Langston Hughes and African-American urban spaces / GeoJSON / Mapping “Could Be”
 
-## [12. Bootstrap layout and cotent](/12-bootstrap)
+## [12. Bootstrap Layout and Content](/12-bootstrap)
 
 ### Creating containers for your project / Fitting the map
 
-## [13. Events in Leaflet](/13-leaflet-events)
+## [13. Handling Events in Leaflet](/13-leaflet-events)
 
 ### Triggering Leaflet events from the DOM
 
-## [14. Styling Leaflet popups](/14-leaflet-style)
+## [14. Styling Leaflet Popups](/14-leaflet-style)
 
 ### Bringing Bootstrap to Leaflet / Hotlinking images
 
