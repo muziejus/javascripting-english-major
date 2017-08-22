@@ -62,8 +62,85 @@ Now, in Atom, I can go to the “Packages” menu, choose “Markdown Preview”
 then “Toggle Preview” to open a new pane that shows what the Markdown I am
 typing will look like in HTML. The heading is larger than the body text, and
 the links, when I click on them, take me to the correct Wikipedia pages. 
+</section>
 
+<section id="hotlinking-images">
+## Hotlinking Images
+
+Using images on webpages sets up a series of issues. Simply copying an image
+from another website is most likely copyright infringement, even if you give
+credit. This is why my webpages are typically light on images; they tend to
+feature only images I have created or photos I have taken. For the “Could Be”
+project, there are not many opportunities for images, but your project may
+differ.
+
+If you do use images, I recommend hotlinking them from a dedicated image
+hosting site, like [Imgur](http://imgur.com). Images carry a lot of internet
+traffic and are pretty much useless in Git, so it makes sense not to host them
+yourself in your own project.
+
+Hosting images in Imgur is easy. Point your browser to
+[`http://imgur.com`](http://imgur.com), and follow the steps to create a new
+post. Once your image appears on Imgur, hover your mouse over the picture and
+choose “Get Share Links” from the dropdown menu. Copy the Markdown option and
+paste it into your Markdown page. Change the `[Imgur]` text to `[a
+description of the photo]`, and don’t forget to type a `!` before it. 
+
+</section>
+<section id="showdown">
+## Rendering Markdown with JavaScript
+
+Getting Markdown into a webpage involves having JavaScript intercede.
+Specifically, we will use the
+[Showdown](https://github.com/showdownjs/showdown) parser. I add it to my list
+of `<script>` tags in `could-be.html` like this:
+
+```html
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+<script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.2/dist/showdown.min.js"></script>
+<script src="could-be.js"></script>
+```
+
+Showdown provides a converter `Object` that has a `.makeHtml()` method. The
+process that follows, then, is:
+
+1. Define and assign a Showdown converter.
+1. Load in the Markdown file using jQuery.
+1. Convert the loaded file into HTML using Showdown.
+1. Print the HTML in the webpage with jQuery.
+
+To accomplish these steps, I add these lines to `could-be.js`:
+
+```javascript
+// Define and assign a Showdown converter.
+let converter;
+converter = new showdown.Converter();
+// Load the Markdown file with jQuery.
+$.ajax({
+  url: "hastings-street.md",
+  success: function(markdown){
+    // Convert the Markdown to HTML.
+    let html;
+    html = converter.makeHtml(markdown);
+    // Print the HTML using jQuery.
+    $("#content").html(html);
+  }
+});
+```
+
+The jQuery method `$.ajax()` is a more generic version of the `$.getJSON()`
+method we have already used. It takes an `Object` as a parameter, with a
+`.url` property and a `.success` property, which runs if the `$.ajax()` method
+runs smoothly. 
 
 </section>
 
 ## Exercises
+
+1. Start drafting your own project’s content using Markdown in Atom. Commit
+   the drafts and push them to GitHub.
+1. Add a `#content` container to your project’s HTML file. Have it load one of
+   your Markdown files with jQuery.
