@@ -6,10 +6,10 @@ permalink: /7-errors
 
 
 Typically in an introduction to programming course, about here is where we
-would start drilling down deeper into how objects work, the idea being that
-creating our own objects that have built-in methods, etc., would be rather
+would start drilling down deeper into how `Object`s work, the idea being that
+creating our own `Object`s that have built-in methods, etc., would be rather
 useful. Abstractly, that is certainly the case. But since we’re moving ahead
-to a very specific goal, learning about how to create object prototypes and
+to a very specific goal, learning about how to create `Object` prototypes and
 the like can be saved for later, if at all.
 
 Instead, we’ll close out this first half of the course by talking about

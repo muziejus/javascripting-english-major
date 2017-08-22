@@ -4,7 +4,7 @@ title: Abstraction
 permalink: /6-abstraction
 ---
 
-Between strings, numbers, booleans, functions, arrays, and objects, we have
+Between strings, numbers, booleans, functions, arrays, and `Object`s, we have
 the fundamentals of JavaScript down. These are the pieces that build together
 to make all JavaScript web projects. But knowing how to put the pieces
 together is where programming stops being a series of clunky, step-by-step
@@ -269,7 +269,7 @@ through with a made up value for string, like “uppErcase me!”
 
 </section>
 <section id="arrays-of-objects">
-## Arrays of Objects
+## Arrays of `Object`s
 
 I hope you enjoyed your break. Iterating over arrays is a vitally important
 aspect of programming. In fact, it’s so common that JavaScript has a special
@@ -301,7 +301,7 @@ more valuable with more complicated arrays.
 
 Let’s imagine that our turtles have cards that tell you about them. On each
 card, we see the turtle’s name, his favorite color, and his weapon of choice.
-We can create these cards as JavaScript objects:
+We can create these cards as JavaScript `Object`s:
 
 ```javascript
 let leonardo, donatello, raphael, michelangelo, turtles;
@@ -351,7 +351,7 @@ all the turtles’ weapons. This is great, but we can do better.
 Let’s say we wanted not only the list of weapons, but we also wanted it in
 alphabetical order. How could we do that? Well, we know that arrays have the
 `.sort()` method, but in order to sort the weapons, we need an array of just
-the weapons’ names. Currently, `turtles` is an array of objects (one for each
+the weapons’ names. Currently, `turtles` is an array of `Object`s (one for each
 turtle) and `weapons` is a string. Instead of `.forEach()`, we can make use of
 the `.map()` method. You use `.map()` whenever you want to build an array out
 of another array. It’s a more specific version of `.forEach()`, but you use it

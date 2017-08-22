@@ -102,8 +102,8 @@ It could be possible to write an interactive version of the Prologue (that is,
 with links) in HTML, but that would involve a lot of repetition. Programmers
 hate repetition, so think for a moment about what the Prologue would look like
 as a dataset in JavaScript. What are our two data types for collections of
-information? Arrays and objects. Are 18 lines of poetry more like an array or
-an object? Both would work, for different reasons, but an array will be
+information? Arrays and `Object`s. Are 18 lines of poetry more like an array or
+an `Object`? Both would work, for different reasons, but an array will be
 simplest.
 
 We can think of the first 18 lines as an array that is 18
@@ -124,7 +124,7 @@ line1 = ["Whan", "that", "Aprill,", "with", "his", "shoures", "soote"];
 
 In this way, `prologueText` would be an array of arrays. That sounds like a
 good way to do things, but I don’t like the line array as a line of strings.
-It would be better if it were an array of objects, or word-objects, like this:
+It would be better if it were an array of `Object`s, or word-`Object`s, like this:
 
 ```javascript
 let line1;
@@ -141,8 +141,8 @@ line1TextArray = line1.map(function(word){
 }
 ```
 
-The `.map()` creates a new array out of the array of word-objects, and this
-new array is just the `.text` property of each object, or, a string. Then we
+The `.map()` creates a new array out of the array of word-`Object`s, and this
+new array is just the `.text` property of each `Object`, or, a string. Then we
 use the `.join()` method on `line1TextArray` to turn the array into one single
 string, separated by spaces. Put it all together in `prologue.js`, and:
 
@@ -164,7 +164,7 @@ the page. Time to increase the complexity. Are you ready?
 
 The Wikipedia page for the General Prologue provides a word-for-word
 translation into Modern English. So let’s add a property, `modern`, to each
-word-object that includes gives its modern version:
+word-`Object` that includes gives its modern version:
 
 ```javascript
 line1 = [{text: "Whan", modern: "When"}, {text: "that"}, {text: "Aprill,",
@@ -194,8 +194,8 @@ steps here that we’ll follow:
 
 1. As things stand now, we have a single string getting printed to `#prologue`
    that includes the first line of the Prologue.
-1. We went to break that line back up into individual word-objects.
-1. If the word-object has no `.modern` property, we print its `.text` property
+1. We went to break that line back up into individual word-`Object`s.
+1. If the word-`Object` has no `.modern` property, we print its `.text` property
    as is.
 1. If it does, we want to surround the `.text` property in `<a>` tags, so that
    it becomes a link.
@@ -219,7 +219,7 @@ line1 = [{text: "Whan", modern: "When"}, {text: "that"}, {text: "Aprill,",
 // Create a blank string that opens two tags.
 line1Text = "<blockquote><p>";
 line1.forEach(function(word){
-  // Add in the word-object’s .text property plus a space.
+  // Add in the word-Object’s .text property plus a space.
   line1Text = line1Text + word.text + " ";
 });
 // Break the line and close the two tags.
@@ -265,7 +265,7 @@ a string, “You clicked on a word!” to `#glosses`. Save, commit, reload, and
 start clicking on the words in the Prologue.
 
 We have one more step, which is to have the gloss be printed, not “You clicked
-on a word.” But how can we tell jQuery what the value of a word-object’s
+on a word.” But how can we tell jQuery what the value of a word-`Object`’s
 `.modern` property is? This is tricky, so let’s break it up into two pieces:
 
 1. We want to send word-specific information to `#glosses`.
@@ -274,7 +274,7 @@ on a word.” But how can we tell jQuery what the value of a word-object’s
 Let’s just send the word *itself* to `#glosses`, to fulfill the first part of
 this step. This requires making use of the `$( this )` selector we saw [last
 chapter](/8-webpage), that lets a jQuery method get information about the
-selected object:
+selected `Object`:
 
 ```javascript
 $("#prologue a").click(function(){
@@ -347,7 +347,7 @@ then go ahead and commit. We're done with this part of the chapter.
 
 You've done a lot in this chapter, but it’s remarkable how much builds on
 the steps you already know. We’re not doing anything more complicated than
-using arrays, objects, and some fancier methods like `.data()`. There may be
+using arrays, `Object`s, and some fancier methods like `.data()`. There may be
 conceptual hurdles, however, which is why it’s worthwhile to make sure you
 understand how everything works above before we finish this chapter,
 especially since one exercise requires you to expand on what we’ve built
@@ -355,13 +355,13 @@ together.
 
 Next, this might seem like a lot of work for just one line of Chaucer! And if
 it were just the one line, I would agree. Luckily, it’s possible to load all
-18 lines at once as one big JavaScript object, so we can have the whole
+18 lines at once as one big JavaScript `Object`, so we can have the whole
 first 18 lines of the General Prologue appear on our page.
 
 **JSON** stands for “JavaScript Object Notation,” and it’s a way to transport
 complex data using a syntax familiar to JavaScript. Concretely, that means
-that a JSON object is an object that often has an array of other objects
-inside, which might have arrays or other objects inside them. We can expand on
+that a JSON `Object` is an `Object` that often has an array of other `Object`s
+inside, which might have arrays or other `Object`s inside them. We can expand on
 the data structure we already set for `line1` above, and imagine something
 like this:
 
@@ -389,7 +389,7 @@ prologueObject = {
 
 As you can imagine, having to type that out would be a nightmare. Luckily,
 I’ve already done it for you. Open up [this file](/prologue.json) in a new tab
-and look at it. You can see that it looks like a regular JavaScript object
+and look at it. You can see that it looks like a regular JavaScript `Object`
 except that the properties are strings, as well. That is, instead of `{text:
 "that"}`, we get `{"text": "that"}`. Now we have to let `prologue.js` know
 about it.
@@ -455,7 +455,7 @@ simmering is done does it call *its* callback, to `mixTheSauceAndPasta()`.
 
 In short, dealing with asynchronous functions means that sometimes the order
 things are written in your JavaScript file are not the order in which they are
-done. And jQuery’s method to get JSON objects from the internet can be
+done. And jQuery’s method to get JSON `Object`s from the internet can be
 confusing in its asynchronicity. 
 
 </section>
@@ -513,15 +513,15 @@ $.getJSON("http://the-javascripting-english-major.org/prologue.json", callback);
 The callback is a bit trickier, but let's think it through abstractly:
 
 1. We have the JSON available to us as a variable for our callback called `data`.
-1. This `data` object has a property, `"lines"`, that is an array of lines.
-1. Each line in `"lines"` is an array of word-objects.
-1. Each word-object has a `"text"` property, and some have a `"modern"` one.
+1. This `data` `Object` has a property, `"lines"`, that is an array of lines.
+1. Each line in `"lines"` is an array of word-`Object`s.
+1. Each word-`Object` has a `"text"` property, and some have a `"modern"` one.
 
 Then what have we already got in that second step:
 
-1. It defines `line1`, an array of word-objects, and `line1Text`, a blank string.
+1. It defines `line1`, an array of word-`Object`s, and `line1Text`, a blank string.
 1. It iterates over `line1` and builds up `line1Text` based on the properties of 
-	 the word-objects.
+	 the word-`Object`s.
 1. It closes the HTML tags in `line1Text`.
 1. It prints the value of `line1Text` in `#prologue`.
 

@@ -337,5 +337,4 @@ and more jQuery grows along with it.
 
 [^hexcolor]: Hex color is an old standard of telling HTML what color something should be. It is made up of three parts, each of which is a hexadecimal number between 0 and FF, which tells the browser how much red, green, and blue to put in a color. As such, `#000000` is the absence of all color, or black.  `#FFFFFF` is all of the colors, or white. `#FF0000` is all of the red, and no blue or green. `#00FF00` is just green, and `#0000FF` is just blue. 
 
-[^this]: `this` is a tricky JavaScript keyword, but the `$( this )` is a way
-of using jQuery on an object itself. So when iterating over each `<section>` with `.each()`, `$( this )` selects the section itself, instead of one of its child entities.
+[^this]: `this` is a tricky JavaScript keyword, but the `$( this )` is a way of using jQuery on an `Object` itself. So when iterating over each `<section>` with `.each()`, `$( this )` selects the section itself, instead of one of its child entities.

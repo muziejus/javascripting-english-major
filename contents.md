@@ -35,11 +35,11 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ## [5. Collections of Information](/5-collections)
 
-### Arrays / Objects / Methods / Strings as Arraylike Things
+### Arrays / `Object`s / Methods / Strings as Arraylike Things
 
 ## [6. Abstraction](/6-abstraction)
 
-### Returning / Iterating / Arrays of Objects / Mapping and Filtering
+### Returning / Iterating / Arrays of `Object`s / Mapping and Filtering
 
 ## [7. Oops!](/7-errors)
 
@@ -61,15 +61,21 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ### Langston Hughes and African-American urban spaces / GeoJSON / Mapping “Could Be”
 
-### Geodata.
+## [12. Bootstrap layout and cotent](/12-bootstrap)
 
-## 12. 
+### Creating containers for your project / Fitting the map
 
-## 13.
+## [13. Events in Leaflet](/13-leaflet-events)
 
-## 14.
+### Triggering Leaflet events from the DOM
 
-## 15. Time to Go Live
+## [14. Styling Leaflet popups](/14-leaflet-style)
+
+### Bringing Bootstrap to Leaflet / Hotlinking images
+
+## [15. Time to Go Live](/15-go-live)
+
+### Activating GitHub Pages
 
 ## [Appendix A. Further Resources](/a-resources/)
 

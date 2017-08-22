@@ -6,7 +6,7 @@ permalink: /10-leaflet
 
 As I wrote in the [previous chapter](/9-dataset), a whole lot happened in it,
 but really, the tools were all the same sort of tools we have been using all
-course: strings, arrays, objects, a few `.forEach()` method calls and some new
+course: strings, arrays, `Object`s, a few `.forEach()` method calls and some new
 jQuery tricks.  This is important to emphasize: you already have the tools at
 your disposal; the trick is to realize what kinds of tools the situation calls
 for. The solution to use JSON to feed the whole General Prologue into the page
@@ -17,7 +17,7 @@ doing the same exact thing, just less efficiently.
 Most importantly, however, was the added level of conceptual complexity. In
 using JSON, you separated out the data (the text of the General Prologue) from
 the logic of the program. Our webpage made assumptions about how the data were
-organized (a `.lines` property that was an array of arrays of word-objects),
+organized (a `.lines` property that was an array of arrays of word-`Object`s),
 and then you wrote an application around it. When the data structures get more
 complex, it becomes more and more important to be confident of the data’s
 integrity, and to write around it. You’ll see what I mean now that we are
@@ -67,15 +67,15 @@ builds on their [quick start
 guide](http://leafletjs.com/examples/quick-start/), but I think I’ll provide
 extra context to help you with thinking through your own project.
 
-Leaflet creates an object, `L`, that has a bunch of methods that we can use to
-create and manipulate maps. Our map is, itself, an object. The tile layer? A
-different object. Markers are objects, polylines are objects, polygons are
-objects, popups are objects, and so on. And they have properties and methods,
+Leaflet creates an `Object`, `L`, that has a bunch of methods that we can use to
+create and manipulate maps. Our map is, itself, an `Object`. The tile layer? A
+different `Object`. Markers are `Object`s, polylines are `Object`s, polygons are
+`Object`s, popups are `Object`s, and so on. And they have properties and methods,
 too. 
 
 ### Setting up the HTML 
 
-The best way to show how these objects work, of course, is by making them
+The best way to show how these `Object`s work, of course, is by making them
 work. So let’s get started. In Atom, open up your `index.html` file and add
 another link below the one to the Prologue:
 
@@ -153,7 +153,7 @@ let map;
 map = L.map("first-map");
 ```
 
-`map` is now an object you can use in JavaScript to control the map on the
+`map` is now an `Object` you can use in JavaScript to control the map on the
 webpage. Note the syntax. `.map()` is a method that `L` (Leaflet) has that
 creates a map in the `<div>` with the id given as the parameter. If you save
 everything and reload `leaflet.html` in the browser, you should see a map.
@@ -182,9 +182,9 @@ firstMap.setView([40.730833, -73.9975], 16);
 ```
 
 Save and reload. You should now see a map zoomed in on Washington Square Park.
-Commit, if that’s the case. Whenever we create an object in Leaflet, be it a
+Commit, if that’s the case. Whenever we create an `Object` in Leaflet, be it a
 tile layer, marker, or whatever, we have to add it to the map, using
-`.addTo()`, a method that all of these objects have. The map itself has a
+`.addTo()`, a method that all of these `Object`s have. The map itself has a
 method, `.setView()`, that takes two parameters: an array of coordinates
 (latitude and longitude), and a zoom level. The highest zoom level—which is to
 say, the most zoomed in, is 19. We’ll learn about other, similar methods as we
@@ -221,11 +221,11 @@ Everything works? Commit.
 
 The [next chapter](/11-geojson) is devoted to building up data sets of
 geographical information, but in this chapter, we’ll keep using toy data so
-that you get familiar with Leaflet. Both the marker object and in the
+that you get familiar with Leaflet. Both the marker `Object` and in the
 `.setView()` method, you saw that Leaflet demanded coordinates. Leaflet
 doesn’t know where places are, and it knows nearly nothing about
 distances.[^distance] All it knows are latitude and longitude coordinates. In
-fact, these are their own object in Leaflet:
+fact, these are their own `Object` in Leaflet:
 
 ```javascript
 let bobstCoords;
@@ -233,10 +233,10 @@ bobstCoords = L.latLng(40.729444, -73.997222);
 firstMap.panTo(bobstCoords);
 ```
 
-Here, `bobstCoords` becomes a `latLng` object, created by using the
+Here, `bobstCoords` becomes a `latLng` `Object`, created by using the
 `L.latLng()` method with two parameters, a latitude and a longitude. Note that
 `latLng` has a capital “L” in the middle.  Throughout Leaflet, you can either
-create `latLng` objects or continue using coordinate arrays like you did
+create `latLng` `Object`s or continue using coordinate arrays like you did
 earlier. Now consider the `.panTo()` method at the end. That’s a method that
 changes a map, in this case `firstMap`. If you save and reload, you’ll see
 that the map is now centered on the library, not the park. If you open the
@@ -303,8 +303,8 @@ Here you add a marker at the center of Washington Square Park
 `tenThousandth`, which is a box two ten thousandths of a degree wide and tall,
 more or less centered around the marker.
 Then you add that to the map. Notice that I’ve collapsed assigning the leaflet
-object with the `.addTo()` method. Furthermore, the `.polygon()` method can
-take an `options` object parameter as well, and, in this case, I defined the
+`Object` with the `.addTo()` method. Furthermore, the `.polygon()` method can
+take an `options` `Object` parameter as well, and, in this case, I defined the
 `tenThousandthPolygon.options.color` property as a shade of blue and the
 `.fillColor` property as a light yellow. 
 
@@ -321,9 +321,9 @@ thousandthPolyline = L.polyline(thousandth, {color: "#d33682"}).addTo(firstMap);
 
 Save and reload, and your Leaflet map should now show both a polygon and three
 line segments, or a polyline. Notice how, because I defined
-`washingtonSquarePark` as an `L.latLng` object, it now has two properties,
+`washingtonSquarePark` as an `L.latLng` `Object`, it now has two properties,
 `.lat` and `.lng`, corresponding to its latitude and longitude. This is one
-reason to make use of the `L.latLng` object instead of just continuously using
+reason to make use of the `L.latLng` `Object` instead of just continuously using
 arrays of coordinates. 
 
 Circles are even easier:
@@ -340,14 +340,14 @@ circle = L.circle(washingtonSquarePark, {radius: 100,
 The `L.circle.options.radius` property is measured in meters. Note also that
 Leaflet provides you with control over the opacity of both the border and the
 fill. `L.circle`, `L.polygon`, and `L.polyline` all inherit these options from
-the Leaflet object `L.path`, and Leaflet provides a list of [all of that
-object’s options](http://leafletjs.com/reference-1.2.0.html#path) that you can
+the Leaflet `Object` `L.path`, and Leaflet provides a list of [all of that
+`Object`’s options](http://leafletjs.com/reference-1.2.0.html#path) that you can
 look at to style your lines and polygons as you like. Similarly, there are to
-objects I don’t mention that you might like to look up. Instead of
+`Object`s I don’t mention that you might like to look up. Instead of
 `L.marker`s, you can use
 [`L.circleMarker`s](http://leafletjs.com/reference-1.2.0.html#circlemarker) (I
 actually prefer them), and there is also a vanilla
-[`L.rectangle`](http://leafletjs.com/reference-1.2.0.html#rectangle) object,
+[`L.rectangle`](http://leafletjs.com/reference-1.2.0.html#rectangle) `Object`,
 similar to what we built for the `tenThousandthPolygon` above.
 
 </section>
@@ -367,4 +367,4 @@ similar to what we built for the `tenThousandthPolygon` above.
 
 [^bobst]: Bobst is also where most of this course was drafted.
 
-[^distance]: There is a `.distance()` method that will calculate the distance, in meters, between a `LatLng` object and another one passed as the parameter.
+[^distance]: There is a `.distance()` method that will calculate the distance, in meters, between a `LatLng` `Object` and another one passed as the parameter.

@@ -9,7 +9,7 @@ assignment](/10-leaflet#exercises) was, I imagine, not a lot of fun. It’s also
 silly for me to assert, in the [previous chapter](/9-dataset), that it’s
 important to separate data wrangling from programming logic, only to then have you
 run them together again. But the data structure for representing geographical
-objects in JavaScript, **GeoJSON**, is complex enough to warrant its own
+`Object`s in JavaScript, **GeoJSON**, is complex enough to warrant its own
 chapter. That is this chapter, and in it we’ll be doing a bit of detective
 work on a short poem in order to generate our dataset. This chapter also marks
 the beginning of the end of the course, as we’ll be working on this dataset
@@ -46,7 +46,7 @@ should we capture when trying to represent this poem?
 
 For these five locations, clearly I need their names, so I can tell them
 apart. I also need their coordinates. In other words, I’m already thinking
-about the data in terms of properties. Every `Place` object will have a
+about the data in terms of properties. Every `Place` `Object` will have a
 `.name` property and a `.coordinates` property. Better: it’ll have both a
 `.lat` property for its latitude and a `.lng` property for its longitude. 
 
@@ -57,9 +57,9 @@ OK, that’s a `.mentions` property. Then maybe the line number? OK, that’s th
 `.lines`. Finally, if the place has a Wikipedia article related to it, we can
 include that link as `.wikipedia`.
 
-A way of thinking about objects and properties that might be a bit more
+A way of thinking about `Object`s and properties that might be a bit more
 familiar to you is as rows and columns in a spreadsheet. That is, each row is
-its own `Place` object, and each column is a property associated with it. In
+its own `Place` `Object`, and each column is a property associated with it. In
 fact, that’s what I did for this poem. As we can see, filling in the data is
 pretty easy for each property *except* `.lat`, `.lng`, and `.wikipedia`. Those
 require some digging.
@@ -148,11 +148,11 @@ fact, we can describe our Hastings Street point in GeoJSON like this:
 }
 ```
 
-Our point is a `Feature` object in GeoJSON. Notice, however, that the
+Our point is a `Feature` `Object` in GeoJSON. Notice, however, that the
 coordinates are flipped. Instead of `[lat, lng]`, like in Leaflet, the
 coordinates here are `[lng, lat]`. Instead of having an endless list of
-potential properties, the `Feature` object has three, a `.type`, a
-`.geometry`, and its own `.properties` object. That object’s properties are
+potential properties, the `Feature` `Object` has three, a `.type`, a
+`.geometry`, and its own `.properties` `Object`. That `Object`’s properties are
 where we can stash our own properties like `.wikipedia`. I made the `.lines`
 property an array by enclosing it in brackets.
 
@@ -165,8 +165,8 @@ whether the first row is column headers (typically yes), and in the third
 step, you mark which two columns feature latitudes and longitudes. 
 
 The result is available [here](/could-be.geo.json). As you can see, the
-`Feature` objects are collected into an array that is the `.features` property
-of a `FeatureCollection` object. 
+`Feature` `Object`s are collected into an array that is the `.features` property
+of a `FeatureCollection` `Object`. 
 </section>
 
 <section id="geojson-in-leaflet">
