@@ -12,7 +12,8 @@ Alongside the geographical data, of course, is the added content that we
 provide as scholars. There’s a reason for making these maps, after all, and
 for making a web project. We want to **inform** visitors to the page, and a
 map will typically not suffice to do so. That means there has to be some
-writing.
+writing. I want my content to appear in a `<div>` I call `#content` that I put
+underneath the map.
 
 <section id="markdown">
 ## Markdown
@@ -110,7 +111,7 @@ process that follows, then, is:
 1. Define and assign a Showdown converter.
 1. Load in the Markdown file using jQuery.
 1. Convert the loaded file into HTML using Showdown.
-1. Print the HTML in the webpage with jQuery.
+1. Print the HTML in the `#content` container with jQuery.
 
 To accomplish these steps, I add these lines to `could-be.js`:
 
@@ -125,7 +126,7 @@ $.ajax({
     // Convert the Markdown to HTML.
     let html;
     html = converter.makeHtml(markdown);
-    // Print the HTML using jQuery.
+    // Print the HTML to #content using jQuery.
     $("#content").html(html);
   }
 });
