@@ -61,17 +61,17 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ### Langston Hughes and African-American urban spaces / GeoJSON / Mapping “Could Be”
 
-## [12. Bootstrap Layout and Content](/12-bootstrap)
+## [12. Writing Content with Markdown](/12-markdown)
+
+### Markdown / Hotlinking Images / Rendering Markdown with JavaScript
+
+## [13. Bootstrap Layout and Content](/13-bootstrap)
 
 ### Creating containers for your project / Fitting the map
 
-## [13. Handling Events in Leaflet](/13-leaflet-events)
+## [14. Events and Popups in Leaflet](/14-events-popups)
 
-### Triggering Leaflet events from the DOM
-
-## [14. Styling Leaflet Popups](/14-leaflet-style)
-
-### Bringing Bootstrap to Leaflet / Hotlinking images
+### Triggering Leaflet events from the DOM / Bringing Bootstrap to Leaflet
 
 ## [15. Time to Go Live](/15-go-live)
 
