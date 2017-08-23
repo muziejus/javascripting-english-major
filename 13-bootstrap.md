@@ -158,11 +158,37 @@ The `<section>`s hold all of the content for this project are currently empty,
 so I will write one markdown file for each. I’ll then use a variation on the
 `$.ajax()` method we used in the [previous chapter](/12-markdown) to feed the
 content into the tabs. Importantly, however, every Markdown document has the
-same name as the id of its corresponding `<section>`.
+same name as the id of its corresponding `<section>`. This allows us, instead
+of having to write the same call to `$.ajax()` five times, we can write it
+once and loop over it by creating an array on the fly made up of the tab
+names:
 
-
-
+```javascript
+let converter;
+converter = new showdown.Converter();
+["hastings-street", "eighteenth-and-vine",
+  "fifth-and-mound", "introduction",
+  "lenox-avenue", "rampart"].forEach(function(tab){
+  // Create a variable tab that has the name as a string.
+  $.ajax({
+    // tab + ".md" yields, for example, "rampart.md".
+    url: tab + ".md",
+    success: function(markdown){
+      let html;
+      html = converter.makeHtml(markdown);
+      // "#rampart", for example.
+      $("#" + tab).html(html);
+    }
+  });
+});
+```
 
 </section>
 <section id="exercises">
 ## Exercises
+
+1. Draw (by hand) a wireframe for your web project. It can have multiple pages
+   to show how the site reacts to different user interactions.
+1. Populate some `<section>`s in your project with Markdown. 
+
+</section>
