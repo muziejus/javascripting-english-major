@@ -1,5 +1,3 @@
----
----
 ## Introduction
 
 This is the introduction to a web project based on the five African-American
