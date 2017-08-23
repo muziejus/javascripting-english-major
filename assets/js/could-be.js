@@ -46,7 +46,7 @@ if (document.location.href.match(/[^\/]+$/)[0].match(/be12/) !== null){
   converter = new showdown.Converter();
   // Load the Markdown file with jQuery.
   $.ajax({
-    url: "hastings-street.md",
+    url: "/markdown/hastings-street.md",
     success: function(markdown){
       // Convert the Markdown to HTML.
       let html;
@@ -65,7 +65,7 @@ if (document.location.href.match(/[^\/]+$/)[0].match(/be13/) !== null){
       // Create a variable tab that has the name as a string.
     $.ajax({
       // tab + ".md" yields, for example, "rampart.md".
-      url: tab + ".md",
+      url: "/markdown/" + tab + ".md",
       success: function(markdown){
         let html;
         html = converter.makeHtml(markdown);
@@ -87,7 +87,7 @@ if (document.location.href.match(/[^\/]+$/)[0].match(/be14/) !== null){
     {text: "Rampart", div: "rampart", html: "Rampart"}
   ];
   $.ajax({
-    url: "poem.md",
+    url: "/markdown/poem.md",
     success: function(poem){
       let html = converter.makeHtml(poem);
       $("#poem").html(html);
@@ -116,7 +116,7 @@ if (document.location.href.match(/[^\/]+$/)[0].match(/be14/) !== null){
       // Create a variable tab that has the name as a string.
     $.ajax({
       // tab + ".md" yields, for example, "rampart.md".
-      url: tab + ".md",
+      url: "/markdown/" + tab + ".md",
       success: function(markdown){
         let html;
         html = converter.makeHtml(markdown);
