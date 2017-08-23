@@ -95,7 +95,7 @@ lifting. The navigation for the `#content` section of our project page, then,
 will look like this:
 
 ```html
-<nav class="nav nav-pills mt-3">
+<nav id="tab-navs" class="nav nav-pills mt-3">
   <a class="nav-link active" href="#introduction">Introduction</a>
   <a class="nav-link" href="#hastings-street">Hastings St.</a>
   <a class="nav-link" href="#lenox-avenue">Lenox Ave.</a>

@@ -69,13 +69,13 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ### Creating containers for your project / Fitting the map
 
-## [14. Events and Popups in Leaflet](/14-events-popups)
+## [14. Integrating Leaflet with Events](/14-events-popups)
 
-### Triggering Leaflet events from the DOM / Bringing Bootstrap to Leaflet
+### Adding interactivity to the page / Triggering Leaflet events with jQuery / Creating rich popups / How did you do that?
 
 ## [15. Time to Go Live](/15-go-live)
 
-### Activating GitHub Pages
+### Final styling / Activating GitHub Pages
 
 ## [Appendix A. Further Resources](/a-resources/)
 

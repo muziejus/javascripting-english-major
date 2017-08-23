@@ -219,16 +219,41 @@ map.setView([40.730833, -73.9975], 16);
 ```
 
 Save and open `could-be.html` in the browser. If the map appears, go ahead and
-commit. GeoJSON gets loaded into the Leaflet by using the `L.geoJSON()` method
-that creates a `GeoJSON Layer` `Object`. You can load the GeoJSON just like we
-loaded regular JSON, using the jQuery `$.getJSON()` method. Add to
+commit. You can load the GeoJSON just like we loaded regular JSON, using the
+jQuery `$.getJSON()` method. Now, Leaflet offers an `L.geoJSON()` method that
+would make adding the GeoJSON one line of code. But, trust me on this, it will
+be easier to do a bit of extra work here and avoid using that method. Instead,
+we'll create an array of `object`s, `couldBeFeatures`, where each `object` has
+the properties of each of the GeoJSON features. So, add to
 `could-be.js`:
 
 ```javascript
+// Define the features array.
+let couldBeFeatures;
 $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", function(data){
-  // Define and assign a layer.
+  // Define the Leaflet layer.
   let couldBeLayer;
-  couldBeLayer = L.geoJSON(data);
+  // Iterate over the .features property of the GeoJSON object to
+  // extract every feature and add it to couldBeFeatures, with
+  // certain properties, as noted
+  couldBeFeatures = data.features.map(function(feature){
+    return {
+      name: feature.properties.name,
+      mentions: feature.properties.mentions,
+      lines: feature.properties.lines,
+      wikipedia: feature.properties.wikipedia,
+      // Create an L.latLng object out of the GeoJSON coordinates.
+      // Remember that in GeoJSON, the coordinates are reversed
+      // (longitude, then latitude).
+      latLng: L.latLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0])
+    };
+  });
+  // Now create a Leaflet feature group made up of markers for each
+  // object in couldBeFeatures.
+  couldBeLayer = L.featureGroup(couldBeFeatures.map(function(feature){
+    return L.marker(feature.latLng);
+    })
+  )
   // Add the layer to the map.
   couldBeLayer.addTo(map);
   // Redraw the map so that all the markers are visible.
@@ -238,13 +263,15 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
 });
 ```
 
-Notice that all of the Leaflet work is happening inside the callback function,
-because `$.getJSON()` is async. I also introduce three new methods here.
-`.getBounds()` returns the bounding box that contains the entirety of a layer,
-in this case our GeoJSON layer. That is fed as a parameter to `.fitBounds()`,
-which changes the map `Object`’s state to a new zoom level and center
-coordinate. Then I use the map `Object`’s `.zoomOut()` method to zoom out a
-smidge to make all the markers appear on the map.
+Notice that, except for the  definition, all of the Leaflet work is happening
+inside the callback function, because `$.getJSON()` is async.[^global-layer] I
+also introduce three new methods here.  `.getBounds()` returns the bounding
+box that contains the entirety of a layer, in this case our `couldBeLayer`. 
+That is fed as a parameter to `.fitBounds()`, which changes the map `Object`’s
+state to a new zoom level and center coordinate. Then I use the map `Object`’s
+`.zoomOut()` method to zoom out a smidge to make all the markers appear on the
+map. `couldBeLayer`, in the meantime, is a Leaflet feature group `Object`, as
+it is made up of several markers.
 
 Save and reload. Your map should now show the whole United States and feature
 five markers, one over New York, one over Cincinnati, one over Kansas City,
@@ -253,9 +280,6 @@ I have done [over here](/examples/couldbe11.html) to see what the project
 looks like.
 </section>
 
-
-
-</section>
 <section id="exercises">
 ## Exercises
 
@@ -267,3 +291,5 @@ looks like.
 ## Footnotes
 
 [^could-be]: Alba Newmann Holmes introduced me to this poem when presenting a paper, “‘Could Be’: Langston Hughes as Situationist Cartographer,” at a special session I convened at the [MLA Convention in 2015](https://moacir.com/talks/mla-15-geocritical-explorations-inside-the-text/).
+
+[^global-layer]: `couldBeFeatures` is defined outside of the `.getJSON()` method. Defined the way it is, it has “global” scope, meaning that it will be available in later functions, as we’ll see in [Chapter 14](/14-events-popups).
