@@ -19,7 +19,7 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
       latLng: L.latLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0])
     };
   });
-  if (document.location.href.match(/[^\/]+$/)[0].match(/be14/) !== null){
+  if (document.location.href.match(/[^\/]+$/)[0].match(/(be14|be.html)/) !== null){
     couldBeLayer = L.featureGroup(couldBeFeatures.map(function(feature){
       let popupContent, lines;
       popupContent = "<h4>" + feature.name + "</h4>";
@@ -28,8 +28,8 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
       } else {
         lines = "line " + feature.lines[0];
       }
-      popupContent = popupContent + feature.name + " is mentioned on " + lines + ".<br />";
-      popupContent = popupContent + "Read about " + feature.name + " on <a href='"+ feature.wikipedia + "'>Wikipedia</a>.";
+      popupContent = popupContent + "<p>" + feature.name + " is mentioned on " + lines + ".<br />";
+      popupContent = popupContent + "Read about " + feature.name + " on <a href='"+ feature.wikipedia + "'>Wikipedia</a>.</p>";
       return L.circleMarker(feature.latLng, {
         radius: 10 * Math.sqrt(feature.mentions),
         color: "#d33682",
@@ -70,7 +70,7 @@ if (document.location.href.match(/[^\/]+$/)[0].match(/be13/) !== null){
     });
   });
 }
-if (document.location.href.match(/[^\/]+$/)[0].match(/be14/) !== null){
+if (document.location.href.match(/[^\/]+$/)[0].match(/(be14|be.html)/) !== null){
   let placesArray;
   placesArray = [
     {text: "Hastings Street", div: "hastings-street", html: "Hastings Street"},

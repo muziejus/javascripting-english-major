@@ -139,7 +139,8 @@ runs smoothly.
 
 And that’s it. Now you can write content in convenient Markdown and use jQuery
 to populate sections of your web project. See [this
-page](/examples/could-be12.html) to see how far we’ve come.
+page](/examples/could-be12.html) to see how far I’ve come on the “Could Be”
+project.
 </section>
 
 ## Exercises

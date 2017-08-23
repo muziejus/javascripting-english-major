@@ -112,9 +112,13 @@ series of creepy photos of the neighborhood, taken as the city was preparing
 to raze it to the ground. As *Cincinnati Magazine* notes, [25,737 people lived
 in
 Kenyon-Barr](http://www.cincinnatimagazine.com/citywiseblog/lost-city-kenyon-barr-queensgate/)
-when the city demolished it. Either way, Mound Street still exists, as does
-5th, but they no longer intersect. I extrapolated their intersection and added
-those coordinates to the dataset.
+when the city demolished it. Furthermore, as Steven C. Tracy notes in a
+history of the Blues in Cincinnati, the Cotton Club, the most important venue
+for African-American entertainers, [was only a block away, on 6th and
+Mound](https://books.google.com/books?id=OGyWw-M5wFsC&pg=PA89&lpg=PA89&dq=cotton+club+cincinnati&source=bl&ots=4iwkg4CjZL&sig=IQAJimJ4pm2fmpUK_Yi0UJrhqrg&hl=en&sa=X&ved=0ahUKEwiS3OayqO7VAhXDzIMKHYkGDaAQ6AEIOzAD#v=onepage&q&f=false).
+Either way, Mound Street still exists, as does 5th, but they no longer
+intersect. I extrapolated their intersection and added those coordinates to
+the dataset.
 
 The completed dataset, small as it is, is [available as a Google Sheets
 document](https://docs.google.com/spreadsheets/d/1u3rlflUa6q4wAQMtqwh_-WYM2J2RIB8id4yzRNxojSM/edit?usp=sharing).
@@ -279,9 +283,8 @@ it is made up of several markers.
 Save and reload. Your map should now show the whole United States and feature
 five markers, one over New York, one over Cincinnati, one over Kansas City,
 one over Detroit, and one over New Orleans. Otherwise, catch up with the work
-I have done [over here](/examples/could-be11.html) to see what the project
-looks like.
-</section>
+I have done so far [over here](/examples/could-be11.html) in oder to see what
+the project looks like. </section>
 
 <section id="exercises">
 ## Exercises

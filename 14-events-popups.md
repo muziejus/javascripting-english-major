@@ -168,11 +168,10 @@ opens under the map.
 
 ### Changing map state with a click
 
-This one is trickier and requires changing the GeoJSON file. I’ve gone through
-and added a `.div` property for each place that has, for its value, the same
-text as in `data-tab`. I then also changed how we define `couldBeFeatures` to
-include a `.div` property for every feature in that array. And then, things
-get a bit easier:
+This one is trickier and requires returning to the GeoJSON file. I had added a
+`.div` property back in [Chapter 11](/11-geojson) for each place that has, for
+its value, the same text as in `data-tab`. As a result of that property, I
+just need to add these lines:
 
 ```javascript
 $("#poem a").click(function(){
@@ -365,7 +364,7 @@ you define in your `.css` file as the rest of the page.
 As a result, the answer to “How did you do that?” is not only usually “drilled
 down into the details,” but also “just like you can.” The details of the
 “Could Be” project are visible to anyone who wants to look at them. Start by
-looking at the [Chapter 14](/examples/couldbe14.html) version of the page.
+looking at the [Chapter 14](/examples/could-be14.html) version of the page.
 
 </section>
 <section id="exercises">

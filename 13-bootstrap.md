@@ -183,7 +183,12 @@ converter = new showdown.Converter();
 });
 ```
 
+The tabs now show the text for each place, as you can [see
+here](/examples/could-be13.html).
+
 </section>
+
+
 <section id="exercises">
 ## Exercises
 
