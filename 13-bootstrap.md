@@ -8,6 +8,7 @@ In this chapter, I will present some of how Bootstrap handles layout, which
 will let you conceive of how you want your project to look and present the
 content you are creating.
 
+<section id="wireframing">
 ## Wireframing
 
 Web designers typically undergo a step called **wireframing**, which involves
@@ -36,7 +37,9 @@ the page, and having the map atop the location information container, which
 has a navigation bar atop it listing all five locations.  Bootstrap, luckily,
 has tools to help us visualize a simple structure like what is in my head
 
-## The Bootstrap Grid
+</section>
+<section id="bootstrap-grid">
+## The Bootstrap grid
 
 Grids help organize visual content. When items on the page (including a
 webpage) do not line up, the page can be confusing and tiring to read. In
@@ -80,8 +83,86 @@ Save and reload, and now the page is clearly split up into three parts. What’s
 more, at small widths, the poem will appear above the map, instead of
 squeezing the map.
 
-## Building a Navbar
+</section>
+<section id="tabbed-navigation">
+## Building tabbed navigation
 
 The next step is designing that navigation element I want to use to show the
-five different places in the poem. This involves using 
+five different places in the poem. We wrap the [navigation
+elements](https://v4-alpha.getbootstrap.com/components/navs/#base-nav), which
+are `<a>` tags, in a `<nav>` tag. Bootstrap’s classes do all the heavy
+lifting. The navigation for the `#content` section of our project page, then,
+will look like this:
 
+```html
+<nav class="nav nav-pills mt-3">
+  <a class="nav-link active" href="#introduction">Introduction</a>
+  <a class="nav-link" href="#hastings-street">Hastings St.</a>
+  <a class="nav-link" href="#lenox-avenue">Lenox Ave.</a>
+  <a class="nav-link" href="#eighteenth-and-vine">18th &amp; Vine</a>
+  <a class="nav-link" href="#fifth-and-mound">5th &amp; Mound</a>
+  <a class="nav-link" href="#rampart">Rampart</a>
+</nav>
+```
+
+The `nav-pills` class means that Bootstrap will style this as though it were a
+bunch of “pills,” where the one with the `active` class will be a different
+color. This will work just fine for how we want our design to look.
+Additionally, the `mt-3` class is a [Bootstrap class that adds a
+**margin**](https://v4-alpha.getbootstrap.com/utilities/spacing/) to the
+top, to push the tabs away from the map above it. 
+
+Also notice that to create an ampersand (&) in HTML, one has to type the
+unwieldy `&amp;`. This also goes for typing things like `<>` (`&lt;&gt;`).
+Markdown, ahem, suffers from none of these problems.
+
+Below the navigation list, we create the contents of each tab. Here we make
+use of more of Bootstrap’s built in classes.
+
+```HTML
+<div class="tab-content p-3">
+  <section class="tab-pane active" id="introduction" role="tabpanel"> </section>
+  <section class="tab-pane" id="hastings-street" role="tabpanel"> </section>
+  <section class="tab-pane" id="lenox-avenue" role="tabpanel"> </section>
+  <section class="tab-pane" id="eighteenth-and-vine" role="tabpanel"> </section>
+  <section class="tab-pane" id="fifth-and-mound" role="tabpanel"> </section>
+  <section class="tab-pane" id="rampart" role="tabpanel"> </section>
+</div>
+```
+The relationship between each `<section>`’s id and the `href` setting on the
+navigation list is how we connect the tabs to the content beneath.
+Furthermore, the `p-3` class provides some **padding** for the inner content.
+Margins and padding are the two best ways to use CSS to control negative
+space.
+
+In order to make the tab pills work their magic, however, we have to add some
+data attributes, so that Bootstrap’s JavaScript knows to treat the section as
+a set of tabs, so the navigation gets augmented to include that:
+
+```html
+<nav class="nav nav-pills mt-3" role="tablist">
+  <a class="nav-link active" href="#introduction" data-toggle="tab" role="tab">Introduction</a>
+  <a class="nav-link" href="#hastings-street" data-toggle="tab" role="tab">Hastings St.</a>
+  <a class="nav-link" href="#lenox-avenue" data-toggle="tab" role="tab">Lenox Ave.</a>
+  <a class="nav-link" href="#eighteenth-and-vine" data-toggle="tab" role="tab">18th &amp; Vine</a>
+  <a class="nav-link" href="#fifth-and-mound" data-toggle="tab" role="tab">5th &amp; Mound</a>
+  <a class="nav-link" href="#rampart" data-toggle="tab" role="tab">Rampart</a>
+</nav>
+```
+
+</section>
+<section id="markdown-sections">
+## Populating the sections with Markdown content
+
+The `<section>`s hold all of the content for this project are currently empty,
+so I will write one markdown file for each. I’ll then use a variation on the
+`$.ajax()` method we used in the [previous chapter](/12-markdown) to feed the
+content into the tabs. Importantly, however, every Markdown document has the
+same name as the id of its corresponding `<section>`.
+
+
+
+
+</section>
+<section id="exercises">
+## Exercises
