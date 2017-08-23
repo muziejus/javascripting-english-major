@@ -141,6 +141,7 @@ fact, we can describe our Hastings Street point in GeoJSON like this:
   },
   "properties": {
     "name": "Hastings Street",
+    "div": "hastings-street",
     "mentions": 2,
     "lines": [1, 13],
     "wikipedia": "https://en.wikipedia.org/wiki/Black_Bottom,_Detroit"
@@ -154,7 +155,8 @@ coordinates here are `[lng, lat]`. Instead of having an endless list of
 potential properties, the `Feature` `Object` has three, a `.type`, a
 `.geometry`, and its own `.properties` `Object`. That `Object`’s properties are
 where we can stash our own properties like `.wikipedia`. I made the `.lines`
-property an array by enclosing it in brackets.
+property an array by enclosing it in brackets. The `.div` property will become
+important in [Chapter 14](/14-events-popups).
 
 With as small a dataset as the one we have for “Could Be,” generating a
 GeoJSON file “by hand” would not be too difficult. However, there are online
@@ -239,6 +241,7 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
   couldBeFeatures = data.features.map(function(feature){
     return {
       name: feature.properties.name,
+      div: feature.properties.div,
       mentions: feature.properties.mentions,
       lines: feature.properties.lines,
       wikipedia: feature.properties.wikipedia,
@@ -276,7 +279,7 @@ it is made up of several markers.
 Save and reload. Your map should now show the whole United States and feature
 five markers, one over New York, one over Cincinnati, one over Kansas City,
 one over Detroit, and one over New Orleans. Otherwise, catch up with the work
-I have done [over here](/examples/couldbe11.html) to see what the project
+I have done [over here](/examples/could-be11.html) to see what the project
 looks like.
 </section>
 
