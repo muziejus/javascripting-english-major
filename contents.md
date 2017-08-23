@@ -11,6 +11,9 @@ ideas behind the course. Skip straight to the [first chapter](/1-environment)
 if you want to zoom ahead. Finally, the technical details and other
 information regarding this course are hidden on the “[About](/about)” page.
 
+If you want to see what you’ll be able to create by chapter 15, [look
+here](/examples/could-be.html).
+
 <div class="contents">
 
 ## [0. Introduction & FAQs](/0-introduction)
