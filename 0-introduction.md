@@ -23,17 +23,16 @@ able to
 choosing,
 * consider means by which you can present the topic to a public larger than
 the class,
-* write HTML and JavaScript,
+* write JavaScript, HTML, Markdown, and CSS,
 * use Atom as a development environment for your project,
 * create and manipulate Leaflet maps,
 * manage GeoJSON data,
 * use Git to keep track of your project, and
-* think about your literary study as a process that changes over time, leading
-to a project.
+* think about your literary study as a process that changes over time.
 
 <section id="prerequisites">
 
-## What Are the Prerequisites?
+## What are the prerequisites?
 
 If you’re on this website, you’ve got most of the prerequisites covered, as it
 implies that you have a web browser and the desire to learn. 
@@ -59,7 +58,7 @@ command on the browser for two decades for just this reason.
 
 <section id="not-english-major">
 
-## What if I’m not an English Major?
+## What if I’m not an English major?
 
 This course is for any student, really. But I was an English major, and I am
 teaching this in an English department, so I prepare the materials with a
@@ -161,7 +160,7 @@ language, jumping to another becomes easier.
 
 </section>
 <section id="why-atom">
-## Atom!?! But vim Is the One True Editor!
+## Atom!?! But vim is the one true editor!
 
 Any text editor in the world can be used to write JavaScript. TextEdit,
 Notepad, vim, and even emacs. This course encourages students to use
@@ -189,7 +188,7 @@ might be too advanced for this course, anyway.
 
 </section>
 <section id="exploitation">
-## Teaching People How to Code Is Just a Silicon Valley Ploy to Drive Down Developer Wages.
+## Teaching people how to code is just a Silicon Valley ploy to drive down developer wages
 
 Of course. However, the goal of this course is not to teach
 students how to become coders so that they can dilute the programmer pool in
@@ -208,7 +207,7 @@ engineers.
 
 </section>
 <section id="neoliberalism">
-## But Isn’t Digital Humanities a Neoliberal Scheme?
+## But isn’t digital humanities a neoliberal scheme?
 
 Please see the multiple volumes of [*Debates in the Digital
 Humanities*](http://dhdebates.gc.cuny.edu/). However, it’s likely that even
@@ -216,7 +215,7 @@ those books won’t convince you otherwise.
 
 </section>
 <section id="trusting-the-author">
-## Why Should I Trust You?
+## Why should I trust you?
 
 This course is called “The JavaScripting English Major.” I was an English
 major for many years. I then became a PhD student in English, and now I’ve

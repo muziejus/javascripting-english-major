@@ -148,7 +148,7 @@ Notice how this looks rather similar to `prompt(promptText, defaultText);`?
 
 </section>
 <section id="back-to-numbers">
-## Back to Numbers
+## Back to numbers
 
 `makeABurrito()` is a great function, and it’s making me hungry, so let’s
 abandon it for a bit and go back to using numbers. Say you wanted a function

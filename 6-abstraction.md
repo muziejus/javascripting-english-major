@@ -346,7 +346,7 @@ all the turtles’ weapons. This is great, but we can do better.
 
 </section>
 <section id="mapping-and-filtering">
-## Mapping and Filtering
+## Mapping and filtering
 
 Let’s say we wanted not only the list of weapons, but we also wanted it in
 alphabetical order. How could we do that? Well, we know that arrays have the

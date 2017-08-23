@@ -189,7 +189,7 @@ new arrays and a string. `.pop()` and `.push()`, however, *do* change
 
 </section>
 <section id="strings-like-arrays">
-## Strings as Arraylike Things
+## Strings as arraylike things
 
 Because everything is an `Object`, that includes strings. Strings can behave a
 bit like arrays, but they also, as `Object`s, have properties and methods. I’ll

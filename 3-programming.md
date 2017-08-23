@@ -12,7 +12,7 @@ of the process we’ll start thinking of the puzzle as a journey.
 
 
 <section id="control-flow">
-## Control Flow
+## Control flow
 
 “Control flow” is an idea you’ve probably seen before, like in flow charts.
 They’re all over social media and often funny. In a flow chart, you start from
@@ -163,7 +163,7 @@ requires writing some html.
 
 </section>
 <section id="embedding-javascript">
-## Embedding JavaScript in a Webpage
+## Embedding JavaScript in a webpage
 
 Typing things into the console can get boring after a while, because it’s
 tedious to have to retype everything every time. Additionally, if you close
@@ -325,7 +325,7 @@ to the input. Of course, it’s still pretty basic, but baby steps. Baby steps.
 
 </section>
 <section id="while-for-loops">
-## While and For loops
+## While and for loops
 
 If you’ve got conditionals down, we can now move to looping. Remember, in
 JavaScript, a conditional statement takes the form of:

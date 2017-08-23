@@ -103,7 +103,7 @@ learning the language itself.
 
 </section>
 <section id="data-types">
-## Basic Data Types
+## Basic data types
 
 We hear the word “data,” but what, precisely, does it mean? If you
 had to draw a picture of “data,” what would it look like? We can say “data is
@@ -233,7 +233,7 @@ But now you’re definitely ready to start add up some numbers in JavaScript.
 
 </section>
 <section id="javascript-as-a-calculator">
-## Using JavaScript as a Calculator
+## Using JavaScript as a calculator
 
 You learned a comparison operator in the previous section, `===`, and you’ll
 learn a few more in this section. You’ll also learn all five arithmetic
@@ -291,7 +291,7 @@ more wrinkle to it by introducing variables.
 
 </section>
 <section id="calculator-understood-variables">
-## What if the Calculator Understood Variables?
+## What if the calculator understood variables?
 
 Everything we have been doing above is fun for about three seconds. It is
 interesting to test edge cases (what happens when you multiply a number with a

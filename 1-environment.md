@@ -92,7 +92,7 @@ public by default**. Keep this in mind when you’re typing commit messages or
 working on your project: it’s all visible to anyone who has a look at your
 repository. Don’t let that scare you from using GitHub. Just keep it in mind.
 
-### Create Yourself a GitHub User
+### Create yourself a GitHub user
 
 The first step with GitHub is easy. Go to [GitHub.com](http://github.com) and
 create an account. Choose the free plan. You should get an email, and once you
@@ -103,7 +103,7 @@ If you’re a current student, you can
 GitHub. That discount entitles you to a limited number of private
 repositories.
 
-### Fork the Course Repository
+### Fork the course repository
 
 In GitHub, anyone can access anyone else’s (public) repositories, or
 projects. And, what’s more, anyone can make an identical copy of that
@@ -158,7 +158,7 @@ your site. Of course, you still have *some* control over how things look. A
 lot, in fact.  But in order to do that, you have to rethink the basics of
 writing. You now have to focus on the content much more than the look.
 
-### A Plain Text Editor
+### A plain text editor
 
 One way of “focusing on the content” is by stripping away a lot of the
 frippery that a program like Word provides. We won’t need something that can
@@ -203,7 +203,7 @@ change the widths of the panes and show and hide them with your mouse.
 Similarly, the tabs work like the tabs do in Chrome, for good
 reason.[^atom-is-chrome] 
 
-### Start Customizing with Packages
+### Start customizing with packages
 
 From the Welcome Guide, I recommend immediately clicking on “Install a
 Package.” Ben Balter has come up with a [list of useful atom packages for
@@ -238,7 +238,7 @@ For each of these, you have to type the name into the little search bar in the
 Install Packages part of the Settings tab. The linters may ask you to add some
 other packages to fulfill dependencies. That’s ok.
 
-### Continue Customizing by Enabling Autosave
+### Continue customizing by enabling autosave
 
 Atom ships with autosave disabled by default. That’s probably not behavior
 you’re expecting, so you should enable it! After you’re done installing
@@ -306,7 +306,7 @@ back into the GitHub pane back on Atom.
 You should get a message saying “No pull request could be found for the
 branch master” and so on. You’ve made the connection.
 
-### Make a Change, Stage a File, Commit, and Push
+### Make a change, stage a file, commit, and push
 
 We’re in the homestretch now, but this section is the most important, because
 it’s a description of what you will be doing with Git in Atom most of the
@@ -363,7 +363,7 @@ will ask you for your GitHub username and password. Type them in, wait a
 minute, and then if you go to GitHub and refresh your repository, you will see
 the changes that you’ve made.[^overpushing]
 
-### Parting Atom Thoughts
+### Parting Atom thoughts
 
 There’s a whole lot going on in this section, but it’s mostly stuff you just
 have to do once to set up the environment. As I wrote above, Atom is a very

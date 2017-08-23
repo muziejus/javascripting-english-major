@@ -7,30 +7,30 @@ permalink: /contents
 Welcome to *The JavaScripting English Major*. Here is a list of this course’s
 contents, session (or chapter) by session. If you’re uncertain about the
 course, start with the [zeroth chapter](/0-introduction), which introduces the
-ideas behind the course. Skip straight to the [first chapter](/1-environment)
-if you want to zoom ahead. Finally, the technical details and other
-information regarding this course are hidden on the “[About](/about)” page.
+course and answers some questions about it. Skip straight to the [first
+chapter](/1-environment) if you’re already motivated. 
 
 If you want to see what you’ll be able to create by chapter 15, [look
-here](/examples/could-be.html).
+here](/examples/could-be.html). Also, the technical details and other
+information regarding this course are hidden on the “[About](/about)” page.
 
 <div class="contents">
 
 ## [0. Introduction & FAQs](/0-introduction)
 
-### Prerequisites / Why this course? / Why JavaScript? / More Esoteric Concerns, etc.
+### Prerequisites / Why this course? / Why JavaScript? / More esoteric concerns, etc.
 
 ## [1. Setting up the Environment](/1-environment)
 
-### Version Control with Git / Editing Plain Text with Atom / Launching a JavaScript Console from the Browser
+### Version control with Git / Editing plain text with Atom / Launching a JavaScript console from the browser
 
 ## [2. JavaScript Calculator](/2-calculator) 
 
-### Introduction to JavaScript / Basic Data Types / Using JavaScript as a Calculator / Assigning Variables
+### Introduction to JavaScript / Basic data types / Using JavaScript as a calculator / Assigning variables
 
 ## [3. Programming](/3-programming)
 
-### Control Flow / If statements / Embedding JavaScript in a Webpage / While and For loops
+### Control flow / If statements / Embedding JavaScript in a webpage / While and for loops
 
 ## [4. Functions](/4-functions) 
 
@@ -38,15 +38,15 @@ here](/examples/could-be.html).
 
 ## [5. Collections of Information](/5-collections)
 
-### Arrays / `Object`s / Methods / Strings as Arraylike Things
+### Arrays / `Object`s / Methods / Strings as arraylike things
 
 ## [6. Abstraction](/6-abstraction)
 
-### Returning / Iterating / Arrays of `Object`s / Mapping and Filtering
+### Returning / Iterating / Arrays of `Object`s / Mapping and filtering
 
 ## [7. Oops!](/7-errors)
 
-### JSHint / Mistakes / Exceptions
+### JSHint / Mistakes / User error
 
 ## [8. Writing a Webpage](/8-webpage)
 
@@ -66,7 +66,7 @@ here](/examples/could-be.html).
 
 ## [12. Writing Content with Markdown](/12-markdown)
 
-### Markdown / Hotlinking Images / Rendering Markdown with JavaScript
+### Markdown / Hotlinking images / Rendering Markdown with JavaScript
 
 ## [13. Bootstrap Layout and Content](/13-bootstrap)
 
