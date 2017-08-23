@@ -1,3 +1,6 @@
+---
+layout: null
+---
 ## Hastings Street
 
 Hastings Street was a major thoroughfare in the [Black

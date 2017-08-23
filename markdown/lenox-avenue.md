@@ -1,3 +1,6 @@
+---
+layout: null
+---
 ## Lenox Avenue
 
 Lenox Avenue is an [avenue that runs through

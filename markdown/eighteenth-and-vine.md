@@ -1,3 +1,6 @@
+---
+layout: null
+---
 ## 18th & Vine
 
 18th and Vine is the [cradle of jazz in Kansas
