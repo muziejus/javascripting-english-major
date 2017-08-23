@@ -45,5 +45,5 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-exclude: [markdown/*, introduction.md]
+exclude: [markdown/*, rampart.md, introduction.md]
 keep_files: [markdown/introduction.md, markdown/eighteenth-and-vine.md, markdown/fifth-and-mound.md, markdown/rampart.md, markdown/lenox-avenue.md, markdown/hastings-street.md]
