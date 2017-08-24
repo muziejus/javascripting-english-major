@@ -120,6 +120,17 @@ blockquote {
   color: $base01;
 }
 
+.btn-info {
+  background-color: $base2;
+  border-color: $cyan;
+  color: $magenta;
+}
+
+.btn-info:hover {
+  background-color: $base3;
+  color: $cyan;
+}
+
 
 @import "index";
 @import "navbar";
