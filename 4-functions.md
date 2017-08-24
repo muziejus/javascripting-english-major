@@ -8,10 +8,14 @@ nextch: /5-collections
 
 The [previous chapter](/3-programming) was very conceptual. Loops are tricky
 to get a hang of, but once you visualize how looping can solve problems,
-you’re definitely on your way to thinking algorithimically. This chapter is a
-bit more focused, but it builds on the idea of a **block** of code, like the
-loop or the if statement. Blocks in JavaScript are always surrounded by braces
-(`{}`), and that is true for functions, as well.
+you’re definitely on your way to thinking algorithimically, which is to say,
+programmatically. This chapter is a bit more focused, but it builds on the
+idea of a **block** of code, like the loop or the if statement. Blocks in
+JavaScript are always surrounded by braces (`{}`), and that is true for
+**functions**, as well.
+
+<section id="function-function">
+## Function, function, what's your…
 
 Just as looping is useful because it automates repetitive tasks, functions
 break up your code into smaller pieces. This means that it’s easier to
@@ -55,9 +59,11 @@ Quickly before moving on, that line `// etc.` is a **comment**. Comments are
 very useful in programming because they can serve as little messages to
 yourself (or to other programmers) about what is going on in your program.
 In JavaScript, everything after two slashes (`//`) to the end of the line is
-commented. If you want to comment out a whole section of multiple lines, begin
-it with `/*` and close it with `*/`. Or you can put a `//` in front of every line.
+**commented out**. If you want to comment out a whole section of multiple lines, begin
+it with `/*` and close it with `*/`. Or you can put a `//` in front of every
+line. I’ll start commenting the code I provide, where necessary.
 
+</section>
 <section id="parameters">
 ## Parameters
 
@@ -88,7 +94,7 @@ userInput = prompt(promptText, defaultText);
 
 It would work in exactly the same way. These two variables, `promptText` and
 `defaultText` are **parameters** that we **send** to the function.[^arguments] Giving
-functions parameters lets us change the internals of the function, to let it
+functions parameters lets us change the internals of the function to let it
 react to specific instances. Now sometimes I want black beans in my burrito,
 and sometimes I want pinto beans. Let’s add a parameter to `makeABurrito()` to
 let us specify which beans to use on the fly:
@@ -117,10 +123,10 @@ If we were to execute:
 
 We would see that the webpage would now read “You ordered black beans. Good
 choice!” Don’t actually try this, yet, though. Can you see why that is the
-case? We define a variable, `blackBeans` and assign it to the string “black.”
-Next, we send (or *pass*) that variable as a parameter to `makeABurrito()`.
+case? We define a variable, `blackBeans` and assign it to the string `"black"`.
+Next, we send (or **pass**) that variable as a parameter to `makeABurrito()`.
 Now, inside the function, we see that it makes reference to a `beansVariable`,
-that has the value “black,” which it then prints in the `<div>`, like we did last
+that has the value “black,” which it then prints in `#response`, like we did last
 chapter.
 
 But where did `beansVariable` come from? And how did it get set to “black”?
@@ -153,9 +159,9 @@ Notice how this looks rather similar to `prompt(promptText, defaultText);`?
 ## Back to numbers
 
 `makeABurrito()` is a great function, and it’s making me hungry, so let’s
-abandon it for a bit and go back to using numbers. Say you wanted a function
-that told you how much to tip at a restaurant. How would you go about building
-it?
+abandon it for a bit and go back to using numbers. Back in [Chapter
+2](/2-calculator), we made a tipping calculator. We can build on that example
+  with real, usable code.
 
 First, what information do you need in order to know how much to tip? You need
 to know the `total` and the `tipRate`, which is a percentage, like 15 or 20%.
@@ -164,11 +170,11 @@ The barebones function looks like this, then:
 ```javascript
 let tipCalculator;
 tipCalculator = function(total, tipRate){
-  // 1. calculate the percentage of the total 
+  // 1. Calculate the percentage of the total 
   // as a variable “tipAmount”
   //
-  // 2. change the response <div> to tell us 
-  // the tip amount.
+  // 2. Change #response to tell us the tip
+  // amount.
 } 
 ```
 
@@ -188,21 +194,21 @@ tipCalculator = function(total, tipRate){
   $("#response").html("Your tip is $" + tipAmount);
 } 
 
-// now execute the function, passing a total of $50.00
-// and a tipRate of 20%:
+// Now call (or “execute”) the function, passing a 
+// total of $50.00 and a tipRate of 20%:
 
 tipCalculator(50.00, 0.2);
 ```
 
-Save, commit, reload, and the webpage should now inform you that you owe $10.
-In the exercises, we’ll expand on this function.
+Save and reload, and the webpage should now inform you that you owe $10. If it
+does, commit. In the exercises, we’ll expand on this function.
 
 </section>
 <section id="scope">
 ## Scope
 
 Alongside the idea of a function block, that is, the set of curly braces, we
-also have the idea of scope. Beginner programmers often get tripped up by
+also have the idea of **scope**. Beginner programmers often get tripped up by
 scope, but that’s ok, so do veteran programmers. Note that though conditionals
 and loops also use blocks, they don’t affect scope in the same way.
 
@@ -216,38 +222,45 @@ alice = "Alice";
 friendOfBob = function(friend){
   let chuck;
   chuck = "Chuck";
+  console.log(alice);
   console.log("Bob has a friend named " + friend);
 }
 
 friendOfBob(alice);
 ```
 
-That works as we expect. In JavaScript, a variable has the scope of the block
-in which its defined and in every block within that block. As a result, we
-define `alice` in the “main” block, and that means `alice` remains defined—or
-*visible*—inside the function. But what happens if that last line is changed to
-`friendOfBob(chuck)`? The console should complain “`Uncaught ReferenceError:
-chuck is not defined`.” But we *defined* `chuck` on the third line here. Why
-doesn’t it work?
+That works as we expect, as we see both “Alice” and “Bob has a friend named
+Alice” logged to the console. In JavaScript, a variable has the scope of the
+block in which its defined and in every block within that block. As a result,
+we define `alice` in the “main” block, and that means `alice` remains
+defined—or *visible*—inside the function, as well, which is why
+`console.log(alice)` responds without an error. 
+
+But what happens if that last line is changed to `friendOfBob(chuck)`? The
+console should complain “`Uncaught ReferenceError: chuck is not defined`.” But
+we *defined* `chuck` on the fourth line there. Why doesn’t it work?
 
 Because we define `chuck` *inside* the function block, it is *only* visible
-inside that block (and any children blocks). If we were to move the third line
-above the second line, `chuck` would now be defined in the “main”
+inside that block (and any children blocks). If we were to move the fourth and
+fifth lines above the third line, `chuck` would now be defined in the “main”
 scope.[^main-scope] 
 
 Scope helps you keep your code tidy, because there is less risk of variables
-being accessed where they shouldn’t be.
+being accessed where they shouldn’t be. Just remember, whenever you type `let`
+to define a variable inside a function, that variable is only available inside
+that function.
 
 </section>
 <section id="recursion">
 ## Recursion
 
-One last bit on functions is that they are recursive. That means they can call
-themselves. This becomes very useful in many instances, especially when trying
-to sort things, but a simple version is to show how a factorial function would
-work. As you may recall from high school, a factorial (like “5!”) is the
-equivalent of 5 &times; 4 &times; 3 &times; 2 &times; 1. Here’s the completed
-function, with a `prompt()` so you can see it in action on your page:
+One last thing about functions is that they are recursive. That means they can
+call themselves. This becomes very useful in many instances for serious
+programmers, especially when they are crafting algorithms to sort things, but
+you can see a simple version of recursion in creating a factorial function. As
+you may recall from school, a factorial (like “5!”) is the equivalent of 5
+&times; 4 &times; 3 &times; 2 &times; 1. Here’s the completed function, with a
+`prompt()` so you can see it in action on your page:
 
 ```javascript
 let factorial;
@@ -294,8 +307,10 @@ If we started with five, we’d have these steps:
    &times; 3) &times; 2) &times; 1)
 3. **break** and return `result`: 120.
 
-Functions are powerful things, as we can see, and we’ll be seeing a lot more
-from them over the rest of this course.
+Functions are powerful things, as we can see. And though ultimately, the goals
+of this course are not to write code that is as modular as the use of
+functions would make possible, you will still be typing the word `function` a
+lot.
 
 </section>
 <section id="exercises">
@@ -305,9 +320,6 @@ from them over the rest of this course.
    “.2” for 20%, and the calculator understands the difference.
 1. Add functionality to the factorial function so that if the user enters 0,
    it calculates 0!, which is 1.
-1. Add functionality so the factorial function so that if the user enters a
-   negative number, it makes the number positive and calculates the factorial
-   as before.
 
 </section>
 
