@@ -53,7 +53,7 @@ a:focus, a:hover {
   color: $cyan;
 }
 
-h4, h5, h6, .lead, p > em, p > strong {
+h4, h5, h6, .lead, p > em {
   color: $base01;
 }
 
@@ -76,6 +76,14 @@ h2, h3 {
 
 h2, h3, h4, h5, h6 {
   font-family: "Ubuntu", "Helvetica", sans-serif;
+}
+
+p > strong {
+
+  font-family: "Ubuntu", "Helvetica", sans-serif;
+  font-size: .9rem;
+  font-weight: bolder;
+  color: $violet;
 }
 
 blockquote {
