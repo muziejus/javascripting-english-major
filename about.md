@@ -72,7 +72,8 @@ way in some way by [Annie Ali Khan](http://www.anniealikhan.com), [Manan
 Ahmed](http://history.columbia.edu/faculty/manan-ahmed/), [Alex
 Gil](https://elotroalex.com), Kirin Wachter-Grene, [Audra
 Grigaliūnas](https://audragrigs.com/), [Kovas Boguta](http://kovasboguta.com),
-Michael Cardarelli, and [Steven Vance](http://stevevance.net).
+Michael Cardarelli, [Steven Vance](http://stevevance.net), and the
+screenwriter who vacuums the eighth floor of Bobst in the mornings.
 
 Also, the impetus for this course came from a workshop I was supposed to lead
 on Leaflet at the 2017 edition of [NYC DHWeek](http://dhweek.nycdh.org). A
