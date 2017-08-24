@@ -6,17 +6,20 @@ prevch: /2-calculator
 nextch: /4-functions
 ---
 
-It’s time to stop playing around with calculator effects in JavaScript.
-We’ve skipped over a lot to get to here, but it’s important to start thinking
-*programmatically* as soon as possible, since that’s where the first
-frustrations set in. Remember, programming is puzzle solving, and in this part
-of the process we’ll start thinking of the puzzle as a journey.
+It’s time to unlock what JavaScript can do when it’s not just a calculator.
+We’ve skipped over a lot of details about data types to get to here, but it’s
+important to start thinking *programmatically* as soon as possible. Rules and
+properties we can always look up. How to do things programmatically, however,
+is a skill that needs to be nurtured. As a result, it’s a source for early
+frustrations as well. Just remember, programming is puzzle solving, and in
+this part of the process you can finally start thinking of the puzzle as a
+journey.
 
 
 <section id="control-flow">
 ## Control flow
 
-“Control flow” is an idea you’ve probably seen before, like in flow charts.
+**Control flow** is an idea you’ve probably seen before, like in flow charts.
 They’re all over social media and often funny. In a flow chart, you start from
 some position and answer questions. Depending on the answers to those
 questions, you end up in a certain location. Other answers lead you somewhere
@@ -24,36 +27,37 @@ else. But the idea is that you are interacting with information, in that you
 are being provided a prompt for some input, and your input directs what
 happens.
 
-Let’s sketch out a toy program to begin.
+Let’s sketch out a toy program to begin illustrating control flow in a
+program.
 
-This program asks you what you want for dinner. If you answer “burrito,” the
-program congratulates your choice. If you answer anything else, the program
-scolds you for not wanting a burrito. What might that look like in
-“pseudocode” (pretend programming that’s not a real language)? Let’s try it
-out while also using some JavaScript we already know, like `let` and
-`console.log()`.
+We want to write a program that asks the user what they want for dinner. If
+they answer “burrito,” the program congratulates their choice. If they answer
+anything else, the program scolds them for not wanting a burrito. What might
+that look like in “pseudocode” (pretend programming that’s not a real
+language)? Let’s try it out while also using some JavaScript we already know,
+like `let` and `console.log()`.
 
-First, the program needs to get the information from you, so we need some kind
-of input. Let’s save that as a variable.
-
-```
-  let userInput;
-  userInput = prompt_the_user_for_what_they_want_for_dinner;
-```
-
-We have a variable now, `userInput`, that has whatever you’ve input. Now let’s
-test that variable, using the `===` operator we’ve already learned.
+First, the program needs to get the information from the user, so we need some
+kind of input. Let’s save that as a variable.
 
 ```
-  if userInput === "burrito";
-    then console.log("Brilliant choice!");
+let userInput;
+userInput = prompt_the_user_for_what_they_want_for_dinner;
+```
+
+We have a variable now, `userInput`, that has whatever the user has input. Now
+let’s test that variable, using the `===` operator you’ve already learned.
+
+```
+if userInput === "burrito";
+  then console.log("Brilliant choice!");
 ```
 
 OK. But what if the input *isn’t* “burrito”?
 
 ```
-  if userInput !== "burrito";
-    then console.log("Don’t you want a burrito?");
+if userInput !== "burrito";
+  then console.log("Don’t you want a burrito?");
 ```
 
 Here I’m using the negation operator `!==`. It’s the same as `===`, but its
@@ -66,19 +70,19 @@ terribly different from this code we already have.
 <section id="if-statements">
 ## If statements
 
-An if statement is an example of “conditional statement.” That means that it
+An if statement is an example of **conditional statement**. That means that it
 behaves in a certain way depending on a condition. From the example above, we
-can read 
+can read
 
 ```
-  if userInput === "burrito";
-    then console.log("Brilliant choice!");
+if userInput === "burrito";
+  then console.log("Brilliant choice!");
 ```
 
 As “If the condition that the variable `userInput` is equivalent to the string
-‘burrito’ is true, then log to the console the string ‘Brilliant choice!’”
+‘burrito’ is true, then respond to the console the string ‘Brilliant choice!’”
 
-That’s a mouthful, and it’s important to see it as three distinct steps:
+That’s a mouthful, but it is actually three distinct steps:
 
 1. The test of whether `userInput` is equivalent to the string “burrito.”
 2. If the test in 1. is `true`, then the condition in the if statement is met,
@@ -113,7 +117,7 @@ Type this into the console (pressing the return key where appropriate). You
 should get “Brilliant choice!” logged to your console. Now replace `true` with
 `false`. What happens? Why?
 
-Now let’s add a layer, this time using the variable `userInput`:
+Now you can add some complexity, this time using the variable `userInput`:
 
 ```javascript
 > let userInput;
@@ -129,7 +133,7 @@ where you have to use `===` (which *tests* whether something is true). If you
 type this in the console, again it should congratulate you. If you replace the
 second line with `userInput = "samosa";`, what happens? Why?
 
-In our program, we had a second condition, which to scold the user if they
+In our program, we had a second condition, which would scold the user if they
 didn’t want a burrito. That’s pretty straightforward to write:
 
 ```javascript
@@ -155,24 +159,24 @@ However, we can *join* both truth tests using `else`:
 ```
 
 Now, we can see this as “if the truth test is true, then log ‘Brilliant
-choice!’ Otherwise, log ‘Don’t you want a burrito?’” Less typing! If you type
+choice!’ Otherwise, respond ‘Don’t you want a burrito?’” Less typing! If you type
 this snippet into your console, you’ll see that it scolds you. What do you
 have to change so that it congratulates you?
 
 So far so good, but we still have the line of the pseudocode, `userInput =
 prompt_the_user_for_what_they_want_for_dinner;`. Getting that part to work
-requires writing some html.
+requires writing some HTML.
 
 </section>
 <section id="embedding-javascript">
 ## Embedding JavaScript in a webpage
 
-Typing things into the console can get boring after a while, because it’s
-tedious to have to retype everything every time. Additionally, if you close
-the window (or reload your browser), you lose everything you’ve already done.
-There must be a better way to write JavaScript, right? Of course there is.
+Typing things into the console becomes tedious to have to retype everything
+every time. Fixing mistakes is difficult. And if you close the window (or
+reload your browser), you lose everything you’ve already done. There must be
+a better way to write and execute JavaScript, right? Of course there is.
 
-Back in [chapter one](/1-environment/), I had you clone a project with Atom,
+Back in [Chapter one](/1-environment/), I had you clone a project with Atom,
 and that project included a file called `index.html`. Open that file up in
 Atom by double clicking on it in the Projects tab on the left of the Atom
 window.  Now we need to open this file in a browser, as well. This is a bit
@@ -183,7 +187,7 @@ folder, in turn, is in a folder called `github`, which is in your home folder.
 On Windows, it’s saved somewhere else.
 
 Open up your home folder, like you would to open up any kind of regular
-document, and you should see the `github` folder. Open that up, and you should
+folder, and you should see the `github` folder. Open that up, and you should
 see a folder with your repository. If you open that up, you’ll see the file
 `index.html`. Double click on that, and it should open up in your browser.
 It’ll be boring, but it’ll be there. You should be greeted with a blank white
@@ -197,10 +201,10 @@ to the browser and press the reload button. The text should change.
 Congratulations, you are now a web editor.[^html] Let’s make you a web developer,
 though. That involves adding a few lines to `index.html`, so go back to Atom.
 
-Inside the `body` tags, add:
+Inside the `<body>` tags, underneath the `<h1>`, add:
 
 ```html
-<div id="response">This is the div.</div>
+<div id="response">This is the #response div.</div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="scripts.js"></script>
 ```
@@ -209,7 +213,7 @@ Type that second line carefully. When you’re done, the whole of `index.html`
 should look like this:
 
 ```html
-<!doctype html>
+<!doctype HTML>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -217,7 +221,7 @@ should look like this:
   </head>
   <body>
     <h1>This is my project!</h1>
-    <div id="response">This is the div.</div>
+    <div id="response">This is the #response div.</div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="scripts.js"></script>
   </body>
@@ -225,15 +229,18 @@ should look like this:
 ```
 
 Save and commit, like you learned earlier. A good commit message would be “Add
-JQuery and local JavaScript.”
+jQuery and local JavaScript.”
 
-There are two new tags here, `<div>` and `<script>`. The first is just a
-generic tag that lets you mark off a part of a page with an id, in this case
-“response.” The second tells the webpage to look for files indicated by the
-`src`, or “source,” attribute. In other words, first it goes to a webserver
-called “code.jquery.com” and downloads a source file from there, called
-`jquery-3.2.1.min.js`. Then it looks for a local file, called
-`scripts.js`. But that file does not yet exist. So let’s make it.
+There are two new tags here, `<div>` and `<script>`. The first is a generic
+container tag that lets you mark off a part of a page for content.  Note that
+it has an `id` **attribute**, and the value of that attribute is `response`.
+Throughout, I’ll be referring to this `<div>` container as `#response`.  The
+second tag, `<script>`, tells the webpage to look for files indicated by the
+`src`, or **source**, attribute. In other words, first it goes to a web
+server, `code.jquery.com`, and downloads a source file from there, called
+`jquery-3.2.1.min.js`. Then it looks for a local file, on your computer,
+called `scripts.js`.  But that file does not yet exist. So now you can make
+it.
 
 Back in Atom, right-click (or control-click) on your project icon and choose
 “New File” from the dropdown menu. A tiny window asking for the file’s name
@@ -244,10 +251,10 @@ opens, type in:
 alert("scripts.js has loaded!");
 ```
 
-Save and commit. A good commit message now would be “Create scripts.js.” In
-the project window, you should see `scripts.js` alongside `index.html`. When
-you reload your page in your browser, you should get an alert, telling you
-that “scripts.js has been loaded!”
+Save the file and reload the browser. You should get an alert, telling you
+that “scripts.js has been loaded!” If you do, stage and commit. A good commit
+message now would be “Create scripts.js.” In the project pane in Atom, you
+should see `scripts.js` alongside `index.html`. 
 
 That’s obviously pretty annoying, so change `alert` in `scripts.js` to
 `console.log`. Now open up the console on the browser and reload the page. As
@@ -256,33 +263,33 @@ it in Atom, instead, and reload our page. But even writing to the console
 isn’t terribly interesting, except when you’re testing or debugging. Let’s use
 JavaScript, instead, to write to the webpage *itself*.
 
-There are a lot of ways to do that, but that line about “jquery” above will
-make things a bit easier. [JQuery](http://jquery.com) is a powerful JavaScript
-library. A library is a set of tools that make programming easier. You don’t
-have to keep rewriting code, say. Or you can write code more succinctly.
-Replace your single line in `scripts.js` with this, then:
+There are a lot of ways to do that, but that `<script>` line about “jquery”
+above will make things a bit easier. [jQuery](http://jquery.com) is a powerful
+JavaScript **library**, meaning it is a set of tools that make programming
+easier. It lets us developers do many tasks succinctly and clearly. Replace
+your single line in `scripts.js` with this, then:
 
 ```javascript
 $("#response").html("scripts.js has loaded!");
 ```
 
 Now reload the page in the browser. That earlier text, that read “This is the
-div.” is now replaced. We’ll learn JQuery in greater detail as we move along,
-but that one line of JavaScript does this:
+#reponse div.” is now replaced. We’ll learn jQuery in greater detail as we
+move along, but that one line of JavaScript does this:
 
-* `$(`: Select something in the webpage with JQuery.
-* `"#response")`: In fact, select the html element with the `id` of `response`. (The
+* `$(`: Select something in the webpage with jQuery.
+* `"#response")`: In fact, select the HTML element with the `id` of `response`. (The
 `#` means are looking for something with a specific `id`.)
-* `.html(`: Change the HTML that is inside the HTML element we selected.
+* `.html(`: Do something with the HTML that is inside the element we selected.
 * `"scripts.js has loaded!");`: Change the HTML with this new HTML.
 
-The [JQuery selector](https://api.jquery.com/category/selectors/), `$("")`, is
-one of the most important bits of code on the web. 
+The [jQuery selector](https://api.jquery.com/category/selectors/), `$("")`, is
+one of the most important bits of code on the web.[^getbyid] 
 
 Catch your breath. A whole lot has happened in this section. Let’s return to
 the toy program from the previous section, though, and update the
-`console.log()` calls with the JQuery calls. In other words, make your
-`scripts.js` file look like this:
+`console.log()` parts with the jQuery. In other words, make your `scripts.js`
+file look like this:
 
 ```javascript
 let userInput;
@@ -298,28 +305,27 @@ Save and reload in the browser. What happens now? What if you change “samosa�
 to “burrito” in `scripts.js`, save, and reload?
 
 We’re back to where we were at the start of this section, but now instead of
-logging information to the console, we’re changing text on the webpage. But
-there’s still that little detail about how to ask you what you want for
+logging information to the console, you’re changing text on the webpage. Yet
+there’s still that little detail about how to ask the user what they want for
 dinner. 
 
 In other words, we want to change `userInput = "samosa";` in `scripts.js`
 to `userInput = prompt_the_user_for_what_they_want_for_dinner;`, but in
 JavaScript, not pseudocode.
 
-There are a lot of ways to get information from the user, and we’ll learn some
-of them as we move along, but for now we can use JavaScript’s `prompt()`
-function, which asks the user to type something in. This works on all
-browsers, but some (like Brave) might have it disabled. Change the second line
-of `scripts.js` to:
+There are a lot of ways to get information from the user, but for now we can
+use JavaScript’s `prompt()` function, which asks the user to type something in.
+This works on most browsers, but some (like Brave) might have it disabled.
+Change the second line of `scripts.js` to:
 
 ```javascript
 userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
 ```
 
-Save and commit. If all goes well, when you reload the page in the browser,
+Save and reload. If all goes well, when you reload the page in the browser,
 you should immediately have a teeny window asking you what you want for
 dinner. No matter what you type in, unless it’s “burrito,” the webpage will
-scold you.
+scold you. If that works, commit.
 
 You’ve written a full program. It takes in input, feeds it through control
 flow (in this case, a conditional statement), and delivers output appropriate
@@ -362,9 +368,9 @@ while ( 0 < 1 ) {
 ```
 
 will keep running forever or until your browser crashes. Whichever comes
-first. This is why while loops can be kind of dangerous. If the truth test
-never stops being true, they loop forever. An if statement gets executed once
-and moves on. Loops, though. Well, it’s in the name!
+first. As you can see, the while loops can be dangerous if the truth test
+never stops being true. An if statement gets executed once and moves on.
+Loops, though. Well, it’s in the name!
 
 Yet it’s possible to use while loops with a bit of discretion. For example,
 replace the contents of `scripts.js` with this:
@@ -389,27 +395,28 @@ i = 1;
 ```
 
 First we define a variable `i` and assign it the number 1. It’s tradition in
-programming to call looping variables `i`, so I’m continuing that tradition.
+programming to call looping variables `i`, so I’m continuing that
+tradition.
 
 ```javascript
 while ( i < 4 ) {
 ```
 
 Read that out in English: “while the variable i is less than the number four.”
-That means that as long as `i` is less than for, the loop will be true, and
+That means that as long as `i` is less than 4, the loop will be true, and
 the program will loop.
 
 ```javascript
   $("#response").append("<br />" + i);
 ```
 
-This line is a bit sneaky. First, it uses `append()` instead of `html()`. That
-just means that it adds the text to the end instead of replacing all of it.
-Next, it uses `<br />`, which is the html tag for making a line break. But
-note that little `i` at the end. We’ll come back to it in a second, but for
-now it should be clear that this line means “append the html line break tag
-and the value of the variable i to the html element with the id of
-‘response.’”
+This line is a bit sneaky. First, it uses `.append()` instead of `.html()`.
+That just means that it adds the HTML to the end the already existing HTML
+instead of replacing all of it.  Next, it uses `<br />`, which is the HTML tag
+for making a line break. But note that little `i` at the end. We’ll come back
+to it in a second, but for now it should be clear that this line means “append
+the HTML line break tag and the value of the variable `i` to the HTML element
+`#response`.”
 
 ```javascript
   i = i + 1;
@@ -434,20 +441,20 @@ while ( i < 4 ) {
 ```
 
 Now we can see that the third line can be simplified, in English, to “append
-the html line break tag and ‘1’ to the ‘response’ html element.” Then the
-fourth line, in English, is “assign to the variable i the result of 1 + 1.”
+the HTML line break tag and ‘1’ to the `#response` HTML element.” Then the
+fourth line, in English, is “assign to the variable `i` the result of 1 + 1.”
 
 At the end of the first time through the loop, then, `i` is now 2, not 1. Now
 we can see it go back to the beginning of the loop. First, truth test: is `2 <
-4` true? Yes. Next, append “<br />2.” Next, reset `i` to be equal to 2 + 1, or
-  3. Once back through the loop... Now reset `i` to be equal to 3 + 1, or 4
-     and…
+4` true? Yes. Next, append a line break and “2.” Next, reset `i` to be equal
+to 2 + 1, or 3. Once back through the loop... Now reset `i` to be equal to 3 +
+1, or 4 and…
 
 Break. Because `4 < 4` is not true, the loop stops executing. More
-colloquially, we break out of the loop. And that’s why your webpage should
+colloquially, we **break out of the loop**. And that’s why your webpage should
 read:
 
->This is the div.<br>
+>This is the #response div.<br>
 >1<br>
 >2<br>
 >3
@@ -463,7 +470,7 @@ useful to loop over (as it were) this section until it’s clear.
 ### For loops
 
 For loops are just like while loops, except the truth test is replaced by a
-three part expression relating to a “control variable.” The three parts are:
+three part expression relating to a **control variable**. The three parts are:
 
 1. **Initialization**. What is the initial state of the control variable before
    the loop begins?
@@ -477,7 +484,7 @@ all, `i = 1;` sets the **initial** state of the control variable before the
 loop begins. Next, `i < 4` is the **condition** that the control variable has to
 pass in order for the loop to continue. Finally, `i = i + 1;` is the **afterthought**,
 or the change the control variable undergoes each time through the loop. In
-other words, we can collapse a five-line program into just three:
+other words, you can collapse a five-line program into just three:
 
 ```javascript
 for (let i = 1; i < 4; i = i + 1 ) {
@@ -485,7 +492,8 @@ for (let i = 1; i < 4; i = i + 1 ) {
 }
 ```
 
-Note where the semicolons are place, and also note that the two lines
+Note where the semicolons are placed, and also note that the two
+initialization lines
 
 ```javascript
 let i;
@@ -515,12 +523,12 @@ browser.)
 1. Building on that program, create it so that instead of printing the number,
    it prints something like:
 
-   >This is the div.<br>
+   >This is the #response div.<br>
    >1 is odd.<br>
    >2 is even.<br>
    >3 is odd.<br>
 1. Building on the previous program, have it print the same, except without
-   that ugly “This is the div.” line.
+   that ugly “This is the #response div.” line.
 1. Write down what seem to be common mistakes you are making. Are you
    forgetting to add some aspect of the JavaScript syntax?
 
@@ -528,3 +536,5 @@ browser.)
 ## Footnotes
 
 [^html]: Yes, you are now writing HTML without learning how to do it. The key grammar of the markup is clear from this example, though. HTML is made up of nested tags that look like this, for example: `<h1>` to open and `</h1>` to close. Some tags, like the `<meta>` and `<!doctype>` tags don’t need to be closed, but most do.  
+
+[^getbyid]: To give a sense of jQuery’s pithiness, the same line in vanilla JavaScript would be: `document.getElementById("response").innerHTML = "scripts.js has loaded!";` To my eyes, this is unnecessarily verbose.
