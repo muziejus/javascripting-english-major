@@ -71,8 +71,8 @@ courses like the one that will be using this text. I was encouraged along the
 way in some way by [Annie Ali Khan](http://www.anniealikhan.com), [Manan
 Ahmed](http://history.columbia.edu/faculty/manan-ahmed/), [Alex
 Gil](https://elotroalex.com), Kirin Wachter-Grene, [Audra
-Grigaliūnas](https://audragrigs.com/), Michael Cardarelli, and [Steven
-Vance](http://stevevance.net).
+Grigaliūnas](https://audragrigs.com/), [Kovas Boguta](http://kovasboguta.com),
+Michael Cardarelli, and [Steven Vance](http://stevevance.net).
 
 Also, the impetus for this course came from a workshop I was supposed to lead
 on Leaflet at the 2017 edition of [NYC DHWeek](http://dhweek.nycdh.org). A
