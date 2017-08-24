@@ -10,17 +10,19 @@ It’s possible to start JavaScripting just by opening your browser, but for the
 purposes of this course, we’re going to introduce two new pieces of software
 that work to make your programming life easier.
 
-This establishes a programming *environment*, which is a workflow in which
+This establishes a programming **environment**, which is a workflow in which
 multiple pieces of software work together in order to make reaching your goals
 as easy as possible. Many programming rely on IDEs, or integrated development
-environments, such as Xcode for writing MacOS and iOS apps or R Studio for
-writing in R. These are one-stop shops that try to handle the entirety of your
-project within one piece of software. We’ll reach a similar state with Atom,
-below, but not before first making a detour through Git.
+environments, such as [Xcode](https://developer.apple.com/xcode/) for writing
+MacOS and iOS apps or [R Studio](http://rstudio.com) for writing in R. These
+are one-stop shops that try to handle the entirety of your project within one
+piece of software. We’ll reach a similar state with Atom, below, but not
+before first making a detour through Git.
 
-A key concept to application development is “versioning.” That is, by making
-use of a piece of software called a version control system, a project can work
-as though it has a time machine attached to it. But not just a time machine.
+A key concept to application development is **versioning**. That is, by making
+use of a piece of software called a **version control system**, a project can
+work as though it has a time machine attached to it. But not just a time
+machine.
 
 Before moving forward, note that above I don’t refer to a “document” or even a
 “file.” Most of the homework you’ve ever turned in before for an English class
@@ -42,7 +44,7 @@ that folder will be under version control.
 ## Git
 
 The version control system we will use in this course is called
-“[Git](http://en.wikipedia.org/wiki/Git).” Git is famously opaque, and, worse,
+[Git](https://git-scm.com/). Git is famously opaque, and, worse,
 a novice user (like us) uses about three commands all the time except when
 things go wrong. Luckily, when things go wrong, Git is often there to help us
 out. Nevertheless, Git deserves its reputation that leads to websites like “[Oh
@@ -68,7 +70,7 @@ commit it, push it, and then, on another computer, **pull** the changes and get
 right back to work—with all that history still built in, even though you were
 working *on another computer!*
 
-That all of what we’ll be doing with Git in this course, and that is
+That covers all of what we’ll be doing with Git in this course, and that is
 already a lot. But as you can see, the system of committing, pushing, and
 pulling means that collaboration becomes very easy. Additionally, Git allows
 for **branching**, where you create new branches for your project. Now Git is
@@ -81,16 +83,16 @@ jokes. In another, the writing can be very serious.
 ## GitHub
 
 For the purposes of this course, we will be using Git via the website
-[GitHub](http://github.com). GitHub will serve the remote point to which you
-push your project, and GitHub will even, down the road, host the project. At
-the end of this course, you’ll have a web address including “github.io” that
-you can send to your friends and family to show off your progress.
+[GitHub](http://github.com). GitHub will serve as the remote point to which
+you push your project, and GitHub will even, down the road, host the project.
+At the end of this course, you’ll have a web address including “github.io”
+that you can send to your friends and family to show off your progress.
 
 In addition to being a user-friendlier face for the Git software, GitHub also
 includes features that expand what Git offers, such as built in discussion
 boards where users can discuss issues. We won’t be using that functionality in
-this class, but that should stand in to remind you that **things on GitHub are
-public by default**. Keep this in mind when you’re typing commit messages or
+this class, but that should stand in to remind you that *things on GitHub are
+public by default*. Keep this in mind when you’re typing commit messages or
 working on your project: it’s all visible to anyone who has a look at your
 repository. Don’t let that scare you from using GitHub. Just keep it in mind.
 
@@ -118,12 +120,12 @@ While logged into GitHub, point your browser to:
 
 Once that page loads, there should be a “Fork” button in the top-right corner.
 Click on that. If it asks you where to fork it, click on your user, and now
-the repository should appear in your account under this url:
+the repository should appear in your account under this URL:
 
 `https://github.com/YOURUSERNAME/javascripting-english-major-project`
 
 Where it reads `YOURUSERNAME`, it should read, of course, the GitHub username
-you chose for yourself. Make a not of this url, as you’ll need it in a few
+you chose for yourself. Make a note of this URL, as you’ll need it in a few
 steps.
 
 </section>
@@ -137,10 +139,10 @@ before you were born, probably. But they all make two conceptual assumptions
 that go against the work we are doing in this course.
 
 First, they deal with documents, not projects. Remember, in this course you
-have to think in terms of a project, not just in terms of a document.
+have to think in terms of a project, not just in terms of a single document.
 Something like Word is great for a single document, like a business letter or
-five page paper. When it comes to something with lots of moving parts, like a
-project, it starts to creak.
+five-page paper. When it comes to something with lots of moving parts, like a
+web project (or a dissertation…), it starts to creak.
 
 Second, the big advance Word brought to the computing world was fusing what a
 document says along with how it looks.[^form-vs-content] In Word, whatever the
@@ -168,22 +170,22 @@ make charts or insert clip art. We won’t be changing fonts willy-nilly. And we
 definitely aren’t creating something that lives only to be printed out. We are
 creating, again, a *project*, not a document. 
 
-Furthermore, we will be writing code in addition to text. We will be
-programming functions and writing paragraphs. The former requires simple text
-files that can be read by the JavaScript interpreter (also known as the
-browser). The latter will be styled with HTML, which means it has to be
-written in plain text that can be fed to the HTML renderer (also known as the
-browser). Instead of one `.docx` file, we will have `.js` files for our
+Furthermore, we will be writing code in addition to text. In your own project,
+you will be programming functions and writing paragraphs. The former requires
+simple text files that can be read by the JavaScript interpreter (also known
+as the browser). The latter will be converted into HTML, which means it has to
+be written in plain text that can be fed to the HTML renderer (also known as
+the browser). Instead of one `.docx` file, we will have `.js` files for our
 JavaScript programming and `.html` files for our HTML webpages. Finally, Git
 is much friendlier with regular text files (like `.js` or `.html` files) than
 it is with `.docx` files. You can use Git with Word, but then you’re basically
 just using it as a backup system, not as a version control system. 
 
-What we need, then, is a “plain text editor.” Something that just writes text
-agnostically. Though it’d be nice if maybe it colored the text certain ways
-when writing JavaScript or HTML. But let’s not jump ahead. You’ve probably
-used a plain text editor before, most notably the Notes application on your
-smartphone. Every personal computer has some kind of plain text editor
+What we need, then, is a “plain text editor.” Something that just writes text,
+more or less agnostically. Though it’d be nice if maybe it colored the text
+certain ways when writing JavaScript or HTML. But let’s not jump ahead. You’ve
+probably used a plain text editor before, most notably the Notes application
+on your smartphone. Every personal computer has some kind of plain text editor
 installed, but we’ll install one that runs on nearly any personal computer,
 Atom.
 
@@ -198,7 +200,7 @@ of getting used to. Still, I hope that, for project-based work, you will see
 that it works much better than Word or a similar word processor.
 
 You can download the software from the [Atom page](http://atom.io), and
-installation should be rather straightforward. Once you install it, if you
+installation should be rather straightforward. Once you install it, when you
 open it, you will be greeted with a welcome tab and the welcome guide tab in a
 separate pane. Atom works on the visual metaphor of panes with tabs. You can
 change the widths of the panes and show and hide them with your mouse.
@@ -208,14 +210,11 @@ reason.[^atom-is-chrome]
 ### Start customizing with packages
 
 From the Welcome Guide, I recommend immediately clicking on “Install a
-Package.” Ben Balter has come up with a [list of useful atom packages for
+Package.” Ben Balter has come up with a [list of useful Atom packages for
 writing prose](https://ben.balter.com/2016/12/23/atom-for-prose/), but I’ll
-mention the absolutely vital ones here. Once you click on “Install a
+mention the most useful ones here. Once you click on “Install a
 Package,” you can click on “Open Installer” and start installing packages by
 searching for them and then clicking the “Install” button.
-
-* [`wordcount`](https://atom.io/packages/wordcount): creates a wordcounter
-along the bottom of your Atom window.
 
 * [`file-icons`](https://atom.io/packages/file-icons): this gives you pretty
 icons in the Atom sidebar and tabs. These visual cues are, in my experience,
@@ -226,15 +225,14 @@ full-screen Atom experience.
 
 * [`linter-write-good`](https://atom.io/packages/linter-write-good) and
 [`linter-just-say-no`](https://atom.io/packages/linter-just-say-no): both of
-these are style or grammar linters to help with your writing. Of course, as
+these are style or grammar **linters** to help with your writing. Of course, as
 with any programmatic grammar or style checker, sometimes their advice is
 nonsense. I find that these get in the way, but they might be useful for you,
 especially if you’re worried about how well you write English.
 
-* [`linter-jshint`](https://atom.io/packages/linter-jshint): adds a “linter”
-based on [JSHint](http://jshint.com/docs/) for JavaScript, meaning the app
-will warn you when the JavaScript you write has problems. This will require
-some configuration, which we’ll tackle later.
+* [`linter-jshint`](https://atom.io/packages/linter-jshint): adds a linter
+based on [JSHint](http://jshint.com/docs/) for JavaScript, meaning the Atom
+will warn you when the JavaScript you write has problems. 
 
 For each of these, you have to type the name into the little search bar in the
 Install Packages part of the Settings tab. The linters may ask you to add some
@@ -254,16 +252,17 @@ Tick the box beside “Enabled” under settings, and now Atom will autosave any
 file as soon as you click away from its tab, even if you go to another
 application.
 
-While the Settings tab is still open, click on Core and Editor and change
-these if you like. The defaults are pretty good, but you may want to change
-the “Font Family” in Editor. Type in the name of your preferred font, provided
-that it is installed! You can make the default text larger or smaller, and so
-on. One more setting to consider in Editor is “Soft Wrap.” With it off, your
-text will keep running off the side of the window as you type. Soft Wrap, like
-in Word or Notes, breaks lines so that everything fits inside the window.
+While the Settings tab is still open, click on “Core” and “Editor” and change
+things around these if you like. The defaults are pretty good, but you may
+want to change the “Font Family” in Editor. Type in the name of your preferred
+font, provided that it is installed. You can make the default text larger or
+smaller, and so on. One more setting to consider in Editor is “Soft Wrap.”
+With it off, your text will keep running off the side of the window as you
+type. Soft Wrap, like in Word or Notes, breaks lines so that everything fits
+inside the window.
 
-Finally, under Themes, you can do some basic changing of the UI (user
-interface) theme and the syntax theme for the editor. Pick a light one or a
+Finally, under Themes, you can do some basic changing of the user
+interface, theme, and the syntax theme for the editor. Pick a light one or a
 dark one, whichever you think fits your personality. I personally use the
 solarized themes, based on Ethan Schoonover’s
 [Solarized](http://ethanschoonover.com/solarized) precision color project.
@@ -273,7 +272,7 @@ solarized themes, based on Ethan Schoonover’s
 Atom is written by the people at GitHub, so it’s pretty easy to link the two
 together. In fact, that’s the main reason I encourage you to install Atom.
 
-First, you have to get the url of the repository you forked a few steps ago:
+First, you have to get the URL of the repository you forked a few steps ago:
 
 `https://github.com/YOURUSERNAME/javascripting-english-major-project`
 
@@ -282,19 +281,20 @@ add `.git` to the end of it, so you have:
 
 `https://github.com/YOURUSERNAME/javascripting-english-major-project.git`
 
-This is the url you will need for cloning.
+This is the URL you will need for cloning.
 
 Second, return to Atom. Here, open up the command palette by going to the
 “Packages” menu, choosing “Command Palette” and then “Toggle.” In the little
 box that opens, type “git” and choose the option labeled “GitHub: Clone.” For
-“Clone from,” paste or type in the url above ending in `.git` with your
+“Clone from,” paste or type in the URL above ending in `.git` with your
 username. Atom will automatically save it to a GitHub folder it creates in
 your home folder, but you can change this location if you like.
 
 Now, if you have the file-icons package installed, in the Projects pane, you
 should see a small book icon with your repository name beside it, and,
-underneath it, you should see a folder called `.git` and a file called
-`README.md`.
+underneath it, you should see a folder called `.git`, a file called
+`README.md`, and a few other files. These are the contents of your repository,
+and they are now on your computer.
 
 Third, let’s make an explicit connection between GitHub and Atom. Open up the
 GitHub pane (“Packages” > “GitHub” > “Toggle GitHub Tab”), and you should now
@@ -306,27 +306,25 @@ asking you for permission to have Atom talk to your GitHub account. Click on
 back into the GitHub pane back on Atom.
 
 You should get a message saying “No pull request could be found for the
-branch master” and so on. You’ve made the connection.
+branch master,” and so on. You’ve made the connection.
 
 ### Make a change, stage a file, commit, and push
 
 We’re in the homestretch now, but this section is the most important, because
 it’s a description of what you will be doing with Git in Atom most of the
-time. In the Projects tab, there should be a file called `README.md`. Double
+time. In the “Projects” tab, there should be a file called `README.md`. Double
 click on it, and it should open in a new tab. You should see some text that
 I’ve written. Go ahead and delete it all and type in something of your own,
 like your name and your goals for your project (it’s ok if they’re vague for
 now).
-
-`index.html`
 
 Just clicking away from the window should autosave the document, which you do
 by now opening the Git tab (“Packages” > “GitHub” > “Toggle Git Tab”). You
 will use this tab much more often than the GitHub tab, so it might be
 worthwhile to remember the keyboard shortcut, control-shift-9. 
 
-The Git tab is split into three horizontal sections, Unstaged, Staged, and
-Commit. Unstaged lists all the files you have saved but have not yet
+The Git tab is split into three horizontal sections, **Unstaged**, **Staged**, and
+**Commit**. Unstaged lists all the files you have saved but have not yet
 committed. If the icon beside the file is a green cross, that means it is a
 new file, never before saved to the repository. `README.md`, on the other
 hand, should appear in unstaged changes with a yellow box with a dot. That
@@ -350,8 +348,8 @@ committing. Do what feels like a good balance between often enough to be
 useful yet infrequent enough so that you actually get work done.
 
 Once files are in the Staged area, you can commit. That will take the files in
-the Staged area and make log the changes to the files in the Git time machine.
-Any changes you make backwards or forwards between commits doesn’t matter. Git
+the Staged area and log the changes to the files in the Git time machine.  Any
+changes you make backwards or forwards between commits doesn’t matter. Git
 only tracks commits, not individual saves.
 
 Type in a useful commit message (like `Edit README`) in the Commit box and
@@ -419,7 +417,7 @@ console.log('Hello, World!');
 Hit return. The console should respond with `Hello, World!`
 Throughout the rest of this course, when something needs to be typed at the
 prompt, I will include the `>`. This time I skipped it, to make things a bit
-clearer.
+clearer for those who have never used a prompt before.
 
 By typing the above, you’ve written your first bit of JavaScript. In other
 words, you’re ready for the [next chapter](/2-calculator/)
@@ -430,12 +428,13 @@ after completing the exercises below.
 ## Exercises
 
 1. Create a GitHub account.
-1. Fork the blank repository for this course from [`https://github.com/muziejus/javascripting-english-major-project`](https://github.com/muziejus/javascripting-english-major-project).
+1. Fork the blank repository for this course from
+   [`https://github.com/muziejus/javascripting-english-major-project`](https://github.com/muziejus/javascripting-english-major-project).
 1. Install Atom on your computer with some useful packages.
 1. Link Atom to your GitHub account.
 1. Use Atom to clone the repository you forked.
-1. Flesh out your hopes for your project in the `README.md` file and commit
-   the changes.
+1. Flesh out your hopes for your personal project in the `README.md` file and
+   commit the changes.
 1. Push your commit(s) from your computer up to GitHub.
 
 </section>

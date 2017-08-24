@@ -58,19 +58,20 @@ they get pretty geeky, what Crockford does well is hammer home two key points
 in the way computing has evolved over time:
 
 * The people who should be the first to recognize the value of an innovation
-[like programmers] are often the last.
+(like programmers) are often the last.
 * Obsolete technologies fade away slowly.
 
 The implications of both points reveal why JavaScript has its quirks and why
 those quirks are here to stay.
 
 The short version of Crockford’s history boils down to the fact that
-JavaScript was written over ten days by one man, Brendan Eich. Netscape wanted
-a scripting language for their web browser, Navigator, and Eich delivered. At
-the time, Java was positioned to be “the language for the web,” as we would be
-running Java applets on websites, so Netscape called Eich’s language
-“JavaScript,” despite the fact that JavaScript inherited nearly nothing
-substantial from Java. 
+JavaScript was written over ten days by one man, [Brendan
+Eich](http://en.wikipedia.org/wiki/Brendan_Eich). Netscape wanted a scripting
+language for their web browser, Navigator, and Eich delivered. At the time,
+Java was positioned to be “the language for the web,” as we would be running
+Java applets on websites, so Netscape called Eich’s language “JavaScript,”
+despite the fact that JavaScript inherited nearly nothing substantial from
+Java. 
 
 Once Microsoft put their *own* version of JavaScript in Internet Explorer, it
 became clear that in order for JavaScript to be useful across the entire web,
@@ -107,7 +108,7 @@ learning the language itself.
 <section id="data-types">
 ## Basic data types
 
-We hear the word “data,” but what, precisely, does it mean? If you
+We hear the word “data” every day, but what, precisely, does it mean? If you
 had to draw a picture of “data,” what would it look like? We can say “data is
 information,” but doesn’t that just pass the buck, because now we have to ask
 what “information” means? 
@@ -115,15 +116,15 @@ what “information” means?
 It maybe helps to remember that the word “data” is the plural version of the
 Latin word “datum.” A datum is a single piece of information, abstract as that
 sounds. It can be a number. It can be string of letters. It can be the answer
-to the question “true or false?” It can be the lack of information. 
+to the question “true or false?” It can also be the *lack* of information. 
 
-Data can also be more complext. A datum can be a list or collection of other
+Data can also be more complex. A datum can be a list or collection of other
 pieces of data, or it can be a process that takes some data and generates new
 data based on that data.
 
 These six possibilities (and more exist) make up the six most important **data
 types** in JavaScript, namely **number**, **string**, **boolean**,
-**null/undefined**, **object**, and **function**. We’ll only be working with
+**null** / **undefined**, **array** / **object**, and **function**. We’ll only be working with
 the first four types, the basic types, in this chapter.
 
 ### Number
@@ -182,10 +183,10 @@ A boolean is a value that is either `true` or `false`. They are named after
 mathematician, and they are astonishingly useful in programming, because they
 allow programs to make decisions based on values, much like you might make a
 decision on where to get dinner based on a series of truth values. For
-example, say you eat tacos every day for dinner except Fridays, when there is
+example, say you eat burritos every day for dinner except Fridays, when there is
 a deal on falafel. You ask yourself the question, “Is today Friday?” If the
 answer is “yes” (`true`), then you go to the falafel joint. If the answer is
-“no” (`false`), you get some tacos.
+“no” (`false`), you get a burrito.
 
 Since booleans are only ever true or false, you refer to them in JavaScript
 using those two words:
@@ -203,12 +204,12 @@ using those two words:
 
 Notice that `true` and `false` do *not* have double quotes around them. What
 would happen if they did? I have also introduced you to `===` in this code
-snippet. That is the “strict equal” comparison operator, and it is a way of
+snippet. That is the “strict equal” **comparison operator**, and it is a way of
 asking the console a question.[^strictequal] `9 === 9;` is the same as “Is the number nine
 the same thing as the number nine?” Because the answer is “yes,” the console
-logs `true`. In the next example, we’re asking the question, “Is the number
+responds `true`. In the next example, we’re asking the question, “Is the number
 nine the same thing as the string ‘Hello, World!’?” Since the answer is “no,”
-the console logs `false`.
+the console responds `false`.
 
 Between numbers, strings, and booleans, we can start using JavaScript as a
 calculator, but one type remains.
@@ -216,22 +217,24 @@ calculator, but one type remains.
 ### Null/Undefined
 
 Sometimes we deal with a lack of information, instead of information we
-understand as a datum. There are two main reasons JavaScript understands that
-lack, through an object called “null” and a data type called “undefined.”
+understand as a datum. There are two main ways JavaScript understands that
+lack, through an object called `null` and a data type called `undefined`.
 
-Null is an object that indicates the lack of information. Say you’re filling
+`null` is an object that indicates the lack of information. Say you’re filling
 out a questionnaire online and you left the last few questions unanswered but
 still pressed “Submit.” The answered questions would be strings or numbers,
 probably. But how should the computer understand the unanswered questions? The number zero doesn’t
 seem right.  Nor does a blank string. In this case, it makes sense to register
-that lack of answers with null.
+that lack of answers with `null`.
 
-Undefined, on the other hand, is for information that we do not yet have.
-Using the questionnaire example again, all of the answers are undefined until
-you press “Submit” and send them to the computer, where it can then decide
-what to do with them, by turning them into strings, numbers, or just null.
+`undefined`, on the other hand, is for information that we do not yet have.
+Using the questionnaire example again, all of the answers are `undefined`
+until you press “Submit” and send them to the computer, where it can then
+decide what to do with them, by turning them into strings, numbers, or just
+`null`.
 
-But now you’re definitely ready to start add up some numbers in JavaScript.
+The distinction is tricky, but now you’re definitely ready to start add up
+some numbers in JavaScript.
 
 </section>
 <section id="javascript-as-a-calculator">
@@ -255,10 +258,10 @@ operators. In fact, let’s start with them:
 ```
 
 These should be pretty straightforward, except for the last one. If I tell you
-it’s called the “remainder operator,” is its meaning clearer?
+it’s called the **remainder operator**, is its meaning clearer?
 
-As you can see, the arithmetic operators return numbers as answers. The
-comparison operators, like `===`, return `true` or `false`:
+As you can see, the arithmetic operators give numbers as answers. The
+comparison operators, like `===`, respond with `true` or `false`:
 
 ```javascript
 > 2 + 3 * 6 === (2 + 3) * 6;
@@ -301,7 +304,8 @@ boolean?), of course, as that is a good way to understand the assumptions the
 language is making. But we’re building websites, not calculators.
 
 Nevertheless, getting a bit of flexibility with the console is useful. Let’s
-expand on that, then, with the `let` statement, which lets us define variables.
+expand on that, then, with the `let` statement, which lets us define
+variables. Type along in the console.
 
 ```javascript
 > let burrito;
@@ -310,13 +314,13 @@ expand on that, then, with the `let` statement, which lets us define variables.
 //--> Basically the best food around.
 ```
 
-In the first line, I declared a variable, `burrito`. In the second, assigned
-to the variable the string, “Basically the best food around.”[^let]
+In the first line, you **defined** a variable, `burrito`. In the second, you
+**assigned** to the variable the string, “Basically the best food around.”[^let]
 
-Then I tell the console to log the variable burrito, and it logs its value,
-“Basically the best food around.”
+Then you tell the console to log the variable burrito, and it logs its value,
+`Basically the best food around.`
 
-Any of the data types we have learned about already we can assign to a
+Any of the data types you have learned about already you can assign to a
 variable, and we can define multiple variables at once. It’s generally good
 practice to define all your variables at the top, so you know what you will be
 working with in the future.
@@ -338,8 +342,8 @@ working with in the future.
 ```
 
 These variables persist only for the duration of the console. If you close the
-console, then you’ll lose these variables. But the variables are also mutable,
-as you can see. `secretNumber` starts out as assigned to the number 10, but
+console, then you’ll lose them. But the variables are also mutable,
+as you can see. `secretNumber` starts out assigned to the number 10, but
 then it becomes assigned to the number 11.
 
 Let’s play a bit more with assigning variables:
@@ -360,14 +364,15 @@ Let’s play a bit more with assigning variables:
 //--> Delicious burritos are clearly the best!
 ```
 
-I did two new things in this example: I used `\n` to make a new line, and I
-showed you that `console.log()` can take multiple values in the parentheses,
-separated by commas.
+There are two new things in this example: `\n` can be used to make a new line
+to make a new line, and now you see that `console.log()` can take multiple
+values in the parentheses, separated by commas.
 
 Finally, this discussion of variables allows me to introduce one more
-operator, the typeof operator. If you get a variable, sometimes you don’t know
+operator, the `typeof` operator. If you get a variable, sometimes you don’t know
 what kind of data type it is. Yet as we have seen with `+`, it behaves
-differently depending on the data. 
+differently depending on the data. Continuing with the variables in the
+previous example:
 
 ```javascript
 > typeof question;
@@ -384,9 +389,9 @@ differently depending on the data.
 //--> "undefined"
 ```
 
-As you can see, this example makes use of variables we declared in earlier
+As you can see, this example makes use of variables defined in earlier
 exercises, but it also refers to variable that has not yet been assigned (or
-even declared).
+even defined).
 
 </section>
 <section id="exercises">
@@ -416,7 +421,7 @@ even declared).
 
 ## Footnotes
 
-[^languagetype]: In this course, most of the JavaScript will be procedural, which encourages a step-by-step way of thinking through a solution. Once we move to making maps with Leaflet, the more object-oriented aspects will emerge. JavaScript’s functional personality is its most powerful and appealing, but it strikes me as the most difficult to understand and teach.
+[^language-type]: In this course, most of the JavaScript will be procedural, which encourages a step-by-step way of thinking through a solution. Once we move to making maps with Leaflet, the more object-oriented aspects will emerge. JavaScript’s functional personality is its most powerful and appealing, but it strikes me as the most difficult to understand and teach.
 
 [^quoting]: Yes, JavaScript permits using single quotes as well, but you should use double quotes exclusively.
 
@@ -424,5 +429,5 @@ even declared).
 
 [^let]: `let` is a statement that is not supported in all JavaScript consoles. If typing the above causes the console to complain `Uncaught SyntaxError: Unexpected identifier`, then you have one of those older consoles. The solution is, luckily, straightforward. For the duration of this course, where I instruct you to use `let`, you can use `var`, instead.
 
-[^consolelog]: More precisely, `console` is a JavaScript object (similar to `window` or `document`, as we’ll see later) that refers to the console you have opened in your browser. `.log()` is a “method” specific to the `console` object that outputs whatever is in sent as a parameter (or, inside the `()`).  In our example, we sent the console a snippet of text, `'Hello, World!'`, and it returned it to us.
+[^consolelog]: More precisely, `console` is a JavaScript object (similar to `window` or `document`, as we’ll see later) that refers to the console you have opened in your browser. `.log()` is a “method” specific to the `console` object that outputs whatever is in sent as a parameter (or, inside the `()`).  In our example, we sent the console a snippet of text, `"Hello, World!"`, and it returned it to us.
 
