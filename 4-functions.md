@@ -2,6 +2,8 @@
 layout: default
 title: Functions
 permalink: /4-functions
+prevch: /3-programming
+nextch: /5-collections
 ---
 
 The [previous chapter](/3-programming) was very conceptual. Loops are tricky

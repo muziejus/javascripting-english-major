@@ -2,6 +2,8 @@
 layout: default
 title: Writing Content with Markdown
 permalink: /12-markdown
+prevch: /11-geojson
+nextch: /13-bootstrap
 ---
 
 For the rest of this course, I will continue making changes to the “Could Be”

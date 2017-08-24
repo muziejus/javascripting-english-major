@@ -2,6 +2,8 @@
 layout: default
 title: Leaflet
 permalink: /10-leaflet
+prevch: /9-dataset
+nextch: /11-geojson
 ---
 
 As I wrote in the [previous chapter](/9-dataset), a whole lot happened in it,

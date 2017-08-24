@@ -2,6 +2,7 @@
 layout: default
 title: Introduction & FAQs
 permalink: /0-introduction
+nextch: /1-environment
 ---
 
 Welcome (again)! This is an introduction to *The JavaScripting

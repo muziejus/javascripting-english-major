@@ -2,6 +2,8 @@
 layout: default
 title: Bootstrap Layout and Content
 permalink: /13-bootstrap
+prevch: /12-markdown
+nextch: /14-events-popups
 ---
 
 In this chapter, I will present some of how Bootstrap handles layout, which

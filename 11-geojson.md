@@ -2,6 +2,8 @@
 layout: default
 title: Starting a Geographical Data Project
 permalink: /11-geojson
+prevch: /10-leaflet
+nextch: /12-markdown
 ---
 
 Typing up the coordinates for the [last homework

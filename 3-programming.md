@@ -2,6 +2,8 @@
 layout: default
 title: Programming
 permalink: /3-programming
+prevch: /2-calculator
+nextch: /4-functions
 ---
 
 It’s time to stop playing around with calculator effects in JavaScript.

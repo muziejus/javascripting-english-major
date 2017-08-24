@@ -2,6 +2,8 @@
 layout: default
 title: JavaScript Calculator
 permalink: /2-calculator
+prevch: /1-environment
+nextch: /3-programming
 ---
 
 

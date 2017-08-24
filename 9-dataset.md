@@ -2,6 +2,8 @@
 layout: default
 title: Building a Dataset
 permalink: /9-dataset
+prevch: /8-webpage
+nextch: /10-leaflet
 ---
 
 Your excitement should be growing as finally, you will stop making play pages

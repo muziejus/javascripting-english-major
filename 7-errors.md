@@ -2,6 +2,8 @@
 layout: default
 title: Oops!
 permalink: /7-errors
+prevch: /6-abstraction
+nextch: /8-webpage
 ---
 
 
