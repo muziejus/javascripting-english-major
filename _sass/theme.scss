@@ -78,10 +78,11 @@ h2, h3, h4, h5, h6 {
   font-family: "Ubuntu", "Helvetica", sans-serif;
 }
 
-p > strong {
+p > strong, section > ol > li > strong {
 
   font-family: "Ubuntu", "Helvetica", sans-serif;
-  font-size: .9rem;
+  font-size: 90%;
+  // font-size: .9rem;
   font-weight: bolder;
   color: $violet;
 }
