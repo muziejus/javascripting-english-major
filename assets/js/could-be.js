@@ -56,8 +56,6 @@ if (document.location.href.match(/[^\/]+$/)[0].match(/be12/) !== null){
   });
 }
 if (document.location.href.match(/[^\/]+$/)[0].match(/be13/) !== null){
-  let converter;
-  converter = new showdown.Converter();
   ["hastings-street", "eighteenth-and-vine",
     "fifth-and-mound", "introduction",
     "lenox-avenue", "rampart"].forEach(function(tab){
