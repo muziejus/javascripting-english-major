@@ -11,6 +11,7 @@
     },
     "properties": {
     "name":"Hastings Street",
+    "html":"Hastings Street",
     "div": "hastings-street",
     "mentions":2,
     "lines":[1, 13],
@@ -25,6 +26,7 @@
     },
     "properties": {
     "name":"Lenox Avenue",
+    "html":"Lenox Avenue",
     "mentions":2,
     "div": "lenox-avenue",
     "lines":[2, 14],
@@ -39,6 +41,7 @@
     },
     "properties": {
     "name":"18th & Vine",
+    "html":"18th &amp; Vine",
     "div": "eighteenth-and-vine",
     "mentions":1,
     "lines":[3],
@@ -53,6 +56,7 @@
     },
     "properties": {
     "name":"5th & Mound",
+    "html":"5th &amp; Mound",
     "div": "fifth-and-mound",
     "mentions":1,
     "lines":[5],
@@ -67,6 +71,7 @@
     },
     "properties": {
     "name":"Rampart",
+    "html":"Rampart",
     "div": "rampart",
     "mentions":1,
     "lines":[6],

@@ -2,18 +2,21 @@
 layout: default
 title: Integrating Leaflet with Events
 permalink: /14-events-popups
+prevch: /13-bootstrap
+nextch: /15-go-live
 ---
 
-The “Could Be” project is coming along nicely, as is, I hope, your own
+The “Could Be” Project is coming along nicely, as is, I hope, your own
 project. In between chapters, I added some code so that the poem would load
 inside `#poem` using the same technique for the tabs. We’ll be working with
 that a bit in this chapter, as this chapter is devoted to integrating Leaflet
-with the rest of the page. In my own wireframing for the “Could Be” project
+with the rest of the page. In my own wireframing for the “Could Be” Project
 that I mentioned in the [previous chapter](/13-bootstrap), I wanted the user
-to be able to click on places in the poem that would then have the map zoom
-and the tab holding the information for that place to become visible.
+to be able to click on places in the poem that would then have the map zoom to
+that place and also have the tab holding the information for that place become
+visible.
 
-There are a few ways to do this, but I will choose the one that is a bit more
+There are a few ways to do this, but I will choose one that is a bit more
 involved, so that you can see other applications of jQuery.
 
 <section id="adding-links">
@@ -28,17 +31,19 @@ $.ajax({
   url: "poem.md",
   success: function(poem){
     let html;
-    html = converter.makeHtml(poem);
+    html = md.render(poem);
     $("#poem").html(html);
     // The above is the same as the $.ajax() call in the prev. ch.
     $("#poem").html(function(_, oldHtml){
-      return oldHtml.replace(/Hastings Street/g, "<a href='#' data-place='hastings-street'>Hastings Street</a>");
+      let newHtml;
+      newHtml = oldHtml.replace(/Hastings Street/g, "<a href='#' data-place='hastings-street'>Hastings Street</a>");
+      return newHtml;
     });
   }
 });
 ```
 
-Those added three lines are doing quite a bit, so I’ll walk through them
+Those added five lines are doing quite a bit, so I’ll walk through them
 step-by-step:
 
 1. `$("#poem")`: Select the `#poem` `<div>`.
@@ -46,10 +51,10 @@ step-by-step:
    `.html()` by itself *gets* the HTML. `.html(variable)` *sets* the HTML. Now
    we see that `.html(function())` *manipulates* the HTML.
 1. `.function(_, oldHtml){`: The anonymous function inside the `.html()`
-   method inherits two functions, an index value I am calling `_`, and the
+   method inherits two variables, an index value I am calling `_`, and the
    “old” HTML, which I am calling `oldHtml`. I won’t use `_`. I’m only
    interested in `oldHtml`.
-1. `return`: Return the result of the following statement.
+1. Define a `newHtml` variable and assign it to the result of:
 1. `oldHtml.replace(`: Strings have a `.replace()` method, that lets us
    replace part of the string with a new string.
 1. `/Hastings Street/g,`: A **regular expression** (more below) that basically
@@ -57,14 +62,15 @@ step-by-step:
 1. `"<a href='#' data-tab='hastings-street'>Hastings Street</a>"`: The
    replacement string. Notice the addition of a `data-tab` attribute I’ll be
    using later.
+1. `return`: Return the result of the following statement.
 
 Everything here should be more or less familiar to you, except for that
 regular expression. Regular expressions are ways of matching string patterns
 that are common in programming languages. The syntax is complex, but “regexes”
-are extremely powerful as a result. For the sake of this course, you only need
+are extremely powerful as a result.[^regex] For the sake of this course, you only need
 to know that:
 
-1. Regular expressions are bounded by `/`.
+1. Regular expressions are bounded by `/` on each side.
 2. A `g` at the end of a regex means to match *every* occurrence of the
    pattern.
 3. To use a variable in a regex, you have to define and assign the regex, as
@@ -77,15 +83,14 @@ have five places. Let’s create an array that we can loop over, then:
   let placesArray;
   placesArray = [
     {text: "Hastings Street", div: "hastings-street", html: "Hastings Street"},
-    {text: "Lenox Avenue", div: "lenox-avenue", html: "Lenox Avenue"},
     {text: "18th & Vine", div: "eighteenth-and-vine", html: "18th &amp; Vine"},
-    {text: "5th & Mound", div: "fifth-and-mound", html: "5th &amp; Mound"},
-    {text: "Rampart", div: "rampart", html: "Rampart"}
-  ];
 ```
 
-Note that there is both a regular `.text` property and an `.html` property to
-handle the fact that to create an “&” in HTML, you have to type `&amp;`.
+*Wait a minute!* This looks familiar. Didn’t we do this already back in [Chapter
+11](/11-geojson/)? Yes, we did. That means we can use that `couldBeFeatures`
+   array of `Object`s we defined earlier again here. And now the point of the
+   `.html` property is clear; to create an “&“ in HTML, you have to type
+   `&amp;`.
 
 And now the loop:
 
@@ -95,17 +100,17 @@ $.ajax({
   success: function(poem){
     // Read in the poem.
     let html;
-    html = converter.makeHtml(poem);
+    html = md.render(poem);
     $("#poem").html(html);
     // Once the poem is in, start the loop.
-    placesArray.forEach(function(place){
+    couldBeFeatures.forEach(function(feature){
       $("#poem").html(function(_, oldHtml){
         let regex, newHtml;
-        // Assign the the regex the value of place.html and the 
+        // Assign the the regex the value of feature.html and the 
         // flag “g”. This is the equivalent to /Hastings Street/g.
-        regex = RegExp(place.html, "g");
-        // Fill in newHtml with the properties from the placesArray.
-        newHtml = "<a href='#' data-tab='" + place.div + "'>" + place.html + "</a>";
+        regex = RegExp(feature.html, "g");
+        // Fill in newHtml with the properties from the couldBeFeatures.
+        newHtml = "<a href='#' data-tab='" + feature.div + "'>" + feature.html + "</a>";
         // Return the newHtml wherever `replace()` finds the value
         // of regex.
         return oldHtml.replace(regex, newHtml);
@@ -116,8 +121,7 @@ $.ajax({
 ```
 
 Hopefully, this helps you see how looping over an array objects provides a lot
-of functionality. I defined `placesArray` on the fly, but was able to leverage
-it to build up clickable links for every place in the poem. 
+of functionality.
 
 Again, this is a slightly contrived example, and it depends on the fact that
 the place names are all unique in that the regular expressions **only** match
@@ -140,7 +144,7 @@ $("#poem a").click(function(){
 ```
 
 The jQuery selector `"#poem a"` means “every instance of an `<a>` tag inside
-the entity with an id of `poem`. Any other `<a>` tags on the web page remain
+`#poem`. Any other `<a>` tags on the web page remain
 unaffected. As for doing something, there are two new methods to introduce
 here, one from Bootstrap, and one from Leaflet.
 
@@ -307,8 +311,8 @@ when you’re designing your own project.
 
 First, any variable you define globally (not inside a function, for our
 purposes) in JavaScript is available in the JavaScript console. For example,
-if you look at the [“Could Be” project for the end of Chapter
-14](/examples/couldbe14.html), and you open the console on that page, you can
+if you look at the [“Could Be” Project for the end of Chapter
+14](/examples/could-be14.html), and you open the console on that page, you can
    type:
 
 ```javascript
@@ -336,7 +340,7 @@ triangles on the elements tab to see how, for example, popups are styled. If
 you click on one of the markers, so that its popup shows, you can see on the
 elements tab a tree of HTML like this:
 
-```HTML
+```html
 <div id="could-be-map" …>
   <!-- Everything below is generated by Leaflet -->
   <div class="leaflet-pane leaflet-map-pane" …>
@@ -363,10 +367,9 @@ you define in your `.css` file as the rest of the page.
 
 As a result, the answer to “How did you do that?” is not only usually “drilled
 down into the details,” but also “just like you can.” The details of the
-“Could Be” project are visible to anyone who wants to look at them. Start by
-looking at the [Chapter 14](/examples/could-be14.html) version of the page.
-
+“Could Be” Project are visible to anyone who wants to look at them.
 </section>
+
 <section id="exercises">
 ## Exercises
 
@@ -374,3 +377,6 @@ looking at the [Chapter 14](/examples/could-be14.html) version of the page.
 1. Create rich popups for your map.
 </section>
 
+## Footnotes
+
+[^regex]: Both Haverbeke and Crockford devote entire chapters to regexes. You can use the [Regular Expressions 101](https://regex101.com/) app to test your regexes if you want to learn more, but be sure to pick the JavaScript flavor from the menu on the left.

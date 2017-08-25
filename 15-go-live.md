@@ -9,8 +9,8 @@ We have come a long, long way since you were creating your GitHub account and
 using JavaScript just as a calculator. Yet with the couple of basic types I
 taught you, you are able to make a fully interactive web project by making use
 of Bootstrap, jQuery, and Leaflet. Hopefully your own personal project is
-coming along as well as the “Could Be” project has. More importantly,
-Hopefully you’ve figured out a few tricks of your own, to get the project to
+coming along as well as the “Could Be” Project has. More importantly,
+hopefully you’ve figured out a few tricks of your own to get your project to
 meet your desires and to make your wireframe a reality. 
 
 In this final chapter, we’ll do two things: do some blanket styling on your
@@ -43,7 +43,7 @@ body {
 }
 ```
 
-Leaflet its own font, however, so force the change this way:
+Leaflet forces the use of its own font, however, so override it this way:
 
 ```css
 .leaflet-container {
@@ -61,7 +61,7 @@ body, .leaflet-popup-content-wrapper, .leaflet-popup-tip {
 ```
 
 We could keep going on, adding borders, etc. But here’s a good place to stop.
-You can view the “finished” version of this “Could Be” project
+You can view the “finished” version of this “Could Be” Project
 [here](/examples/could-be.html).
 
 
@@ -69,7 +69,7 @@ You can view the “finished” version of this “Could Be” project
 <section id="going-live">
 ## Going live
 
-Since I’ve started working on the “Could Be” project, and you’ve been working
+Since I’ve started working on the “Could Be” Project, and you’ve been working
 on your own project, I hope that you have been saving and committing along the
 way to your GitHub repository. I also hope you’ve been pushing your commits up
 to GitHub. If the latest and greatest is pushed to GitHub, then going live is
@@ -86,9 +86,14 @@ a one-minute procedure.
 
 That last line is the URL to your project, with your project’s `.html` file
 added to the end, like `could-be.html`. If you want to rename your project’s
-file to `index.html`, that would simplify things. Now you can share that with
-your friends. You can also keep making changes by editing files in Atom,
-committing, and then pushing back up to GitHub.
+file to `index.html` (thereby replacing the `index.html` you were working on
+at the beginning of the course), that would simplify things. Now you can share
+that with your friends. You can also keep making changes by editing files in
+Atom, committing, and then pushing back up to GitHub.
+
+</section>
+<section id="conclusion">
+## Conclusion
 
 And that’s it! We’ve laughed, we’ve cried, we talked a lot about burritos
 until it got time to start building web sites. And now you know how to use
@@ -96,9 +101,20 @@ JavaScript and can go on making sites, learning more about Leaflet, Bootstrap,
 jQuery, and even other, more exciting libraries, like
 [d3.js](http://d3js.org). 
 
-Please let me know what kinds of amazing things you go on to create, and I
-hope your learning process has been as enjoyable as my writing this course
-(and teaching it) has been.
+I recommend having a look at the HTML, JavaScript, *and* CSS for the “final”
+version of the “Could Be” Project. You can see them here:
+
+* [HTML](/examples/could-be.html)
+* [JavaScript](/assets/js/could-be.js)
+* [CSS](/assets/css/could-be.css)
+
+I’ve gone through and changed around the JavaScript rather substantially to
+make it easier to understand as a whole, and I’ve commented it, too. Hopefully
+it will inspire you, too.
+
+Finally, please let me know what kinds of amazing things you go on to create,
+and I hope your learning process has been as enjoyable as my writing this
+course (and teaching it) has been.
 
 </section>
 
