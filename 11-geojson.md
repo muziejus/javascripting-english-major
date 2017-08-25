@@ -13,15 +13,22 @@ important to separate data wrangling from programming logic, only to then have y
 run them together again. But the data structure for representing geographical
 `Object`s in JavaScript, **GeoJSON**, is complex enough to warrant its own
 chapter. That is this chapter, and in it we’ll be doing a bit of detective
-work on a short poem in order to generate our dataset. This chapter also marks
-the beginning of the end of the course, as we’ll be working on this dataset
-for the rest of the chapters. We’ve come so far in so short a time.
+work on a short poem in order to generate our dataset. 
+
+This chapter also marks the beginning of the end of the course, as we’ll be
+working on this dataset, and the “‘Could Be’ Project,” for the rest of the
+chapters. We’ve come so far in so short a time. In my class, you would already
+be starting on your own final project, so I use the “Could Be” Project as an
+opportunity to teach new techniques for building that project. If you want to
+see the “finished” project, have a [look here](/examples/could-be.html). It’s
+not much because the text I’ve written is so thin, but you can at least see
+what you, too, will be capable of.
 
 <section id="could-be">
 ## Langston Hughes’s “Could Be”
 
-The “final project” for this course is a look at Langston Hughes’s poem,
-“Could Be.”[^could-be] The complete text is available at [Song of
+The “Could Be” Project is a look at Langston Hughes’s poem, “Could
+Be.”[^could-be] The complete text is available at [Song of
 America](http://www.songofamerica.net/song/could-be), so I encourage you to
 read it there. In 16 lines of poetry, Hughes manages to refer to five
 different geographical spaces in the United States, with two of them being
@@ -33,44 +40,46 @@ mentioned twice apiece. The places he mentions are:
 * 5th & Mound
 * Rampart
 
-I was thinking about this poem recently and wondered if mapping it might open
-up any sort of new interpretive angles into it. It’s also a good poem for
-teaching mapping, because the amount of data is small but important to the
-text as a whole. 
+I was thinking about this poem in the Spring, and I wondered if mapping it
+might open up any sort of new interpretive angles into it. It’s also a good
+poem for teaching digital mapping, because the amount of data is small but
+important to the text as a whole. Your own projects will have considerably
+more data.
 
 Yet in converting a poem into data, a scholar has to at the same time wonder
-what that data should look. Remember, data are captured, so what information
+how that data should look. Remember, data are captured, so what information
 should we capture when trying to represent this poem?
 
 </section>
 <section id="geographical-data-structure">
 ## Geographical data structure
 
-For these five locations, clearly I need their names, so I can tell them
-apart. I also need their coordinates. In other words, I’m already thinking
-about the data in terms of properties. Every `Place` `Object` will have a
-`.name` property and a `.coordinates` property. Better: it’ll have both a
-`.lat` property for its latitude and a `.lng` property for its longitude. 
+For these five locations, clearly I need their names, so that I can tell them
+apart. I also need their coordinates, if I plan on mapping them. In other
+words, I’m already thinking about the data in terms of JavaScript `Object`s
+and properties. Every `Place` `Object` will have a `.name` property and a
+`.coordinates` property.  Better: it’ll have both a `.lat` property for its
+latitude and a `.lng` property for its longitude. 
 
 What else could I include? How about how many times each place is mentioned?
 OK, that’s a `.mentions` property. Then maybe the line number? OK, that’s the
 `.line` property. But wait, two places are mentioned twice. How will the
 `.line` property work there? Maybe `.line` should be an array, then, or
 `.lines`. Finally, if the place has a Wikipedia article related to it, we can
-include that link as `.wikipedia`.
+include that link as the `.wikipedia` property.
 
-A way of thinking about `Object`s and properties that might be a bit more
-familiar to you is as rows and columns in a spreadsheet. That is, each row is
-its own `Place` `Object`, and each column is a property associated with it. In
-fact, that’s what I did for this poem. As we can see, filling in the data is
-pretty easy for each property *except* `.lat`, `.lng`, and `.wikipedia`. Those
-require some digging.
+A way of thinking about `Object`s and properties that might be familiar to you
+is as rows and columns in a spreadsheet. That is, each row is its own `Place`
+`Object`, and each column is a property associated with it. In fact, that’s
+what I did for this poem. It turns out that filling in the data is pretty easy
+for each property *except* `.lat`, `.lng`, and `.wikipedia`. Those require
+some digging.
 
 </section>
 <section id="geo-sleuthing">
 ## Geo-sleuthing
 
-How to fill in those coordinates, though? There’s some immediate low-hanging
+So how to fill in those coordinates? There are some immediate low-hanging
 fruit, luckily. Lenox Avenue clearly refers to the [avenue that runs through
 Harlem](https://en.wikipedia.org/wiki/Lenox_Avenue). Similarly, 18th & Vine is
 a [cradle of jazz in Kansas
@@ -91,7 +100,7 @@ bonkers. They are for the intersection of St. Philip St. and N Prieur St.,
 about ten blocks away from Rampart. As the Wikipedia article notes, the
 intersection of Rampart and Canal was a center of African-American life in New
 Orleans, and as we’re already seeing, Hughes is referring to various urban
-centers of African American life. So, instead, I drop a marker at that
+centers of African-American life. So, instead, I drop a marker at that
 intersection and make note of those coordinates.
 
 Hastings Street was the center of African-American life in Detroit’s [Black
@@ -102,8 +111,7 @@ and deduced the latitude and longitude for Hastings Street that way.
 
 5th & Mound is trickier still. It, too, doesn’t exist anymore, the
 intersection having been destroyed to make way, again, for Interstate 75.
-Nevertheless, 5th & Mound had been part of Cincinnati’s Kenyon-Barr
-neighborhood, which was part of the [West
+Nevertheless, 5th & Mound had been part of Cincinnati’s [West
 End](https://en.wikipedia.org/wiki/West_End,_Cincinnati), which remains the
 most African-American area in the city. Not much is available about this
 neighborhood online, but the Cincinnati History Library and Archives provides
@@ -111,13 +119,10 @@ a [search
 tool](http://library.cincymuseum.org/starweb/photos/servlet.starweb?path=photos/photo-session.web)
 that lets the user browse their Kenyon Barr Collection, which features a
 series of creepy photos of the neighborhood, taken as the city was preparing
-to raze it to the ground. As *Cincinnati Magazine* notes, [25,737 people lived
-in
-Kenyon-Barr](http://www.cincinnatimagazine.com/citywiseblog/lost-city-kenyon-barr-queensgate/)
-when the city demolished it. Furthermore, as Steven C. Tracy notes in a
-history of the Blues in Cincinnati, the Cotton Club, the most important venue
-for African-American entertainers, [was only a block away, on 6th and
-Mound](https://books.google.com/books?id=OGyWw-M5wFsC&pg=PA89&lpg=PA89&dq=cotton+club+cincinnati&source=bl&ots=4iwkg4CjZL&sig=IQAJimJ4pm2fmpUK_Yi0UJrhqrg&hl=en&sa=X&ved=0ahUKEwiS3OayqO7VAhXDzIMKHYkGDaAQ6AEIOzAD#v=onepage&q&f=false).
+to raze it to the ground. Furthermore, as Steven C. Tracy notes in a history
+of the Blues in Cincinnati, the Cotton Club, the most important venue for
+African-American entertainers, [was only a block away, on 6th and
+Mound](https://books.google.com/books?id=OGyWw-M5wFsC&pg=PA89&dq=%22the+cotton+club+was+the+most+important+club+in+cincinnati%22&hl=en&sa=X&ved=0ahUKEwi-3pfb8vLVAhVi4IMKHQHXAQgQ6AEIJjAA#v=onepage&q=%22the%20cotton%20club%20was%20the%20most%20important%20club%20in%20cincinnati%22&f=false).
 Either way, Mound Street still exists, as does 5th, but they no longer
 intersect. I extrapolated their intersection and added those coordinates to
 the dataset.
@@ -242,9 +247,10 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
   // Define the Leaflet layer.
   let couldBeLayer;
   // Iterate over the .features property of the GeoJSON object to
-  // extract every feature and add it to couldBeFeatures, with
-  // certain properties, as noted
+  // create an array of objects (features), with every object’s
+  // properties as noted.
   couldBeFeatures = data.features.map(function(feature){
+    // This return returns an object.
     return {
       name: feature.properties.name,
       div: feature.properties.div,
@@ -272,22 +278,24 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
 });
 ```
 
-Notice that, except for the  definition, all of the Leaflet work is happening
-inside the callback function, because `$.getJSON()` is async.[^global-layer] I
-also introduce three new methods here.  `.getBounds()` returns the bounding
-box that contains the entirety of a layer, in this case our `couldBeLayer`. 
-That is fed as a parameter to `.fitBounds()`, which changes the map `Object`’s
-state to a new zoom level and center coordinate. Then I use the map `Object`’s
-`.zoomOut()` method to zoom out a smidge to make all the markers appear on the
-map. `couldBeLayer`, in the meantime, is a Leaflet feature group `Object`, as
-it is made up of several markers.
+Notice that, except for the  definition of `couldBeFeatures`, all of the
+Leaflet work is happening inside the callback function, because `$.getJSON()`
+is async.[^global-layer] I also introduce three new methods here.
+`.getBounds()` returns the bounding box that contains the entirety of a layer,
+in this case our `couldBeLayer`.  That is fed as a parameter to
+`.fitBounds()`, which changes the map `Object`’s state to a new zoom level and
+center coordinate. Then I use the map `Object`’s `.zoomOut()` method to zoom
+out a smidge to make all the markers appear on the map. `couldBeLayer`, in the
+meantime, is a Leaflet feature group `Object`, as it is made up of several
+markers.
 
 Save and reload. Your map should now show the whole United States and feature
 five markers, one over New York, one over Cincinnati, one over Kansas City,
 one over Detroit, and one over New Orleans. Otherwise, catch up with the work
 I have done so far [over here](/examples/could-be11.html) in oder to see what
-the project looks like. </section>
+the project looks like. 
 
+</section>
 <section id="exercises">
 ## Exercises
 
