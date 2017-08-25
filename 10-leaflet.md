@@ -48,8 +48,9 @@ start building our own.
 1. Above the overlay layer is the **popup** layer. When you click on a marker,
    sometimes a little popup appears. This is typically on a separate layer
    from the marker, so that it appears above it (and the other markerts).
-1. Finally, at the top, we have the **control** layer. This includes controls
-   for zooming in and out and maybe other controls, depending.
+1. Finally, we have the **control** layer. This includes controls
+   for zooming in and out and maybe other controls, depending. It’s always on
+   the top of all of the layers.
 
 Most of these layers are of the set-it-and-forget-it variety. We’ll be working
 mostly with the overlay and popup layers.  The rest provide either usability
@@ -82,7 +83,7 @@ work. So let’s get started. In Atom, open up your `index.html` file and add
 another link below the one to the Prologue:
 
 ```html
-<h2><a href="prologue.html">General Prologue</a></h2>
+<h2><a href="leaflet.html">Leaflet page</a></h2>
 ```
 
 Save and close `index.html`. Now, create a new document, `leaflet.html`, that
@@ -120,14 +121,14 @@ loading Leaflet’s own CSS files. Second, the page is loading `leaflet.css`.
 Unlike in the [example with the General Prologue](/9-dataset), CSS will be
 important in this chapter.
 
-In the `<body>`, there is a `<div>` with an id and class of `map`. That’s
-where the map will go. And at the bottom, note that the page is loading
+In the `<body>`, there is a `<div>` with an id `#first-map` and class `.map`.
+That’s where the map will go. And at the bottom, note that the page is loading
 Leaflet and a new file, `leaflet.js`. That’s about it for HTML in this
 chapter. 
 
 If you save and reload your `index.html` in the browser, the link to
 `leaflet.html` will appear. When you click on it, you should see some text,
-but no map. Let’s get to work on that.
+but no map. Commit. Let’s get to work on getting the map to show.
 
 ### Setting up the CSS
 
@@ -139,23 +140,23 @@ Create a new file in Atom called `leaflet.css`. Type in these three lines:
 }
 ```
 
-This means that everything that has a class `map` should have its `height`
-property set to 400 pixels. You can change this number if you like, but it
-must be there. Leaflet’s one demand of CSS is that the map container have a
-defined `height`. Save and reload `leaflet.html` in the browser. Now the line
-“Above, you can see a Leaflet map.” should be separated from the `<h1>`,
-“Working with Leaflet” by a considerable amount of white space.
+This means that everything that has a class `.map` should have its `height`
+property set to 400 pixels. You can change this number if you like, but the
+property must be there. Leaflet’s one demand of CSS is that the map container
+have a defined `height`. Save and reload `leaflet.html` in the browser. Now
+the line “Above, you can see a Leaflet map.” should be separated from the
+`<h1>`, “Working with Leaflet,” by a considerable amount of white space.
 
 ### Initializing the Leaflet map
 
 Now create the last file for this chapter in Atom, `leaflet.js`. In it, type:
 
 ```javascript
-let map;
-map = L.map("first-map");
+let firstMap;
+firstMap = L.map("first-map");
 ```
 
-`map` is now an `Object` you can use in JavaScript to control the map on the
+`firstMap` is now an `Object` you can use in JavaScript to control the map on the
 webpage. Note the syntax. `.map()` is a method that `L` (Leaflet) has that
 creates a map in the `<div>` with the id given as the parameter. If you save
 everything and reload `leaflet.html` in the browser, you should see a map.
@@ -226,7 +227,7 @@ Everything works? Commit.
 
 The [next chapter](/11-geojson) is devoted to building up data sets of
 geographical information, but in this chapter, we’ll keep using toy data so
-that you get familiar with Leaflet. Both the marker `Object` and in the
+that you get familiar with Leaflet. Both with the marker `Object` and the
 `.setView()` method, you saw that Leaflet demanded coordinates. Leaflet
 doesn’t know where places are, and it knows nearly nothing about
 distances.[^distance] All it knows are latitude and longitude coordinates. In
@@ -276,11 +277,11 @@ creating datasets, so here are four tips:
    when you have data on both sides of the Prime Meridian, the antimeridian,
    or the Equator.
 
-Finally, coordinates from Google Maps, then taken out to six significant
+Finally, coordinates from Google Maps, when taken out to six significant
 digits, give an illusion of precision that is unwarranted. At American
-latitudes, the difference between one ten-thousandth of a degree in longitude is only a few
-meters. And the difference in latitude is not much greater, as I’ll show in
-the next section.
+latitudes, the difference between one ten-thousandth of a degree (4 digits) in
+longitude is only a few meters. And the difference in latitude is not much
+greater, as I’ll show in the next section.
 
 ## Beyond the marker
 
@@ -297,10 +298,11 @@ washingtonSquarePark = L.latLng(40.730833, -73.9975);
 washingtonSquareParkMarker = L.marker(washingtonSquarePark).addTo(firstMap);
 tenThousandth = [[40.7307, -73.9976], [40.7307, -73.9974], 
                  [40.7309, -73.9974], [40.7309, -73.9976]];
-tenThousandthPolygon = L.polygon(tenThousandth,
-                                  {color: "#268bd2",
-                                   fillColor: "#fdf6e3"}
-                                ).addTo(firstMap);
+tenThousandthPolygon = L.polygon(tenThousandth, {
+                                  color: "#268bd2",
+                                  fillColor: "#fdf6e3"
+                                }
+                        ).addTo(firstMap);
 ```
 
 Here you add a marker at the center of Washington Square Park
@@ -321,7 +323,8 @@ thousandth = [[washingtonSquarePark.lat + 0.001, washingtonSquarePark.lng + 0.00
               [washingtonSquarePark.lat + 0.001, washingtonSquarePark.lng - 0.001],
               [washingtonSquarePark.lat - 0.001, washingtonSquarePark.lng - 0.001],
               [washingtonSquarePark.lat - 0.001, washingtonSquarePark.lng + 0.001]];
-thousandthPolyline = L.polyline(thousandth, {color: "#d33682"}).addTo(firstMap);
+thousandthPolyline = L.polyline(thousandth, {color: "#d33682"}
+                      ).addTo(firstMap);
 ```
 
 Save and reload, and your Leaflet map should now show both a polygon and three
@@ -339,7 +342,8 @@ circle = L.circle(washingtonSquarePark, {radius: 100,
                                          color: "#859900",
                                          fillColor: "#cb4b16",
                                          opacity: 0.9,
-                                         fillOpacity: 0.25}).addTo(firstMap);
+                                         fillOpacity: 0.25}
+          ).addTo(firstMap);
 ```
 
 The `L.circle.options.radius` property is measured in meters. Note also that
@@ -347,22 +351,24 @@ Leaflet provides you with control over the opacity of both the border and the
 fill. `L.circle`, `L.polygon`, and `L.polyline` all inherit these options from
 the Leaflet `Object` `L.path`, and Leaflet provides a list of [all of that
 `Object`’s options](http://leafletjs.com/reference-1.2.0.html#path) that you can
-look at to style your lines and polygons as you like. Similarly, there are to
+look at to style your lines and polygons as you like. Similarly, there are two
 `Object`s I don’t mention that you might like to look up. Instead of
 `L.marker`s, you can use
 [`L.circleMarker`s](http://leafletjs.com/reference-1.2.0.html#circlemarker) (I
 actually prefer them), and there is also a vanilla
 [`L.rectangle`](http://leafletjs.com/reference-1.2.0.html#rectangle) `Object`,
-similar to what we built for the `tenThousandthPolygon` above.
+similar to what we built for the `tenThousandthPolygon` above. Circlemarkers
+will return in a later chapter.
 
 </section>
 <section id="exercises">
 ## Exercises
 
 1. Create two new files, `derive.html` and `derive.js`. Have them include a
-   Leaflet map with your two dérives you made for class drawn on them. Or it
-   can be two walks, if you’re not in my class. The dérives should be
-   different colors. Save, commit, and push to GitHub when you’re done.
+   Leaflet map with the two dérives you made for class drawn on them. Or it
+   can be two walks you’ve taken, if you’re not in my class. The dérives
+   should be different colors. Save, commit, and push to GitHub when you’re
+   done.
 
 </section>
 
