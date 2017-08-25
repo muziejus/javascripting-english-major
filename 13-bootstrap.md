@@ -6,9 +6,9 @@ prevch: /12-markdown
 nextch: /14-events-popups
 ---
 
-In this chapter, I will present some of how Bootstrap handles layout, which
-will let you conceive of how you want your project to look and present the
-content you are creating.
+In this chapter, I will show you part of how Bootstrap handles layout. This
+will let you better imagine the look of your project and help you consider if
+it’s the best way of presenting your information.
 
 <section id="wireframing">
 ## Wireframing
@@ -23,7 +23,7 @@ Wireframing, in short, is a way of forcing the web author to answer the
 questions regarding what they want their website to do. What do they want
 their users to do. What kind of information do they want to expose. 
 
-For the “Could Be” project, there are three clear containers of information
+For the “Could Be” Project, there are three clear containers of information
 that I want to present to the user. The first is the poem itself, in an
 interactive format. The second is the map, showing the five locations
 mentioned in the poem. And the third is a container showing the information I
@@ -37,7 +37,7 @@ without having to click on the poem.
 In my head, the best way to achieve this is by having the poem on one side of
 the page, and having the map atop the location information container, which
 has a navigation bar atop it listing all five locations.  Bootstrap, luckily,
-has tools to help us visualize a simple structure like what is in my head
+has tools to help us visualize a simple structure like what is in my head.
 
 </section>
 <section id="bootstrap-grid">
@@ -45,15 +45,15 @@ has tools to help us visualize a simple structure like what is in my head
 
 Grids help organize visual content. When items on the page (including a
 webpage) do not line up, the page can be confusing and tiring to read. In
-Bootstrap, when a `<div>` has the `row` class, it triggers Bootstrap’s [grid
+Bootstrap, when a `<div>` has the `.row` class, it triggers Bootstrap’s [grid
 system](https://v4-alpha.getbootstrap.com/layout/grid/), which generates a
-that is twelve columns wide, leaving us to distribute those columns as we
+grid that is twelve columns wide, leaving us to distribute those columns as we
 like. 
 
-The great part about Bootstrap’s grid is that it can be resized depending on
-the width of the browser. For example, what might be two columns on a laptop
-or tablet may appear as just one column (with both columns stacked atop each
-other) on a smartphone. 
+The great part about Bootstrap’s grid is that it can be resizes itself
+depending on the width of the browser. For example, what might be two columns
+on a laptop or tablet may appear as just one column (with both columns stacked
+atop each other) on a smartphone. 
 
 Each column in Bootstrap is typically also a `<div>` with a class that uses a
 `col-sz-n` syntax. Here, `sz` refers to the **breakpoint**, meaning at what
@@ -97,7 +97,7 @@ lifting. The navigation for the `#content` section of our project page, then,
 will look like this:
 
 ```html
-<nav id="tab-navs" class="nav nav-pills mt-3">
+<nav id="nav-tabs" class="nav nav-pills mt-3">
   <a class="nav-link active" href="#introduction">Introduction</a>
   <a class="nav-link" href="#hastings-street">Hastings St.</a>
   <a class="nav-link" href="#lenox-avenue">Lenox Ave.</a>
@@ -107,10 +107,10 @@ will look like this:
 </nav>
 ```
 
-The `nav-pills` class means that Bootstrap will style this as though it were a
-bunch of “pills,” where the one with the `active` class will be a different
+The `.nav-pills` class means that Bootstrap will style this as though it were a
+bunch of “pills,” where the one with the `.active` class will be a different
 color. This will work just fine for how we want our design to look.
-Additionally, the `mt-3` class is a [Bootstrap class that adds a
+Additionally, the `.mt-3` class is a [Bootstrap class that adds a
 **margin**](https://v4-alpha.getbootstrap.com/utilities/spacing/) to the
 top, to push the tabs away from the map above it. 
 
@@ -121,7 +121,7 @@ Markdown, ahem, suffers from none of these problems.
 Below the navigation list, we create the contents of each tab. Here we make
 use of more of Bootstrap’s built in classes.
 
-```HTML
+```html
 <div class="tab-content p-3">
   <section class="tab-pane active" id="introduction" role="tabpanel"> </section>
   <section class="tab-pane" id="hastings-street" role="tabpanel"> </section>
@@ -133,7 +133,7 @@ use of more of Bootstrap’s built in classes.
 ```
 The relationship between each `<section>`’s id and the `href` setting on the
 navigation list is how we connect the tabs to the content beneath.
-Furthermore, the `p-3` class provides some **padding** for the inner content.
+Furthermore, the `.p-3` class provides some **padding** for the inner content.
 Margins and padding are the two best ways to use CSS to control negative
 space.
 
@@ -142,7 +142,7 @@ data attributes, so that Bootstrap’s JavaScript knows to treat the section as
 a set of tabs, so the navigation gets augmented to include that:
 
 ```html
-<nav class="nav nav-pills mt-3" role="tablist">
+<nav id="nav-tabs" class="nav nav-pills mt-3" role="tablist">
   <a class="nav-link active" href="#introduction" data-toggle="tab" role="tab">Introduction</a>
   <a class="nav-link" href="#hastings-street" data-toggle="tab" role="tab">Hastings St.</a>
   <a class="nav-link" href="#lenox-avenue" data-toggle="tab" role="tab">Lenox Ave.</a>
@@ -160,14 +160,14 @@ The `<section>`s hold all of the content for this project are currently empty,
 so I will write one markdown file for each. I’ll then use a variation on the
 `$.ajax()` method we used in the [previous chapter](/12-markdown) to feed the
 content into the tabs. Importantly, however, every Markdown document has the
-same name as the id of its corresponding `<section>`. This allows us, instead
+same name as the id of its corresponding `<section>`. As a result, instead
 of having to write the same call to `$.ajax()` five times, we can write it
 once and loop over it by creating an array on the fly made up of the tab
 names:
 
 ```javascript
-let converter;
-converter = new showdown.Converter();
+let md;
+md = window.markdownit({html: true}).use(window.markdownitFootnote);
 ["hastings-street", "eighteenth-and-vine",
   "fifth-and-mound", "introduction",
   "lenox-avenue", "rampart"].forEach(function(tab){
@@ -177,7 +177,7 @@ converter = new showdown.Converter();
     url: tab + ".md",
     success: function(markdown){
       let html;
-      html = converter.makeHtml(markdown);
+      html = md.render(markdown);
       // "#rampart", for example.
       $("#" + tab).html(html);
     }
