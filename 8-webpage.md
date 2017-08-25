@@ -17,7 +17,8 @@ ever been.
 In this chapter, however, I’ll continue to use the metaphor of the single page
 (instead of “site” or “project”), because it’s useful to think of that file,
 `index.html`, as directing everything that happens for the rest of this
-course.
+course, even when we move on to other files, like `prologue.html` and
+`could-be.html`.
 
 The `.html` at the end of the file name indicates that it’s written in HTML,
 or Hyper-text Markup Language. HTML provides the structure and the content of the
@@ -30,10 +31,10 @@ CSS, or Cascading Style Sheets. Without CSS, all webpages would be boring,
 black Times New Roman text on white backgrounds.
 
 Finally, the *action* on the page, that is, what happens when a user interacts
-with a page, is controlled by JavaScript. We’ve already seen that this course
-with how the `prompt()` function can change what gets printed on the page. In
-this chapter, we'll be looking at jQuery, specifically, which is a means of
-accessing and altering the content of a webpage quickly and easily.
+with a page, is controlled by JavaScript. We’ve already in this course how the
+`prompt()` function can change what gets printed on the page. In this chapter,
+we'll be looking at jQuery, specifically, which is a means of accessing and
+altering the content of a webpage quickly and easily.
 
 The three languages are intertwined; it’s possible to write CSS and JavaScript
 inside an HTML document. Similarly, JavaScript on webpages often changes
@@ -55,7 +56,7 @@ something like this:
   </head>
   <body>
     <h1>This is my project!</h1>
-    <div id="response">This is the div.</div>
+    <div id="response">This is the #response div.</div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="scripts.js"></script>
   </body>
@@ -68,7 +69,7 @@ closed, like the `<meta>` tag. Earlier, I said that HTML provides a webpage
 both with its structure and its content. We can see that in this short page
 already. The `<html>` tag is split into two sections, each with its own tag,
 `<head>` and `<body>`. Inside the `<head>` are two more tags, a `<meta>` tag
-and a `<title>` tag. And you can extrapolate what’s inside the `<body>`
+and a `<title>` tag. And you can deduce what’s inside the `<body>`
 tag.[^doctype]
 
 The `<head>` is where web authors put information about the page. None of the
@@ -80,7 +81,8 @@ appropriate to the page, but styling is for the next section.
 Inside the `<body>` tag is everything we see. It is also, traditionally, where
 JavaScript files get loaded with `<script>` tags. It’s best to leave the
 JavaScript loading for the end of the page, so that the JavaScript has a
-canvas in place to work on and manipulate. Most of your HTML writing happens
+canvas in place to work on and manipulate (and so that the page doesn’t freeze
+waiting for the JavaScript to load). All of your HTML writing should happen
 inside the `<body>` tag but before the `<script>` tags.
 
 Tags can also have **attributes**, which are designated by the syntax
@@ -89,10 +91,12 @@ here. Some, like `charset` or `lang`, we can ignore. They’re of the “set it
 and forget it” variety. But there are several attributes worth learning:
 
 * `id`: sets an identifier for an entity. The entity can then be accessed or
-manipulated using the `#id` syntax, as with the `$("#response")` selector we have been using so far.
+manipulated using the `#id` syntax, as with the `$("#response")` selector we
+have been using so far. These are supposed to be unique on the webpage.
 * `class`: where `id` is supposed to describe a specific entity, `class` can
 be used to group entities together for manipulation. They can be accessed
-using the `.class` syntax, which we have not yet seen.
+using the `.class` syntax, which we have not yet seen, and which looks like
+a method, but without the parentheses.
 * `src`: designates the source of either a JavaScript file (in a `<script>`
 tag) or an image (in an `<img>` tag).
 * `href`: designates the URL of a link in an `<a>` tag.
@@ -101,7 +105,7 @@ In addition to the tags you have seen above, I’ll introduce a few more here:
 
 * `<p></p>`: paragraph
 * `<a href="http://..."></a>`: anchor, for making links
-* `<img src="...">`: images
+* `<img src="..." alt="Text for those who cannot see images">`: images
 * `<h2></h2>`: second-level heading (they descend all the way to `<h6>`
 * `<div></div>`: a generic block of content
 * `<span></span>`: a generic span of inline content
@@ -122,7 +126,8 @@ Any webpage on the internet can expose its raw HTML to the user. The same
 window that gives you the JavaScript console also has a tab for “Elements.” If
 you click on it, you can see the entire structure of the webpage.
 Unfortunately, a lot of webpages these days, especially of popular websites,
-are nearly impossible to read. But give it a try.
+are nearly impossible to read. But give it a try. Twenty years ago, looking at
+the source of HTML pages was the easiest way to learn HTML.
 
 </section>
 <section id="css">
@@ -178,20 +183,20 @@ on line 5:
 <body>
   <div class="container">
     <h1>This is my project!</h1>
-    <div id="response">This is the div.</div>
+    <div id="response">This is the #response div.</div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="scripts.js"></script>
 </body>
 ```
 
 “Container” is a class [provided by
 Bootstrap](https://v4-alpha.getbootstrap.com/layout/overview/#containers) that
-lets us use the grid layout system. If you save, commit, and reload the
-webpage in the browser, you should see that it looks different. The font has
-changed, and there are tidy margins on both sides.
+lets us use the grid layout system. If you save and reload the webpage in the
+browser, you should see that the page looks different. The font has changed,
+and there are tidy margins on both sides. Commit.
 
 For me, usually getting this far is enough with CSS. On the other hand,
 sometimes I like to personalize Bootstrap. This course, for example, uses a
@@ -211,14 +216,14 @@ like this:
 <body>
   <div class="container">
     <h1>This is my project!</h1>
-    <div id="response">This is the div.</div>
+    <div id="response">This is the #response div.</div>
     <p>This is the first paragraph of my webpage, despite the div above.</p>
     <p class="second-paragraph">This is the second paragraph. As such, it even has two sentences.</p>
-		<p id="third-paragraph">This is the third paragraph. Do you want three sentences? Lucky you, because here they are.</p>
+    <p id="third-paragraph">This is the third paragraph. Do you want three sentences? Lucky you, because here they are.</p>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="scripts.js"></script>
 </body>
 ```
@@ -266,8 +271,8 @@ mentioned above are also CSS selectors. Add these two statements to
 ```
 
 As we can see, `.second-paragraph` means “apply these properties to everything
-that has the class “second-paragraph.” Similarly, `#third-paragraph` means
-“apply these properties to the entity that has the id “third-paragraph.” Try
+that has the class ‘second-paragraph.’” Similarly, `#third-paragraph` means
+“apply these properties to the element that has the id ‘third-paragraph.’” Try
 adding `class="second-paragraph"` to the `<h1>` tag. What happens?
 
 The selectors can also be mixed and matched. `p.lead`, for example, refers to
@@ -329,7 +334,8 @@ and more jQuery grows along with it.
    [images](https://v4-alpha.getbootstrap.com/content/images/) and give your
    image rounded corners.
 1. Add some jQuery to `scripts.js` that selects one (and only one) `<p>`
-   element and uses `.addClass` to add the “lead” class to it. 
+   element and uses `.addClass` to add the “lead” class to it. Style that
+   class in some distinct way.
 
 </section>
 
