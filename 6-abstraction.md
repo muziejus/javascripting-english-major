@@ -10,7 +10,7 @@ Between strings, numbers, booleans, functions, arrays, and `Object`s, we have
 the fundamentals of JavaScript down. These are the pieces that build together
 to make all JavaScript web projects. But knowing how to put the pieces
 together is where programming stops being a series of clunky, step-by-step
-instructions and becomes something like an art.
+instructions and becomes creative expression.
 
 Recall the example from [chapter 4](/4-functions/) of teaching the computer to
 make a burrito. One way to do it could be to list out every command, step by
@@ -26,7 +26,7 @@ beans, for getting cheese, for getting guacamole? Define it once, reuse it
 forever. 
 
 Another way of thinking about abstraction is through a programming philosophy
-called “DRY,” for “Don’t Repeat Yourself.” If you find yourself writing the
+called **DRY**, for “Don’t Repeat Yourself.” If you find yourself writing the
 same kind of code over and over, it means you haven’t thought about the
 problem abstractly enough to realize moments where your code could benefit
 from abstraction.
@@ -56,9 +56,9 @@ return value using the `return` keyword. For example, we have been using
 `console.log()` to write to the console so far, but try this in the console:
 
 ```javascript
-let f;
-f = function(){ return "I am a return value." };
-f();
+> let f;
+> f = function(){ return "I am a return value." };
+> f();
 ```
 
 First, note that I collapsed the entire function definition to one line. But,
@@ -67,27 +67,29 @@ by writing a function that combines someone’s first and last names into a full
 name with a space between them:
 
 ```javascript
-let makeFullName, eichsFullName;
-makeFullName = function(firstName, lastName){
-  firstName + " " + lastName;
-}
-eichsFullName = makeFullName("Brendan" "Eich");
-console.log("Is your name " + eichsFullName + "?");
+> let makeFullName, hughessFullName;
+> makeFullName = function(firstName, lastName){
+    firstName + " " + lastName;
+  }
+> hughessFullName = makeFullName("Langston", "Hughes");
+> console.log("Is your name " + hughessFullName + "?");
+//--> Is your name undefined?
 ```
 
 The function is doing stuff, but we don’t get the result we want. We want the
-console to ask, “Is your name Brendan Eich?” not “Is your name undefined?” The
-problem is that the variable, `eichsFullName` is assigned to `undefined`. But
-we want, instead, for that variable to hold the value `"Brendan Eich"`. We do
-this by telling the function to return the string.
+console to ask, “Is your name Langston Hughes?” not “Is your name undefined?” The
+problem is that the variable, `hughessFullName`, is assigned to `undefined`. But
+we want, instead, for that variable to hold the value `"Langston Hughes"`. We do
+this by telling the function to **return** the string.
 
 ```javascript
-let makeFullName, eichsFullName;
-makeFullName = function(firstName, lastName){
-  return firstName + " " + lastName;
-}
-eichsFullName = makeFullName("Brendan" "Eich");
-console.log("Is your name " + eichsFullName + "?");
+> let makeFullName, hughessFullName;
+> makeFullName = function(firstName, lastName){
+    return firstName + " " + lastName;
+  }
+> hughessFullName = makeFullName("Langston" "Hughes");
+> console.log("Is your name " + hughessFullName + "?");
+//--> Is your name Langston Hughes?
 ```
 
 Knowing the return value of a function helps you manipulate it with
@@ -96,9 +98,9 @@ arrays, leaving the original array unchanged. Since we know this, we can even
 **chain** the two methods:
 
 ```javascript
-let turtles, sortedReversedTurtles;
-turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
-sortedReversedTurtles = turtles.sort().reverse();
+> let turtles, sortedReversedTurtles;
+> turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
+> sortedReversedTurtles = turtles.sort().reverse();
 //--> ["Raphael", "Michelangelo", "Leonardo", "Donatello"]
 ```
 
@@ -106,19 +108,19 @@ Say we accidentally included Splinter in the list of turtles, and decided to
 `.pop()` him off before reversing:
 
 ```javascript
-let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
-turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
-// oops. let's pop() Splinter off before reversing…
-reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
+> let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
+> turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
+> // oops. let's pop() Splinter off before reversing…
+> reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
 ```
 
 Uh-oh. This causes an error. Why does this happen? After all, we're just
 telling JavaScript to pop off the last value of the array, then sort it, and
 then reverse it. The answer is that, although `.sort()` and `.reverse()`
-return *arrays*, `.pop()` does not. It returns the value of the popped off
+return *arrays*, `.pop()` does not. It returns the *value* of the popped off
 element in the array. In other words, we're asking JavaScript to run
 `.reverse()` on `"Splinter"`, which is a string. And strings have no
-`.reverse()` method.
+`.reverse()` method. Error ensues.
 
 Return values encourage programmers to think in terms of the effect of the way
 their functions manipulate data. This is valuable when we start to talk about
@@ -130,19 +132,22 @@ iteration.
 
 We know that strings can behave a bit like arrays, in that they have a
 `.length` property and index values. They also have the method
-`.toUpperCase()`, which makes string all caps. What if we wanted to write a
+`.toUpperCase()`, which makes a string all caps. What if we wanted to write a
 function that made every letter upper case *except* “e”? Let’s close the
-console for now and work this out in Atom:
+console for now and work this out in Atom. Erase your `scripts.js` and type in
+this:
 
 ```javascript
-// First, we need a string from the user
 let userString, upperCaseMinusE, upperCasedString;
+// First, we need a string from the user.
 userString = prompt("What do you want to UPPeRCASe?");
 // Second, we need to create our function.
 upperCaseMinusE = function(string){
-  // Something will happen here
-}
-// Third, we need to pass the user’s string to the function
+  // Something will happen here…
+};
+// Third, we need to pass the user’s string to the 
+// function and assign the return value to a 
+// variable.
 upperCasedString = upperCaseMinusE(userString);
 // And we can then print the string to the webpage.
 $("#response").html(upperCasedString);
@@ -157,14 +162,13 @@ while skipping the letter whenever it is “e.” That should be easy enough to
 write:
 
 ```javascript
-let upperCaseMinusE;
 upperCaseMinusE = function(string){
   if ( letter === "e" ) {
     result = letter;
   } else {
     result = letter.toUpperCase();
   }
-}
+};
 ```
 
 This code won’t yet work, mostly because it references two variables,
@@ -175,7 +179,6 @@ for loop. Remember, a for loop takes three parameters: the initialization, the
 condition, and the afterthought. So let’s add a for loop to our function:
 
 ```javascript
-let upperCaseMinusE;
 upperCaseMinusE = function(string){
   for ( let i = 0; i < string.length ; i = i + 1 ) {
     if ( letter === "e" ) {
@@ -184,7 +187,7 @@ upperCaseMinusE = function(string){
       result = letter.toUpperCase();
     }
   }
-}
+};
 ```
 
 `letter` still isn’t defined, but we’re at least iterating over the string.
@@ -194,10 +197,9 @@ not set `i` to 1, and make the condition `i <= string.length`? The answer has
 to do with zero indexing. Recall that to get the first letter of a string, we
 need to ask it for `string[0]`. So the first time through the loop, we want
 `i` to be 0, so that we can ask for `string[i]` and get the zeroth letter in
-the string. And that’s how we’ll define `letter`!
+the string. And that’s what we’ll assign to `letter`!
 
 ```javascript
-let upperCaseMinusE;
 upperCaseMinusE = function(string){
   for ( let i = 0; i < string.length ; i = i + 1 ) {
     let letter;
@@ -208,7 +210,7 @@ upperCaseMinusE = function(string){
       result = letter.toUpperCase();
     }
   }
-}
+};
 ```
 
 `i`, of course, is defined for the course of the loop, and it increases every
@@ -217,15 +219,17 @@ variable by calling `string[i]` on it every time through the loop, when `i`
 has a different value. But that `result` variable is still undefined, and it’s
 still not doing anything. `result` will be what we return from the function.
 And we know that what we return will be a string, so let’s define `result` at
-the beginning of the function and assign it to a blank string:
+the beginning of the function and assign it to a blank string. `scripts.js`
+should now look like this:
 
 ```javascript
-let upperCaseMinusE;
-upperCase MinusE = function(string){
+let userString, upperCaseMinusE, upperCasedString;
+userString = prompt("What do you want to UPPeRCASe?");
+upperCaseMinusE = function(string){
   let result;
   result = ""; 
   for ( let i = 0; i < string.length ; i = i + 1 ) {
-    let letter
+    let letter;
     letter = string[i];
     if ( letter === "e" ) {
       result = letter;
@@ -234,7 +238,9 @@ upperCase MinusE = function(string){
     }
   }
   return result;
-}
+};
+upperCasedString = upperCaseMinusE(userString);
+$("#response").html(upperCasedString);
 ```
 
 At last, the code isn’t broken any longer, so you can save, commit, and reload
@@ -244,7 +250,8 @@ to the `result` variable every time we step through the loop, so we simply
 have to change two lines:
 
 ```javascript
-let upperCaseMinusE;
+let userString, upperCaseMinusE, upperCasedString;
+userString = prompt("What do you want to UPPeRCASe?");
 upperCaseMinusE = function(string){
   let result;
   result = ""; 
@@ -252,17 +259,21 @@ upperCaseMinusE = function(string){
     let letter;
     letter = string[i];
     if ( letter === "e" ) {
+      // Change here.
       result = result + letter;
     } else {
+      // And change here.
       result = result + letter.toUpperCase();
     }
   }
   return result;
-}
+};
+upperCasedString = upperCaseMinusE(userString);
+$("#response").html(upperCasedString);
 ```
 
-Save, commit, reload, and you’ll see that it works now just as we would have
-hoped. 
+Save and reload, and you’ll see that it works now just as we would have
+hoped. If that’s the case, go ahead and commit.
 
 Take a break. We’ve just done a lot. Have a look over the code and make
 certain you understand what is going on in every line. For the for loop, try
@@ -275,18 +286,17 @@ through with a made up value for string, like “uppErcase me!”
 
 I hope you enjoyed your break. Iterating over arrays is a vitally important
 aspect of programming. In fact, it’s so common that JavaScript has a special
-method, `forEach()`, for iterating over arrays. We could rewrite the function
+method, `.forEach()`, for iterating over arrays. We could rewrite the function
 in the previous section this way:
 
 ```javascript
-let upperCaseMinusE;
 upperCaseMinusE = function(string){
   let result, stringArray;
   result = ""; 
   // Since forEach() only works on arrays, we have 
   // to convert the string to an array:
   stringArray = string.split("");
-  // now we call forEach() on stringArray:
+  // Now we call forEach() on stringArray:
   stringArray.forEach(function(letter){
     if ( letter === "e" ) {
       result = result + letter;
@@ -295,7 +305,7 @@ upperCaseMinusE = function(string){
     }
   }) // Note the parenthesis!
   return result;
-}
+};
 ```
 
 The savings in terms of typing aren’t that great, but `.forEach()` becomes far
@@ -316,7 +326,7 @@ turtles = [leonardo, donatello, raphael, michelangelo];
 
 Each turtle has three properties, `.name`, `.color`, and `.weapon`. And then
 we put all four turtles into an array, `turtles`. Now let’s say we want a list
-of their weapons on the webpage. In Atom, type out:
+of their weapons on the webpage. In `scripts.js`, type out:
 
 ```javascript
 let leonardo, donatello, raphael, michelangelo, turtles, weapons;
@@ -329,7 +339,7 @@ weapons = ""; // a list of weapons.
 $("#response").html(weapons);
 ```
 
-Of course, `weapons` is blank for the time being, so our `<div>` on the
+Of course, `weapons` is blank for the time being, so `#response` on the
 webpage will just be blank. How can we get the list of weapons, though? We
 need to iterate over the list of turtles and get each turtle’s individual
 weapon. Then we can put those together into the `weapons` string and be on our
@@ -343,7 +353,7 @@ turtles.forEach(function(turtle){
 
 Weapons starts out blank, but then every time through the `.forEach()` loop,
 it gets its previous value, plus the value of the turtle’s `.weapon` property,
-plus a space. If you save, commit, and reload, you should now get a list of
+plus a space. If you save and reload the browser, you should now get a list of
 all the turtles’ weapons. This is great, but we can do better.
 
 </section>

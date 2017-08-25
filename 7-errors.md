@@ -12,7 +12,7 @@ would start drilling down deeper into how `Object`s work, the idea being that
 creating our own `Object`s that have built-in methods, etc., would be rather
 useful. Abstractly, that is certainly the case. But since we’re moving ahead
 to a very specific goal, learning about how to create `Object` prototypes and
-the like can be saved for later, if at all.
+the like can be saved for a different course.[^haverbeke]
 
 Instead, we’ll close out this first half of the course by talking about
 mistakes. They happen in programming. Sometimes they’re simple mistakes, like
@@ -117,11 +117,12 @@ turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Spli
 // oops. let's pop() Splinter off before reversing…
 turtlesWithoutSplinter = turtlesWithSplinter.pop();
 console.log(turtlesWithoutSplinter);
+//--> Splinter
 //reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
 //$("#response").html(reversedTurtlesWithoutSplinter);
 ```
 
-Save, reload, and the console now reads `"Splinter"`. At least it’s not
+Save, reload, and the console now reads `Splinter`. At least it’s not
 causing errors.
 
 But this shows us why we had the error. `turtlesWithoutSplinter` does *not*
@@ -160,7 +161,7 @@ This is much tidier because it does not make the assumption, as `.pop()` does,
 that `"Splinter"` is the last value. Instead, it uses `.filter()` to return
 all the strings that *do not* match `"Splinter"`. That’s what `!==` means. So
 we get an array of all the strings except `"Splinter"`, and that happens to be
-our turtles array, which we can then reverse with no difficult and print to
+our turtles array, which we can then reverse with no difficulty and print to
 the webpage.
 
 The trick here is to break down the program into tiny pieces and to test our
@@ -186,18 +187,18 @@ question by working in the console, with a twist:
 ```javascript
 > let x, y, z;
 > x = "string";
-//<-- "string"
+//--> "string"
 > y = x + 3;
-//<-- "string3"
+//--> "string3"
 > z = x * 3;
-//<-- NaN
+//--> NaN
 ```
 
-There’s that confusing `NaN` type, the “Not a Number.” Instead of breaking and
+There’s that confusing `NaN` type, **Not a Number**. Instead of breaking and
 saying something like “cannot multiply a string!” JavaScript instead just
 quietly fails, sets the response to `NaN` and moves on. This level of
 forgiveness can cause trouble, because finding what, precisely, caused your
-expected number to become not a number can be difficult.
+expected number to stop being a number can be difficult.
 
 In fact, we’ve already used (and benefited from) JavaScript’s forgiveness.
 Remember the `tipCalculator()` function in [chapter 4](/4-functions)? It
@@ -207,15 +208,15 @@ Let’s revisit that part, too, in the console:
 ```javascript
 > let promptValue;
 > promptValue = prompt("Type in a number, please.");
-//<-- "2"
+//--> "2"
 > typeof promptValue;
-//<-- "string"
+//--> "string"
 > promptValue = promptValue + 3;
-//<-- "23"
+//--> "23"
 > promptValue = promptValue * 3;
-//<-- 69
+//--> 69
 > typeof promptValue;
-//<-- "number"
+//--> "number"
 ```
 
 Wait, what? Let’s follow what happens to our variable `promptValue`. When the
@@ -248,7 +249,7 @@ promptValue = prompt("Type in a number, please");
 if (isNaN(promptValue) === true) {
 	alert("The value you submitted is not a number");
 } else {
-	// do the calculations on promptValue knowing it
+	// Do the calculations on promptValue knowing it
 	// will behave like a number and move on from here.
 }
 ```
@@ -267,3 +268,7 @@ Remember, you can always check your sanity in the console.
 
 1. No homework this time. Enjoy the halfway point. When you come back, it will
    be time to start creating!
+
+## Footnotes
+
+[^haverbeke]: This is where I make my first large deviation from Haverbeke’s book’s structure. The sixth chapter of *Eloquent JavaScript* is “The Hidden Life of Objects,” and none of what is covered in that chapter is covered in this course.
