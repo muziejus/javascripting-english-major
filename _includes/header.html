@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:url" content="{{ site.host-full | append: page.url }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ page.title | append: ' | The JavaScripting English Major' }}" />
+    <meta property="og:title" content="{{ page.title | append: ' | ' | append: site.title }}" />
     <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
     <meta property="og:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -18,7 +18,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
-    <title>{{ page.title | append: ' | The JavaScripting English Major' | default site.title }}</title>
+    <title>{{ page.title | append: ' | ' | append: site.title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
