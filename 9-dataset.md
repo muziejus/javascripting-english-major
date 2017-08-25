@@ -8,8 +8,8 @@ nextch: /10-leaflet
 
 Your excitement should be growing as finally, you will stop making play pages
 and actually build a self-contained digital version of a text you may already
-know (or will see soon in your academic career), the “[General
-Prologue](https://en.wikipedia.org/wiki/General_Prologue)” of *The Canterbury
+know (or will see soon in your academic career), the [General
+Prologue](https://en.wikipedia.org/wiki/General_Prologue) of *The Canterbury
 Tales*—or at least the first 18 lines. Here they are, in their late 14th
 century Middle English grandeur:
 
@@ -35,7 +35,7 @@ century Middle English grandeur:
 In this chapter, you will create a webpage that glosses these first 18 lines.
 That is, it prints them, and then it turns every word that might not be clear
 into a link the user can click on. And when the user does click on such a
-word, a gloss of that word appears in a box below the text.
+word, the modern version of that word appears in a box below the text.
 
 <section id="building-a-page">
 ## Building a page for the Prologue
@@ -93,8 +93,8 @@ $("#prologue").html("<p>The text of the Prologue will go here.</p>");
 $("#glosses").html("<p>The glosses will go here.</p>");
 ```
 
-Save, commit, and reload `prologue.html` in the browser. The text in the
-jQuery commands should appear on `prologue.html`.
+Save and load `prologue.html` in the browser. The text in the
+jQuery commands should appear on `prologue.html`. If it does, commit.
 
 </section>
 <section id="prologue-into-data">
@@ -140,7 +140,7 @@ Now you can sort of imagine using the `.map()` method like this:
 let line1TextArray;
 line1TextArray = line1.map(function(word){
   return word.text;
-}
+});
 ```
 
 The `.map()` creates a new array out of the array of word-`Object`s, and this
@@ -161,12 +161,13 @@ $("#prologue").html("<p>" + line1Text + "<br /></p>");
 // lines.
 ```
 
-Save, commit, and reload. Now the first line of the Prologue should appear on
-the page. Time to increase the complexity. Are you ready? 
+Type the above into `prologue.js`, save, and reload. Now the first line of the
+Prologue should appear on the page. If it does, commit. Time to increase the
+complexity. Are you ready? 
 
 The Wikipedia page for the General Prologue provides a word-for-word
-translation into Modern English. So let’s add a property, `modern`, to each
-word-`Object` that includes gives its modern version:
+translation into Modern English. So let’s add a property, `.modern`, to each
+word-`Object` that includes its modern version:
 
 ```javascript
 line1 = [{text: "Whan", modern: "When"}, {text: "that"}, {text: "Aprill,",
@@ -196,7 +197,7 @@ steps here that we’ll follow:
 
 1. As things stand now, we have a single string getting printed to `#prologue`
    that includes the first line of the Prologue.
-1. We went to break that line back up into individual word-`Object`s.
+1. We want to break that line back up into individual word-`Object`s.
 1. If the word-`Object` has no `.modern` property, we print its `.text` property
    as is.
 1. If it does, we want to surround the `.text` property in `<a>` tags, so that
@@ -204,11 +205,11 @@ steps here that we’ll follow:
 1. When we click on the link, we want the `.modern` property to get printed in
    `#glosses`.
 
-The final step, of course, will be to do this for all 18 lines, but let’s
+The *real* final step, of course, will be to do this for all 18 lines, but let’s
 stick to one line for now.
 
 The first step is straightforward. Remember, we are dealing with word-size
-chunks of data to begin with, so we just have to get rid of that `.join()`
+chunks of data to begin with, so you just have to get rid of that `.join()`
 method and iterate over the array to build up the single line of text,
 instead:
 
@@ -230,10 +231,10 @@ $("#prologue").html(line1Text);
 ```
 
 Nothing changes as far as the look of the webpage (if you save and reload),
-but using that `.forEach()` method means that we expose the array to the
+but using that `.forEach()` method means that you expose the array to the
 potential for an if statement. Looking just at that block:
 
-```
+```javascript
 line1.forEach(function(word){
   // Define a variable that will be the entirety of a single
   // word-sized chunk of information.
@@ -249,10 +250,10 @@ line1.forEach(function(word){
 });
 ```
 
-Save, commit, and reload. Now the words “Whan,” “Aprill,” “shoures,” and
-“soote” should appear like links. But if you click on them, nothing happens.
-Here’s where the jQuery `.click()` method becomes our friend. At the bottom of
-`prologue.js`, add:
+Save and reload. Now the words “Whan,” “Aprill,” “shoures,” and “soote” should
+appear like links. If they do, commit. But if you click on them, nothing
+happens. Here’s where the jQuery `.click()` method becomes our friend. At the
+bottom of `prologue.js`, add:
 
 ```javascript
 $("#prologue a").click(function(){
@@ -263,7 +264,7 @@ $("#prologue a").click(function(){
 The jQuery selector, `$("#prologue a")`, is selecting every `<a>` tag inside
 `#prologue`. With the `click()` method, it says to execute a function whenever
 the user clicks on an `<a>` tag inside `#prologue`. And that function appends
-a string, “You clicked on a word!” to `#glosses`. Save, commit, reload, and
+a string, “You clicked on a word!” to `#glosses`. Save, reload, and
 start clicking on the words in the Prologue.
 
 We have one more step, which is to have the gloss be printed, not “You clicked
@@ -275,12 +276,12 @@ on a word.” But how can we tell jQuery what the value of a word-`Object`’s
 
 Let’s just send the word *itself* to `#glosses`, to fulfill the first part of
 this step. This requires making use of the `$( this )` selector we saw [last
-chapter](/8-webpage), that lets a jQuery method get information about the
+chapter](/8-webpage) that lets a jQuery method get information about the
 selected `Object`:
 
 ```javascript
 $("#prologue a").click(function(){
-  // Define the text and the word that was clicked
+  // Define the text and the word that was clicked.
   let glossText, clickedWord;
   clickedWord = $( this ).text();
   glossText = "<h2>You clicked on the word: " + clickedWord + "</h2>";
@@ -288,17 +289,17 @@ $("#prologue a").click(function(){
 });
 ```
 
-Save, commit, and reload. Note that the `.text()` method, when called without
+Save and reload. Note that the `.text()` method, when called without
 parameters, *gets* the text. When called with parameters, it *sets* the text
-to the parameters.  Unfortunately, we can’t do something like `$( this
+to the parameter.  Unfortunately, we can’t do something like `$( this
 ).modern` to get the `.modern` property, though that would be pretty cool. Can
 you see why? 
 
-Instead, we have to feed the `<a>` tag some hidden data that we can then use
-jQuery to harvest. Here, we make use of **data attributes**, which are custom,
-on-the-fly attributes we can set in HTML. So let’s make one, called
-`data-modern`.[^data-attributes] Now we can change the `forEach` loop to add
-the data-attribute:
+Instead, you have to feed the `<a>` tag some hidden data that you can then use
+jQuery to harvest. Here, you should make use of **data attributes**, which are
+custom, on-the-fly attributes you set in HTML. So make one, called
+`data-modern`.[^data-attributes] Now change the `forEach` loop to add the
+data-attribute:
 
 ```javascript
 line1.forEach(function(word){
@@ -312,9 +313,9 @@ line1.forEach(function(word){
 });
 ```
 
-Save and reload. To make sure it worked correctly, if you use the Element
-inspector (a tab near the console tab in the browser), see if the HTML around
-the word “Whan” looks like this:
+Save and reload. To make sure it worked correctly, use the Element inspector
+(a tab near the console tab in the browser’s developer tools) to see if the
+HTML around the word “Whan” looks like this:
 
 ```html
 <a href="#" data-modern="When">Whan</a>
@@ -341,7 +342,7 @@ $("#prologue a").click(function(){
 ```
 
 Save and reload. If clicking on the words gives the modern word at the bottom,
-then go ahead and commit. We're done with this part of the chapter. 
+then go ahead and commit. You're done with this part of the chapter. 
  
 </section>
 <section id="json">
@@ -367,7 +368,7 @@ inside, which might have arrays or other `Object`s inside them. We can expand on
 the data structure we already set for `line1` above, and imagine something
 like this:
 
-```
+```javascript
 let prologueObject;
 prologueObject = {
   lines: [ // .lines is an array of lines
@@ -379,12 +380,12 @@ prologueObject = {
       {
         text: "that"
       }
-      ...
+      // ...
     ], // this closes the line 1 array
     [ // this opens the line 2 array
-      ...
+      // ...
     ] // closes line 2
-    ...
+    // ...
   ] // closes the .lines property
 } // closes prologueObject
 ```
@@ -394,7 +395,7 @@ I’ve already done it for you. Open up [this file](/prologue.json) in a new tab
 and look at it. You can see that it looks like a regular JavaScript `Object`
 except that the properties are strings, as well. That is, instead of `{text:
 "that"}`, we get `{"text": "that"}`. Now we have to let `prologue.js` know
-about it.
+about this file.
 
 </section>
 <section id="async">
@@ -419,7 +420,7 @@ makeAPastaDinner = function (){
   makeTheSauce(); // includes chopping vegetables and simmering
   boilThePasta(); // includes heating up the water
   mixTheSauceAndPasta();
-}
+};
 ```
 
 By the time we got to `mixTheSauceAndPasta()`, the sauce would be cold!
@@ -433,7 +434,7 @@ simmering), we start `boilThePasta()`.
 
 That’s cooking async. And we do stuff async constantly in our daily lives.
 Software should be similar. In JavaScript, some functions and methods are
-async, which means they do their thing, while, in the meantime, the rest of
+async, which means they do their thing while, in the meantime, the rest of
 the functions happen. This asynchronous activity is done via **callback
 functions**, which are functions that happen only once the calling function is
 done. To continue with the pasta analogy, let’s get a bit more discrete:
@@ -447,7 +448,7 @@ makeAPastaDinner = function (){
     });
     boilThePasta();
   });
-}
+};
 ```
 
 The first step is `prepareSauceIngredients()`. When that finishes, it executes
@@ -515,11 +516,11 @@ $.getJSON("http://the-javascripting-english-major.org/prologue.json", callback);
 The callback is a bit trickier, but let's think it through abstractly:
 
 1. We have the JSON available to us as a variable for our callback called `data`.
-1. This `data` `Object` has a property, `"lines"`, that is an array of lines.
-1. Each line in `"lines"` is an array of word-`Object`s.
-1. Each word-`Object` has a `"text"` property, and some have a `"modern"` one.
+1. This `data` `Object` has a property, `.lines`, that is an array of lines.
+1. Each line in `.lines` is an array of word-`Object`s.
+1. Each word-`Object` has a `.text` property, and some have a `.modern` one.
 
-Then what have we already got in that second step:
+Then look to what you already have in that second step:
 
 1. It defines `line1`, an array of word-`Object`s, and `line1Text`, a blank string.
 1. It iterates over `line1` and builds up `line1Text` based on the properties of 
@@ -527,14 +528,14 @@ Then what have we already got in that second step:
 1. It closes the HTML tags in `line1Text`.
 1. It prints the value of `line1Text` in `#prologue`.
 
-Really all we need to do is two things: create a `prologueText` variable that
-holds the text of the *whole* Prologue and repeat what we’ve already got down:
+Really all you need to do is two things: create a `prologueText` variable that
+holds the text of the *whole* Prologue and repeat what you’ve already got down:
 
 ```javascript
 $.getJSON("prologue.json", function(data){ // Note the data variable!
-  let prologueText; // Define the variable we didn’t need before.
+  let prologueText; // Define the variable you didn’t need before.
   prologueText = "<blockquote><p>"; // Open the tags.
-  // Now we can iterate over the data variable’s .lines property:
+  // Now you can iterate over the data variable’s .lines property:
   data.lines.forEach(function(line){ // We get a variable, line.
     // Define a blank lineText.
     let lineText;
@@ -555,11 +556,11 @@ $.getJSON("prologue.json", function(data){ // Note the data variable!
   prologueText = prologueText + "</p></blockquote>";
   // Replace the content of #prologue.
   $("#prologue").html(prologueText);
-}); // close the callback function.
+}); // Close the callback function & method.
 ```
 
-If we replace step two with this, save and reload, huzzah! The first 18 lines
-of the General Prologue appear. But if we click on the words, they don’t work
+If you replace step two with this, save, and reload, huzzah! The first 18 lines
+of the General Prologue appear. But if you click on the words, they don’t work
 anymore. Nothing happens. That’s not fair! We didn’t even touch step 3. Why
 did it work before, but not now?
 
@@ -572,7 +573,7 @@ setTheDefaultPrologueValue();
 selectThePrologueLinksAndWaitForClicks();
 ```
 
-Because the second functions runs asynchronously, the third function looks for
+Because the second function runs asynchronously, the third function looks for
 links in `#prologue`, but *`#prologue` is still blank*. So by the time the
 second function is done, the third has already finished its business. We need
 to treat the third function as a callback to the second. We need to do
