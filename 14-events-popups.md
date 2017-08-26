@@ -11,10 +11,9 @@ project. In between chapters, I added some code so that the poem would load
 inside `#poem` using the same technique for the tabs. We’ll be working with
 that a bit in this chapter, as this chapter is devoted to integrating Leaflet
 with the rest of the page. In my own wireframing for the “Could Be” Project
-that I mentioned in the [previous chapter](/13-bootstrap), I wanted the user
-to be able to click on places in the poem that would then have the map zoom to
-that place and also have the tab holding the information for that place become
-visible.
+that I mentioned in the [previous chapter](/13-bootstrap), I wanted it to be
+the case that when the user clicks on a place in the poem, that has the map zoom to
+that place and also reveals the tab holding the information for that place.
 
 There are a few ways to do this, but I will choose one that is a bit more
 involved, so that you can see other applications of jQuery.
@@ -46,9 +45,9 @@ $.ajax({
 Those added five lines are doing quite a bit, so I’ll walk through them
 step-by-step:
 
-1. `$("#poem")`: Select the `#poem` `<div>`.
+1. `$("#poem")`: Select `#poem`.
 1. `.html(`: Use the `.html()` method on the selected content. Recall that
-   `.html()` by itself *gets* the HTML. `.html(variable)` *sets* the HTML. Now
+   `.html()` by itself *gets* the HTML. `.html("string")` *sets* the HTML. Now
    we see that `.html(function())` *manipulates* the HTML.
 1. `.function(_, oldHtml){`: The anonymous function inside the `.html()`
    method inherits two variables, an index value I am calling `_`, and the
@@ -62,13 +61,13 @@ step-by-step:
 1. `"<a href='#' data-tab='hastings-street'>Hastings Street</a>"`: The
    replacement string. Notice the addition of a `data-tab` attribute I’ll be
    using later.
-1. `return`: Return the result of the following statement.
+1. `return`: Return the result of `newHtml`.
 
-Everything here should be more or less familiar to you, except for that
-regular expression. Regular expressions are ways of matching string patterns
-that are common in programming languages. The syntax is complex, but “regexes”
-are extremely powerful as a result.[^regex] For the sake of this course, you only need
-to know that:
+Everything here should familiar to you, except for that regular expression.
+Regular expressions are ways of matching string patterns that are common in
+programming languages. The syntax is complex, but, as a result, “regexes” are
+extremely powerful.[^regex] For the sake of this course, you only need to know
+that:
 
 1. Regular expressions are bounded by `/` on each side.
 2. A `g` at the end of a regex means to match *every* occurrence of the
@@ -82,17 +81,17 @@ have five places. Let’s create an array that we can loop over, then:
 ```javascript
   let placesArray;
   placesArray = [
-    {text: "Hastings Street", div: "hastings-street", html: "Hastings Street"},
-    {text: "18th & Vine", div: "eighteenth-and-vine", html: "18th &amp; Vine"},
+    {text: "Hastings Street", tab: "hastings-street", html: "Hastings Street"},
+    {text: "18th & Vine", tab: "eighteenth-and-vine", html: "18th &amp; Vine"},
 ```
 
 *Wait a minute!* This looks familiar. Didn’t we do this already back in [Chapter
 11](/11-geojson/)? Yes, we did. That means we can use that `couldBeFeatures`
-   array of `Object`s we defined earlier again here. And now the point of the
-   `.html` property is clear; to create an “&“ in HTML, you have to type
+   array of `Object`s again here. And now the point of the
+   `.html` property I added back then becomes clear; to create an “&“ in HTML, you have to type
    `&amp;`.
 
-And now the loop:
+The loop:
 
 ```javascript
 $.ajax({
@@ -100,6 +99,7 @@ $.ajax({
   success: function(poem){
     // Read in the poem.
     let html;
+    // Use the Markdown-it renderer I defined last chapter.
     html = md.render(poem);
     $("#poem").html(html);
     // Once the poem is in, start the loop.
@@ -110,7 +110,7 @@ $.ajax({
         // flag “g”. This is the equivalent to /Hastings Street/g.
         regex = RegExp(feature.html, "g");
         // Fill in newHtml with the properties from the couldBeFeatures.
-        newHtml = "<a href='#' data-tab='" + feature.div + "'>" + feature.html + "</a>";
+        newHtml = "<a href='#' data-tab='" + feature.tab + "'>" + feature.html + "</a>";
         // Return the newHtml wherever `replace()` finds the value
         // of regex.
         return oldHtml.replace(regex, newHtml);
@@ -120,15 +120,16 @@ $.ajax({
 });
 ```
 
-Hopefully, this helps you see how looping over an array objects provides a lot
-of functionality.
+Hopefully, this helps you see how looping over an array objects provides yet
+even more functionality.
 
 Again, this is a slightly contrived example, and it depends on the fact that
 the place names are all unique in that the regular expressions **only** match
-the place names. If we had a place called “Could,” we’d be out of luck.
-Nevertheless, now you know how to manipulate HTML, in addition to getting and
-setting it. Now that we have the links, though, we should make them do
-something.
+the place names. If we had a place called “Could,” we’d be out of luck,
+because there would be no easy way to tell if “Could” referred to a place or
+was a regular word starting a line. Nevertheless, now you know how to
+manipulate HTML, in addition to getting and setting it. With the links on the
+page, though, we should make them do something.
 
 </section>
 <section id="responding-to-clicks">
@@ -172,45 +173,67 @@ opens under the map.
 
 ### Changing map state with a click
 
-This one is trickier and requires returning to the GeoJSON file. I had added a
-`.div` property back in [Chapter 11](/11-geojson) for each place that has, for
-its value, the same text as in `data-tab`. As a result of that property, I
-just need to add these lines:
+This one is a bit trickier, and to get it to work, we need to add two more
+data attributes for each `<a>` tag in `#poem`, a `data-lat` and a `data-lng`.
+Time to return to the loop above:
 
 ```javascript
-$("#poem a").click(function(){
-  let div, latLng;
-  div = $( this ).data("tab");
-  $("#tabs-nav a[href='#" + div + "']").tab("show");
-  latLng = couldBeFeatures.filter(function(feature){
-    return feature.div === div;
-  })[0].latLng;
-  map.panTo(latLng);
+$.ajax({
+  url: "poem.md",
+  success: function(poem){
+    // Read in the poem.
+    let html;
+    // Use the Markdown-it renderer I defined last chapter.
+    html = md.render(poem);
+    $("#poem").html(html);
+    // Once the poem is in, start the loop.
+    couldBeFeatures.forEach(function(feature){
+      $("#poem").html(function(_, oldHtml){
+        // Define two new variables, lat and lng.
+        let regex, newHtml;
+        // Assign the the regex the value of feature.html and the 
+        // flag “g”. This is the equivalent to /Hastings Street/g.
+        regex = RegExp(feature.html, "g");
+        // Fill in newHtml with the properties from the couldBeFeatures.
+        newHtml = "<a href='#' data-tab='" + 
+          feature.tab + 
+          "' data-lat='" +
+          feature.latLng.lat +
+          "' data-lng='" +
+          feature.latLng.lng +
+          "'>" + feature.html + "</a>";
+        // Return the newHtml wherever `replace()` finds the value
+        // of regex.
+        return oldHtml.replace(regex, newHtml);
+      });
+    });
+  }
 });
 ```
 
-Recall the `.filter()` method that arrays have. It returns an array of every
-element that matches the condition. So in this case, we’re asking it to return
-an array of every feature in `couldBeFeatures` that has a `.div` property
-equal to the `data-tab` attribute in the `<a>` tag. Then, the `[0]` takes the
-first (zeroth) element of that array, and then we get that `object`’s
-`.latLng` property, assign that to the variable `latLng`, and then use the
-Leaflet `.panTo()` method to have our map pan to the new coordinates.
+Now there are three data attributes, and we can harvest the latitude and
+longitude for our `$().click()` callback:
+
+
+```javascript
+$("#poem a").click(function(){
+  let tab, lat, lng;
+  tab = $( this ).data("tab");
+  $("#tabs-nav a[href='#" + tab + "']").tab("show");
+  lat = $( this ).data("lat");
+  lng = $( this ).data("lng");
+  map.panTo([lat, lng]);
+});
+```
 
 That is certainly a mouthful, and despite how confusing this is, this is
-probably the easier way to do this. The first draft of this chapter had a far
+probably the easiest way to do this. The first draft of this chapter had a far
 more complex process, because I had not thought to create the
-`couldBeFeatures` array. 
-
-Nevertheless, the mouthful can be broken down into steps if we work backward.
-Our goal is to move the map to a set of coordinates:
-
-* Use `.panTo()` to move to a set of coordinates.
-* Get the coordinates from an `Object` that has a property with the coordinates
-* Know which `Object` to choose by picking based on that `Object`’s `.div`
-property.
-* Get the `.div` property from the `data-tab` attribute,
-* which is set when reading in the poem and adding links. 
+`couldBeFeatures` array. Then the second draft was still confusing because I
+did not think to use `data-lat` and `data-lng` to get coordinates in the
+links. But programming is like that. There are many ways to get to the
+destination, and sometimes it takes time to figure out which is the most
+elegant.
 
 </section>
 <section id="popups">

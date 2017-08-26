@@ -20,7 +20,7 @@ tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/ligh
             }).addTo(map);
 // Acquire geographic GeoJSON data from an async request. The rest of 
 // the JavaScript will be callbacks in this function.
-$.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", function(data){
+$.getJSON("/could-be.geo.json", function(data){
   // Define the markers’s data array and Leaflet layer of 
   // circle markers.
   let couldBeLayer, couldBeFeatures;
@@ -31,7 +31,7 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
     return {
       name: feature.properties.name,
       html: feature.properties.html,
-      div: feature.properties.div,
+      tab: feature.properties.tab,
       mentions: feature.properties.mentions,
       lines: feature.properties.lines,
       wikipedia: feature.properties.wikipedia,
@@ -83,35 +83,40 @@ loadPoem = function(featuresArray){
         $("#poem").html(function(_, oldHtml){
           let regex, newHtml;
           regex = RegExp(feature.html, "g");
-          newHtml = "<a href='#' data-tab='" + feature.div + "'>" + feature.html + "</a>";
+          newHtml = "<a href='#' data-tab='" +
+            feature.tab + 
+            "' data-lat='" +
+            feature.latLng.lat +
+            "' data-lng='" +
+            feature.latLng.lng +
+            "'>" + feature.html + "</a>";
           return oldHtml.replace(regex, newHtml);
         });
         // While looping, make the navigation tabs also cause panning.
-        $("#nav-tabs a[href='#" + feature.div + "']").click(function(){
+        $("#nav-tabs a[href='#" + feature.tab + "']").click(function(){
           map.panTo(feature.latLng);
         });
       });
       $("#poem a").click(function(){
-        let div, latLng;
-        div = $( this ).data("tab");
-        $("#nav-tabs a[href='#" + div + "']").tab("show");
-        latLng = featuresArray.filter(function(feature){
-          return feature.div === div;
-        })[0].latLng;
-        map.panTo(latLng);
+        let tab, lat, lng;
+        tab = $( this ).data("tab");
+        $("#tabs-nav a[href='#" + tab + "']").tab("show");
+        lat = $( this ).data("lat");
+        lng = $( this ).data("lng");
+        map.panTo([lat, lng]);
       });
     }
   });
 };
 
 loadNavTabs = function(featuresArray){
-  // Create an array using the div properties of every object in
+  // Create an array using the tab properties of every object in
   // couldBeFeatures, then add "introduction" to the end of that
   // array.
   featuresArray.map(function(feature){
-    return feature.div;
+    return feature.tab;
   }).concat(["introduction"]).forEach(function(tab){
-    // Loop through the new array of div names and "introduction".
+    // Loop through the new array of tab names and "introduction".
       $.ajax({
         // Note, this is not Markdown.
         url: "/markdown/" + tab + ".html",

@@ -153,7 +153,7 @@ fact, we can describe our Hastings Street point in GeoJSON like this:
   "properties": {
     "name": "Hastings Street",
     "html": "Hastings Street",
-    "div": "hastings-street",
+    "tab": "hastings-street",
     "mentions": 2,
     "lines": [1, 13],
     "wikipedia": "https://en.wikipedia.org/wiki/Black_Bottom,_Detroit"
@@ -167,7 +167,7 @@ coordinates here are `[lng, lat]`. Instead of having an endless list of
 potential properties, the `Feature` `Object` has three, a `.type`, a
 `.geometry`, and its own `.properties` `Object`. That `Object`’s properties are
 where we can stash our own properties like `.wikipedia`. I made the `.lines`
-property an array by enclosing it in brackets. The `.div` and `.html`
+property an array by enclosing it in brackets. The `.tab` and `.html`
 properties will become important in [Chapter 14](/14-events-popups).
 
 With as small a dataset as the one we have for “Could Be,” generating a
@@ -255,7 +255,7 @@ $.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", functi
     return {
       name: feature.properties.name,
       html: feature.properties.html,
-      div: feature.properties.div,
+      tab: feature.properties.tab,
       mentions: feature.properties.mentions,
       lines: feature.properties.lines,
       wikipedia: feature.properties.wikipedia,

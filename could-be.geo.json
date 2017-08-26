@@ -12,7 +12,7 @@
     "properties": {
     "name":"Hastings Street",
     "html":"Hastings Street",
-    "div": "hastings-street",
+    "tab": "hastings-street",
     "mentions":2,
     "lines":[1, 13],
     "wikipedia":"https://en.wikipedia.org/wiki/Black_Bottom,_Detroit"
@@ -28,7 +28,7 @@
     "name":"Lenox Avenue",
     "html":"Lenox Avenue",
     "mentions":2,
-    "div": "lenox-avenue",
+    "tab": "lenox-avenue",
     "lines":[2, 14],
     "wikipedia":"https://en.wikipedia.org/wiki/Lenox_Avenue"
     }
@@ -42,7 +42,7 @@
     "properties": {
     "name":"18th & Vine",
     "html":"18th &amp; Vine",
-    "div": "eighteenth-and-vine",
+    "tab": "eighteenth-and-vine",
     "mentions":1,
     "lines":[3],
     "wikipedia":"https://en.wikipedia.org/wiki/18th_and_Vine-Downtown_East,_Kansas_City"
@@ -57,7 +57,7 @@
     "properties": {
     "name":"5th & Mound",
     "html":"5th &amp; Mound",
-    "div": "fifth-and-mound",
+    "tab": "fifth-and-mound",
     "mentions":1,
     "lines":[5],
     "wikipedia":"https://en.wikipedia.org/wiki/West_End,_Cincinnati"
@@ -72,7 +72,7 @@
     "properties": {
     "name":"Rampart",
     "html":"Rampart",
-    "div": "rampart",
+    "tab": "rampart",
     "mentions":1,
     "lines":[6],
     "wikipedia":"https://en.wikipedia.org/wiki/Rampart_Street"
