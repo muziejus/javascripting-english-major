@@ -250,67 +250,10 @@ being accessed where they shouldn’t be. Just remember, whenever you type `let`
 to define a variable inside a function, that variable is only available inside
 that function.
 
-</section>
-<section id="recursion">
-## Recursion
-
-One last thing about functions is that they are recursive. That means they can
-call themselves. This becomes very useful in many instances for serious
-programmers, especially when they are crafting algorithms to sort things, but
-you can see a simple version of recursion in creating a factorial function. As
-you may recall from school, a factorial (like “5!”) is the equivalent of 5
-&times; 4 &times; 3 &times; 2 &times; 1. Here’s the completed function, with a
-`prompt()` so you can see it in action on your page:
-
-```javascript
-let factorial;
-factorial = function(integer, result){
-  while (integer > 0) {
-    result = result * integer;
-    integer = integer - 1;
-    factorial(integer, result)
-  }
-  $("#response").html("The result is: " + result);
-}
-let initialInteger;
-initialInteger = prompt("Factorial", "Initial integer");
-factorial(initialInteger, 1);
-```
-
-Let’s walk through it, step by step, starting with an initial integer of 2.
-The function gets a value for `integer`, 2, and a value for `result`, also 1.
-Because 2 > 0, we pass the truth test and enter the while loop. Now `result`
-and `integer` are multiplied to each other and that value is set to `result`.
-That means that `result` now is assigned 2, not 1. Next, 1 is subtracted from
-`integer`. Finally, the function is called again, but this time instead of
-passing `(2, 1)`, it passes `(1, 2)`, because that 1 is the result of 2 - 1,
-and that 2 is the result of 2 &times; 1.
-
-Now the second time through, `integer` still passes the truth test, gets into
-the while loop, and has subtracted from it. `result` remains the same, because
-2 &times; 1 is still 2.
-
-The third time through, `integer` is now 0 ((2 - 1) - 1), and `result` is still 2
-((2 &times; 1) &times; 1). But now the truth test fails. The function breaks out of
-the while loop and prints the value of `result` to the `<div>`.
-
-If we started with five, we’d have these steps:
-
-1. `integer` = 5, `result` = 1
-2. `integer` = 4 (5 - 1), `result` = 5 (5 &times; 1)
-2. `integer` = 3 ((5 - 1) - 1), `result` = 20 ((5 &times; 1) &times; 4)
-2. `integer` = 2 (((5 - 1) - 1) - 1), `result` = 60 (((5 &times; 1) &times; 4)
-   &times; 3)
-2. `integer` = 1 ((((5 - 1) - 1) - 1) - 1), `result` = 120 ((((5 &times; 1) &times; 4)
-   &times; 3) &times; 2)
-2. `integer` = 0 (((((5 - 1) - 1) - 1) - 1) - 1), `result` = 120 (((((5 &times; 1) &times; 4)
-   &times; 3) &times; 2) &times; 1)
-3. **break** and return `result`: 120.
-
-Functions are powerful things, as we can see. And though ultimately, the goals
-of this course are not to write code that is as modular as the use of
-functions would make possible, you will still be typing the word `function` a
-lot.
+In closing, functions are powerful things, as we can see. And though
+ultimately, the goals of this course are not to write code that is as modular
+as the use of functions would make possible, you will still be typing the word
+`function` a lot.
 
 </section>
 <section id="exercises">
@@ -318,8 +261,6 @@ lot.
 
 1. Add functionality to the tip calculator so that you can enter “20” *or*
    “.2” for 20%, and the calculator understands the difference.
-1. Add functionality to the factorial function so that if the user enters 0,
-   it calculates 0!, which is 1.
 
 </section>
 
