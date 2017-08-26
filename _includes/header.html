@@ -6,7 +6,11 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta property="og:url" content="{{ site.host-full | append: page.url }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ page.title | append: ' | ' | append: site.title }}" />
+    {% if page.title %}
+      <meta property="og:title" content="{{ page.title | append: ' | ' | append: site.title }}" />
+    {% else %}
+      <meta property="og:title" content="{{ site.title | default 'A Jekyll site' }}" />
+    {% endif %}
     <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
     <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
     <!-- <meta property="og:image" content="http://i.imgur.com/Sh7MOqg.jpg" /> -->
@@ -24,7 +28,11 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
-    <title>{{ page.title | append: ' | ' | append: site.title }}</title>
+    {% if page.title %}
+      <title>{{ page.title | append: ' | ' | append: site.title }}</title>
+    {% else %}
+      <title>{{ site.title | default 'A Jekyll site' }}</title>
+    {% endif %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
