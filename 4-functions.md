@@ -214,43 +214,83 @@ and loops also use blocks, they don’t affect scope in the same way.
 
 Just like a “scope” is used to see things that are far away (tele*scope*) or
 are really tiny (micro*scope*), in JavaScript, scope also has to do with
-visbility. Consider this snippet:
+visbility. Variables defined with the `let` keyword have block-level
+scope.[^var-let] That means:
 
 ```javascript
-let alice, friendOfBob;
-alice = "Alice";
-friendOfBob = function(friend){
-  let chuck;
-  chuck = "Chuck";
-  console.log(alice);
-  console.log("Bob has a friend named " + friend);
-}
-
-friendOfBob(alice);
+> let global;
+> global = "🌏";
+> if (true) { console.log(global); };
+//--> 🌏
+> let globalFunction;
+> globalFunction = function(){ console.log(global); };
+> globalFunction();
+//--> 🌏
 ```
 
-That works as we expect, as we see both “Alice” and “Bob has a friend named
-Alice” logged to the console. In JavaScript, a variable has the scope of the
-block in which its defined and in every block within that block. As a result,
-we define `alice` in the “main” block, and that means `alice` remains
-defined—or *visible*—inside the function, as well, which is why
-`console.log(alice)` responds without an error. 
+When we define `global`, it’s *visible* to us inside subsequent if statements
+and functions. But notice this:
 
-But what happens if that last line is changed to `friendOfBob(chuck)`? The
-console should complain “`Uncaught ReferenceError: chuck is not defined`.” But
-we *defined* `chuck` on the fourth line there. Why doesn’t it work?
+```javascript
+> let global;
+> global = "🌏";
+> if (true) {
+    let blocky;
+    blocky = "📓";
+    console.log("global is " + global);
+    console.log("blocky is " + blocky);
+  }
+//--> global is 🌏
+//--> blocky is 📓
+> console.log("Wait, the value of blocky is really " + blocky + "?");
+```
 
-Because we define `chuck` *inside* the function block, it is *only* visible
-inside that block (and any children blocks). If we were to move the fourth and
-fifth lines above the third line, `chuck` would now be defined in the “main”
-scope.[^main-scope] 
+This last line will crash with a `ReferenceError`. `blocky`, it turns out, is
+only visible *within* the if statement block. Once the code leaves the `{}`,
+`blocky` is no longer available. The same works with functions:
 
-Scope helps you keep your code tidy, because there is less risk of variables
-being accessed where they shouldn’t be. Just remember, whenever you type `let`
-to define a variable inside a function, that variable is only available inside
-that function.
+```javascript
+> let global;
+> global = "🌏";
+> let showMeABurrito = function(){
+    let burrito;
+    burrito = "🌯"; 
+    global = "I’m global!";
+    console.log("global is " + global);
+    console.log("burrito is " + burrito);
+  }
+> showMeABurrito();
+//--> global is I’m global!
+//--> burrito is 🌯
+> console.log(global);
+//--> I’m global!
+> console.log("Wait, the value of burrito is really " + burrito + "?");
+```
 
-In closing, functions are powerful things, as we can see. And though
+Crash. Again. Sadly, `burrito is not defined`. But notice that `global` was
+changed inside the function, and that change persisted outside the
+function. `global` is visible—and, as a result, changeable (or
+**mutable**)—everywhere. But `burrito` is not.
+
+As Molly Bloom asks, “who’s he when he’s at home?” and we may, also, ask,
+“where are we when we’re in the console?” That is, if `burrito` is defined in
+the function block, where on earth is `global` defined? Even though we talk
+about typing “in” the console, we’re actually always within a special object
+called `window`. It is the [window of the
+browser](https://www.w3schools.com/jsref/obj_window.asp), and when we open up
+the console, we’re getting closer access to that window. In fact, `prompt()`
+and `alert()`, two functions you’ve already seen, are actually **methods** that
+belong to `window`; `window.alert()` and `alert()` will do the same thing. But
+more on methods [next chapter](/5-collections). The `window` is typically
+ignored, as it’s the frame that is unavoidable. Its ubiquity gives it the
+privilege of being silent.
+
+Back to the purpose of this section. Scope helps you keep your code tidy,
+because there is less risk of variables’ being accessed where they shouldn’t
+be. Just remember, whenever you type `let` to define a variable inside a
+function, that variable is only available inside that function.
+
+In closing, functions are powerful things, as we can see. And though,
 ultimately, the goals of this course are not to write code that is as modular
 as the use of functions would make possible, you will still be typing the word
 `function` a lot.
@@ -270,4 +310,4 @@ as the use of functions would make possible, you will still be typing the word
 
 [^arguments]: Parameters are also often called **arguments**, but to my ears, that term is more opaque.
 
-[^main-scope]: Technically, this can be considered either the global scope or the scope of the `window` or `console` objects.
+[^var-let]: This is one difference between `var` and `let`, but I’m not teaching `var` except for those of you with old browsers. Other than the slightly contrived examples in this section, my examples won’t be making a lot of use of block-scoping.
