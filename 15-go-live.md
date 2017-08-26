@@ -3,6 +3,7 @@ layout: default
 title: Time to Go Live
 permalink: /15-go-live
 prevch: /14-events-popups
+nextch: /a-resources
 ---
 
 We have come a long, long way since you were creating your GitHub account and
