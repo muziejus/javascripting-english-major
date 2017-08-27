@@ -270,7 +270,11 @@ solarized themes, based on Ethan Schoonover’s
 ### Link Atom to GitHub
 
 Atom is written by the people at GitHub, so it’s pretty easy to link the two
-together. In fact, that’s the main reason I encourage you to install Atom.
+together. In fact, that’s the main reason I encourage you to install Atom. The
+Atom people have [written a decent
+introduction](http://flight-manual.atom.io/using-atom/sections/github-package/)
+to most of what I describe here, so it’s useful to glance over at their
+screenshots, etc., if this part gets too confusing.
 
 First, you have to get the URL of the repository you forked a few steps ago:
 
@@ -375,7 +379,10 @@ in whatever command you want to execute.
 
 Also, Atom will be frustrating the first few times. Any new piece of software
 is. By the end of this course, though, I hope that you’ll see why I insisted
-on this unpleasantness at the beginning.
+on this unpleasantness at the beginning. And if you are interested in learning
+more about Atom, [please have a look at their
+documentation](https://atom.io/docs), that includes the *Flight Manual* book,
+and an introductory video.
 
 </section>
 <section id="browser">
