@@ -35,5 +35,6 @@ I welcome pull requests, as this is very much a work in progress.
 
 ## Copyright, etc.
 
-The content is all ©2017, Moacir P. de Sá Pereira and is shared as [CC BY-NC
-4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+The content is all ©2017, Moacir P. de Sá Pereira and is shared as [CC
+BY-NC-SA
+4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
