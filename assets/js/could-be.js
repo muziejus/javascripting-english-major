@@ -7,6 +7,10 @@
 // http://the-javascripting-english-major.org/
 //
 
+// Define and assign a Markdown-it renderer.
+let md;
+md = window.markdownit({html: true}).use(window.markdownitFootnote);
+
 // Leaflet section.
 // Define map and baselayer.
 let map, tileLayer;
@@ -74,10 +78,10 @@ $.getJSON("/could-be.geo.json", function(data){
 let loadPoem, loadNavTabs;
 loadPoem = function(featuresArray){
   $.ajax({
-    // Note, this is not Markdown.
-    url: "/markdown/poem.html",
-    success: function(html){
-      // See Ch. 12 for how to do this with Markdown.
+    url: "/examples/markdown/poem.md",
+    success: function(markdown){
+      let html;
+      html = md.render(markdown);
       $("#poem").html(html);
       featuresArray.forEach(function(feature){
         $("#poem").html(function(_, oldHtml){
@@ -118,10 +122,10 @@ loadNavTabs = function(featuresArray){
   }).concat(["introduction"]).forEach(function(tab){
     // Loop through the new array of tab names and "introduction".
       $.ajax({
-        // Note, this is not Markdown.
-        url: "/markdown/" + tab + ".html",
-        success: function(html){
-          // See Ch. 12 for how to do this in Markdown.
+        url: "/examples/markdown/" + tab + ".md",
+        success: function(markdown){
+          let html;
+          html = md.render(markdown);
           $("#" + tab).html(html);
         }
       });

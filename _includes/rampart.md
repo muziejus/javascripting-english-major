@@ -1,6 +1,3 @@
----
-layout: null
----
 ## Rampart
 
 [Rampart Street](https://en.wikipedia.org/wiki/Rampart_Street) is in New

@@ -1,3 +1,5 @@
+let md;
+md = window.markdownit({html: true}).use(window.markdownitFootnote);
 let map, tileLayer;
 map = L.map("could-be-map");
 tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
@@ -47,8 +49,10 @@ $.getJSON("/could-be.geo.json", function(data){
   couldBeLayer.addTo(map);
   if (document.location.href.match(/[^\/]+$/)[0].match(/be12/) !== null){
     $.ajax({
-      url: "/markdown/hastings-street.html",
-      success: function(html){
+      url: "/examples/markdown/hastings-street.md",
+      success: function(markdown){
+        let html;
+        html = md.render(markdown);
         $("#content").html(html);
       }
     });
@@ -59,8 +63,10 @@ $.getJSON("/could-be.geo.json", function(data){
       "lenox-avenue", "rampart"].forEach(function(tab){
         // Create a variable tab that has the name as a string.
       $.ajax({
-        url: "/markdown/" + tab + ".html",
-        success: function(html){
+        url: "/examples/markdown/" + tab + ".md",
+        success: function(markdown){
+          let html;
+          html = md.render(markdown);
           $("#" + tab).html(html);
         }
       });
@@ -68,8 +74,10 @@ $.getJSON("/could-be.geo.json", function(data){
   }
   if (document.location.href.match(/[^\/]+$/)[0].match(/be14/) !== null){
     $.ajax({
-      url: "/markdown/poem.html",
-      success: function(html){
+      url: "/examples/markdown/poem.md",
+      success: function(markdown){
+        let html;
+        html = md.render(markdown);
         $("#poem").html(html);
         console.log(couldBeFeatures);
         console.log("it's in.");
@@ -102,8 +110,10 @@ $.getJSON("/could-be.geo.json", function(data){
       "fifth-and-mound", "introduction",
       "lenox-avenue", "rampart"].forEach(function(tab){
       $.ajax({
-        url: "/markdown/" + tab + ".html",
-        success: function(html){
+        url: "/examples/markdown/" + tab + ".md",
+        success: function(markdown){
+          let html;
+          html = md.render(markdown);
           $("#" + tab).html(html);
         }
       });

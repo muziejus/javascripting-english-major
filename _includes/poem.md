@@ -1,6 +1,3 @@
----
-layout: null
----
 Could be Hastings Street,<br />
 Or Lenox Avenue,<br />
 Could be 18th & Vine<br />
