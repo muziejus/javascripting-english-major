@@ -153,6 +153,7 @@ to populate sections of your web project. See [this
 page](/examples/could-be12.html) to see how far I’ve come on the “Could Be”
 project.
 </section>
+<section id="exercises">
 
 ## Exercises
 
@@ -160,3 +161,5 @@ project.
    the drafts and push them to GitHub.
 1. Add a `#content` container to your project’s HTML file. Have it load one of
    your Markdown files with jQuery and Markdown-it.
+
+</section>
