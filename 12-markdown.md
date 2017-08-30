@@ -46,7 +46,7 @@ greater detail below.
 * Introduce an `<h2>` by typing `##`. Use three octothorpes for `<h3>` and so
 on.
 * Footnotes are `[^n]` where the footnote marker is supposed to be (`n` is a
-number), and then the corresponding footnote test is written at the end of the
+number), and then the corresponding footnote text is written at the end of the
 document like `[^n]: This is footnote text.` Footnotes aren’t included in my
 cheat sheet, since I load them as a separate extension, as you will see below.
 
