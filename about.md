@@ -82,6 +82,6 @@ themselves would not have been sufficient. Then, while speaking with [Jonathan
 Reeve](http://jonreeve.com) in the Spring about the folly of teaching
 proprietary mapping software with crippling license fees (hello, Esri!) or
 one-trick pony tools that students would use for a week and then forget, it
-dawned on me that I could do both at once by teaching a language with
+dawned on me that I evade both at once by teaching a language with
 applications beyond mapping (JavaScript) that also could help my students in
-making mapping projects.
+making mapping projects (with Leaflet).
