@@ -52,9 +52,10 @@ relationship the Ubuntu Sans and Mono create across the page. The color scheme
 is a rather arbitrarily applied version of Ethan Schoonover’s
 [Solarized](http://ethanschoonover.com/solarized).
 
-Finally, this course is **entirely free** and covered under the [CC BY-NC
-4.0](https://creativecommons.org/licenses/by-nc/4.0/) license. That means
-you’re completely free to share or adapt this material. But I also await
+Finally, this course is **entirely free** and covered under the [CC BY-NC-SA
+4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. That means
+you’re completely free to share or adapt this material as long as you give
+credit and maintain the license. But I also await
 [GitHub pull requests](https://help.github.com/articles/about-pull-requests)
 if you find something about the course upon which you think you could
 improve! Just [fork the
