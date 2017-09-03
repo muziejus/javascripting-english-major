@@ -22,9 +22,7 @@ More information about the project in general is available in the [zeroth
 chapter](/0-introduction/).
 
 If you enjoyed this course, consider letting me know on
-Twitter, where I tweet as [@muziejus](http://twitter.com/muziejus), or *if
-you’re not one of my students*, you can contribute to [my coffee budget on
-Patreon](http://patreon.com/moacir).
+Twitter, where I tweet as [@muziejus](http://twitter.com/muziejus).
 
 ## Technical details
 
