@@ -193,6 +193,27 @@ that is entirely up to you. Of course, if you’re already using Vim, then you
 might be too advanced for this course, anyway.
 
 </section>
+<section id="analysis">
+## There’s a lot of “how to make a website” stuff here, but not a lot of analysis.
+
+Correct. This course is not designed to teach you to be a better literary
+scholar. It teaches you how to use JavaScript in order to be a better literary
+scholar. I believe that process- and project-based learning are useful engines
+of interpretive practice, meaning that submitting a literary text to the kind
+of work we do in this course can only help but augment the experience of
+reading the text. 
+
+Jockers’s book, mentioned above, is about using R as a tool for literary
+criticism. This is about using JavaScript as a tool to make more (and
+different) literary criticism possible down the line. That is why the focus is
+on handling and presenting information, not (geo) statistical analysis, say.
+The “analysis” comes later. I don’t provide, by the end of the
+[demo](/examples/could-be.html) a new reading of Langston Hughes’s “Could Be.”
+What I do, instead, is provide an opportunity for scholars to increase their
+knowledge of the text and look at it in a different way, thereby enhancing
+that reading.
+
+</section>
 <section id="exploitation">
 ## Teaching people how to code is just a Silicon Valley ploy to drive down developer wages
 
