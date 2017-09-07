@@ -208,7 +208,7 @@ criticism. This is about using JavaScript as a tool to make more (and
 different) literary criticism possible down the line. That is why the focus is
 on handling and presenting information, not (geo) statistical analysis, say.
 The “analysis” comes later. I don’t provide, by the end of the
-[demo](/examples/could-be.html) a new reading of Langston Hughes’s “Could Be.”
+[demo](/examples/could-be.html), a new reading of Langston Hughes’s “Could Be.”
 What I do, instead, is provide an opportunity for scholars to increase their
 knowledge of the text and look at it in a different way, thereby enhancing
 that reading.
