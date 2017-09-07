@@ -194,7 +194,7 @@ might be too advanced for this course, anyway.
 
 </section>
 <section id="analysis">
-## There’s a lot of “how to make a website” stuff here, but not a lot of analysis.
+## There’s a lot of “how to make a website” stuff here, but not a lot of analysis
 
 Correct. This course is not designed to teach you to be a better literary
 scholar. It teaches you how to use JavaScript in order to be a better literary
