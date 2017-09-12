@@ -303,7 +303,8 @@ and they are now on your computer.
 Third, let’s make an explicit connection between GitHub and Atom. Open up the
 GitHub pane (“Packages” > “GitHub” > “Toggle GitHub Tab”), and you should now
 see a button asking you to log in or a message encouraging you to go to the
-[GitHub Atom login page](http://github.atom.io/login). Click on “Login” and
+[GitHub Atom login page](http://github.atom.io/login). If you don’t, make sure
+that your project is open and loaded in Atom. Otherwise, click on “Login” and
 then click on the web address, which will open a new page in your browser
 asking you for permission to have Atom talk to your GitHub account. Click on
 “Authorize atom” and then copy the extremely long code that appears. Paste it
