@@ -349,6 +349,8 @@ If you’ve got conditionals down, we can now move to looping. Remember, in
 JavaScript, a conditional statement takes the form of:
 
 ```javascript
+// This code is for illustration only. It will crash your console.
+//
 if ( some_condition_is_true ) {
   do_things;
 }
@@ -357,6 +359,8 @@ if ( some_condition_is_true ) {
 Loops use the same syntax:
 
 ```javascript
+// This code is for illustration only. It will crash your console.
+//
 while ( some_condition_is_true ) {
   do_things;
 }
