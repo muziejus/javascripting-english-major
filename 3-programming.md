@@ -33,7 +33,7 @@ program.
 We want to write a program that asks the user what they want for dinner. If
 they answer “burrito,” the program congratulates their choice. If they answer
 anything else, the program scolds them for not wanting a burrito. What might
-that look like in “pseudocode” (pretend programming that’s not a real
+that look like in **pseudocode** (pretend programming that’s not a real
 language)? Let’s try it out while also using some JavaScript we already know,
 like `let` and `console.log()`.
 
@@ -41,6 +41,8 @@ First, the program needs to get the information from the user, so we need some
 kind of input. Let’s save that as a variable.
 
 ```
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
+//
 let userInput;
 userInput = prompt_the_user_for_what_they_want_for_dinner;
 ```
@@ -49,6 +51,8 @@ We have a variable now, `userInput`, that has whatever the user has input. Now
 let’s test that variable, using the `===` operator you’ve already learned.
 
 ```
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
+//
 if userInput === "burrito";
   then console.log("Brilliant choice!");
 ```
@@ -56,6 +60,8 @@ if userInput === "burrito";
 OK. But what if the input *isn’t* “burrito”?
 
 ```
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
+//
 if userInput !== "burrito";
   then console.log("Don’t you want a burrito?");
 ```
@@ -75,6 +81,8 @@ behaves in a certain way depending on a condition. From the example above, we
 can read
 
 ```
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
+//
 if userInput === "burrito";
   then console.log("Brilliant choice!");
 ```

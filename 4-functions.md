@@ -37,6 +37,8 @@ All those burrito-making instructions can be collapsed into a function. That
 might look something like:
 
 ```javascript
+// This code is for illustration only. It will crash your console.
+//
 let makeABurrito;
 makeABurrito = function(){
   prepareTortilla();
@@ -100,6 +102,8 @@ and sometimes I want pinto beans. Let’s add a parameter to `makeABurrito()` to
 let us specify which beans to use on the fly:
 
 ```javascript
+// This code is for illustration only. It will crash your console.
+//
 let makeABurrito;
 makeABurrito = function(beansVariable){
   let beansResponse;
@@ -116,9 +120,11 @@ makeABurrito = function(beansVariable){
 If we were to execute:
 
 ```javascript
-  let blackBeans;
-  blackBeans = "black";
-  makeABurrito(blackBeans);
+// This code is for illustration only. It will crash your console.
+//
+let blackBeans;
+blackBeans = "black";
+makeABurrito(blackBeans);
 ```
 
 We would see that the webpage would now read “You ordered black beans. Good
@@ -141,6 +147,8 @@ different kinds of tortillas, like whole wheat and regular wheat. You can
 redefine the function as:
 
 ```javascript
+// This code is for illustration only. It will crash your console.
+//
 let makeABurrito;
 makeABurrito = function(beansVariable, tortillaVariable){
   prepareTortilla(tortillaVariable);
