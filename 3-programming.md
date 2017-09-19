@@ -104,6 +104,8 @@ Everything within the braces gets executed if the truth test (`userInput ===
 parentheses. Generically, then, it looks like this:
 
 ```javascript
+// This code is for illustration only. It will crash your console.
+//
 if ( truth_test ) {
   do_things_if_the_test_returns_true;
 }
