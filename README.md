@@ -10,22 +10,21 @@ undergraduates how to build a web project. More concretely, it teaches
 students basics on using:
 
 * Git
-* * GitHub (and GH Pages)
-* * Atom
-* * JavaScript
-* * jQuery
-* * Bootstrap
-* * Leaflet
-* * GeoJSON
-* * Markdown
-*
-* It is largely based on Marijn Haverbeke’s [*Eloquent
-* JavaScript*](http://eloquentjavascript.com), but it strips out parts of that
-* wonderful book that are of limited value to students eager to build simple
-* projects, not understand a language deeply.
-*
-* Its companion repository—that has the “course materials,” thin as they
-are—is
+* GitHub (and GH Pages)
+* Atom
+* JavaScript
+* jQuery
+* Bootstrap
+* Leaflet
+* GeoJSON
+* Markdown
+
+It is largely based on Marijn Haverbeke’s [*Eloquent
+JavaScript*](http://eloquentjavascript.com), but it strips out parts of that
+wonderful book that are of limited value to students eager to build simple
+projects, not understand a language deeply.
+
+Its companion repository—that has the “course materials,” thin as they are—is
 [@muziejus/javascripting-english-major-project](https://github.com/muziejus/javascripting-english-major-project).
 which students fork and then change to meet their desires, as noted in the
 first chapter of the course.
