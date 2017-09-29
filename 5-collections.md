@@ -177,7 +177,7 @@ let makeABurrito = function(){
 The `function(){}` part of it disappears into the variable `makeABurrito`. We
 can then resurrect it using `makeABurrito()`. In `.spiciness`, however, we are
 assigning the function to a *property*, not even a variable. Later, we will
-make of even more ephemeral anonymous functions, where the function gets
+make even more ephemeral anonymous functions, where the function gets
 called, executed, and then disappears, without even a variable or property to
 resurrect it. But anonymous functions pop up all over the place in JavaScript,
 which is why I promised last chapter that you would be typing `function` a
