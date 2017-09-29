@@ -19,7 +19,7 @@ efforts to provide tutorials and training to people without backgrounds in
 programming.
 
 More information about the project in general is available in the [zeroth
-chapter](/0-introduction/).
+chapter](/0-introduction).
 
 If you enjoyed this course, consider letting me know on
 Twitter, where I tweet as [@muziejus](http://twitter.com/muziejus).
