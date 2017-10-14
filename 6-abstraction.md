@@ -465,14 +465,6 @@ included.
    we receive, in turn, `[2, 4, 6]`.
 1. Add functionality to the weapons examples above so that the final result is
    “bo, katana, nunchaku, and sai.”
-1. Couldn’t we have just put an if statement in the `.map()` function to skip
-   the filter step? Something like:
-  ```javascript
-  if ( turtle.name.includes("o") ){ 
-      return turtle.name; 
-  }
-  ```
-  Why is this not a good idea?
 
 </section>
 

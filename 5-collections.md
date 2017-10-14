@@ -243,7 +243,6 @@ replacedString = string.replace("string", "pipe");
 
 1. Write a function that always returns the last item in whatever array you
    pass it.
-1. Why might `.push()` and `.pop()` change the array, while `sort()` and `.reverse()` do not? Try seeing what happens when you to something like `popResult = someArray.pop()`.
 1. Numbers also have methods and properties. Look them up at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) and change your webpage so that it asks for a number and tells you if it is an integer or not.
 
 </section>
