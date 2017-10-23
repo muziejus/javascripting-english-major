@@ -1,10 +1,15 @@
 {% include header.html %}
   <body class="h-100 bg-base2">
-    <div class="container h-100">
+    <div id="outer-container" class="container">
       {{ content }}
     </div>
     {% include scripts.html %}
     <script>
       $("html").css("height", "100%");
+      $("body").css("padding-top", "0").css("margin-bottom", "0");
+      if($("#center-box").width() > 576){
+        $("#center-box").addClass("align-items-center").addClass("h-100");
+        $("#outer-container").addClass("h-100");
+      }
     </script>
   </body>
