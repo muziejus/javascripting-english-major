@@ -244,7 +244,7 @@ the properties of each of the GeoJSON features. So, add to
 ```javascript
 // Define the features array.
 let couldBeFeatures;
-$.getJSON("http://the-javascripting-english-major.org/could-be.geo.json", function(data){
+$.getJSON("https://the-javascripting-english-major.org/could-be.geo.json", function(data){
   // Define the Leaflet layer.
   let couldBeLayer;
   // Iterate over the .features property of the GeoJSON object to
