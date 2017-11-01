@@ -510,7 +510,7 @@ JSON file is `$.getJSON(file, callback)`, and it takes two parameters, as you
 can see. The file part is easy, since you’ve been looking at it already:
 
 ```javascript
-$.getJSON("http://the-javascripting-english-major.org/prologue.json", callback);
+$.getJSON("https://the-javascripting-english-major.org/prologue.json", callback);
 ```
 
 The callback is a bit trickier, but let's think it through abstractly:
@@ -532,7 +532,7 @@ Really all you need to do is two things: create a `prologueText` variable that
 holds the text of the *whole* Prologue and repeat what you’ve already got down:
 
 ```javascript
-$.getJSON("prologue.json", function(data){ // Note the data variable!
+$.getJSON("https://the-javascripting-english-major.org/prologue.json", function(data){ // Note the data variable!
   let prologueText; // Define the variable you didn’t need before.
   prologueText = "<blockquote><p>"; // Open the tags.
   // Now you can iterate over the data variable’s .lines property:
