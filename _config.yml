@@ -47,3 +47,7 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
