@@ -366,7 +366,9 @@ will return in a later chapter.
    Leaflet map with the two dérives you made for class drawn on them. Or it
    can be two walks you’ve taken, if you’re not in my class. The dérives
    should be different colors. Save, commit, and push to GitHub when you’re
-   done.
+   done. Use this site’s [coordinate catcher](/coordinates.html) to quickly
+   get your coordinates. Just click on the map, and it will give you the
+   correct latitude and longitude.
 
 </section>
 
