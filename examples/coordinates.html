@@ -35,8 +35,7 @@ permalink: /coordinates.html
       }).addTo(map);
       let popup = L.popup();
       map.setView(center, 16);
-      map.on('click', function(ev) {
-        console.log(ev)
+      map.on("click", function(ev) {
         marker.setLatLng(ev.latlng).setStyle({
           opacity: 1,
           fillOpacity: 0.2
