@@ -1,5 +1,5 @@
 $("#glosses").html("<p>The glosses will go here.</p>");
-$.getJSON("http://the-javascripting-english-major.org/prologue.json", function(data){
+$.getJSON("https://the-javascripting-english-major.org/prologue.json", function(data){
   let prologueText;
   prologueText = "<blockquote><p>";
   data.lines.forEach(function(line){
