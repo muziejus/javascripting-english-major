@@ -1,0 +1,210 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% JavaScripting English Major Cheat Sheet
+%
+% by Moacir P. de Sá Pereira, based on 
+% a template by Michelle Cristina de Sousa Baltazar:
+%
+% https://www.overleaf.com/latex/examples/matplotlib-and-random-cheat-sheet/yttxrcxntbht#.Wg8t2rbMyRs
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+% \usepackage{amsmath}
+% \usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+% \usepackage{amsmath,amssymb}
+
+% \usepackage{colortbl}
+\usepackage{xcolor}
+% \usepackage{mathtools}
+% \usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\usepackage{tabulary}
+\usepackage{listings}
+
+\title{The JavaScripting English Major Cheat Sheet}
+\usepackage[english]{babel} 
+\usepackage{fontspec}   
+\setmainfont{EBGaramond}[
+  Path = /Users/moacir/Library/Fonts/,
+  UprightFont = * ,
+  ItalicFont = *12-Italic ,
+  SmallCapsFont = *SC ,
+  Extension =.otf 
+  ]
+\setmonofont[Scale=0.8]{UbuntuMono-R}[
+  Path = /Users/moacir/Library/Fonts/,
+  UprightFont = * ,
+  ItalicFont = *I,
+  Extension =.ttf 
+  ]
+
+\advance\topmargin-.8in
+\advance\textheight3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.5in
+\advance\evensidemargin-1.5in
+\parindent0pt
+\parskip2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
+
+
+\definecolor{backcolor}{rgb}{0.92,0.92,0.92}
+\definecolor{commentcolor}{rgb}{0.35,0.35,0.35}
+\lstdefinestyle{mystyle}{%
+    backgroundcolor=\color{backcolor},   
+    commentstyle=\color{commentcolor},
+    keywordstyle=\textbf,
+    % numberstyle=\tiny,
+%    stringstyle=
+    basicstyle=\small\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    % numbers=left,                    
+    % numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    morecomment=[l]{//}
+}
+\lstset{style=mystyle}
+
+\newcommand{\colortt}[1]{\setlength{\fboxsep}{1.5pt}\colorbox{backcolor}{\texttt{#1}}}
+\newcommand{\sectionBox}[2]{%
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+        \begin{minipage}{0.3\textwidth}
+          #2
+        \end{minipage}
+    };
+    \node[fancytitle, right=10pt] at (box.north west) {#1};
+  \end{tikzpicture}
+}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+\begin{document}
+
+\begin{center}
+  {\huge{\raisebox{-.2\height}{\includegraphics[height=1em]{/Users/moacir/assets/images/javascripting-english-major.png}}\textsc{The
+JavaScripting English Major Cheat Sheet}}}\\
+  {\large \url{https://the-javascripting-english-major.org/cheat-sheet}, by Moacir P. de Sá Pereira}
+\end{center}
+
+\begin{multicols*}{3}
+
+  \sectionBox{Files \& Basic Syntax (ch 2)}{%
+      Write JavaScript in your \colortt{script.js} file, HTML in your
+  \colortt{index.html}, and CSS (styles) in your \colortt{styles.css}. You can use
+  different file names, but the JavaScript files should always end in
+  \colortt{.js}.
+
+      End every statement (typically a line of code) with a \colortt{;}.
+  Comment text out with \colortt{//}. All of the subsequent code on that line
+  will not be executed.
+
+      Define variables using \colortt{let variableName;} and then assign it
+  with \colortt{variableName = "some string";}, for example.
+  }
+  \sectionBox{Data Types (ch 2)}{%
+      \begin{center}\small{\begin{tabulary}{\textwidth}{LL}
+        \colortt{string} & Regular text, surrounded by \colortt{""}.  \\
+        \colortt{number} & A number. Not surrounded by \colortt{""}.  \\
+        \colortt{boolean} & \colortt{true} or \colortt{false}. \\
+        \colortt{array} & A list, surrounded by \colortt{[…]}.\\
+        \colortt{object} & Always surrounded by \colortt{\{…\}}.\\
+      \end{tabulary}}\end{center}
+  }
+  \sectionBox{If Statements (ch. 3)}{%
+    If-then-else logic is central to program decision making.
+
+    \lstinputlisting[firstline=101, lastline=103]{listings.js}
+
+    What follows \colortt{if} in parentheses is a truth test that should
+  respond either with \colortt{true} or \colortt{false}:
+
+    \lstinputlisting[firstline=111, lastline=128]{listings.js}
+  }
+  \sectionBox{Functions (ch 4 \& 6)}{%
+    JavaScript provides the verbs of the web. If a page does something because of
+    you, that’s JavaScript. The verbs of JavaScript, however,
+    are functions. Functions receive parameters and \colortt{return} a
+    value:
+
+    \lstinputlisting[firstline=31, lastline=36]{listings.js}
+
+    Parameter names are arbitrary and exist only inside the 
+    function. Methods like \colortt{.forEach()} are functions:
+
+    \lstinputlisting[firstline=41, lastline=47]{listings.js}
+  }
+  \sectionBox{Arrays (chs 5, 6, \& 11)}{%
+    Arrays are a list of things (strings, objects, arrays).
+
+    \lstinputlisting[firstline=1, lastline=11]{listings.js}
+  }
+  \vfill\null
+  \columnbreak
+  \sectionBox{Other Resources}{%
+    These basics of JavaScript should lead you much of the way towards
+being able to look up other methods and looking up questions online. Here are
+some useful references:
+
+    \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+
+    \item \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference}
+    — MDN JavaScript reference
+    \item \url{http://api.jquery.com} — jQuery documentation
+    \item \url{http://leafletjs.com} — Leaflet homepage 
+    \item \url{https://stackoverflow.com/questions/tagged/javascript} — Stack
+    Overflow JavaScript questions. Priceless resource
+    \item \url{https://www.w3schools.com/TAGs/} — HTML reference
+    \item \url{https://www.w3schools.com/cssref/} — CSS reference
+
+    \end{enumerate}
+  }
+  \sectionBox{Objects (chs 5, 6, \& 11)}{%
+    Objects are generic types and have properties.
+
+    \lstinputlisting[firstline=21, lastline=28]{listings.js}
+  }
+  \vfill\null
+  \columnbreak
+  \sectionBox{jQuery (chs 8, 9, 11, \& 14)}{%
+    jQuery lets you select parts of the webpage with \colortt{\$("selector")} and
+    manipulate them:
+
+    \lstinputlisting[firstline=51, lastline=58]{listings.js}
+
+    \colortt{.html()} is a method, but there are other useful ones in JQuery:
+
+    \lstinputlisting[firstline=61, lastline=69]{listings.js}
+  }
+  \sectionBox{Leaflet (chs 10, 11, \& 14)}{%
+    \lstinputlisting[firstline=71, lastline=93]{listings.js}
+  }
+  \sectionBox{HTML \& CSS (ch 8)}{%
+    HTML
+
+    \lstinputlisting{listings.html}
+
+  }
+
+\end{multicols*}
+% \newpage
+% \begin{multicols*}{3}
+
+
+% \end{multicols*}
+\end{document}
