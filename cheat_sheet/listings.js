@@ -1,14 +1,14 @@
-let myArray, zerothArrayItem, newArray, newArrayLength;
+let myArray, zerothArrayItem;
 myArray = ["a", 1, "string", 23];
 zerothArrayItem = myArray[0];
 // zerothArrayItem is now "a"
-// .map() takes an array and creates a new array:
+let newArrayLength, newArray;
+newArrayLength = newArray.length;
+// newArrayLength is now 4
 newArray = myArray.map(function(value) {
   return value + 1;
 });
 // newArray is ["a1", 2, "string1", 24]
-newArrayLength = newArray.length;
-// newArrayLength is now 4
 
 
 
@@ -25,7 +25,7 @@ myObject = {
 // Access a property:
 myName = myObject.name;
 // myName is now "JavaScript";
-// Properties can be any data type, even functions.
+
 
 
 let myFunction, myReturnValue;
@@ -126,3 +126,18 @@ if (b === "someString") {
 } else {
   console.log("b is not equal to 'someString.'");
 }
+
+
+myObject = {
+  name: "JavaScript",
+  favNumbers: [1, 3, 5, 6],
+  favGreeting: function(name){
+    return "Ahoy, ahoy, " + name + "!";
+  }
+}
+myObject.favNumbers.map(function(i){
+  return i + 2;
+});
+// returns: [3, 5, 7, 8]
+myObject.favGreeting("Bhalu");
+// returns: "Ahoy, ahoy, Bhalu!"

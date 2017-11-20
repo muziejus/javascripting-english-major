@@ -151,9 +151,21 @@ are functions. Functions receive parameters and \colortt{return} a value:
     \lstinputlisting[firstline=41, lastline=47]{listings.js}
   }
   \sectionBox{Arrays (chs 5, 6, \& 11)}{%
-    \noindent Arrays are a list of things (strings, objects, arrays).
+    \noindent Arrays are a list of things (strings, objects, arrays). Every
+item in the list has an index (that begins with 0) that can be used to access
+it:
 
-    \lstinputlisting[firstline=1, lastline=11]{listings.js}
+    \lstinputlisting[firstline=1, lastline=4]{listings.js}
+
+    Arrays also have a \colortt{.length} property and useful functions built-in
+as methods, like \colortt{.map()}, which takes the array and builds a new one.
+
+    \lstinputlisting[firstline=5, lastline=11]{listings.js}
+
+    The \colortt{.forEach()} method works similarly to \colortt{.map()} and
+iterates over the array—say, a set of points on a map—in order to execute
+useful commands on each item. See above.
+
   }
   \vfill\null
   \columnbreak
@@ -179,9 +191,14 @@ picker
     \end{enumerate}
   }
   \sectionBox{Objects (chs 5, 6, \& 11)}{%
-    \noindent Objects are generic types and have properties.
+    \noindent Objects are generic types and have arbitrary properties that you
+can assign. They are the multi-purpose blank slate of JavaScript.
 
-    \lstinputlisting[firstline=21, lastline=28]{listings.js}
+    \lstinputlisting[firstline=21, lastline=27]{listings.js}
+
+    Properties can be any data type, including functions:
+
+    \lstinputlisting[firstline=131, lastline=143]{listings.js}
   }
   \vfill\null
   \columnbreak
@@ -236,7 +253,7 @@ HTML object, while many objects can have the same \colortt{class=}.
             \colortt{<p></p>} & paragraph \\
             \colortt{<a href="http://…"></a>} & anchor, for making links \\
             \colortt{<img src="http://…" />} & images \\
-            \colortt{<h2></h2>} & 2nd-level heading (goes all the way to \colortt{<h6>}) \\
+            \colortt{<h2></h2>} & 2nd-level heading (down to \colortt{<h6>}) \\
             \colortt{<div></div>} & a generic block of content \\
             \colortt{<span></span>} & a generic span of inline content \\
             \colortt{<em></em>} & emphasis (typically italics) \\
@@ -261,8 +278,14 @@ to draw the background map.
 can be styled in a way similar to CSS. Every Leaflet method is of the form
 \colortt{L.someMethod()}.
 
-    \lstinputlisting[firstline=21, lastline=38]{leaflet.js}
+    \lstinputlisting[firstline=21, lastline=40]{leaflet.js}
+
+    Leaflet also can respond to events like clicking:
+
+    \lstinputlisting[firstline=41, lastline=44]{leaflet.js}
+
   }
+  
 
 \end{multicols*}
 % \newpage

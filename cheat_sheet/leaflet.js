@@ -36,4 +36,10 @@ marker.setStyle({
   radius: 20, 
   fillColor: "#0000aa" // blue
 });
+// add a popup that shows when you click on marker:
+marker.bindPopup("This is a <em>popup</em>");
+// show the coordinates whereever you click:
+map.on("click", function(clickEvent) {
+  alert("You clicked at " + clickEvent.latlng.lat + ", " + clickEvent.latlng.lng);
+});
 
