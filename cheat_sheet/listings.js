@@ -48,7 +48,7 @@ myArray.forEach(function(value, i){
 
 
 
-$("#response").html("New <i>HTML</i> text.");
+$("#response").html("New <em>HTML</em> text.");
 // Changes the value of <div id="response"></div>
 let pHtml, theParagraph;
 pHtml = $("p").html();
@@ -69,8 +69,8 @@ $.getJSON("some.url.of/file.json", function(obj){
 });
 
 let map, tileLayer, lat, lng, marker, line;
-// initialize a map inside <div id="map"></div>:
-map = L.map("map");
+// initialize a map inside <div id="leaflet-map"></div>:
+map = L.map("leaflet-map");
 // set the tileLayer to a tile url:
 tileLayer = L.tileLayer("some.url.of/tiles.png", {
       attribution: "&copy; rights holders",

@@ -24,6 +24,7 @@
 % \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
 
+\usepackage{verbatimbox}
 \usepackage{tabulary}
 \usepackage{listings}
 
@@ -83,6 +84,7 @@
   \begin{tikzpicture}
     \node [mybox] (box){%
         \begin{minipage}{0.3\textwidth}
+          \parindent=1em
           #2
         \end{minipage}
     };
@@ -105,7 +107,7 @@ JavaScripting English Major Cheat Sheet}}}\\
 \begin{multicols*}{3}
 
   \sectionBox{Files \& Basic Syntax (ch 2)}{%
-      Write JavaScript in your \colortt{script.js} file, HTML in your
+  \noindent Write JavaScript in your \colortt{scripts.js} file, HTML in your
   \colortt{index.html}, and CSS (styles) in your \colortt{styles.css}. You can use
   different file names, but the JavaScript files should always end in
   \colortt{.js}.
@@ -127,7 +129,7 @@ JavaScripting English Major Cheat Sheet}}}\\
       \end{tabulary}}\end{center}
   }
   \sectionBox{If Statements (ch. 3)}{%
-    If-then-else logic is central to program decision making.
+    \noindent If-then-else logic is central to program decision making.
 
     \lstinputlisting[firstline=101, lastline=103]{listings.js}
 
@@ -137,10 +139,9 @@ JavaScripting English Major Cheat Sheet}}}\\
     \lstinputlisting[firstline=111, lastline=128]{listings.js}
   }
   \sectionBox{Functions (ch 4 \& 6)}{%
-    JavaScript provides the verbs of the web. If a page does something because of
-    you, that’s JavaScript. The verbs of JavaScript, however,
-    are functions. Functions receive parameters and \colortt{return} a
-    value:
+    \noindent JavaScript provides the verbs of the web. If a page does
+something because of you, that’s JavaScript. The verbs of JavaScript, however,
+are functions. Functions receive parameters and \colortt{return} a value:
 
     \lstinputlisting[firstline=31, lastline=36]{listings.js}
 
@@ -150,14 +151,14 @@ JavaScripting English Major Cheat Sheet}}}\\
     \lstinputlisting[firstline=41, lastline=47]{listings.js}
   }
   \sectionBox{Arrays (chs 5, 6, \& 11)}{%
-    Arrays are a list of things (strings, objects, arrays).
+    \noindent Arrays are a list of things (strings, objects, arrays).
 
     \lstinputlisting[firstline=1, lastline=11]{listings.js}
   }
   \vfill\null
   \columnbreak
   \sectionBox{Other Resources}{%
-    These basics of JavaScript should lead you much of the way towards
+    \noindent These basics of JavaScript should lead you much of the way towards
 being able to look up other methods and looking up questions online. Here are
 some useful references:
 
@@ -167,38 +168,100 @@ some useful references:
     — MDN JavaScript reference
     \item \url{http://api.jquery.com} — jQuery documentation
     \item \url{http://leafletjs.com} — Leaflet homepage 
+    \item \url{https://getbootstrap.com/docs/} — Bootstrap documentation
     \item \url{https://stackoverflow.com/questions/tagged/javascript} — Stack
     Overflow JavaScript questions. Priceless resource
     \item \url{https://www.w3schools.com/TAGs/} — HTML reference
     \item \url{https://www.w3schools.com/cssref/} — CSS reference
+    \item \url{https://www.w3schools.com/colors/colors_picker.asp} — Color
+picker
 
     \end{enumerate}
   }
   \sectionBox{Objects (chs 5, 6, \& 11)}{%
-    Objects are generic types and have properties.
+    \noindent Objects are generic types and have properties.
 
     \lstinputlisting[firstline=21, lastline=28]{listings.js}
   }
   \vfill\null
   \columnbreak
   \sectionBox{jQuery (chs 8, 9, 11, \& 14)}{%
-    jQuery lets you select parts of the webpage with \colortt{\$("selector")} and
+    \noindent jQuery lets you select parts of the webpage with
+\colortt{\$("entity")} selector and
     manipulate them:
 
     \lstinputlisting[firstline=51, lastline=58]{listings.js}
 
-    \colortt{.html()} is a method, but there are other useful ones in JQuery:
+    \colortt{.html()} is a method, but there many, many useful ones in JQuery.
+Here are two more:
 
     \lstinputlisting[firstline=61, lastline=69]{listings.js}
   }
-  \sectionBox{Leaflet (chs 10, 11, \& 14)}{%
-    \lstinputlisting[firstline=71, lastline=93]{listings.js}
+  \sectionBox{CSS (ch 8)}{%
+    \noindent CSS (cascading style sheets) is the language we use to control
+how things look on the page, in terms of colors, fonts, sizes, margins, etc.
+Styles are defined in a file ending in \colortt{.css}.
+
+    Styles use the same syntax for tags, ids, and classes as jQuery uses in
+its \colortt{\$("entity")} selector.
+
+    \lstinputlisting{listings.css}
+
+    CSS is magic, so I recommend using pre-defined styles like those in
+Bootstrap and tweaking them. Colors are defined either as hex values or rgb values. See the other resources
+section for more.
   }
-  \sectionBox{HTML \& CSS (ch 8)}{%
-    HTML
+  \sectionBox{HTML (ch 8)}{%
+    \noindent HTML is a relatively simple language made up of a \colortt{<tag>} that
+contains information inside and are then closed with a similar tag:
+\colortt{</tag>}. Here is a sample \colortt{index.html}:
 
-    \lstinputlisting{listings.html}
+    \lstinputlisting[language=html]{listings.html}
 
+    Information about the page and pointers to CSS stylesheets go between the
+\colortt{<head></head>} tags. The content of the page goes in the
+\colortt{<body></body>} tags, with the JavaScript files loaded at the bottom
+inside \colortt{<script></script>} tags.
+
+    Inside a tag, we can set attributes with values, like \colortt{id="response"}
+in the \colortt{<div>} in the example. In addition to \colortt{id=},
+\colortt{class=} and \colortt{src=} (for “source”) are common attributes.  \colortt{id=} should give a unique name to an
+HTML object, while many objects can have the same \colortt{class=}.
+
+    Some other useful tags include:
+
+      \begin{center}
+        \small{\addvbuffer[-12pt 0pt]{%
+          \begin{tabulary}{\textwidth}{LL}
+            \colortt{<p></p>} & paragraph \\
+            \colortt{<a href="http://…"></a>} & anchor, for making links \\
+            \colortt{<img src="http://…" />} & images \\
+            \colortt{<h2></h2>} & 2nd-level heading (goes all the way to \colortt{<h6>}) \\
+            \colortt{<div></div>} & a generic block of content \\
+            \colortt{<span></span>} & a generic span of inline content \\
+            \colortt{<em></em>} & emphasis (typically italics) \\
+            \colortt{<strong></strong>} & strong (typically bold) \\
+          \end{tabulary}
+        }}
+      \end{center}
+
+
+    The jQuery selector can grab HTML objects based on the tag type, the id,
+and the class. See the jQuery section for more.
+  }
+  \sectionBox{Leaflet (chs 10, 11, \& 14)}{%
+    \noindent Leaflet requires some added stylesheet and script additions in
+your HTML file (see ch 10). The map also needs to be drawn in a
+\colortt{<div>} with a pre-defined height (see the CSS section here). Defining
+a map then requires that \colortt{<div>}, a center point, and a tile resource
+to draw the background map.
+    \lstinputlisting[firstline=1, lastline=13]{leaflet.js}
+
+    Once the basic map is drawn, you can add markers and lines to it, which
+can be styled in a way similar to CSS. Every Leaflet method is of the form
+\colortt{L.someMethod()}.
+
+    \lstinputlisting[firstline=21, lastline=38]{leaflet.js}
   }
 
 \end{multicols*}

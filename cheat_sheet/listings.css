@@ -1,0 +1,13 @@
+p { 
+	color: #657b83;
+	background-color: #fdf6e3;
+}
+.some-class-name {
+	font-size: 24px;
+}
+#some-id-name {
+	margin: 20px;
+}
+#leaflet-map {
+  height: 500px;
+}
