@@ -132,7 +132,7 @@ let md;
 md = window.markdownit({html: true}).use(window.markdownitFootnote);
 // Load the Markdown file with jQuery.
 $.ajax({
-  url: "hastings-street.md",
+  url: "http://the-javascripting-english-major.org/examples/markdown/hastings-street.md",
   success: function(markdown){
     // Convert the Markdown to HTML.
     let html;
@@ -146,7 +146,11 @@ $.ajax({
 The jQuery method `$.ajax()` is a more generic version of the `$.getJSON()`
 method we have already used. It takes an `Object` as a parameter, with a
 `.url` property and a `.success` property, which runs if the `$.ajax()` method
-runs smoothly. 
+runs smoothly. The `.url` property _must_ point to a markdown file on the
+internet (say, hosted in your GitHub repository; see [chapter
+15](/15-go-live#going-live) for directions on how to turn your repository into
+a webserver). That is, the value of the property must begin with `http://` or
+`https://`.
 
 And that’s it. Now you can write content in convenient Markdown and use jQuery
 to populate sections of your web project. See [this
