@@ -156,16 +156,16 @@ selector in jQuery is a bit trickier, but this works for the â€œHastings Streetâ
 tab:
 
 ```javascript
-$("#tabs-nav a[href='#hastings-street']").tab("show");
+$("#nav-tabs a[href='#hastings-street']").tab("show");
 ```
 
 The selector is telling jQuery to select the `<a>` tag within the entity with
-the id `tabs-nav` that has the `href` property of `#hastings-street`. So that
+the id `nav-tabs` that has the `href` property of `#hastings-street`. So that
 works for Hastings Street, but what about for all the places? This is why I
 added the `data-tab` data attribute above. We can replace the code with:
 
 ```javascript
-$("#tabs-nav a[href='#" + $( this ).data("tab") + "']").tab("show");
+$("#nav-tabs a[href='#" + $( this ).data("tab") + "']").tab("show");
 ```
 
 Now whenever the user clicks on a link in the poem, the corresponding tab
@@ -219,7 +219,7 @@ longitude for our `$().click()` callback:
 $("#poem a").click(function(){
   let tab, lat, lng;
   tab = $( this ).data("tab");
-  $("#tabs-nav a[href='#" + tab + "']").tab("show");
+  $("#nav-tabs a[href='#" + tab + "']").tab("show");
   lat = $( this ).data("lat");
   lng = $( this ).data("lng");
   map.panTo([lat, lng]);

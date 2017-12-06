@@ -104,7 +104,7 @@ loadPoem = function(featuresArray){
       $("#poem a").click(function(){
         let tab, lat, lng;
         tab = $( this ).data("tab");
-        $("#tabs-nav a[href='#" + tab + "']").tab("show");
+        $("#nav-tabs a[href='#" + tab + "']").tab("show");
         lat = $( this ).data("lat");
         lng = $( this ).data("lng");
         map.panTo([lat, lng]);
