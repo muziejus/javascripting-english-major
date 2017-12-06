@@ -27,7 +27,7 @@ names in tags? Start with just one example, “Hastings Street”:
 
 ```javascript
 $.ajax({
-  url: "poem.md",
+  url: "http://the-javascripting-english-major.org/examples/markdown/poem.md",
   success: function(poem){
     let html;
     html = md.render(poem);
@@ -95,7 +95,7 @@ The loop:
 
 ```javascript
 $.ajax({
-  url: "poem.md",
+  url: "http://the-javascripting-english-major.org/examples/markdown/poem.md",
   success: function(poem){
     // Read in the poem.
     let html;
@@ -179,7 +179,7 @@ Time to return to the loop above:
 
 ```javascript
 $.ajax({
-  url: "poem.md",
+  url: "http://the-javascripting-english-major.org/examples/markdown/poem.md",
   success: function(poem){
     // Read in the poem.
     let html;

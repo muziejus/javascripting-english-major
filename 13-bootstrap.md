@@ -50,10 +50,10 @@ system](https://v4-alpha.getbootstrap.com/layout/grid/), which generates a
 grid that is twelve columns wide, leaving us to distribute those columns as we
 like. 
 
-The great part about Bootstrap’s grid is that it can be resizes itself
-depending on the width of the browser. For example, what might be two columns
-on a laptop or tablet may appear as just one column (with both columns stacked
-atop each other) on a smartphone. 
+The great part about Bootstrap’s grid is that it resizes itself depending on
+the width of the browser. For example, what might be two columns on a laptop
+or tablet may appear as just one column (with both columns stacked atop each
+other) on a smartphone. 
 
 Each column in Bootstrap is typically also a `<div>` with a class that uses a
 `col-sz-n` syntax. Here, `sz` refers to the **breakpoint**, meaning at what
@@ -73,8 +73,9 @@ I rewrite part of `could-be.html` to make use of the grid system:
     </div>
     <div class="col-md-8" id="places-sidebar">
       <div id="could-be-map" class="map"></div>
-      <div id="places-info">
-        <p>Info on places will go here.</p>
+      <div id="content">
+        <p>Info on places, that is, the content,
+          will go here.</p>
       </div>
     </div>
   </div>
@@ -94,17 +95,19 @@ five different places in the poem. We wrap the [navigation
 elements](https://v4-alpha.getbootstrap.com/components/navs/#base-nav), which
 are `<a>` tags, in a `<nav>` tag. Bootstrap’s classes do all the heavy
 lifting. The navigation for the `#content` section of our project page, then,
-will look like this:
+will look like this, and it goes inside the `#content` `<div>`:
 
 ```html
-<nav id="nav-tabs" class="nav nav-pills mt-3">
-  <a class="nav-link active" href="#introduction">Introduction</a>
-  <a class="nav-link" href="#hastings-street">Hastings St.</a>
-  <a class="nav-link" href="#lenox-avenue">Lenox Ave.</a>
-  <a class="nav-link" href="#eighteenth-and-vine">18th &amp; Vine</a>
-  <a class="nav-link" href="#fifth-and-mound">5th &amp; Mound</a>
-  <a class="nav-link" href="#rampart">Rampart</a>
-</nav>
+<div id="content">
+  <nav id="nav-tabs" class="nav nav-pills mt-3">
+    <a class="nav-link active" href="#introduction">Introduction</a>
+    <a class="nav-link" href="#hastings-street">Hastings St.</a>
+    <a class="nav-link" href="#lenox-avenue">Lenox Ave.</a>
+    <a class="nav-link" href="#eighteenth-and-vine">18th &amp; Vine</a>
+    <a class="nav-link" href="#fifth-and-mound">5th &amp; Mound</a>
+    <a class="nav-link" href="#rampart">Rampart</a>
+  </nav>
+</div>
 ```
 
 The `.nav-pills` class means that Bootstrap will style this as though it were a
@@ -152,6 +155,12 @@ a set of tabs, so the navigation gets augmented to include that:
 </nav>
 ```
 
+Now, inside the `#content` block, you should have the `<nav></nav>` section as
+well as the `.tab-content` collection of `<section>`s. See how the `href=`
+attribute among the `.nav-link`s connects to the `id=` of the `.tab-panes`,
+as we’ll also wire the JavaScript to use those terms as well in the next
+section.
+
 </section>
 <section id="markdown-sections">
 ## Populating the sections with Markdown content
@@ -163,7 +172,10 @@ content into the tabs. Importantly, however, every Markdown document has the
 same name as the id of its corresponding `<section>`. As a result, instead
 of having to write the same call to `$.ajax()` five times, we can write it
 once and loop over it by creating an array on the fly made up of the tab
-names:
+names. Remember that the `$.ajax()` method’s `.url` property must refer to a
+document on the internet (begins with `http://` or `https://`, so have a quick
+peek at [chapter 15](/15-go-live#going-live) to see how to setup your GitHub
+repository as its own mini webserver.
 
 ```javascript
 let md;
@@ -174,7 +186,7 @@ md = window.markdownit({html: true}).use(window.markdownitFootnote);
   // Create a variable tab that has the name as a string.
   $.ajax({
     // tab + ".md" yields, for example, "rampart.md".
-    url: tab + ".md",
+    url: "http://the-javascripting-english-major.org/examples/markdown/" + tab + ".md",
     success: function(markdown){
       let html;
       html = md.render(markdown);
