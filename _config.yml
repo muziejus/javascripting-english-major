@@ -14,13 +14,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: The JavaScripting English Major
-host-full: http://the-javascripting-english-major.org
 description: A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.
 url: https://the-javascripting-english-major.org/
 author: Moacir P. de Sá Pereira
 twitter:
   username: jsingenglishmaj
 logo: /apple-touch-icon.png
+host-full: http://the-javascripting-english-major.org
 exclude: 
  - cheat_sheet
 social:
@@ -56,6 +56,5 @@ kramdown:
       line_numbers: true
       start_line: 1
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
