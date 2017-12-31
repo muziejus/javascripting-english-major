@@ -45,7 +45,7 @@ markdown: kramdown
 #   - Gemfile
 #   - Gemfile.lock
 google-code: UA-592475-7
-include: [examples]
+include: [_pages, examples]
 kramdown:
   input: GFM
   auto_id_prefix: s-
