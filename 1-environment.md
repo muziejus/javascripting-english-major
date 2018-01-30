@@ -220,22 +220,12 @@ searching for them and then clicking the “Install” button.
 icons in the Atom sidebar and tabs. These visual cues are, in my experience,
 more useful than file name extensions.
 
-* [`zen`](https://atom.io/packages/zen): creates a distraction-free,
-full-screen Atom experience.
-
-* [`linter-write-good`](https://atom.io/packages/linter-write-good) and
-[`linter-just-say-no`](https://atom.io/packages/linter-just-say-no): both of
-these are style or grammar **linters** to help with your writing. Of course, as
-with any programmatic grammar or style checker, sometimes their advice is
-nonsense. I find that these get in the way, but they might be useful for you,
-especially if you’re worried about how well you write English.
-
 * [`linter-jshint`](https://atom.io/packages/linter-jshint): adds a linter
 based on [JSHint](http://jshint.com/docs/) for JavaScript, meaning the Atom
 will warn you when the JavaScript you write has problems. 
 
-For each of these, you have to type the name into the little search bar in the
-Install Packages part of the Settings tab. The linters may ask you to add some
+For these, you have to type the name into the little search bar in the
+Install Packages part of the Settings tab. The linter may ask you to add some
 other packages to fulfill dependencies. That’s ok.
 
 ### Continue customizing by enabling autosave
