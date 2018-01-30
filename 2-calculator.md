@@ -253,12 +253,7 @@ operators. In fact, let’s start with them:
 //--> 6
 > 2 / 3;
 //--> 0.6666666666666666
-> 3 % 2;
-//--> 1
 ```
-
-These should be pretty straightforward, except for the last one. If I tell you
-it’s called the **remainder operator**, is its meaning clearer?
 
 As you can see, the arithmetic operators give numbers as answers. The
 comparison operators, like `===`, respond with `true` or `false`:
@@ -401,16 +396,6 @@ even defined).
 
 2. What happens when you surround `true` or `false` with double quotes? Are
    they still booleans?
-
-3. What will be the result of `10 % 7`? Try to reason it out before you ask
-   the console.
-
-4. The remainder operator is a quick way to tell if a number is odd or even.
-   Can you think of a test, using `===`, that will give `true` if a number is
-   even and `false` if it’s odd?
-
-5. What is the value of 0.1 + 0.2? What does JavaScript think it is? Can you
-   think of why that might be the case? 
 
 6. What happens when you add a string to a number? What about the reverse?
    Why?
