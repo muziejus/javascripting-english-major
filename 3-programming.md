@@ -283,8 +283,7 @@ your single line in `scripts.js` with this, then:
 $("#response").html("scripts.js has loaded!");
 ```
 
-Now reload the page in the browser. That earlier text, that read “This is the
-#reponse div.” is now replaced. We’ll learn jQuery in greater detail as we
+Now reload the page in the browser. That earlier text, that read “This is the #reponse div.” is now replaced. We’ll learn jQuery in greater detail as we
 move along, but that one line of JavaScript does this:
 
 * `$(`: Select something in the webpage with jQuery.
