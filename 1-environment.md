@@ -200,7 +200,7 @@ of getting used to. Still, I hope that, for project-based work, you will see
 that it works much better than Word or a similar word processor.
 
 You can download the software from the [Atom page](http://atom.io), and
-installation should be rather straightforward. Once you install it, when you
+installation should be rather straightforward[^atom-install]. Once you install it, when you
 open it, you will be greeted with a welcome tab and the welcome guide tab in a
 separate pane. Atom works on the visual metaphor of panes with tabs. You can
 change the widths of the panes and show and hide them with your mouse.
@@ -447,3 +447,5 @@ after completing the exercises below.
 [^atom-is-chrome]: Atom is, basically, a very customized version of Chrome that talks to a JavaScript server that you run in the background when you launch the application.
 
 [^overpushing]: I, personally, overpush. I usually commit and immediately push, which is generally fine, but it can be embarrassing sometimes. Also, since the default means by which Atom pushes to GitHub asks you for your username and password, it makes sense to push only every few commits or so.  Find a balance that works for you, but remember to always finish your work before a break with a commit and a push, just in case!
+
+[^atom-install]: There are two hiccups that will come up during installation when you aim to use git with Atom. On Macs, you will be prompted to install the command-line tools. It should work automagically, but if it doesn’t, see [this post](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/). On Windows, you need to install the [gitbash shell](https://gitforwindows.org) and then [configure git](https://help.github.com/articles/setting-your-username-in-git/#platform-windows) using gitbash.
