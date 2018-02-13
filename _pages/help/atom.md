@@ -28,7 +28,7 @@ If you open Atom and get a blank screen when you were expecting your list of
 files, don’t fret. There are several ways to open it back up. Try these in
 order.
 
-1. The project tree—which shows the files—may have just disappeared. Try
+1. The project tree—which shows the files—may have just closed. Try
    typing `ctrl` `0` (that’s a
    zero) to have the tree reopen. If that’s empty, too, move to the next step.
 
