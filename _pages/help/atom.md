@@ -54,6 +54,21 @@ order.
 
 </section>
 
+<section id="new-file">
+
+## I want to create a new file in my project
+
+In Atom, if you just `command` `N` or `ctrl` `N` to create a new file, it’ll
+make an arbitrary untitled file that you later save and name. If you know
+ahead of time where in your project you want your file to go, click on the
+project tree (the list of files) where you want the file to go and type `A`
+(lowercase). Atom will open a little window asking to “Enter the path for the
+new file,” which should already have the folder name filled in. Just type in
+your file name with the appropriate extension (`.js` for JavaScript, `.md` for
+Markdown, etc.), and you should be ready to go.
+
+</section>
+
 <section id="git-push-failed">
 
 ## When I go to push my changes to GitHub, it says I’m behind master
