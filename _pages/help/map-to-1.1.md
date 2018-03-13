@@ -15,6 +15,26 @@ JavaScript](https://www.youtube.com/watch?v=iepGc3prnEA) for
 “[Media History of New
 York](https://muziejus.github.io/media-history-of-nyc/).”
 
+There are two prongs to how to improve _The JavaScripting English Major_, and
+they may seem initially unrelated. First, there’s the question of how to
+improve the choices I make in terms of the technologies taught. Second,
+however, are the pedagogical choices I make in terms of aligning the course
+better with its implicit and explicit goals. But they are, in fact, tightly
+related. Pursuing inclusivity, for example, requires changes in both aspects
+of the course, as what might seem like “just” a technical choice can be,
+actually, anti-inculsionary.
+
+Since this website is designed both to guide my teaching of the course and to
+inspire others to learn JavaScript (or use it in their own teaching!), I
+_must_ aim to keep pedagogical concerns transparent. It may seem weird for me
+to talk about “requiring weekly labs,” say, as part of what version 1.1 of
+this course’s _website_ would look like, especially without providing detailed
+lesson plans for those labs. But the weekly labs build on and reinforce what
+this site already provides, and the site can be improved to make those labs
+even more useful. Not every student will need them, of course, and not every
+instructor can afford to provide them. But it strikes me that the labs, like
+all the changes proposed below, should be goals to which we (teachers) aspire.
+
 <section id="background">
 ## Background
 
@@ -35,7 +55,12 @@ pedagogical and technical, underscore how this project is to continue.
 <section id="inclusivity">
 ## Inclusivity
 
-As mentioned above, the whole point of _The JavaScripting English Major_ is to be more inclusive than the JavaScript textbooks that I considered using. Programming books, in my experience, [are written for CS students](/0-introduction#not-english-major), meaning they highlight concepts that are obscure or irrelevant to humanities students who want to learn JavaScript. The books can be great, but their audience is wrong.
+As mentioned above, the whole point of _The JavaScripting English Major_ is to
+be more inclusive than the JavaScript textbooks that I considered using.
+Programming books, in my experience, [are written for CS
+students](/0-introduction#not-english-major), meaning they highlight concepts
+that are obscure or irrelevant to humanities students who want to learn
+JavaScript. The books can be great, but their audience is wrong.
 
 That CS has an inclusivity problem is no surprise. Nevertheless, a lot of the
 suggestions someone like [Ashe Dryden can make to Stanford’s CS
