@@ -3,6 +3,7 @@
     <div id="outer-container" class="container">
       {{ content }}
     </div>
+    {% include construction-modal.html %}
     {% include scripts.html %}
     <script>
       $("html").css("height", "100%");
@@ -10,6 +11,9 @@
       if($("#center-box").width() > 576){
         $("#center-box").addClass("align-items-center").addClass("h-100");
         $("#outer-container").addClass("h-100");
+      }
+      if ( $(".modal").length > 0 ){
+        $(".modal").modal("show");
       }
     </script>
   </body>

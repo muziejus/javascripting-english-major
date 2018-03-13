@@ -25,3 +25,5 @@ $("aside").append(function(){
 
 // add lead to first paragraph.
 $("article p").first().addClass("lead");
+
+

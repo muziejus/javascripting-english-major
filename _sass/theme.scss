@@ -70,7 +70,7 @@ h1 {
   font-size: 3.5rem;
 }
 
-h2, h3 {
+h2, h3, h5 {
   color: $yellow;
 }
 
@@ -139,6 +139,12 @@ blockquote {
   background-color: $base3;
   color: $cyan;
 }
+
+.modal-content {
+  background-color: $base3;
+}
+
+
 
 
 @import "index";
