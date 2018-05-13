@@ -80,7 +80,7 @@ information regarding this course are hidden on the “[About](/about)” page.
 
 ### Final styling / Activating GitHub Pages
 
-## [Appendix A. Further Resources](/a-resources/)
+## [Appendix A. Further Resources](/a-resources)
 
 ### Books / Websites / Videos
 
