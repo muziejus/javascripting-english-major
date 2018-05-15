@@ -69,6 +69,7 @@ collections:
     output: true
   help-pages:
     output: true
+    permalink: /help/:name
 defaults:
 - scope:
     path: ""
