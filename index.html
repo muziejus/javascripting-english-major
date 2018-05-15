@@ -4,9 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">    
   <head>      
     <title>The JavaScripting English Major</title>      
+{% if jekyll.environment == "production" %}
     <meta http-equiv="refresh" content="0;URL='/v1/'" />    
+{% endif %}
   </head>    
   <body> 
+{% if jekyll.environment == "production" %}
     Redirecting to v1 of <em>The JavaScripting English Major</em>
+{% else %}
+    No redirect wooo
+{% endif %}
   </body>  
 </html> --
