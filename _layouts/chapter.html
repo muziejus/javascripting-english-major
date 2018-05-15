@@ -3,3 +3,28 @@ layout: default
 ---
 
 {{ content }}
+
+{% assign prevch = page.chapter-no | minus: 1 %}
+{% assign nextch = page.chapter-no | plus: 1 %}
+{% assign chapters = site.chapters | sort: "chapter-no" %}
+
+<div class="row justify-content-between">
+  <div>
+    {% if prevch >= 0 %}
+      <a class="btn btn-info" href="{{ chapters[prevch].url }}">
+        ← {{ chapters[prevch].chapter-no }}. {{ chapters[prevch].title }}
+      </a>
+    {% endif %}
+  </div>
+  <div>
+    {% if nextch > 15 %}
+      <a class="disabled btn btn-info" href="#">
+        All Done!
+      </a>
+    {% else %}
+      <a class="btn btn-info" href="{{ chapters[nextch].url }}">
+        {{ chapters[nextch].chapter-no }}. {{ chapters[nextch].title }} →
+      </a>
+    {% endif %}
+  </div>
+</div>
