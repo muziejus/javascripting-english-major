@@ -1,6 +1,7 @@
 ---
 chapter-no: 9
 title: Building a Dataset
+summary: Digital *Canterbury Tales* / JSON / Async
 ---
 
 Your excitement should be growing as finally, you will stop making play pages

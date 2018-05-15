@@ -1,6 +1,7 @@
 ---
 chapter-no: 0
 title: Introduction & FAQs
+summary: Prerequisites / Why this course? / Why JavaScript? / More esoteric concerns, etc.
 ---
 
 Welcome (again)! This is the introduction to *The JavaScripting

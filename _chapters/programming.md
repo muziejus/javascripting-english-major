@@ -1,6 +1,7 @@
 ---
 chapter-no: 3
 title: Programming
+summary: Control flow / If statements / Embedding JavaScript in a webpage / While and for loops
 ---
 
 It’s time to unlock what JavaScript can do when it’s not just a calculator.

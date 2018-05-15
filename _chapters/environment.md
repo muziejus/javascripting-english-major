@@ -1,6 +1,7 @@
 ---
 chapter-no: 1
 title: Setting up the Environment
+summary: Version control with Git / Editing plain text with Atom / Launching a JavaScript console from the browser
 ---
 
 It’s possible to start JavaScripting just by opening your browser, but for the

@@ -1,6 +1,7 @@
 ---
 chapter-no: 10
 title: Leaflet
+summary: Web map structure / Tour of Leaflet / Working with coordinates
 ---
 
 As I wrote in the [previous chapter](/9-dataset), a whole lot happened in it,

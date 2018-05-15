@@ -1,6 +1,7 @@
 ---
 chapter-no: 12
 title: Writing Content with Markdown
+summary: Markdown / Hotlinking images / Rendering Markdown with JavaScript
 ---
 
 Now that the map for the “Could Be” Project works and we have a good sense of

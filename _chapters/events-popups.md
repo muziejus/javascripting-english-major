@@ -1,6 +1,7 @@
 ---
 chapter-no: 14
 title: Integrating Leaflet with Events
+summary: Adding interactivity to the page / Triggering Leaflet events with jQuery / Creating rich popups / How did you do that?
 ---
 
 The “Could Be” Project is coming along nicely, as is, I hope, your own

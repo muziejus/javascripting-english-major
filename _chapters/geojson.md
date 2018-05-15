@@ -1,6 +1,7 @@
 ---
 chapter-no: 11
 title: Starting a Geographical Data Project
+summary: Langston Hughes and African-American urban spaces / GeoJSON / Mapping “Could Be”
 ---
 
 Typing up the coordinates for the [last homework

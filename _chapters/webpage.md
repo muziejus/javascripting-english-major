@@ -1,6 +1,7 @@
 ---
 chapter-no: 8
 title: Writing a Webpage
+summary:  HTML / CSS / JQuery
 ---
 
 The second half of this course begins with an introduction to the foundation

@@ -1,6 +1,7 @@
 ---
 chapter-no: 13
 title: Bootstrap Layout and Content
+summary: Creating containers for your project / Fitting the map
 ---
 
 In this chapter, I will show you part of how Bootstrap handles layout. This

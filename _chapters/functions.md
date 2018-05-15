@@ -1,6 +1,7 @@
 ---
 chapter-no: 4
 title: Functions
+summary: Parameters / Scope / Recursion
 ---
 
 The [previous chapter](/3-programming) was very conceptual. Loops are tricky

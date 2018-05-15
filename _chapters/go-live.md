@@ -1,6 +1,7 @@
 ---
 chapter-no: 15
 title: Time to Go Live
+summary: Final styling / Activating GitHub Pages
 ---
 
 We have come a long, long way since you were creating your GitHub account and

@@ -1,6 +1,7 @@
 ---
 chapter-no: 5
 title: Collections of Data
+summary: Arrays / `Object`s / Methods / Strings as arraylike things
 ---
 
 “Data,” you may recall, is a plural. Just like “bacteria” is a collection of

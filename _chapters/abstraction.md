@@ -1,6 +1,7 @@
 ---
 chapter-no: 6
 title: Abstraction
+summary: Returning / Iterating / Arrays of `Object`s / Mapping and filtering
 ---
 
 Between strings, numbers, booleans, functions, arrays, and `Object`s, we have

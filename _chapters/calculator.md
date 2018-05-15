@@ -1,6 +1,7 @@
 ---
 chapter-no: 2
 title: JavaScript Calculator
+summary: Introduction to JavaScript / Basic data types / Using JavaScript as a calculator / Assigning variables
 ---
 
 

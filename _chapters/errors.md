@@ -1,6 +1,7 @@
 ---
 chapter-no: 7
 title: Oops!
+summary:  JSHint / Mistakes / User error
 ---
 
 

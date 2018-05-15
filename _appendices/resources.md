@@ -1,6 +1,7 @@
 ---
 title: Additional Resources
 appendix-no: 0
+summary:  Books / Websites / Videos
 ---
 
 Congratulations! You’ve finished the course! Or, perhaps, you’re eager to see
