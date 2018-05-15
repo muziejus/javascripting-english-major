@@ -67,6 +67,8 @@ collections:
     output: true
   appendices:
     output: true
+  help-pages:
+    output: true
 defaults:
 - scope:
     path: ""
@@ -78,5 +80,10 @@ defaults:
     type: appendices
   values:
     layout: chapter
+- scope:
+    path: ""
+    type: help-pages
+  values:
+    layout: help-page
 
 

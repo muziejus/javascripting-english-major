@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Map to 1.1
-permalink: /help/map-to-1dot1
 ---
 
 It was a great privilege to be able to teach this course as part of my

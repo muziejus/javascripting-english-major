@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Atom Help
-permalink: /help/atom
 ---
 
 Atom is a tricky piece of software, and it’s easy to get frustrated using it.
