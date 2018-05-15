@@ -14,23 +14,14 @@
           Chapters
         </a>
         <div class="dropdown-menu" aria-labelledby="chapters">
-          <a class="dropdown-item" href="/0-introduction">0. Introduction</a>
-          <a class="dropdown-item" href="/1-environment">1. Environment</a>
-          <a class="dropdown-item" href="/2-calculator">2. JS Calculator</a>
-          <a class="dropdown-item" href="/3-programming">3. Programming</a>
-          <a class="dropdown-item" href="/4-functions">4. Functions</a>
-          <a class="dropdown-item" href="/5-collections">5. Collections</a>
-          <a class="dropdown-item" href="/6-abstraction">6. Abstraction</a>
-          <a class="dropdown-item" href="/7-errors">7. Oops!</a>
-          <a class="dropdown-item" href="/8-webpage">8. Webpage Writing</a>
-          <a class="dropdown-item" href="/9-dataset">9. Datasets</a>
-          <a class="dropdown-item" href="/10-leaflet">10. Leaflet</a>
-          <a class="dropdown-item" href="/11-geojson">11. Starting a Project</a>
-          <a class="dropdown-item" href="/12-markdown">12. Markdown</a>
-          <a class="dropdown-item" href="/13-bootstrap">13. Layout and Content</a>
-          <a class="dropdown-item" href="/14-events-popups">14. Events and Popups</a>
-          <a class="dropdown-item" href="/15-go-live">15. Going Live</a>
-          <a class="dropdown-item" href="/a-resources">A. Resources</a>
+          {% assign chapters = site.chapters | sort: "chapter-no" %}
+          {% for chapter in chapters %}
+            <a class="dropdown-item" href="{{ chapter.url }}">{{ chapter.chapter-no }}. {{ chapter.title }}</a>
+          {% endfor %}
+          <div class="dropdown-divider"></div>
+          {% for appendix in site.appendices %}
+            <a class="dropdown-item" href="{{ appendix.url }}">{{ appendix.title }}</a>
+          {% endfor %}
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -38,9 +29,9 @@
           Help
         </a>
         <div class="dropdown-menu" aria-labelledby="help">
-          <a class="dropdown-item" href="/help/map-to-1dot1">Map to v. 1.1</a>
-          <a class="dropdown-item" href="/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
-          <a class="dropdown-item" href="/help/atom">Atom Help</a>
+          {% for help-page in site.help-pages %}
+            <a class="dropdown-item" href="{{ help-page.url }}">{{ help-page.title }}</a>
+          {% endfor %}
         </div>
       </li>
       <li class="nav-item">
