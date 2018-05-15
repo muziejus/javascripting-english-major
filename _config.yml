@@ -62,3 +62,21 @@ kramdown:
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
+collections:
+  chapters:
+    output: true
+  appendices:
+    output: true
+defaults:
+- scope:
+  path: ""
+  type: chapters
+  value:
+    layout: chapter
+- scope:
+  path: ""
+  type: appendices
+  value:
+    layout: chapter
+
+
