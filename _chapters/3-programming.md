@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 3
 title: Programming
-permalink: /3-programming
-prevch: /2-calculator
-nextch: /4-functions
 ---
 
 It’s time to unlock what JavaScript can do when it’s not just a calculator.

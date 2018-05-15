@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 8
 title: Writing a Webpage
-permalink: /8-webpage
-prevch: /7-errors
-nextch: /9-dataset
 ---
 
 The second half of this course begins with an introduction to the foundation

@@ -1,8 +1,6 @@
 ---
-layout: default
+chapter-no: 0
 title: Introduction & FAQs
-permalink: /0-introduction
-nextch: /1-environment
 ---
 
 Welcome (again)! This is the introduction to *The JavaScripting

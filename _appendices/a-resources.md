@@ -1,8 +1,6 @@
 ---
-layout: default
 title: Additional Resources
-permalink: /a-resources
-prevch: /15-go-live
+appendix-no: 0
 ---
 
 Congratulations! You’ve finished the course! Or, perhaps, you’re eager to see

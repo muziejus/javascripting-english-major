@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 13
 title: Bootstrap Layout and Content
-permalink: /13-bootstrap
-prevch: /12-markdown
-nextch: /14-events-popups
 ---
 
 In this chapter, I will show you part of how Bootstrap handles layout. This

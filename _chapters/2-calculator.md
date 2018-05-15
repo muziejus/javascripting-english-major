@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 2
 title: JavaScript Calculator
-permalink: /2-calculator
-prevch: /1-environment
-nextch: /3-programming
 ---
 
 

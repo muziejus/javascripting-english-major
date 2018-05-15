@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 5
 title: Collections of Data
-permalink: /5-collections
-prevch: /4-functions
-nextch: /6-abstraction
 ---
 
 “Data,” you may recall, is a plural. Just like “bacteria” is a collection of

@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 14
 title: Integrating Leaflet with Events
-permalink: /14-events-popups
-prevch: /13-bootstrap
-nextch: /15-go-live
 ---
 
 The “Could Be” Project is coming along nicely, as is, I hope, your own

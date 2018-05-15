@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 6
 title: Abstraction
-permalink: /6-abstraction
-prevch: /5-collections
-nextch: /7-errors
 ---
 
 Between strings, numbers, booleans, functions, arrays, and `Object`s, we have

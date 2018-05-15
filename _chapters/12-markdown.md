@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 12
 title: Writing Content with Markdown
-permalink: /12-markdown
-prevch: /11-geojson
-nextch: /13-bootstrap
 ---
 
 Now that the map for the “Could Be” Project works and we have a good sense of

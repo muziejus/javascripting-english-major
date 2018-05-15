@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 7
 title: Oops!
-permalink: /7-errors
-prevch: /6-abstraction
-nextch: /8-webpage
 ---
 
 

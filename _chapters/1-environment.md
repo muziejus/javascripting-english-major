@@ -1,9 +1,6 @@
 ---
-layout: default
+chapter-no: 1
 title: Setting up the Environment
-permalink: /1-environment
-prevch: /0-introduction
-nextch: /2-calculator
 ---
 
 It’s possible to start JavaScripting just by opening your browser, but for the
