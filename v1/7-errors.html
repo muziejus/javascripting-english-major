@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/7-errors" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Oops! | The JavaScripting English Major" />
+      <title>Oops! | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Oops! | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/7-errors" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/7-errors" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/7-errors","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Oops!</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>Typically in an introduction to programming course, about here is where we
+would start drilling down deeper into how <code class="highlighter-rouge">Object</code>s work, the idea being that
+creating our own <code class="highlighter-rouge">Object</code>s that have built-in methods, etc., would be rather
+useful. Abstractly, that is certainly the case. But since we’re moving ahead
+to a very specific goal, learning about how to create <code class="highlighter-rouge">Object</code> prototypes and
+the like can be saved for a different course.<sup id="fnref:haverbeke"><a href="#fn:haverbeke" class="footnote">1</a></sup></p>
+
+<p>Instead, we’ll close out this first half of the course by talking about
+mistakes. They happen in programming. Sometimes they’re simple mistakes, like
+typos, that can break programs. Luckily, those tend to be easy to spot.
+Sometimes they are conceptual errors that arise from making erroneous
+assumptions about the data, like the <code class="highlighter-rouge">.pop().reverse()</code> example in the
+<a href="/v1/6-abstraction">previous chapter</a>. Those are a bit trickier to solve, but
+it’s possible.</p>
+
+<p>Then there’s the issue of dealing with users giving you bad data, and
+defending against that. Every time we have used the <code class="highlighter-rouge">prompt()</code> function so
+far, we have made assumptions about what the user was going to type in, like a
+number. In the real world, users find miraculous ways to break programs
+(sometimes maliciously, but sometimes not). Even something as simple as
+entering a name can break a program; when I type in my name into many systems,
+I get errors, telling me my name has too many words. That means that the
+program is checking for things that look like user mistakes and handling them.
+Unfortunately, my name isn’t wrong; it’s their assumption about what a name
+looks like that is. But that programmers are not particularly empathetic and
+attuned to the wide variety of the world around them is nothing new. Anyway…</p>
+
+<p>Let’s look at the first line of defense, typing errors.</p>
+
+<section id="jshint">
+  <h2 id="s-jshint">JSHint</h2>
+
+  <p>Back in <a href="/v1/1-environment/">chapter 1</a>, I had you install the
+<a href="https://atom.io/packages/linter-jshint"><code class="highlighter-rouge">linter-jshint</code></a> package into Atom. A
+linter cleans out the lint from code, ensuring that the code is clean and
+lean. The linter has, then, two tasks. The first is to ensure a consistent
+style to your programming. For example, the linter can complain whenever you
+are using single quotes instead of double quotes to quote a string. But the
+linter can also catch syntax errors, that is, errors that will simply break
+JavaScript. Open up the <code class="highlighter-rouge">scripts.js</code> file in Atom, and type this in the last
+two lines:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">brokenVariable</span><span class="p">;</span>
+<span class="nx">brokenVariable</span> <span class="o">=</span> <span class="s2">"This will be broken';
+</span></code></pre></div>  </div>
+
+  <p>Little red dots will appear near that last line, complaining about an “Unclosed
+string” and a “Missing semicolon.” That is because you typed a single quote
+when JavaScript was expecting a double quote.</p>
+
+  <p>JSHint is set to be pretty strict, and the errors the linter throws up are
+meant to be annoying enough to change how you write your code to fix them.
+It’s hard to believe there was a time when writing code didn’t benefit from
+linters, and you could spend hours looking at your code trying to figure out
+why it didn’t run. Not didn’t <em>work</em>, mind, but didn’t even <em>run</em>.</p>
+
+</section>
+<section id="mistakes">
+  <h2 id="s-mistakes">Mistakes</h2>
+
+  <p>Since the linter handles syntax errors, we’re not as likely to run into those
+when coding. That’s great, because it lets us spend more time on more
+complicated mistakes. Let’s revisit the <code class="highlighter-rouge">.pop().reverse()</code> error from last
+chapter. Go ahead and make sure your <code class="highlighter-rouge">scripts.js</code> file looks like this:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">turtlesWithSplinter</span><span class="p">,</span> <span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">;</span>
+<span class="nx">turtlesWithSplinter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Leonardo"</span><span class="p">,</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="s2">"Splinter"</span><span class="p">];</span>
+<span class="c1">// oops. let's pop() Splinter off before reversing…</span>
+<span class="nx">reversedTurtlesWithoutSplinter</span> <span class="o">=</span> <span class="nx">turtlesWithSplinter</span><span class="p">.</span><span class="nx">pop</span><span class="p">().</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>How could we have debugged this? It turns out, in fact, that <code class="highlighter-rouge">console.log()</code>
+is there more for debugging than it is for what we’ve been using it for
+throughout this course. It’s the console that tells us why we have the error,
+after all. It says, <code class="highlighter-rouge">TypeError</code>, and though that is a relatively clear error
+if you know the language deeply, it’s not clear for beginners. But the
+console is helpful in telling us that the error is on line 3.</p>
+
+  <p>In solving the problem, we can try to turn it into English:</p>
+
+  <ol>
+    <li>We are creating a variable named <code class="highlighter-rouge">reversedTurtlesWithoutSplinter</code>.</li>
+    <li>We want to assign to the variable the <code class="highlighter-rouge">turtlesWithSplinter</code> array, but
+without <code class="highlighter-rouge">"Splinter"</code> and reversed.</li>
+    <li>To get rid of <code class="highlighter-rouge">"Splinter"</code>, we use the <code class="highlighter-rouge">.pop()</code> method.</li>
+    <li>To reverse the array, we use the <code class="highlighter-rouge">.reverse()</code> method.</li>
+  </ol>
+
+  <p>What are our assumptions here? In the first step, we are assuming that there
+isn’t already a variable defined called <code class="highlighter-rouge">reversedTurtlesWithoutSplinter</code>.
+Since the only JavaScript other than jQuery that the page is loading is
+<code class="highlighter-rouge">scripts.js</code>, we know that isn’t the problem. Similarly, JSHint would have
+caught the error if we were defining (with <code class="highlighter-rouge">let</code>) a variable that had already
+been defined. So we know the first step is clear.</p>
+
+  <p>In the second step, we’re assuming that the <code class="highlighter-rouge">turtlesWithSplinter</code> variable
+exists and that it’s an array. Again, since we just defined it two lines
+earlier, let’s assume that’s not the problem for now.</p>
+
+  <p>Here the assumptions start causing problems. We assume in step three that
+<code class="highlighter-rouge">.pop()</code> will remove <code class="highlighter-rouge">"Splinter"</code> from the array. So let’s break that off into
+a separate step, comment out the line that is creating the error and the jQuery line, and have the console tell us what <code class="highlighter-rouge">turtlesWithoutSplinter</code> equals:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">turtlesWithSplinter</span><span class="p">,</span> <span class="nx">turtlesWithoutSplinter</span><span class="p">,</span> <span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">;</span>
+<span class="nx">turtlesWithSplinter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Leonardo"</span><span class="p">,</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="s2">"Splinter"</span><span class="p">];</span>
+<span class="c1">// oops. let's pop() Splinter off before reversing…</span>
+<span class="nx">turtlesWithoutSplinter</span> <span class="o">=</span> <span class="nx">turtlesWithSplinter</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">turtlesWithoutSplinter</span><span class="p">);</span>
+<span class="c1">//--&gt; Splinter</span>
+<span class="c1">//reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();</span>
+<span class="c1">//$("#response").html(reversedTurtlesWithoutSplinter);</span>
+</code></pre></div>  </div>
+
+  <p>Save, reload, and the console now reads <code class="highlighter-rouge">Splinter</code>. At least it’s not
+causing errors.</p>
+
+  <p>But this shows us why we had the error. <code class="highlighter-rouge">turtlesWithoutSplinter</code> does <em>not</em>
+equal the array, as we thought it might. Instead, it’s just a single string,
+<code class="highlighter-rouge">"Splinter"</code>. We made a bad assumption, and now we have to solve it. Two
+techniques work here. The first is to <code class="highlighter-rouge">.pop()</code> the array, and then create a
+new array that is the popped array, but reversed:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">turtlesWithSplinter</span><span class="p">,</span> <span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">;</span>
+<span class="nx">turtlesWithSplinter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Leonardo"</span><span class="p">,</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="s2">"Splinter"</span><span class="p">];</span>
+<span class="c1">// oops. let's pop() Splinter off before reversing…</span>
+<span class="nx">turtlesWithSplinter</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="c1">// turtlesWithSplinter is now, paradoxically, without Splinter.</span>
+<span class="c1">// Now define a new array that is reversed.</span>
+<span class="nx">reversedTurtlesWithoutSplinter</span> <span class="o">=</span> <span class="nx">turtlesWithSplinter</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>We get the result we want. However, there is another way to do this, by
+avoiding <code class="highlighter-rouge">.pop()</code> entirely:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">turtlesWithSplinter</span><span class="p">,</span> <span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">;</span>
+<span class="nx">turtlesWithSplinter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Leonardo"</span><span class="p">,</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="s2">"Splinter"</span><span class="p">];</span>
+<span class="c1">// Use .filter() instead of .pop().</span>
+<span class="nx">reversedTurtlesWithoutSplinter</span> <span class="o">=</span> <span class="nx">turtlesWithSplinter</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">turtle</span><span class="p">){</span>
+  <span class="c1">// What is the value of turtle?</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">turtle</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">turtle</span> <span class="o">!==</span> <span class="s2">"Splinter"</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>This is much tidier because it does not make the assumption, as <code class="highlighter-rouge">.pop()</code> does,
+that <code class="highlighter-rouge">"Splinter"</code> is the last value. Instead, it uses <code class="highlighter-rouge">.filter()</code> to return
+all the strings that <em>do not</em> match <code class="highlighter-rouge">"Splinter"</code>. That’s what <code class="highlighter-rouge">!==</code> means. So
+we get an array of all the strings except <code class="highlighter-rouge">"Splinter"</code>, and that happens to be
+our turtles array, which we can then reverse with no difficulty and print to
+the webpage.</p>
+
+  <p>The trick here is to break down the program into tiny pieces and to test our
+assumptions, making use of <code class="highlighter-rouge">console.log()</code> to keep us sane, so we know what
+the program is doing. Writing these little tests is completely normal and
+actually good practice. In fact, if this were a more rigorous course, I would
+be teaching <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven
+development</a>, where you
+write the tests first, and then only write code that makes the tests pass. But
+that takes us to the final part, dealing with users.</p>
+
+</section>
+<section id="users">
+  <h2 id="s-users-and-their-mistakes">Users and their mistakes</h2>
+
+  <p>Part of programming with testing in mind is that it encourages you to think of
+the edge cases, when something happens that you couldn’t prepare for. Back in
+<a href="/v1/2-calculator">chapter 2</a>, one of the homework assignments asked you to add a
+string to a number. It clearly doesn’t work, but it also doesn’t cause
+JavaScript to break, like a syntax error would. But let’s revisit that
+question by working in the console, with a twist:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">"string"</span><span class="p">;</span>
+<span class="c1">//--&gt; "string"</span>
+<span class="o">&gt;</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; "string3"</span>
+<span class="o">&gt;</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; NaN</span>
+</code></pre></div>  </div>
+
+  <p>There’s that confusing <code class="highlighter-rouge">NaN</code> type, <strong>Not a Number</strong>. Instead of breaking and
+saying something like “cannot multiply a string!” JavaScript instead just
+quietly fails, sets the response to <code class="highlighter-rouge">NaN</code> and moves on. This level of
+forgiveness can cause trouble, because finding what, precisely, caused your
+expected number to stop being a number can be difficult.</p>
+
+  <p>In fact, we’ve already used (and benefited from) JavaScript’s forgiveness.
+Remember the <code class="highlighter-rouge">tipCalculator()</code> function in <a href="/v1/4-functions">chapter 4</a>? It
+relied on <code class="highlighter-rouge">prompt()</code> to get numbers from the user in order to calculate a tip.
+Let’s revisit that part, too, in the console:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">promptValue</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">promptValue</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">"Type in a number, please."</span><span class="p">);</span>
+<span class="c1">//--&gt; "2"</span>
+<span class="o">&gt;</span> <span class="k">typeof</span> <span class="nx">promptValue</span><span class="p">;</span>
+<span class="c1">//--&gt; "string"</span>
+<span class="o">&gt;</span> <span class="nx">promptValue</span> <span class="o">=</span> <span class="nx">promptValue</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; "23"</span>
+<span class="o">&gt;</span> <span class="nx">promptValue</span> <span class="o">=</span> <span class="nx">promptValue</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; 69</span>
+<span class="o">&gt;</span> <span class="k">typeof</span> <span class="nx">promptValue</span><span class="p">;</span>
+<span class="c1">//--&gt; "number"</span>
+</code></pre></div>  </div>
+
+  <p>Wait, what? Let’s follow what happens to our variable <code class="highlighter-rouge">promptValue</code>. When the
+user types it in, it’s a string. This makes sense, the user could type in <code class="highlighter-rouge">2</code>
+as easily as <code class="highlighter-rouge">burrito</code>. But the user can only type, so assuming the result is
+a string is a good one. Next, because <code class="highlighter-rouge">promptValue</code> is a string, when we add
+three to it, it’s just like adding <code class="highlighter-rouge">"string" + 3</code> and getting <code class="highlighter-rouge">"string3"</code>, so
+we get <code class="highlighter-rouge">"23"</code>. A little bit weird, but, remember, <code class="highlighter-rouge">promptValue</code> is a <em>string</em>.</p>
+
+  <p>Then we multiply it by 3, which in the above example returned <code class="highlighter-rouge">NaN</code>. Instead
+we get the number (not the string) <code class="highlighter-rouge">69</code>. In other words, the result of
+multiplying a number (<code class="highlighter-rouge">23</code>) times another number (<code class="highlighter-rouge">3</code>). What on earth
+happened? Why did <code class="highlighter-rouge">promptValue</code> suddenly start behaving like a number? And
+then how does <code class="highlighter-rouge">promptValue</code> start out as a string but end as a number?</p>
+
+  <p>The answer, in non-technical terms, is that JavaScript will look at a string,
+when it’s being asked to behave like a number, and if it can turn into a
+number, it does so. We get the value <code class="highlighter-rouge">"23"</code>, however, because strings <em>can</em>
+use the <code class="highlighter-rouge">+</code> operator. So it stays a string. Confusing, I know. But this shows
+that we have to make sure we know what we’re dealing with when we receive data
+from a user.</p>
+
+  <p>For numbers, one trick is to use the function <code class="highlighter-rouge">isNaN()</code> on any data we receive
+from a user that <em>must</em> be a number, so our function could look something like
+this:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">promptValue</span><span class="p">;</span>
+<span class="nx">promptValue</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">"Type in a number, please"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">promptValue</span><span class="p">)</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">alert</span><span class="p">(</span><span class="s2">"The value you submitted is not a number"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	<span class="c1">// Do the calculations on promptValue knowing it</span>
+	<span class="c1">// will behave like a number and move on from here.</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p><code class="highlighter-rouge">alert()</code> makes that little box appear on your browser, similar to <code class="highlighter-rouge">prompt()</code>.</p>
+
+  <p>Of course, over the rest of this course, you will be creating a project where
+you, yourself, are the sole source of data. In other words, you will be your
+worst enemy. But keep in mind the sorts of valves JavaScript offers, like
+<code class="highlighter-rouge">isNaN()</code>, while also knowing the limitations of things like <code class="highlighter-rouge">typeof</code>.
+Remember, you can always check your sanity in the console.</p>
+
+</section>
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>No homework this time. Enjoy the halfway point. When you come back, it will
+be time to start creating!</li>
+  </ol>
+
+  <h2 id="s-footnotes">Footnotes</h2>
+
+</section>
+<div class="footnotes">
+  <ol>
+    <li id="fn:haverbeke">
+      <p>This is where I make my first large deviation from Haverbeke’s book’s structure. The sixth chapter of <em>Eloquent JavaScript</em> is “The Hidden Life of Objects,” and none of what is covered in that chapter is covered in this course. <a href="#fnref:haverbeke" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/6-abstraction">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/8-webpage">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

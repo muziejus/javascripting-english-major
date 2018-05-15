@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/6-abstraction" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Abstraction | The JavaScripting English Major" />
+      <title>Abstraction | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Abstraction | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/6-abstraction" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/6-abstraction" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/6-abstraction","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Abstraction</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>Between strings, numbers, booleans, functions, arrays, and <code class="highlighter-rouge">Object</code>s, we have
+the fundamentals of JavaScript down. These are the pieces that build together
+to make all JavaScript web projects. But knowing how to put the pieces
+together is where programming stops being a series of clunky, step-by-step
+instructions and becomes creative expression.</p>
+
+<p>Recall the example from <a href="/v1/4-functions/">chapter 4</a> of teaching the computer to
+make a burrito. One way to do it could be to list out every command, step by
+excruciatingly small step. Think about step 1: “get a tortilla.” What is a
+tortilla? What does it mean “to get”? Well, it seems that’s not step 1.
+Because there are steps that come before, that define both of those things.
+Abstraction is when you start combining these little chunks of code into
+something more elegant, something that reads more like English.</p>
+
+<p>Furthermore, abstracting also leads to reusable code. Why not define a
+function <code class="highlighter-rouge">get()</code> in getting a tortilla, that you can then reuse for getting
+beans, for getting cheese, for getting guacamole? Define it once, reuse it
+forever.</p>
+
+<p>Another way of thinking about abstraction is through a programming philosophy
+called <strong>DRY</strong>, for “Don’t Repeat Yourself.” If you find yourself writing the
+same kind of code over and over, it means you haven’t thought about the
+problem abstractly enough to realize moments where your code could benefit
+from abstraction.</p>
+
+<p>If this all sounds abstract (as it were), we’ll get to some details in a bit.
+However, first we need to look back at functions and methods and learn an
+important detail I left out.</p>
+
+<section id="returning">
+  <h2 id="s-returning">Returning</h2>
+
+  <p>In the <a href="/v1/5-collections/">previous chapter</a>, when working with array methods, I
+asked you to think about why <code class="highlighter-rouge">.push()</code> and <code class="highlighter-rouge">.pop()</code> change the array, while
+<code class="highlighter-rouge">.sort()</code> and <code class="highlighter-rouge">.reverse()</code> do not. The why of the question is for discussion
+(and hopefully was already discussed in class), but now we have to think about
+the <em>how</em>.</p>
+
+  <p>Open up the JavaScript console, and type in <code class="highlighter-rouge">let one; one = 1;</code>. When you hit
+return, the console should read <code class="highlighter-rouge">undefined</code>. But now just type <code class="highlighter-rouge">one;</code> and hit
+return. Now the console responds with <code class="highlighter-rouge">1</code>, which is what we assigned to the
+variable <code class="highlighter-rouge">one</code>.</p>
+
+  <p>In these two examples, <code class="highlighter-rouge">undefined</code> and <code class="highlighter-rouge">1</code> are the <strong>return values</strong> of the
+two commands you send the console. Every statement in JavaScript has a return
+value. The default is <code class="highlighter-rouge">undefined</code>, but with functions, you can set your own
+return value using the <code class="highlighter-rouge">return</code> keyword. For example, we have been using
+<code class="highlighter-rouge">console.log()</code> to write to the console so far, but try this in the console:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">f</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">f</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="k">return</span> <span class="s2">"I am a return value."</span> <span class="p">};</span>
+<span class="o">&gt;</span> <span class="nx">f</span><span class="p">();</span>
+</code></pre></div>  </div>
+
+  <p>First, note that I collapsed the entire function definition to one line. But,
+second, note that the function prints text to the console. Let’s build on this
+by writing a function that combines someone’s first and last names into a full
+name with a space between them:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">makeFullName</span><span class="p">,</span> <span class="nx">hughessFullName</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">makeFullName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">){</span>
+    <span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="o">&gt;</span> <span class="nx">hughessFullName</span> <span class="o">=</span> <span class="nx">makeFullName</span><span class="p">(</span><span class="s2">"Langston"</span><span class="p">,</span> <span class="s2">"Hughes"</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Is your name "</span> <span class="o">+</span> <span class="nx">hughessFullName</span> <span class="o">+</span> <span class="s2">"?"</span><span class="p">);</span>
+<span class="c1">//--&gt; Is your name undefined?</span>
+</code></pre></div>  </div>
+
+  <p>The function is doing stuff, but we don’t get the result we want. We want the
+console to ask, “Is your name Langston Hughes?” not “Is your name undefined?” The
+problem is that the variable, <code class="highlighter-rouge">hughessFullName</code>, is assigned to <code class="highlighter-rouge">undefined</code>. But
+we want, instead, for that variable to hold the value <code class="highlighter-rouge">"Langston Hughes"</code>. We do
+this by telling the function to <strong>return</strong> the string.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">makeFullName</span><span class="p">,</span> <span class="nx">hughessFullName</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">makeFullName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="o">&gt;</span> <span class="nx">hughessFullName</span> <span class="o">=</span> <span class="nx">makeFullName</span><span class="p">(</span><span class="s2">"Langston"</span> <span class="s2">"Hughes"</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Is your name "</span> <span class="o">+</span> <span class="nx">hughessFullName</span> <span class="o">+</span> <span class="s2">"?"</span><span class="p">);</span>
+<span class="c1">//--&gt; Is your name Langston Hughes?</span>
+</code></pre></div>  </div>
+
+  <p>Knowing the return value of a function helps you manipulate it with
+confidence. For example, we know that <code class="highlighter-rouge">.sort()</code> and <code class="highlighter-rouge">.reverse()</code> <em>return</em> new
+arrays, leaving the original array unchanged. Since we know this, we can even
+<strong>chain</strong> the two methods:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">turtles</span><span class="p">,</span> <span class="nx">sortedReversedTurtles</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">turtles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Leonardo"</span><span class="p">,</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="s2">"Michelangelo"</span><span class="p">];</span>
+<span class="o">&gt;</span> <span class="nx">sortedReversedTurtles</span> <span class="o">=</span> <span class="nx">turtles</span><span class="p">.</span><span class="nx">sort</span><span class="p">().</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="c1">//--&gt; ["Raphael", "Michelangelo", "Leonardo", "Donatello"]</span>
+</code></pre></div>  </div>
+
+  <p>Say we accidentally included Splinter in the list of turtles, and decided to
+<code class="highlighter-rouge">.pop()</code> him off before reversing:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">turtlesWithSplinter</span><span class="p">,</span> <span class="nx">reversedTurtlesWithoutSplinter</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">turtlesWithSplinter</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Leonardo"</span><span class="p">,</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="s2">"Splinter"</span><span class="p">];</span>
+<span class="o">&gt;</span> <span class="c1">// oops. let's pop() Splinter off before reversing…</span>
+<span class="o">&gt;</span> <span class="nx">reversedTurtlesWithoutSplinter</span> <span class="o">=</span> <span class="nx">turtlesWithSplinter</span><span class="p">.</span><span class="nx">pop</span><span class="p">().</span><span class="nx">reverse</span><span class="p">();</span>
+</code></pre></div>  </div>
+
+  <p>Uh-oh. This causes an error. Why does this happen? After all, we’re just
+telling JavaScript to pop off the last value of the array, then sort it, and
+then reverse it. The answer is that, although <code class="highlighter-rouge">.sort()</code> and <code class="highlighter-rouge">.reverse()</code>
+return <em>arrays</em>, <code class="highlighter-rouge">.pop()</code> does not. It returns the <em>value</em> of the popped off
+element in the array. In other words, we’re asking JavaScript to run
+<code class="highlighter-rouge">.reverse()</code> on <code class="highlighter-rouge">"Splinter"</code>, which is a string. And strings have no
+<code class="highlighter-rouge">.reverse()</code> method. Error ensues.</p>
+
+  <p>Return values encourage programmers to think in terms of the effect of the way
+their functions manipulate data. This is valuable when we start to talk about
+iteration.</p>
+
+</section>
+<section id="iterating">
+  <h2 id="s-iterating">Iterating</h2>
+
+  <p>We know that strings can behave a bit like arrays, in that they have a
+<code class="highlighter-rouge">.length</code> property and index values. They also have the method
+<code class="highlighter-rouge">.toUpperCase()</code>, which makes a string all caps. What if we wanted to write a
+function that made every letter upper case <em>except</em> “e”? Let’s close the
+console for now and work this out in Atom. Erase your <code class="highlighter-rouge">scripts.js</code> and type in
+this:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userString</span><span class="p">,</span> <span class="nx">upperCaseMinusE</span><span class="p">,</span> <span class="nx">upperCasedString</span><span class="p">;</span>
+<span class="c1">// First, we need a string from the user.</span>
+<span class="nx">userString</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">"What do you want to UPPeRCASe?"</span><span class="p">);</span>
+<span class="c1">// Second, we need to create our function.</span>
+<span class="nx">upperCaseMinusE</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">){</span>
+  <span class="c1">// Something will happen here…</span>
+<span class="p">};</span>
+<span class="c1">// Third, we need to pass the user’s string to the </span>
+<span class="c1">// function and assign the return value to a </span>
+<span class="c1">// variable.</span>
+<span class="nx">upperCasedString</span> <span class="o">=</span> <span class="nx">upperCaseMinusE</span><span class="p">(</span><span class="nx">userString</span><span class="p">);</span>
+<span class="c1">// And we can then print the string to the webpage.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">upperCasedString</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Perhaps the easiest way to write the function would be to have it upper case
+the whole string at once and then just replace every “E” with “e.” But say the
+rules were that if a user <em>enters</em> an “E,” like “uppercase everything but the
+little ‘e’s and leave this ‘E’ alone,” then it wouldn’t work. Instead, let’s
+go over the string, letter by letter, and uppercase each letter on its own,
+while skipping the letter whenever it is “e.” That should be easy enough to
+write:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upperCaseMinusE</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">){</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nx">letter</span> <span class="o">===</span> <span class="s2">"e"</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>  </div>
+
+  <p>This code won’t yet work, mostly because it references two variables,
+<code class="highlighter-rouge">letter</code>, and <code class="highlighter-rouge">result</code> that are undefined. But the mechanics should be clear.
+Given a variable <code class="highlighter-rouge">letter</code>, if it’s equal to “e,” let it be and set <code class="highlighter-rouge">result</code> to
+it. If it’s not, make it upper case.  Now, how do we iterate over it? We use a
+for loop. Remember, a for loop takes three parameters: the initialization, the
+condition, and the afterthought. So let’s add a for loop to our function:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upperCaseMinusE</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">){</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">string</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">letter</span> <span class="o">===</span> <span class="s2">"e"</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>  </div>
+
+  <p><code class="highlighter-rouge">letter</code> still isn’t defined, but we’re at least iterating over the string.
+Notice that the condition is that our counter variable, <code class="highlighter-rouge">i</code>, be less than the
+length of the string, which we get by asking for the <code class="highlighter-rouge">string.length</code>. But why
+not set <code class="highlighter-rouge">i</code> to 1, and make the condition <code class="highlighter-rouge">i &lt;= string.length</code>? The answer has
+to do with zero indexing. Recall that to get the first letter of a string, we
+need to ask it for <code class="highlighter-rouge">string[0]</code>. So the first time through the loop, we want
+<code class="highlighter-rouge">i</code> to be 0, so that we can ask for <code class="highlighter-rouge">string[i]</code> and get the zeroth letter in
+the string. And that’s what we’ll assign to <code class="highlighter-rouge">letter</code>!</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upperCaseMinusE</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">){</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">string</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="nx">letter</span> <span class="o">=</span> <span class="nx">string</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">letter</span> <span class="o">===</span> <span class="s2">"e"</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>  </div>
+
+  <p><code class="highlighter-rouge">i</code>, of course, is defined for the course of the loop, and it increases every
+time through it. As a result, we get access to each letter in our <code class="highlighter-rouge">string</code>
+variable by calling <code class="highlighter-rouge">string[i]</code> on it every time through the loop, when <code class="highlighter-rouge">i</code>
+has a different value. But that <code class="highlighter-rouge">result</code> variable is still undefined, and it’s
+still not doing anything. <code class="highlighter-rouge">result</code> will be what we return from the function.
+And we know that what we return will be a string, so let’s define <code class="highlighter-rouge">result</code> at
+the beginning of the function and assign it to a blank string. <code class="highlighter-rouge">scripts.js</code>
+should now look like this:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userString</span><span class="p">,</span> <span class="nx">upperCaseMinusE</span><span class="p">,</span> <span class="nx">upperCasedString</span><span class="p">;</span>
+<span class="nx">userString</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">"What do you want to UPPeRCASe?"</span><span class="p">);</span>
+<span class="nx">upperCaseMinusE</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">result</span><span class="p">;</span>
+  <span class="nx">result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> 
+  <span class="k">for</span> <span class="p">(</span> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">string</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="nx">letter</span> <span class="o">=</span> <span class="nx">string</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">letter</span> <span class="o">===</span> <span class="s2">"e"</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">letter</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">upperCasedString</span> <span class="o">=</span> <span class="nx">upperCaseMinusE</span><span class="p">(</span><span class="nx">userString</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">upperCasedString</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>At last, the code isn’t broken any longer, so you can save, commit, and reload
+the webpage. But if you try it, you’ll see that it only prints one letter to
+the webpage… the last one. Can you see why? We want to be <em>adding</em> each letter
+to the <code class="highlighter-rouge">result</code> variable every time we step through the loop, so we simply
+have to change two lines:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userString</span><span class="p">,</span> <span class="nx">upperCaseMinusE</span><span class="p">,</span> <span class="nx">upperCasedString</span><span class="p">;</span>
+<span class="nx">userString</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">"What do you want to UPPeRCASe?"</span><span class="p">);</span>
+<span class="nx">upperCaseMinusE</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">result</span><span class="p">;</span>
+  <span class="nx">result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> 
+  <span class="k">for</span> <span class="p">(</span> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">string</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="nx">letter</span> <span class="o">=</span> <span class="nx">string</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">letter</span> <span class="o">===</span> <span class="s2">"e"</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Change here.</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">+</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// And change here.</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">+</span> <span class="nx">letter</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">upperCasedString</span> <span class="o">=</span> <span class="nx">upperCaseMinusE</span><span class="p">(</span><span class="nx">userString</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">upperCasedString</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload, and you’ll see that it works now just as we would have
+hoped. If that’s the case, go ahead and commit.</p>
+
+  <p>Take a break. We’ve just done a lot. Have a look over the code and make
+certain you understand what is going on in every line. For the for loop, try
+writing out the values of <code class="highlighter-rouge">result</code>, <code class="highlighter-rouge">letter</code>, <code class="highlighter-rouge">i</code>, and <code class="highlighter-rouge">string</code> for every step
+through with a made up value for string, like “uppErcase me!”</p>
+
+</section>
+<section id="arrays-of-objects">
+  <h2 id="s-arrays-of-objects">Arrays of <code class="highlighter-rouge">Object</code>s</h2>
+
+  <p>I hope you enjoyed your break. Iterating over arrays is a vitally important
+aspect of programming. In fact, it’s so common that JavaScript has a special
+method, <code class="highlighter-rouge">.forEach()</code>, for iterating over arrays. We could rewrite the function
+in the previous section this way:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">upperCaseMinusE</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">string</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">result</span><span class="p">,</span> <span class="nx">stringArray</span><span class="p">;</span>
+  <span class="nx">result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> 
+  <span class="c1">// Since forEach() only works on arrays, we have </span>
+  <span class="c1">// to convert the string to an array:</span>
+  <span class="nx">stringArray</span> <span class="o">=</span> <span class="nx">string</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+  <span class="c1">// Now we call forEach() on stringArray:</span>
+  <span class="nx">stringArray</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">letter</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">letter</span> <span class="o">===</span> <span class="s2">"e"</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">+</span> <span class="nx">letter</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">+</span> <span class="nx">letter</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">})</span> <span class="c1">// Note the parenthesis!</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>  </div>
+
+  <p>The savings in terms of typing aren’t that great, but <code class="highlighter-rouge">.forEach()</code> becomes far
+more valuable with more complicated arrays.</p>
+
+  <p>Let’s imagine that our turtles have cards that tell you about them. On each
+card, we see the turtle’s name, his favorite color, and his weapon of choice.
+We can create these cards as JavaScript <code class="highlighter-rouge">Object</code>s:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">,</span> <span class="nx">turtles</span><span class="p">;</span>
+<span class="nx">leonardo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Leonardo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"katana"</span><span class="p">};</span>
+<span class="nx">donatello</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"purple"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"bo"</span><span class="p">};</span>
+<span class="nx">raphael</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"sai"</span><span class="p">};</span>
+<span class="nx">michelangelo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"nunchaku"</span><span class="p">};</span>
+<span class="nx">turtles</span> <span class="o">=</span> <span class="p">[</span><span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">];</span>
+</code></pre></div>  </div>
+
+  <p>Each turtle has three properties, <code class="highlighter-rouge">.name</code>, <code class="highlighter-rouge">.color</code>, and <code class="highlighter-rouge">.weapon</code>. And then
+we put all four turtles into an array, <code class="highlighter-rouge">turtles</code>. Now let’s say we want a list
+of their weapons on the webpage. In <code class="highlighter-rouge">scripts.js</code>, type out:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">,</span> <span class="nx">turtles</span><span class="p">,</span> <span class="nx">weapons</span><span class="p">;</span>
+<span class="nx">leonardo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Leonardo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"katana"</span><span class="p">};</span>
+<span class="nx">donatello</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"purple"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"bo"</span><span class="p">};</span>
+<span class="nx">raphael</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"sai"</span><span class="p">};</span>
+<span class="nx">michelangelo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"nunchaku"</span><span class="p">};</span>
+<span class="nx">turtles</span> <span class="o">=</span> <span class="p">[</span><span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">];</span>
+<span class="nx">weapons</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// a list of weapons.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">weapons</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Of course, <code class="highlighter-rouge">weapons</code> is blank for the time being, so <code class="highlighter-rouge">#response</code> on the
+webpage will just be blank. How can we get the list of weapons, though? We
+need to iterate over the list of turtles and get each turtle’s individual
+weapon. Then we can put those together into the <code class="highlighter-rouge">weapons</code> string and be on our
+way. Under <code class="highlighter-rouge">weapons = "";</code>, we can add:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">turtles</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">turtle</span><span class="p">){</span>
+  <span class="nx">weapons</span> <span class="o">=</span> <span class="nx">weapons</span> <span class="o">+</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">weapon</span> <span class="o">+</span> <span class="s2">" "</span><span class="p">;</span>
+<span class="p">})</span>
+</code></pre></div>  </div>
+
+  <p>Weapons starts out blank, but then every time through the <code class="highlighter-rouge">.forEach()</code> loop,
+it gets its previous value, plus the value of the turtle’s <code class="highlighter-rouge">.weapon</code> property,
+plus a space. If you save and reload the browser, you should now get a list of
+all the turtles’ weapons. This is great, but we can do better.</p>
+
+</section>
+<section id="mapping-and-filtering">
+  <h2 id="s-mapping-and-filtering">Mapping and filtering</h2>
+
+  <p>Let’s say we wanted not only the list of weapons, but we also wanted it in
+alphabetical order. How could we do that? Well, we know that arrays have the
+<code class="highlighter-rouge">.sort()</code> method, but in order to sort the weapons, we need an array of just
+the weapons’ names. Currently, <code class="highlighter-rouge">turtles</code> is an array of <code class="highlighter-rouge">Object</code>s (one for each
+turtle) and <code class="highlighter-rouge">weapons</code> is a string. Instead of <code class="highlighter-rouge">.forEach()</code>, we can make use of
+the <code class="highlighter-rouge">.map()</code> method. You use <code class="highlighter-rouge">.map()</code> whenever you want to build an array out
+of another array. It’s a more specific version of <code class="highlighter-rouge">.forEach()</code>, but you use it
+the same way. You write an anonymous function that takes as its first
+parameter the current array item over which you’re iterating.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">,</span> <span class="nx">turtles</span><span class="p">,</span> <span class="nx">weapons</span><span class="p">;</span>
+<span class="nx">leonardo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Leonardo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"katana"</span><span class="p">};</span>
+<span class="nx">donatello</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"purple"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"bo"</span><span class="p">};</span>
+<span class="nx">raphael</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"sai"</span><span class="p">};</span>
+<span class="nx">michelangelo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"nunchaku"</span><span class="p">};</span>
+<span class="nx">turtles</span> <span class="o">=</span> <span class="p">[</span><span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">];</span>
+<span class="nx">weapons</span> <span class="o">=</span> <span class="nx">turtles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">turtle</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">weapon</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// weapons is now ["katana", "bo", "sai", "nunchaku"]</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">weapons</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Now that <code class="highlighter-rouge">weapons</code> is an array instead of a string, that means we can also run
+<code class="highlighter-rouge">.sort()</code> on it:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">,</span> <span class="nx">turtles</span><span class="p">,</span> <span class="nx">weapons</span><span class="p">;</span>
+<span class="nx">leonardo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Leonardo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"katana"</span><span class="p">};</span>
+<span class="nx">donatello</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Donatello"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"purple"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"bo"</span><span class="p">};</span>
+<span class="nx">raphael</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Raphael"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"sai"</span><span class="p">};</span>
+<span class="nx">michelangelo</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"Michelangelo"</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="na">weapon</span><span class="p">:</span> <span class="s2">"nunchaku"</span><span class="p">};</span>
+<span class="nx">turtles</span> <span class="o">=</span> <span class="p">[</span><span class="nx">leonardo</span><span class="p">,</span> <span class="nx">donatello</span><span class="p">,</span> <span class="nx">raphael</span><span class="p">,</span> <span class="nx">michelangelo</span><span class="p">];</span>
+<span class="nx">weapons</span> <span class="o">=</span> <span class="nx">turtles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">turtle</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">weapon</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">sort</span><span class="p">();</span>
+<span class="c1">// weapons is now ["bo", "katana", "nunchaku", "sai"]. Sorted!</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">weapons</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>And the webpage is printing “bo,katana,nunchaku,sai”, which isn’t bad, but it
+looks a bit weird. Let’s replace those commas with commas and spaces:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">weapons</span> <span class="o">=</span> <span class="nx">turtles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">turtle</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">weapon</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">);</span>
+<span class="c1">// weapons is now "bo, katana, nunchaku, sai". Sorted, with commas.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">weapons</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Notice that <code class="highlighter-rouge">weapons</code> is no longer an array. It is now a string. That is because
+the array’s <code class="highlighter-rouge">.join()</code> method creates a string out of an array, where it glues
+the array’s pieces together using the parameter sent to it, in this case
+<code class="highlighter-rouge">, </code>. <code class="highlighter-rouge">.join()</code> is the opposite of <code class="highlighter-rouge">.split()</code>, which turns a string into an
+array, splitting on the parameter sent to it.</p>
+
+  <p>The <code class="highlighter-rouge">.map()</code> method opens up possibilities for manipulating data, because as
+it gives us a new array, we can use other methods inherent to arrays to work
+on the new data. One such method is <code class="highlighter-rouge">.filter()</code>.</p>
+
+  <p>Say we want a list of the turtles’ names, but only if their names have the
+letter “o.” Getting the names is easy; it’s no different than getting the
+weapons:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">names</span><span class="p">;</span>
+<span class="nx">names</span> <span class="o">=</span> <span class="nx">turtles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">turtle</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">names</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>This gets us most of the way there, but Raphael is in the list, and we want
+him gone. <code class="highlighter-rouge">.filter()</code> works just like <code class="highlighter-rouge">.map()</code>, but instead of returning a
+value, it returns the value over which it is iterating only if it meets a
+conditional, like an if statement. Now, strings have a method, <code class="highlighter-rouge">.includes()</code>,
+that returns <code class="highlighter-rouge">true</code> if the string includes whatever the parameter is. Let’s
+add some code, then.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">names</span><span class="p">,</span> <span class="nx">namesWithO</span><span class="p">;</span>
+<span class="nx">names</span> <span class="o">=</span> <span class="nx">turtles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">turtle</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">turtle</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">sort</span><span class="p">();</span>
+<span class="nx">namesWithO</span> <span class="o">=</span> <span class="nx">names</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">name</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"o"</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">namesWithO</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Because <code class="highlighter-rouge">"Leonardo".includes("o")</code> returns <code class="highlighter-rouge">true</code>, that name is included in
+the list. Because <code class="highlighter-rouge">"Raphael".includes("o")</code> returns <code class="highlighter-rouge">false</code>, it is not
+included.</p>
+
+</section>
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>Write a function that takes an array of integers and, using <code class="highlighter-rouge">.map()</code>,
+returns an array of those integers, doubled. So if we give it <code class="highlighter-rouge">[1, 2, 3]</code>,
+we receive, in turn, <code class="highlighter-rouge">[2, 4, 6]</code>.</li>
+    <li>Add functionality to the weapons examples above so that the final result is
+“bo, katana, nunchaku, and sai.”</li>
+  </ol>
+
+</section>
+
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/5-collections">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/7-errors">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

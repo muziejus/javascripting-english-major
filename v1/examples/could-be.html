@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>“Could Be,” by Langston Hughes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+   crossorigin=""/>
+    <link rel="stylesheet" href="/v1/assets/css/could-be.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>“Could Be,” by Langston Hughes</h1>
+      <div class="row">
+        <div class="col-md-3" id="poem">
+        </div>
+        <div class="col-md-9" id="places-sidebar">
+          <div id="could-be-map" class="map"></div>
+          <div id="content">
+            <nav id="nav-tabs" class="nav nav-pills mt-3" role="tablist">
+              <a class="nav-link active" href="#introduction" data-toggle="tab" role="tab">Introduction</a>
+              <a class="nav-link" href="#hastings-street" data-toggle="tab" role="tab">Hastings St.</a>
+              <a class="nav-link" href="#lenox-avenue" data-toggle="tab" role="tab">Lenox Ave.</a>
+              <a class="nav-link" href="#eighteenth-and-vine" data-toggle="tab" role="tab">18th &amp; Vine</a>
+              <a class="nav-link" href="#fifth-and-mound" data-toggle="tab" role="tab">5th &amp; Mound</a>
+              <a class="nav-link" href="#rampart" data-toggle="tab" role="tab">Rampart</a>
+            </nav>
+            <div class="tab-content p-3">
+              <section class="tab-pane active" id="introduction" role="tabpanel"></section>
+              <section class="tab-pane" id="hastings-street" role="tabpanel"></section>
+              <section class="tab-pane" id="lenox-avenue" role="tabpanel"></section>
+              <section class="tab-pane" id="eighteenth-and-vine" role="tabpanel"></section>
+              <section class="tab-pane" id="fifth-and-mound" role="tabpanel"></section>
+              <section class="tab-pane" id="rampart" role="tabpanel"></section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.0/markdown-it.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it-footnote/3.0.1/markdown-it-footnote.js"></script>
+    <script src="/v1/assets/js/could-be.js"></script>
+  </body>
+</html>

@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/4-functions" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Functions | The JavaScripting English Major" />
+      <title>Functions | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Functions | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/4-functions" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/4-functions" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/4-functions","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Functions</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>The <a href="/v1/3-programming">previous chapter</a> was very conceptual. Loops are tricky
+to get a hang of, but once you visualize how looping can solve problems,
+you’re definitely on your way to thinking algorithimically, which is to say,
+programmatically. This chapter is a bit more focused, but it builds on the
+idea of a <strong>block</strong> of code, like the loop or the if statement. Blocks in
+JavaScript are always surrounded by braces (<code class="highlighter-rouge">{}</code>), and that is true for
+<strong>functions</strong>, as well.</p>
+
+<section id="function-function">
+  <h2 id="s-function-function-whats-your">Function, function, what’s your…</h2>
+
+  <p>Just as looping is useful because it automates repetitive tasks, functions
+break up your code into smaller pieces. This means that it’s easier to
+reason about your work abstractly and find problems. Additionally, functions
+also automate repetitive tasks, and that’s the way I’ll introduce them to you.</p>
+
+  <p>Imagine if you want your computer to make burritos. Wouldn’t it be great to
+just tell it “make a burrito” every time you wanted one, instead of saying
+“get out the tortillas, take one out, place it on the griddle,” and so on? We
+make little tasks in our daily life abstract using the huge figurative power
+of language as well as our own memories. Computers can’t think as abstractly,
+however. And though they do have memories, we still need to spell things out
+in detail. Yet once we do it, we’re set. We can ask the computer to make us a
+burrito from then on.</p>
+
+  <p>Of course, I don’t think computers can make good burritos, but stick with me.</p>
+
+  <p>All those burrito-making instructions can be collapsed into a function. That
+might look something like:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This code is for illustration only. It will crash your console.</span>
+<span class="c1">//</span>
+<span class="kd">let</span> <span class="nx">makeABurrito</span><span class="p">;</span>
+<span class="nx">makeABurrito</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">prepareTortilla</span><span class="p">();</span>
+  <span class="nx">addBeans</span><span class="p">();</span>
+  <span class="nx">addOnionsAndCilantro</span><span class="p">();</span>
+  <span class="c1">// etc.</span>
+  <span class="nx">rollUpTortilla</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>As you can see, there are syntactic similarities between functions and loops.
+Both use blocks with braces, and both have parentheses. In fact, this snippet
+of code is perfectly fine JavaScript. That’s because the <code class="highlighter-rouge">makeABurrito()</code>
+function does nothing but <strong>call</strong> other functions. We can imagine that a
+function like <code class="highlighter-rouge">prepareTortilla()</code> has even more specific steps inside it. But
+with the function in place, you just have to execute <code class="highlighter-rouge">makeABurrito()</code> once and
+be done with it. The internals of the function take care of everything else.</p>
+
+  <p>Quickly before moving on, that line <code class="highlighter-rouge">// etc.</code> is a <strong>comment</strong>. Comments are
+very useful in programming because they can serve as little messages to
+yourself (or to other programmers) about what is going on in your program.
+In JavaScript, everything after two slashes (<code class="highlighter-rouge">//</code>) to the end of the line is
+<strong>commented out</strong>. If you want to comment out a whole section of multiple lines, begin
+it with <code class="highlighter-rouge">/*</code> and close it with <code class="highlighter-rouge">*/</code>. Or you can put a <code class="highlighter-rouge">//</code> in front of every
+line. I’ll start commenting the code I provide, where necessary.</p>
+
+</section>
+<section id="parameters">
+  <h2 id="s-parameters">Parameters</h2>
+
+  <p>Back to the function. Did you notice the parentheses that follow the function
+name? Where have you seen this kind of of syntax before? We’ve already gone
+over <code class="highlighter-rouge">prompt()</code>, for example, in the <a href="/v1/3-programming/">previous chapter</a>, and
+that is, of course, a function.<sup id="fnref:console"><a href="#fn:console" class="footnote">1</a></sup> But recall how we typed it:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userInput</span><span class="p">;</span>
+<span class="nx">userInput</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">"What do you want to have for dinner?"</span><span class="p">,</span> <span class="s2">"Type your answer here."</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>The parentheses aren’t empty. Instead, they have two strings in them. From
+experience, we know that that the first string is what appears at the top of
+the prompt box, and the second string is what appears where we type our
+answer. We can abstract out the function, then, as <code class="highlighter-rouge">prompt(promptText,
+defaultText)</code>, where <code class="highlighter-rouge">promptText</code> and <code class="highlighter-rouge">defaultText</code> are two variables. And, in
+fact, if we were to rewrite the above as:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">promptText</span><span class="p">,</span> <span class="nx">defaultText</span><span class="p">,</span> <span class="nx">userInput</span><span class="p">;</span>
+<span class="nx">promptText</span> <span class="o">=</span> <span class="s2">"What do you want to have for dinner?"</span><span class="p">;</span>
+<span class="nx">defaultText</span> <span class="o">=</span> <span class="s2">"Type your answer here."</span><span class="p">;</span>
+<span class="nx">userInput</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="nx">promptText</span><span class="p">,</span> <span class="nx">defaultText</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>It would work in exactly the same way. These two variables, <code class="highlighter-rouge">promptText</code> and
+<code class="highlighter-rouge">defaultText</code> are <strong>parameters</strong> that we <strong>send</strong> to the function.<sup id="fnref:arguments"><a href="#fn:arguments" class="footnote">2</a></sup> Giving
+functions parameters lets us change the internals of the function to let it
+react to specific instances. Now sometimes I want black beans in my burrito,
+and sometimes I want pinto beans. Let’s add a parameter to <code class="highlighter-rouge">makeABurrito()</code> to
+let us specify which beans to use on the fly:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This code is for illustration only. It will crash your console.</span>
+<span class="c1">//</span>
+<span class="kd">let</span> <span class="nx">makeABurrito</span><span class="p">;</span>
+<span class="nx">makeABurrito</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">beansVariable</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">beansResponse</span><span class="p">;</span>
+  <span class="nx">prepareTortilla</span><span class="p">();</span>
+  <span class="nx">addBeans</span><span class="p">();</span>
+  <span class="nx">addOnionsAndCilantro</span><span class="p">();</span>
+  <span class="nx">beansResponse</span> <span class="o">=</span> <span class="s2">"You ordered "</span> <span class="o">+</span> <span class="nx">beansVariable</span> <span class="o">+</span> <span class="s2">" beans. Good choice!"</span><span class="p">;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">beansResponse</span><span class="p">);</span>
+  <span class="c1">// etc.</span>
+  <span class="nx">rollUpTortilla</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>If we were to execute:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This code is for illustration only. It will crash your console.</span>
+<span class="c1">//</span>
+<span class="kd">let</span> <span class="nx">blackBeans</span><span class="p">;</span>
+<span class="nx">blackBeans</span> <span class="o">=</span> <span class="s2">"black"</span><span class="p">;</span>
+<span class="nx">makeABurrito</span><span class="p">(</span><span class="nx">blackBeans</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>We would see that the webpage would now read “You ordered black beans. Good
+choice!” Don’t actually try this, yet, though. Can you see why that is the
+case? We define a variable, <code class="highlighter-rouge">blackBeans</code> and assign it to the string <code class="highlighter-rouge">"black"</code>.
+Next, we send (or <strong>pass</strong>) that variable as a parameter to <code class="highlighter-rouge">makeABurrito()</code>.
+Now, inside the function, we see that it makes reference to a <code class="highlighter-rouge">beansVariable</code>,
+that has the value “black,” which it then prints in <code class="highlighter-rouge">#response</code>, like we did last
+chapter.</p>
+
+  <p>But where did <code class="highlighter-rouge">beansVariable</code> come from? And how did it get set to “black”?
+There’s no <code class="highlighter-rouge">beansVariable = "black"</code>, after all. The answer is that the
+variable is defined at the same time as the function is. <code class="highlighter-rouge">makeABurrito =
+function(beansVariable){}</code> defines both the function, <code class="highlighter-rouge">makeABurrito()</code>, and
+the parameter, <code class="highlighter-rouge">beansVariable</code>, which can be used as a variable inside the
+function.</p>
+
+  <p>The number of parameters you can define is up to you. Imagine you had
+different kinds of tortillas, like whole wheat and regular wheat. You can
+redefine the function as:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This code is for illustration only. It will crash your console.</span>
+<span class="c1">//</span>
+<span class="kd">let</span> <span class="nx">makeABurrito</span><span class="p">;</span>
+<span class="nx">makeABurrito</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">beansVariable</span><span class="p">,</span> <span class="nx">tortillaVariable</span><span class="p">){</span>
+  <span class="nx">prepareTortilla</span><span class="p">(</span><span class="nx">tortillaVariable</span><span class="p">);</span>
+  <span class="nx">addBeans</span><span class="p">(</span><span class="nx">beansVariable</span><span class="p">);</span>
+  <span class="nx">addOnionsAndCilantro</span><span class="p">();</span>
+  <span class="c1">// etc.</span>
+  <span class="nx">rollUpTortilla</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>What would happen if you executed <code class="highlighter-rouge">makeABurrito("black", "whole wheat")</code>?
+Notice how this looks rather similar to <code class="highlighter-rouge">prompt(promptText, defaultText);</code>?</p>
+
+</section>
+<section id="back-to-numbers">
+  <h2 id="s-back-to-numbers">Back to numbers</h2>
+
+  <p><code class="highlighter-rouge">makeABurrito()</code> is a great function, and it’s making me hungry, so let’s
+abandon it for a bit and go back to using numbers. Back in <a href="/v1/2-calculator">Chapter
+2</a>, we made a tipping calculator. We can build on that example
+  with real, usable code.</p>
+
+  <p>First, what information do you need in order to know how much to tip? You need
+to know the <code class="highlighter-rouge">total</code> and the <code class="highlighter-rouge">tipRate</code>, which is a percentage, like 15 or 20%.
+The barebones function looks like this, then:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">tipCalculator</span><span class="p">;</span>
+<span class="nx">tipCalculator</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">tipRate</span><span class="p">){</span>
+  <span class="c1">// 1. Calculate the percentage of the total </span>
+  <span class="c1">// as a variable “tipAmount”</span>
+  <span class="c1">//</span>
+  <span class="c1">// 2. Change #response to tell us the tip</span>
+  <span class="c1">// amount.</span>
+<span class="p">}</span> 
+</code></pre></div>  </div>
+
+  <p>In fact, type this into your <code class="highlighter-rouge">scripts.js</code> file. It can go after the earlier
+code you’ve written, or it can replace it. Note what’s in the comments; it’s a
+sketch of what the function will do. The first step is that it’ll do some
+math—an easy calculation. In the second step, it will tell us what the result
+of the calculation is.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">tipCalculator</span><span class="p">;</span>
+<span class="nx">tipCalculator</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">tipRate</span><span class="p">){</span>
+  <span class="c1">// step 1:</span>
+  <span class="kd">let</span> <span class="nx">tipAmount</span><span class="p">;</span>
+  <span class="nx">tipAmount</span> <span class="o">=</span> <span class="nx">tipRate</span> <span class="o">*</span> <span class="nx">total</span><span class="p">;</span>
+  <span class="c1">// and step 2:</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">"Your tip is $"</span> <span class="o">+</span> <span class="nx">tipAmount</span><span class="p">);</span>
+<span class="p">};</span> 
+
+<span class="c1">// Now call (or “execute”) the function, passing a </span>
+<span class="c1">// total of $50.00 and a tipRate of 20%:</span>
+
+<span class="nx">tipCalculator</span><span class="p">(</span><span class="mf">50.00</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload, and the webpage should now inform you that you owe $10. If it
+does, commit. In the exercises, we’ll expand on this function.</p>
+
+</section>
+<section id="scope">
+  <h2 id="s-scope">Scope</h2>
+
+  <p>Alongside the idea of a function block, that is, the set of curly braces, we
+also have the idea of <strong>scope</strong>. Beginner programmers often get tripped up by
+scope, but that’s ok, so do veteran programmers. Note that though conditionals
+and loops also use blocks, they don’t affect scope in the same way.</p>
+
+  <p>Just like a “scope” is used to see things that are far away (tele<em>scope</em>) or
+are really tiny (micro<em>scope</em>), in JavaScript, scope also has to do with
+visbility. Variables defined with the <code class="highlighter-rouge">let</code> keyword have block-level
+scope.<sup id="fnref:var-let"><a href="#fn:var-let" class="footnote">3</a></sup> That means:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nb">global</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nb">global</span> <span class="o">=</span> <span class="s2">"🌏"</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">global</span><span class="p">);</span> <span class="p">};</span>
+<span class="c1">//--&gt; 🌏</span>
+<span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">globalFunction</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">globalFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">global</span><span class="p">);</span> <span class="p">};</span>
+<span class="o">&gt;</span> <span class="nx">globalFunction</span><span class="p">();</span>
+<span class="c1">//--&gt; 🌏</span>
+</code></pre></div>  </div>
+
+  <p>When we define <code class="highlighter-rouge">global</code>, it’s <em>visible</em> to us inside subsequent if statements
+and functions. But notice this:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nb">global</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nb">global</span> <span class="o">=</span> <span class="s2">"🌏"</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">blocky</span><span class="p">;</span>
+    <span class="nx">blocky</span> <span class="o">=</span> <span class="s2">"📓"</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"global is "</span> <span class="o">+</span> <span class="nb">global</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"blocky is "</span> <span class="o">+</span> <span class="nx">blocky</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="c1">//--&gt; global is 🌏</span>
+<span class="c1">//--&gt; blocky is 📓</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Wait, the value of blocky is really "</span> <span class="o">+</span> <span class="nx">blocky</span> <span class="o">+</span> <span class="s2">"?"</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>This last line will crash with a <code class="highlighter-rouge">ReferenceError</code>. <code class="highlighter-rouge">blocky</code>, it turns out, is
+only visible <em>within</em> the if statement block. Once the code leaves the <code class="highlighter-rouge">{}</code>,
+<code class="highlighter-rouge">blocky</code> is no longer available. The same works with functions:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nb">global</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nb">global</span> <span class="o">=</span> <span class="s2">"🌏"</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">showMeABurrito</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">burrito</span><span class="p">;</span>
+    <span class="nx">burrito</span> <span class="o">=</span> <span class="s2">"🌯"</span><span class="p">;</span> 
+    <span class="nb">global</span> <span class="o">=</span> <span class="s2">"I’m global!"</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"global is "</span> <span class="o">+</span> <span class="nb">global</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"burrito is "</span> <span class="o">+</span> <span class="nx">burrito</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="o">&gt;</span> <span class="nx">showMeABurrito</span><span class="p">();</span>
+<span class="c1">//--&gt; global is I’m global!</span>
+<span class="c1">//--&gt; burrito is 🌯</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">global</span><span class="p">);</span>
+<span class="c1">//--&gt; I’m global!</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Wait, the value of burrito is really "</span> <span class="o">+</span> <span class="nx">burrito</span> <span class="o">+</span> <span class="s2">"?"</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Crash. Again. Sadly, <code class="highlighter-rouge">burrito is not defined</code>. But notice that <code class="highlighter-rouge">global</code> was
+changed inside the function, and that change persisted outside the
+function. <code class="highlighter-rouge">global</code> is visible—and, as a result, changeable (or
+<strong>mutable</strong>)—everywhere. But <code class="highlighter-rouge">burrito</code> is not.</p>
+
+  <p>As Molly Bloom asks, “who’s he when he’s at home?” and we may, also, ask,
+“where are we when we’re in the console?” That is, if <code class="highlighter-rouge">burrito</code> is defined in
+the function block, where on earth is <code class="highlighter-rouge">global</code> defined? Even though we talk
+about typing “in” the console, we’re actually always within a special object
+called <code class="highlighter-rouge">window</code>. It is the <a href="https://www.w3schools.com/jsref/obj_window.asp">window of the
+browser</a>, and when we open up
+the console, we’re getting closer access to that window. In fact, <code class="highlighter-rouge">prompt()</code>
+and <code class="highlighter-rouge">alert()</code>, two functions you’ve already seen, are actually <strong>methods</strong> that
+belong to <code class="highlighter-rouge">window</code>; <code class="highlighter-rouge">window.alert()</code> and <code class="highlighter-rouge">alert()</code> will do the same thing. But
+more on methods <a href="/v1/5-collections">next chapter</a>. The <code class="highlighter-rouge">window</code> is typically
+ignored, as it’s the frame that is unavoidable. Its ubiquity gives it the
+privilege of being silent.</p>
+
+  <p>Back to the purpose of this section. Scope helps you keep your code tidy,
+because there is less risk of variables’ being accessed where they shouldn’t
+be. Just remember, whenever you type <code class="highlighter-rouge">let</code> to define a variable inside a
+function, that variable is only available inside that function.</p>
+
+  <p>In closing, functions are powerful things, as we can see. And though,
+ultimately, the goals of this course are not to write code that is as modular
+as the use of functions would make possible, you will still be typing the word
+<code class="highlighter-rouge">function</code> a lot.</p>
+
+</section>
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>Add functionality to the tip calculator so that you can enter “20” <em>or</em>
+“.2” for 20%, and the calculator understands the difference.</li>
+  </ol>
+
+</section>
+
+<h2 id="s-footnotes">Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:console">
+      <p><code class="highlighter-rouge">console.log()</code> also looks like a function, but as I mentioned back in <a href="2-calculator/#fn:consolelog">chapter 2</a>, <code class="highlighter-rouge">.log()</code> is a method belonging to the <code class="highlighter-rouge">console</code> object. <a href="#fnref:console" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:arguments">
+      <p>Parameters are also often called <strong>arguments</strong>, but to my ears, that term is more opaque. <a href="#fnref:arguments" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:var-let">
+      <p>This is one difference between <code class="highlighter-rouge">var</code> and <code class="highlighter-rouge">let</code>, but I’m not teaching <code class="highlighter-rouge">var</code> except for those of you with old browsers. Other than the slightly contrived examples in this section, my examples won’t be making a lot of use of block-scoping. <a href="#fnref:var-let" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/3-programming">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/5-collections">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

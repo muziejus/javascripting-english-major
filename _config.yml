@@ -23,6 +23,10 @@ logo: /apple-touch-icon.png
 host-full: http://the-javascripting-english-major.org
 exclude: 
  - cheat_sheet
+ - Gemfile
+ - Gemfile.lock
+ - README.md
+ - CNAME
 social:
   name: Moacir P. de Sá Pereira
   links:
@@ -45,7 +49,7 @@ markdown: kramdown
 #   - Gemfile
 #   - Gemfile.lock
 google-code: UA-592475-7
-include: [_pages, examples]
+include: [_pages, examples, v1]
 kramdown:
   input: GFM
   auto_id_prefix: s-

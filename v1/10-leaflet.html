@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/10-leaflet" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Leaflet | The JavaScripting English Major" />
+      <title>Leaflet | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Leaflet | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/10-leaflet" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/10-leaflet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/10-leaflet","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Leaflet</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>As I wrote in the <a href="/v1/9-dataset">previous chapter</a>, a whole lot happened in it,
+but really, the tools were all the same sort of tools we have been using all
+course: strings, arrays, <code class="highlighter-rouge">Object</code>s, a few <code class="highlighter-rouge">.forEach()</code> method calls and some new
+jQuery tricks.  This is important to emphasize: you already have the tools at
+your disposal; the trick is to realize what kinds of tools the situation calls
+for. The solution to use JSON to feed the whole General Prologue into the page
+may have been unexpected, but if you had just repeated making the <code class="highlighter-rouge">line1</code>
+array with a <code class="highlighter-rouge">line2</code> array all the way up to <code class="highlighter-rouge">line18</code>, you would have been
+doing the same exact thing, just less efficiently.</p>
+
+<p>Most importantly, however, was the added level of conceptual complexity. In
+using JSON, you separated out the data (the text of the General Prologue) from
+the logic of the program. Our webpage made assumptions about how the data were
+organized (a <code class="highlighter-rouge">.lines</code> property that was an array of arrays of word-<code class="highlighter-rouge">Object</code>s),
+and then you wrote an application around it. When the data structures get more
+complex, it becomes more and more important to be confident of the data’s
+integrity, and to write around it. You’ll see what I mean now that we are
+moving into making JavaScript maps using Leaflet.</p>
+
+<section id="map-structure">
+  <h2 id="s-map-structure">Map structure</h2>
+
+  <p>It’s probably a safe assumption that you’ve used a map on a webpage before,
+like Google Maps or <a href="https://www.openstreetmap.org">OpenStreetMap (OSM)</a>.
+It might help to imagine, abstractly, what’s going on in a web map before we
+start building our own.</p>
+
+  <ol>
+    <li>First, a map goes in an HTML <strong>container</strong> that isolates the map from the
+rest of the webpage. We’ll use a generic container, a <code class="highlighter-rouge">&lt;div&gt;</code>, for this.</li>
+    <li>Next, a map has “the map itself,” which is called the <strong>tile layer</strong> or
+<strong>base layer</strong>. This is a layer of images (assembled like tiles) with roads
+and parks and buildings drawn on them.  Google has a specific style they
+use, and OSM uses a few different ones.  For many uses of web maps, this is
+it.</li>
+    <li>Above the tile layer can be, however, an <strong>overlay</strong> layer. This provides
+added content, like a <strong>marker</strong> or a <strong>polyline</strong> (a line made up of many
+segments, like driving directions) or even a <strong>polygon</strong>. If you search for
+something in Google Maps, for example, it will draw something on the
+overlay layer to let you know where what you’re looking for is.</li>
+    <li>Above the overlay layer is the <strong>popup</strong> layer. When you click on a marker,
+sometimes a little popup appears. This is typically on a separate layer
+from the marker, so that it appears above it (and the other markerts).</li>
+    <li>Finally, we have the <strong>control</strong> layer. This includes controls
+for zooming in and out and maybe other controls, depending. It’s always on
+the top of all of the layers.</li>
+  </ol>
+
+  <p>Most of these layers are of the set-it-and-forget-it variety. We’ll be working
+mostly with the overlay and popup layers.  The rest provide either usability
+(controls) or context (tile layer). In other words, we won’t be redrawing OSM
+maps. We’ll be drawing on top of them.</p>
+
+</section>
+<section id="leaflet-tour">
+
+  <h2 id="s-tour-of-leaflet">Tour of Leaflet</h2>
+
+  <p><a href="http://leafletjs.com">Leaflet.js</a> is a JavaScript library for making maps on
+the web. Unlike other software for making web maps, like ESRI’s ArcGISOnline
+or Google Maps, Leaflet is entirely free and, more importantly, both easier to
+use and more permissive of a wide array of customization. Much of this chapter
+builds on their <a href="http://leafletjs.com/examples/quick-start/">quick start
+guide</a>, but I think I’ll provide
+extra context to help you with thinking through your own project.</p>
+
+  <p>Leaflet creates an <code class="highlighter-rouge">Object</code>, <code class="highlighter-rouge">L</code>, that has a bunch of methods that we can use to
+create and manipulate maps. Our map is, itself, an <code class="highlighter-rouge">Object</code>. The tile layer? A
+different <code class="highlighter-rouge">Object</code>. Markers are <code class="highlighter-rouge">Object</code>s, polylines are <code class="highlighter-rouge">Object</code>s, polygons are
+<code class="highlighter-rouge">Object</code>s, popups are <code class="highlighter-rouge">Object</code>s, and so on. And they have properties and methods,
+too.</p>
+
+  <h3 id="s-setting-up-the-html">Setting up the HTML</h3>
+
+  <p>The best way to show how these <code class="highlighter-rouge">Object</code>s work, of course, is by making them
+work. So let’s get started. In Atom, open up your <code class="highlighter-rouge">index.html</code> file and add
+another link below the one to the Prologue:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2&gt;&lt;a</span> <span class="na">href=</span><span class="s">"leaflet.html"</span><span class="nt">&gt;</span>Leaflet page<span class="nt">&lt;/a&gt;&lt;/h2&gt;</span>
+</code></pre></div>  </div>
+
+  <p>Save and close <code class="highlighter-rouge">index.html</code>. Now, create a new document, <code class="highlighter-rouge">leaflet.html</code>, that
+looks like this:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Working with Leaflet<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"</span> <span class="na">integrity=</span><span class="s">"sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="</span>
+   <span class="na">crossorigin=</span><span class="s">""</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"leaflet.css"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>Working with Leaflet<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"first-map"</span> <span class="na">class=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Above, you can see a Leaflet map.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.2.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"</span> <span class="na">integrity=</span><span class="s">"sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="</span> <span class="na">crossorigin=</span><span class="s">""</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"leaflet.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>  </div>
+
+  <p>In the <code class="highlighter-rouge">&lt;head&gt;</code>, there are two changes from before. First, the page is also
+loading Leaflet’s own CSS files. Second, the page is loading <code class="highlighter-rouge">leaflet.css</code>.
+Unlike in the <a href="/v1/9-dataset">example with the General Prologue</a>, CSS will be
+important in this chapter.</p>
+
+  <p>In the <code class="highlighter-rouge">&lt;body&gt;</code>, there is a <code class="highlighter-rouge">&lt;div&gt;</code> with an id <code class="highlighter-rouge">#first-map</code> and class <code class="highlighter-rouge">.map</code>.
+That’s where the map will go. And at the bottom, note that the page is loading
+Leaflet and a new file, <code class="highlighter-rouge">leaflet.js</code>. That’s about it for HTML in this
+chapter.</p>
+
+  <p>If you save and reload your <code class="highlighter-rouge">index.html</code> in the browser, the link to
+<code class="highlighter-rouge">leaflet.html</code> will appear. When you click on it, you should see some text,
+but no map. Commit. Let’s get to work on getting the map to show.</p>
+
+  <h3 id="s-setting-up-the-css">Setting up the CSS</h3>
+
+  <p>Create a new file in Atom called <code class="highlighter-rouge">leaflet.css</code>. Type in these three lines:</p>
+
+  <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.map</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>This means that everything that has a class <code class="highlighter-rouge">.map</code> should have its <code class="highlighter-rouge">height</code>
+property set to 400 pixels. You can change this number if you like, but the
+property must be there. Leaflet’s one demand of CSS is that the map container
+have a defined <code class="highlighter-rouge">height</code>. Save and reload <code class="highlighter-rouge">leaflet.html</code> in the browser. Now
+the line “Above, you can see a Leaflet map.” should be separated from the
+<code class="highlighter-rouge">&lt;h1&gt;</code>, “Working with Leaflet,” by a considerable amount of white space.</p>
+
+  <h3 id="s-initializing-the-leaflet-map">Initializing the Leaflet map</h3>
+
+  <p>Now create the last file for this chapter in Atom, <code class="highlighter-rouge">leaflet.js</code>. In it, type:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">firstMap</span><span class="p">;</span>
+<span class="nx">firstMap</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s2">"first-map"</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p><code class="highlighter-rouge">firstMap</code> is now an <code class="highlighter-rouge">Object</code> you can use in JavaScript to control the map on the
+webpage. Note the syntax. <code class="highlighter-rouge">.map()</code> is a method that <code class="highlighter-rouge">L</code> (Leaflet) has that
+creates a map in the <code class="highlighter-rouge">&lt;div&gt;</code> with the id given as the parameter. If you save
+everything and reload <code class="highlighter-rouge">leaflet.html</code> in the browser, you should see a map.</p>
+
+  <p>But it will be a boring, gray map. Why? For starters, because you have not loaded a tile
+layer. Define a variable <code class="highlighter-rouge">tileLayer</code> and assign it:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">firstMap</span><span class="p">,</span> <span class="nx">tileLayer</span><span class="p">;</span>
+<span class="nx">firstMap</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s2">"first-map"</span><span class="p">);</span>
+<span class="nx">tileLayer</span> <span class="o">=</span>
+<span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s2">"https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">attribution</span><span class="p">:</span> <span class="s2">"&amp;copy; &lt;a href='http://www.openstreetmap.org/copyright'&gt;OpenStreetMap&lt;/a&gt; &amp;copy; &lt;a href='http://carto.com/attribution'&gt;CARTO&lt;/a&gt;"</span><span class="p">,</span>
+      <span class="na">subdomains</span><span class="p">:</span> <span class="s2">"abcd"</span><span class="p">,</span>
+      <span class="na">maxZoom</span><span class="p">:</span> <span class="mi">18</span>
+    <span class="p">});</span>
+</code></pre></div>  </div>
+
+  <p>The details of the tile layer are not important, but you should note that if
+you save and reload, you still get a boring, gray map.<sup id="fnref:tilelayer"><a href="#fn:tilelayer" class="footnote">1</a></sup> The tile
+layer needs to be added to the map, of course, but then the map also has to be
+told what part of the world to show:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">tileLayer</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">firstMap</span><span class="p">);</span>
+<span class="nx">firstMap</span><span class="p">.</span><span class="nx">setView</span><span class="p">([</span><span class="mf">40.730833</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.9975</span><span class="p">],</span> <span class="mi">16</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload. You should now see a map zoomed in on Washington Square Park.
+Commit, if that’s the case. Whenever we create an <code class="highlighter-rouge">Object</code> in Leaflet, be it a
+tile layer, marker, or whatever, we have to add it to the map, using
+<code class="highlighter-rouge">.addTo()</code>, a method that all of these <code class="highlighter-rouge">Object</code>s have. The map itself has a
+method, <code class="highlighter-rouge">.setView()</code>, that takes two parameters: an array of coordinates
+(latitude and longitude), and a zoom level. The highest zoom level—which is to
+say, the most zoomed in, is 19. We’ll learn about other, similar methods as we
+continue. But now the map itself is initialized.</p>
+
+  <h3 id="s-adding-a-marker-and-popup">Adding a marker and popup</h3>
+
+  <p>With the map zoomed in like this, we can add a marker to <a href="https://en.wikipedia.org/wiki/Elmer_Holmes_Bobst_Library">Bobst
+Library</a>. For people
+unfamiliar with NYU, this library is on the edge of the park.<sup id="fnref:bobst"><a href="#fn:bobst" class="footnote">2</a></sup> From the
+Wikipedia article, we can get Bobst’s coordinates, 40.729444 and -73.997222.
+Initializing a marker is similar to the tile layer:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">bobstLibrary</span><span class="p">;</span>
+<span class="nx">bobstLibrary</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">([</span><span class="mf">40.729444</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.997222</span><span class="p">]);</span>
+<span class="nx">bobstLibrary</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">firstMap</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Binding a popup to the marker is one more step:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">bobstLibrary</span><span class="p">.</span><span class="nx">bindPopup</span><span class="p">(</span><span class="s2">"This is Bobst Library."</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>When you add those lines to <code class="highlighter-rouge">leaflet.js</code>, save, and reload, the marker should
+appear right over the library. Click on the marker, and the popup appears.
+Everything works? Commit.</p>
+
+</section>
+<section id="coordinates">
+
+  <h2 id="s-coordinates">Coordinates</h2>
+
+  <p>The <a href="/v1/11-geojson">next chapter</a> is devoted to building up data sets of
+geographical information, but in this chapter, we’ll keep using toy data so
+that you get familiar with Leaflet. Both with the marker <code class="highlighter-rouge">Object</code> and the
+<code class="highlighter-rouge">.setView()</code> method, you saw that Leaflet demanded coordinates. Leaflet
+doesn’t know where places are, and it knows nearly nothing about
+distances.<sup id="fnref:distance"><a href="#fn:distance" class="footnote">3</a></sup> All it knows are latitude and longitude coordinates. In
+fact, these are their own <code class="highlighter-rouge">Object</code> in Leaflet:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">bobstCoords</span><span class="p">;</span>
+<span class="nx">bobstCoords</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">latLng</span><span class="p">(</span><span class="mf">40.729444</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.997222</span><span class="p">);</span>
+<span class="nx">firstMap</span><span class="p">.</span><span class="nx">panTo</span><span class="p">(</span><span class="nx">bobstCoords</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Here, <code class="highlighter-rouge">bobstCoords</code> becomes a <code class="highlighter-rouge">latLng</code> <code class="highlighter-rouge">Object</code>, created by using the
+<code class="highlighter-rouge">L.latLng()</code> method with two parameters, a latitude and a longitude. Note that
+<code class="highlighter-rouge">latLng</code> has a capital “L” in the middle.  Throughout Leaflet, you can either
+create <code class="highlighter-rouge">latLng</code> <code class="highlighter-rouge">Object</code>s or continue using coordinate arrays like you did
+earlier. Now consider the <code class="highlighter-rouge">.panTo()</code> method at the end. That’s a method that
+changes a map, in this case <code class="highlighter-rouge">firstMap</code>. If you save and reload, you’ll see
+that the map is now centered on the library, not the park. If you open the
+console and type in:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">eiffelTower</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">eiffelTower</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">latLng</span><span class="p">(</span><span class="mf">48.858222</span><span class="p">,</span> <span class="mf">2.2945</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="nx">firstMap</span><span class="p">.</span><span class="nx">panTo</span><span class="p">(</span><span class="nx">eiffelTower</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>You can watch the map swing over to the Eiffel Tower in Paris.</p>
+
+  <p>This much is clear, then, but <em>finding</em> coordinates can be tricky when
+creating datasets, so here are four tips:</p>
+
+  <ol>
+    <li>The coordinates I have used so far in this chapter come from Wikipedia.
+Many places have coordinates listed in the top right corner of their
+Wikipedia pages. If you click on them, it takes you to a GeoHack page,
+which includes the coordinates in decimal format. Leaflet won’t understand
+coordinates given in arc-minutes and arc-seconds.</li>
+    <li>In Google Maps, if you click on a point, a little window appears at the
+bottom with the address (if it can guess it) and the coordinates.</li>
+    <li>For larger entities, like countries, sometimes they have a single
+coordinate associated with them. You can look that up at
+<a href="http://www.geonames.org">GeoNames</a>, a gazetteer. For France, for example,
+GeoNames gives <code class="highlighter-rouge">[46, 2]</code>, which is more or less in the middle of
+L’Hexagone.</li>
+    <li>Converting to decimal degrees can cause errors. You can use sites like
+<a href="http://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees">LatLong</a>
+to do the conversion, but always do a sanity check afterward, especially
+when you have data on both sides of the Prime Meridian, the antimeridian,
+or the Equator.</li>
+  </ol>
+
+  <p>Finally, coordinates from Google Maps, when taken out to six significant
+digits, give an illusion of precision that is unwarranted. At American
+latitudes, the difference between one ten-thousandth of a degree (4 digits) in
+longitude is only a few meters. And the difference in latitude is not much
+greater, as I’ll show in the next section.</p>
+
+  <h2 id="s-beyond-the-marker">Beyond the marker</h2>
+
+  <p>In addition to making markers, Leaflet can also build polylines, polygons, and
+circles. The syntax for the first two is identical: you build an array of
+coordinates and feed it as a parameter to either the <code class="highlighter-rouge">L.polyline()</code> or
+<code class="highlighter-rouge">L.polygon()</code> methods. Delete everything pertaining to Bobst Library from
+<code class="highlighter-rouge">leaflet.js</code>, and add:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">washingtonSquarePark</span><span class="p">,</span> <span class="nx">washingtonSquareParkMarker</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">tenThousandth</span><span class="p">,</span> <span class="nx">tenThousandthPolygon</span><span class="p">,</span> <span class="nx">thousandth</span><span class="p">,</span> <span class="nx">thousandthPolyline</span><span class="p">;</span>
+<span class="nx">washingtonSquarePark</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">latLng</span><span class="p">(</span><span class="mf">40.730833</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.9975</span><span class="p">);</span>
+<span class="nx">washingtonSquareParkMarker</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">washingtonSquarePark</span><span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">firstMap</span><span class="p">);</span>
+<span class="nx">tenThousandth</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">40.7307</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.9976</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.7307</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.9974</span><span class="p">],</span> 
+                 <span class="p">[</span><span class="mf">40.7309</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.9974</span><span class="p">],</span> <span class="p">[</span><span class="mf">40.7309</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.9976</span><span class="p">]];</span>
+<span class="nx">tenThousandthPolygon</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">polygon</span><span class="p">(</span><span class="nx">tenThousandth</span><span class="p">,</span> <span class="p">{</span>
+                                  <span class="na">color</span><span class="p">:</span> <span class="s2">"#268bd2"</span><span class="p">,</span>
+                                  <span class="na">fillColor</span><span class="p">:</span> <span class="s2">"#fdf6e3"</span>
+                                <span class="p">}</span>
+                        <span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">firstMap</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Here you add a marker at the center of Washington Square Park
+(<code class="highlighter-rouge">washingtonSquareParkMarker</code>) and then construct an array of coordinates,
+<code class="highlighter-rouge">tenThousandth</code>, which is a box two ten thousandths of a degree wide and tall,
+more or less centered around the marker.
+Then you add that to the map. Notice that I’ve collapsed assigning the leaflet
+<code class="highlighter-rouge">Object</code> with the <code class="highlighter-rouge">.addTo()</code> method. Furthermore, the <code class="highlighter-rouge">.polygon()</code> method can
+take an <code class="highlighter-rouge">options</code> <code class="highlighter-rouge">Object</code> parameter as well, and, in this case, I defined the
+<code class="highlighter-rouge">tenThousandthPolygon.options.color</code> property as a shade of blue and the
+<code class="highlighter-rouge">.fillColor</code> property as a light yellow.</p>
+
+  <p>There are also two variables here that are not assigned, but are declared:
+<code class="highlighter-rouge">thousandth</code> and <code class="highlighter-rouge">thousandthPolyline</code>. Use them so:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">thousandth</span> <span class="o">=</span> <span class="p">[[</span><span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lat</span> <span class="o">+</span> <span class="mf">0.001</span><span class="p">,</span> <span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lng</span> <span class="o">+</span> <span class="mf">0.001</span><span class="p">],</span>
+              <span class="p">[</span><span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lat</span> <span class="o">+</span> <span class="mf">0.001</span><span class="p">,</span> <span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lng</span> <span class="o">-</span> <span class="mf">0.001</span><span class="p">],</span>
+              <span class="p">[</span><span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lat</span> <span class="o">-</span> <span class="mf">0.001</span><span class="p">,</span> <span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lng</span> <span class="o">-</span> <span class="mf">0.001</span><span class="p">],</span>
+              <span class="p">[</span><span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lat</span> <span class="o">-</span> <span class="mf">0.001</span><span class="p">,</span> <span class="nx">washingtonSquarePark</span><span class="p">.</span><span class="nx">lng</span> <span class="o">+</span> <span class="mf">0.001</span><span class="p">]];</span>
+<span class="nx">thousandthPolyline</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">polyline</span><span class="p">(</span><span class="nx">thousandth</span><span class="p">,</span> <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="s2">"#d33682"</span><span class="p">}</span>
+                      <span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">firstMap</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload, and your Leaflet map should now show both a polygon and three
+line segments, or a polyline. Notice how, because I defined
+<code class="highlighter-rouge">washingtonSquarePark</code> as an <code class="highlighter-rouge">L.latLng</code> <code class="highlighter-rouge">Object</code>, it now has two properties,
+<code class="highlighter-rouge">.lat</code> and <code class="highlighter-rouge">.lng</code>, corresponding to its latitude and longitude. This is one
+reason to make use of the <code class="highlighter-rouge">L.latLng</code> <code class="highlighter-rouge">Object</code> instead of just continuously using
+arrays of coordinates.</p>
+
+  <p>Circles are even easier:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">circle</span><span class="p">;</span>
+<span class="nx">circle</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="nx">washingtonSquarePark</span><span class="p">,</span> <span class="p">{</span><span class="na">radius</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                                         <span class="na">color</span><span class="p">:</span> <span class="s2">"#859900"</span><span class="p">,</span>
+                                         <span class="na">fillColor</span><span class="p">:</span> <span class="s2">"#cb4b16"</span><span class="p">,</span>
+                                         <span class="na">opacity</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+                                         <span class="na">fillOpacity</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">}</span>
+          <span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">firstMap</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>The <code class="highlighter-rouge">L.circle.options.radius</code> property is measured in meters. Note also that
+Leaflet provides you with control over the opacity of both the border and the
+fill. <code class="highlighter-rouge">L.circle</code>, <code class="highlighter-rouge">L.polygon</code>, and <code class="highlighter-rouge">L.polyline</code> all inherit these options from
+the Leaflet <code class="highlighter-rouge">Object</code> <code class="highlighter-rouge">L.path</code>, and Leaflet provides a list of <a href="http://leafletjs.com/reference-1.2.0.html#path">all of that
+<code class="highlighter-rouge">Object</code>’s options</a> that you can
+look at to style your lines and polygons as you like. Similarly, there are two
+<code class="highlighter-rouge">Object</code>s I don’t mention that you might like to look up. Instead of
+<code class="highlighter-rouge">L.marker</code>s, you can use
+<a href="http://leafletjs.com/reference-1.2.0.html#circlemarker"><code class="highlighter-rouge">L.circleMarker</code>s</a> (I
+actually prefer them), and there is also a vanilla
+<a href="http://leafletjs.com/reference-1.2.0.html#rectangle"><code class="highlighter-rouge">L.rectangle</code></a> <code class="highlighter-rouge">Object</code>,
+similar to what we built for the <code class="highlighter-rouge">tenThousandthPolygon</code> above. Circlemarkers
+will return in a later chapter.</p>
+
+</section>
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>Create two new files, <code class="highlighter-rouge">derive.html</code> and <code class="highlighter-rouge">derive.js</code>. Have them include a
+Leaflet map with the two dérives you made for class drawn on them. Or it
+can be two walks you’ve taken, if you’re not in my class. The dérives
+should be different colors. Save, commit, and push to GitHub when you’re
+done. Use this site’s <a href="/v1/coordinates.html">coordinate catcher</a> to quickly
+get your coordinates. Just click on the map, and it will give you the
+correct latitude and longitude.</li>
+  </ol>
+
+</section>
+
+<h2 id="s-footnotes">Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:tilelayer">
+      <p>In creating the tile layer, you specify the server from which Leaflet should get its tiles (in this case from <code class="highlighter-rouge">cartocdn.com</code>), and then add three options. The <code class="highlighter-rouge">attribution</code> option describes what appears in the bottom corner of the map. <a href="#fnref:tilelayer" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:bobst">
+      <p>Bobst is also where most of this course was drafted. <a href="#fnref:bobst" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:distance">
+      <p>There is a <code class="highlighter-rouge">.distance()</code> method that will calculate the distance, in meters, between a <code class="highlighter-rouge">LatLng</code> <code class="highlighter-rouge">Object</code> and another one passed as the parameter. <a href="#fnref:distance" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/9-dataset">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/11-geojson">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

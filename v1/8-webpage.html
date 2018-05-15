@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/8-webpage" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Writing a Webpage | The JavaScripting English Major" />
+      <title>Writing a Webpage | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Writing a Webpage | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/8-webpage" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/8-webpage" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/8-webpage","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Writing a Webpage</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>The second half of this course begins with an introduction to the foundation
+of a web site, the actual web “page.” Twenty-five years ago, writing for the
+web involved precisely that: writing documents that included links to each
+other. Each was its own page. Now an entire website can be contained in just
+one HTML file, like the <code class="highlighter-rouge">index.html</code> file we have been working on so far. In
+2017, the distinction between “website” and “webpage” is as unclear as it has
+ever been.</p>
+
+<p>In this chapter, however, I’ll continue to use the metaphor of the single page
+(instead of “site” or “project”), because it’s useful to think of that file,
+<code class="highlighter-rouge">index.html</code>, as directing everything that happens for the rest of this
+course, even when we move on to other files, like <code class="highlighter-rouge">prologue.html</code> and
+<code class="highlighter-rouge">could-be.html</code>.</p>
+
+<p>The <code class="highlighter-rouge">.html</code> at the end of the file name indicates that it’s written in HTML,
+or Hyper-text Markup Language. HTML provides the structure and the content of the
+page. It directs not only what will be on the page (text, images), but also,
+more or less, where that information will appear.</p>
+
+<p>The <em>look</em> of the page, however, which includes colors, fonts, sizes of boxes
+holding text, and so on, are handled by files written in another language,
+CSS, or Cascading Style Sheets. Without CSS, all webpages would be boring,
+black Times New Roman text on white backgrounds.</p>
+
+<p>Finally, the <em>action</em> on the page, that is, what happens when a user interacts
+with a page, is controlled by JavaScript. We’ve already in this course how the
+<code class="highlighter-rouge">prompt()</code> function can change what gets printed on the page. In this chapter,
+we’ll be looking at jQuery, specifically, which is a means of accessing and
+altering the content of a webpage quickly and easily.</p>
+
+<p>The three languages are intertwined; it’s possible to write CSS and JavaScript
+inside an HTML document. Similarly, JavaScript on webpages often changes
+content (as we have done in class so far) or style.</p>
+
+<section id="html">
+  <h2 id="s-html">HTML</h2>
+
+  <p>It’s time to return to <code class="highlighter-rouge">index.html</code>, after so many chapters of working
+exclusively on <code class="highlighter-rouge">scripts.js</code>. When you open it in Atom, you should see
+something like this:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My JavaScripting English Major Project<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>This is my project!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"response"</span><span class="nt">&gt;</span>This is the #response div.<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.2.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"scripts.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>  </div>
+
+  <p>Remember that HTML is made up of tags that are enclosed in <code class="highlighter-rouge">&lt;&gt;</code>. Some tags
+open and close, like the <code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code> tag above. Other tags don’t need to be
+closed, like the <code class="highlighter-rouge">&lt;meta&gt;</code> tag. Earlier, I said that HTML provides a webpage
+both with its structure and its content. We can see that in this short page
+already. The <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> tag is split into two sections, each with its own tag,
+<code class="highlighter-rouge">&lt;head&gt;</code> and <code class="highlighter-rouge">&lt;body&gt;</code>. Inside the <code class="highlighter-rouge">&lt;head&gt;</code> are two more tags, a <code class="highlighter-rouge">&lt;meta&gt;</code> tag
+and a <code class="highlighter-rouge">&lt;title&gt;</code> tag. And you can deduce what’s inside the <code class="highlighter-rouge">&lt;body&gt;</code>
+tag.<sup id="fnref:doctype"><a href="#fn:doctype" class="footnote">1</a></sup></p>
+
+  <p>The <code class="highlighter-rouge">&lt;head&gt;</code> is where web authors put information about the page. None of the
+information is actually visible, except for the <code class="highlighter-rouge">&lt;title&gt;</code>, which appears in
+your browser’s title bar. Importantly, however, the <code class="highlighter-rouge">&lt;head&gt;</code> is the
+where we instruct the browser where to find the style sheets
+appropriate to the page, but styling is for the next section.</p>
+
+  <p>Inside the <code class="highlighter-rouge">&lt;body&gt;</code> tag is everything we see. It is also, traditionally, where
+JavaScript files get loaded with <code class="highlighter-rouge">&lt;script&gt;</code> tags. It’s best to leave the
+JavaScript loading for the end of the page, so that the JavaScript has a
+canvas in place to work on and manipulate (and so that the page doesn’t freeze
+waiting for the JavaScript to load). All of your HTML writing should happen
+inside the <code class="highlighter-rouge">&lt;body&gt;</code> tag but before the <code class="highlighter-rouge">&lt;script&gt;</code> tags.</p>
+
+  <p>Tags can also have <strong>attributes</strong>, which are designated by the syntax
+<code class="highlighter-rouge">attribute="value"</code>. As you can see, there are a few attributes already listed
+here. Some, like <code class="highlighter-rouge">charset</code> or <code class="highlighter-rouge">lang</code>, we can ignore. They’re of the “set it
+and forget it” variety. But there are several attributes worth learning:</p>
+
+  <ul>
+    <li><code class="highlighter-rouge">id</code>: sets an identifier for an entity. The entity can then be accessed or
+manipulated using the <code class="highlighter-rouge">#id</code> syntax, as with the <code class="highlighter-rouge">$("#response")</code> selector we
+have been using so far. These are supposed to be unique on the webpage.</li>
+    <li><code class="highlighter-rouge">class</code>: where <code class="highlighter-rouge">id</code> is supposed to describe a specific entity, <code class="highlighter-rouge">class</code> can
+be used to group entities together for manipulation. They can be accessed
+using the <code class="highlighter-rouge">.class</code> syntax, which we have not yet seen, and which looks like
+a method, but without the parentheses.</li>
+    <li><code class="highlighter-rouge">src</code>: designates the source of either a JavaScript file (in a <code class="highlighter-rouge">&lt;script&gt;</code>
+tag) or an image (in an <code class="highlighter-rouge">&lt;img&gt;</code> tag).</li>
+    <li><code class="highlighter-rouge">href</code>: designates the URL of a link in an <code class="highlighter-rouge">&lt;a&gt;</code> tag.</li>
+  </ul>
+
+  <p>In addition to the tags you have seen above, I’ll introduce a few more here:</p>
+
+  <ul>
+    <li><code class="highlighter-rouge">&lt;p&gt;&lt;/p&gt;</code>: paragraph</li>
+    <li><code class="highlighter-rouge">&lt;a href="http://..."&gt;&lt;/a&gt;</code>: anchor, for making links</li>
+    <li><code class="highlighter-rouge">&lt;img src="..." alt="Text for those who cannot see images"&gt;</code>: images</li>
+    <li><code class="highlighter-rouge">&lt;h2&gt;&lt;/h2&gt;</code>: second-level heading (they descend all the way to <code class="highlighter-rouge">&lt;h6&gt;</code></li>
+    <li><code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code>: a generic block of content</li>
+    <li><code class="highlighter-rouge">&lt;span&gt;&lt;/span&gt;</code>: a generic span of inline content</li>
+    <li><code class="highlighter-rouge">&lt;em&gt;&lt;/em&gt;</code>: emphasis. <em>Emphasis</em>.</li>
+    <li><code class="highlighter-rouge">&lt;strong&gt;&lt;/strong&gt;</code>: strong. <strong>Strong</strong>.</li>
+    <li><code class="highlighter-rouge">&lt;article&gt;&lt;/article&gt;</code>: designates the main content of a page</li>
+    <li><code class="highlighter-rouge">&lt;section&gt;&lt;/section&gt;</code>: designates a section, typically of an <code class="highlighter-rouge">&lt;article&gt;</code></li>
+  </ul>
+
+  <p>Try the tags out on your <code class="highlighter-rouge">index.html</code>. See what happens if you forget to close
+an <code class="highlighter-rouge">&lt;a&gt;</code> tag or an <code class="highlighter-rouge">&lt;em&gt;</code> tag.</p>
+
+  <p>There are, of course, many tags I have not mentioned here, like tags relating
+to lists, tables, and the like. W3Schools provides <a href="https://www.w3schools.com/TAGs/default.asp">an entire
+list</a>. Each tag has attributes
+that are appropriate to it, but <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">class</code> are the most widespread.</p>
+
+  <p>Any webpage on the internet can expose its raw HTML to the user. The same
+window that gives you the JavaScript console also has a tab for “Elements.” If
+you click on it, you can see the entire structure of the webpage.
+Unfortunately, a lot of webpages these days, especially of popular websites,
+are nearly impossible to read. But give it a try. Twenty years ago, looking at
+the source of HTML pages was the easiest way to learn HTML.</p>
+
+</section>
+<section id="css">
+  <h2 id="s-css">CSS</h2>
+
+  <p>CSS is infamous. While HTML has been rather standardized, CSS remains a bit
+more unreliable. It’s also changing very quickly, and browsers are slow to
+adopt the latest and greatest CSS tricks that are available to design-minded
+web authors. But CSS is where artists can shine, as they fine tune
+proportions, colors, fonts, and the like.</p>
+
+  <h3 id="s-bootstrap">Bootstrap</h3>
+
+  <p>I’m not an artist, however. I’m an English Major. So I like to leave the art
+to the professionals. One way of doing that is by making use of a pre-built
+set of styles that will make your webpage look handsome right away. The
+framework I prefer, and the one that we’ll be using now, is
+<a href="http://getbootstrap.com">Bootstrap</a>, designed by the people at Twitter. We’ll
+be using version 4 of Bootstrap, which isn’t even out yet.</p>
+
+  <p>We can load Bootstrap styles by putting three lines of HTML in our <code class="highlighter-rouge">&lt;head&gt;</code>
+tag in <code class="highlighter-rouge">index.html</code>:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My JavaScripting English Major Project<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"styles.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div>  </div>
+
+  <p>Those two <code class="highlighter-rouge">&lt;link&gt;</code> tags tell the browser to load the Bootstrap styles (first
+line), and your personal styles (second line). The new <code class="highlighter-rouge">&lt;meta&gt;</code> tag lets
+Bootstrap change its look based on whether we are using a computer or a
+telephone to view the page.</p>
+
+  <p>We also need to add two more <code class="highlighter-rouge">&lt;script&gt;</code> tags to load Bootstrap’s special
+JavaScript, so put these two in just above <code class="highlighter-rouge">&lt;script
+src="scripts.js"&gt;&lt;/script&gt;</code>.</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>  </div>
+
+  <p>Let’s also wrap our content inside a container <code class="highlighter-rouge">&lt;div&gt;</code>, which is a <code class="highlighter-rouge">&lt;div&gt;</code>
+with a class of “container”. You can see it opened on line 2 below and closed
+on line 5:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>This is my project!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"response"</span><span class="nt">&gt;</span>This is the #response div.<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.2.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"scripts.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div>  </div>
+
+  <p>“Container” is a class <a href="https://v4-alpha.getbootstrap.com/layout/overview/#containers">provided by
+Bootstrap</a> that
+lets us use the grid layout system. If you save and reload the webpage in the
+browser, you should see that the page looks different. The font has changed,
+and there are tidy margins on both sides. Commit.</p>
+
+  <p>For me, usually getting this far is enough with CSS. On the other hand,
+sometimes I like to personalize Bootstrap. This course, for example, uses a
+customized version of Bootstrap. Let’s customize your page, then, while
+learning about CSS.</p>
+
+  <h3 id="s-css-selectors-and-properties">CSS selectors and properties</h3>
+
+  <p>CSS is made up of selectors that then have specific properties. Selectors are
+typically either tags, ids, or classes. Then the properties are nested inside
+of them, using a syntax that looks like <em>but is not</em> JavaScript. Let’s make
+some changes to our <code class="highlighter-rouge">index.html</code> let us see how CSS works. Let’s add some
+paragraphs underneath the response <code class="highlighter-rouge">&lt;div&gt;</code>, so that the <code class="highlighter-rouge">&lt;body&gt;</code> tag looks
+like this:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>This is my project!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"response"</span><span class="nt">&gt;</span>This is the #response div.<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is the first paragraph of my webpage, despite the div above.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"second-paragraph"</span><span class="nt">&gt;</span>This is the second paragraph. As such, it even has two sentences.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"third-paragraph"</span><span class="nt">&gt;</span>This is the third paragraph. Do you want three sentences? Lucky you, because here they are.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.2.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"scripts.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload, and the three new paragraphs appear, silly though they may
+be. Now let’s create a CSS file. In Atom, on the Projects tab on the left
+side, right click (or command click) on the project name and choose “New
+File.” Name the file <code class="highlighter-rouge">styles.css</code>. A blank document will open up in Atom, and
+type this in:</p>
+
+  <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload, and what happens? The three paragraphs become a painful
+red-on-gray mess to look at. In this snippet of CSS, we can see that the
+selector is <code class="highlighter-rouge">p</code>, which means “everything with a <code class="highlighter-rouge">&lt;p&gt;</code> tag.” <code class="highlighter-rouge">color</code> is the
+color of text, and <code class="highlighter-rouge">background-color</code> is the background color. If you’d like
+to pick less garish colors, you can use Dixon and Moe’s <a href="http://htmlcolorcodes.com/color-picker/">Color
+Picker</a>. Use the hue slider and then
+pick a place on the saturation/lightness grid for the color you want and then
+make a note of the “HEX” value.<sup id="fnref:hexcolor"><a href="#fn:hexcolor" class="footnote">2</a></sup> Try something like this:</p>
+
+  <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#657b83</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#fdf6e3</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload. Much nicer on the eyes. The <code class="highlighter-rouge">#id</code> and <code class="highlighter-rouge">.class</code> syntax I
+mentioned above are also CSS selectors. Add these two statements to
+<code class="highlighter-rouge">styles.css</code>:</p>
+
+  <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.second-paragraph</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#b58900</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#third-paragraph</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#d33682</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>As we can see, <code class="highlighter-rouge">.second-paragraph</code> means “apply these properties to everything
+that has the class ‘second-paragraph.’” Similarly, <code class="highlighter-rouge">#third-paragraph</code> means
+“apply these properties to the element that has the id ‘third-paragraph.’” Try
+adding <code class="highlighter-rouge">class="second-paragraph"</code> to the <code class="highlighter-rouge">&lt;h1&gt;</code> tag. What happens?</p>
+
+  <p>The selectors can also be mixed and matched. <code class="highlighter-rouge">p.lead</code>, for example, refers to
+everything that is <code class="highlighter-rouge">&lt;p class="lead"&gt;</code>. <code class="highlighter-rouge">p.lead.burrito</code> selects every <code class="highlighter-rouge">&lt;p
+class="lead burrito"&gt;</code>, though I’m not sure what the “burrito” class should
+do. As for the properties, there are many, many, many of them. Text formatting
+by itself is <a href="https://www.w3schools.com/css/css_text.asp">14 properties</a>, and
+that does not even include the font properties.</p>
+
+  <p>CSS is more than just colors and fonts, however. It’s possible, by using
+properties such as <code class="highlighter-rouge">width</code>, <code class="highlighter-rouge">position</code>, <code class="highlighter-rouge">float</code>, and so on, to even manipulate
+how large the blocks are that hold your content and where they appear.
+Teaching all of that would be a semester-long course of its own, which is why
+I prefer to stick to Bootstrap and use their classes.</p>
+
+</section>
+<section id="jquery">
+  <h2 id="s-jquery">jQuery</h2>
+
+  <p>jQuery is a library that provides a lot of shortcuts for manipulating
+webpages. As with CSS, it selects parts of the page and works on them. We’ve
+already seen an example of that throughout this course, with:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#response"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">"some string."</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>The selector (<code class="highlighter-rouge">$("")</code>) chooses the HTML element with the id of “response” and
+replaces the HTML inside it. Similarly, <code class="highlighter-rouge">$("p")</code> chooses all of the <code class="highlighter-rouge">&lt;p&gt;</code>
+tags, and <code class="highlighter-rouge">$(".second-paragraph")</code> chooses everything with a class of
+“second-paragraph.” Open up <code class="highlighter-rouge">scripts.js</code> and try to change all of the
+paragraphs to read the same thing at once.</p>
+
+  <p>There are <a href="https://api.jquery.com/">many, many jQuery methods</a> that let you
+manipulate webpages. For example, this webpage makes use of jQuery to build
+the sidebar, automatically.</p>
+
+  <ul>
+    <li>It uses <code class="highlighter-rouge">$("article").has("section").length</code> as a test to see if the <code class="highlighter-rouge">&lt;article&gt;</code> tag has <code class="highlighter-rouge">&lt;section&gt;</code> tags inside it (so the <code class="highlighter-rouge">.length</code> property is greater than 0, and, hence, <code class="highlighter-rouge">true</code>).</li>
+    <li>It then uses <code class="highlighter-rouge">$("section").each()</code> to go to each <code class="highlighter-rouge">&lt;section&gt;</code> in the page.</li>
+    <li>It gets that section’s id using <code class="highlighter-rouge">$( this ).attr("id")</code>, where <code class="highlighter-rouge">.attr()</code> is
+the method for getting an attribute.<sup id="fnref:this"><a href="#fn:this" class="footnote">3</a></sup></li>
+    <li>It also gets that sections <code class="highlighter-rouge">&lt;h2&gt;</code> value by using <code class="highlighter-rouge">$( this
+).find("h2").html()</code>.</li>
+    <li>Then it uses the id value as the <code class="highlighter-rouge">href</code> attribute for a link and uses the <code class="highlighter-rouge">&lt;h2&gt;</code> value for the text of the link.</li>
+    <li>Then it does the same for subsections.</li>
+  </ul>
+
+  <p>As your web project grows more interactive, the potential for injecting more
+and more jQuery grows along with it.</p>
+
+</section>
+
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>Flesh out your <code class="highlighter-rouge">index.html</code> with a subheading, an image, a few paragraphs,
+and a link or two.</li>
+    <li>Glance over the Bootstrap documentation for
+<a href="https://v4-alpha.getbootstrap.com/content/images/">images</a> and give your
+image rounded corners.</li>
+    <li>Add some jQuery to <code class="highlighter-rouge">scripts.js</code> that selects one (and only one) <code class="highlighter-rouge">&lt;p&gt;</code>
+element and uses <code class="highlighter-rouge">.addClass</code> to add the “lead” class to it. Style that
+class in some distinct way.</li>
+  </ol>
+
+</section>
+
+<h2 id="s-footnotes">Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:doctype">
+      <p>The <code class="highlighter-rouge">&lt;!doctype&gt;</code> tag is not, actually, a tag. Rather, it’s a way of telling the browser to expect a certain kind of HTML, in this case, HTML 5, as noted by giving it the doctype <code class="highlighter-rouge">html</code>. That is confusing, but it’s so much clearer now than it used to be… <a href="#fnref:doctype" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:hexcolor">
+      <p>Hex color is an old standard of telling HTML what color something should be. It is made up of three parts, each of which is a hexadecimal number between 0 and FF, which tells the browser how much red, green, and blue to put in a color. As such, <code class="highlighter-rouge">#000000</code> is the absence of all color, or black.  <code class="highlighter-rouge">#FFFFFF</code> is all of the colors, or white. <code class="highlighter-rouge">#FF0000</code> is all of the red, and no blue or green. <code class="highlighter-rouge">#00FF00</code> is just green, and <code class="highlighter-rouge">#0000FF</code> is just blue. <a href="#fnref:hexcolor" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:this">
+      <p><code class="highlighter-rouge">this</code> is a tricky JavaScript keyword, but the <code class="highlighter-rouge">$( this )</code> is a way of using jQuery on an <code class="highlighter-rouge">Object</code> itself. So when iterating over each <code class="highlighter-rouge">&lt;section&gt;</code> with <code class="highlighter-rouge">.each()</code>, <code class="highlighter-rouge">$( this )</code> selects the section itself, instead of one of its child entities. <a href="#fnref:this" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/7-errors">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/9-dataset">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

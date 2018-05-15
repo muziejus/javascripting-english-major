@@ -1,0 +1,305 @@
+/* The main Sass page */
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu Mono|Ubuntu");
+/* Solarized Dark 
+
+For use with Jekyll and Pygments
+
+http://ethanschoonover.com/solarized
+
+From: https://gist.github.com/nicolashery/5765395
+With changes to base0 for primary content.
+
+SOLARIZED HEX      ROLE
+--------- -------- ------------------------------------------
+base03    #002b36  background
+base01    #586e75  comments / secondary content
+base0     #93a1a1  body text / default code / primary content
+orange    #cb4b16  constants
+red       #dc322f  regex, special keywords
+blue      #268bd2  reserved keywords
+cyan      #2aa198  strings, numbers
+green     #859900  operators, other keywords
+*/
+.highlight { background-color: #002b36; color: #839496; }
+
+.highlight .c { color: #586e75; }
+
+/* Comment */
+.highlight .err { color: #839496; }
+
+/* Error */
+.highlight .g { color: #839496; }
+
+/* Generic */
+.highlight .k { color: #859900; }
+
+/* Keyword */
+.highlight .l { color: #839496; }
+
+/* Literal */
+.highlight .n { color: #839496; }
+
+/* Name */
+.highlight .o { color: #859900; }
+
+/* Operator */
+.highlight .x { color: #cb4b16; }
+
+/* Other */
+.highlight .p { color: #839496; }
+
+/* Punctuation */
+.highlight .cm { color: #586e75; }
+
+/* Comment.Multiline */
+.highlight .cp { color: #859900; }
+
+/* Comment.Preproc */
+.highlight .c1 { color: #586e75; }
+
+/* Comment.Single */
+.highlight .cs { color: #859900; }
+
+/* Comment.Special */
+.highlight .gd { color: #2aa198; }
+
+/* Generic.Deleted */
+.highlight .ge { color: #839496; font-style: italic; }
+
+/* Generic.Emph */
+.highlight .gr { color: #dc322f; }
+
+/* Generic.Error */
+.highlight .gh { color: #cb4b16; }
+
+/* Generic.Heading */
+.highlight .gi { color: #859900; }
+
+/* Generic.Inserted */
+.highlight .go { color: #839496; }
+
+/* Generic.Output */
+.highlight .gp { color: #839496; }
+
+/* Generic.Prompt */
+.highlight .gs { color: #839496; font-weight: bold; }
+
+/* Generic.Strong */
+.highlight .gu { color: #cb4b16; }
+
+/* Generic.Subheading */
+.highlight .gt { color: #839496; }
+
+/* Generic.Traceback */
+.highlight .kc { color: #cb4b16; }
+
+/* Keyword.Constant */
+.highlight .kd { color: #268bd2; }
+
+/* Keyword.Declaration */
+.highlight .kn { color: #859900; }
+
+/* Keyword.Namespace */
+.highlight .kp { color: #859900; }
+
+/* Keyword.Pseudo */
+.highlight .kr { color: #268bd2; }
+
+/* Keyword.Reserved */
+.highlight .kt { color: #dc322f; }
+
+/* Keyword.Type */
+.highlight .ld { color: #839496; }
+
+/* Literal.Date */
+.highlight .m { color: #2aa198; }
+
+/* Literal.Number */
+.highlight .s { color: #2aa198; }
+
+/* Literal.String */
+.highlight .na { color: #839496; }
+
+/* Name.Attribute */
+.highlight .nb { color: #859900; }
+
+/* Name.Builtin */
+.highlight .nc { color: #268bd2; }
+
+/* Name.Class */
+.highlight .no { color: #cb4b16; }
+
+/* Name.Constant */
+.highlight .nd { color: #268bd2; }
+
+/* Name.Decorator */
+.highlight .ni { color: #cb4b16; }
+
+/* Name.Entity */
+.highlight .ne { color: #cb4b16; }
+
+/* Name.Exception */
+.highlight .nf { color: #268bd2; }
+
+/* Name.Function */
+.highlight .nl { color: #839496; }
+
+/* Name.Label */
+.highlight .nn { color: #839496; }
+
+/* Name.Namespace */
+.highlight .nx { color: #839496; }
+
+/* Name.Other */
+.highlight .py { color: #839496; }
+
+/* Name.Property */
+.highlight .nt { color: #268bd2; }
+
+/* Name.Tag */
+.highlight .nv { color: #268bd2; }
+
+/* Name.Variable */
+.highlight .ow { color: #859900; }
+
+/* Operator.Word */
+.highlight .w { color: #839496; }
+
+/* Text.Whitespace */
+.highlight .mf { color: #2aa198; }
+
+/* Literal.Number.Float */
+.highlight .mh { color: #2aa198; }
+
+/* Literal.Number.Hex */
+.highlight .mi { color: #2aa198; }
+
+/* Literal.Number.Integer */
+.highlight .mo { color: #2aa198; }
+
+/* Literal.Number.Oct */
+.highlight .sb { color: #586e75; }
+
+/* Literal.String.Backtick */
+.highlight .sc { color: #2aa198; }
+
+/* Literal.String.Char */
+.highlight .sd { color: #839496; }
+
+/* Literal.String.Doc */
+.highlight .s2 { color: #2aa198; }
+
+/* Literal.String.Double */
+.highlight .se { color: #cb4b16; }
+
+/* Literal.String.Escape */
+.highlight .sh { color: #839496; }
+
+/* Literal.String.Heredoc */
+.highlight .si { color: #2aa198; }
+
+/* Literal.String.Interpol */
+.highlight .sx { color: #2aa198; }
+
+/* Literal.String.Other */
+.highlight .sr { color: #dc322f; }
+
+/* Literal.String.Regex */
+.highlight .s1 { color: #2aa198; }
+
+/* Literal.String.Single */
+.highlight .ss { color: #2aa198; }
+
+/* Literal.String.Symbol */
+.highlight .bp { color: #268bd2; }
+
+/* Name.Builtin.Pseudo */
+.highlight .vc { color: #268bd2; }
+
+/* Name.Variable.Class */
+.highlight .vg { color: #268bd2; }
+
+/* Name.Variable.Global */
+.highlight .vi { color: #268bd2; }
+
+/* Name.Variable.Instance */
+.highlight .il { color: #2aa198; }
+
+/* Literal.Number.Integer.Long */
+html { position: relative; min-height: 100%; }
+
+body { font-family: "EB Garamond", "Times New Roman", serif; color: #657b83; background-color: #fdf6e3; padding-top: 4.25rem; margin-bottom: 4rem; }
+
+section { padding-top: 4rem; margin-top: -4rem; }
+
+code { font-family: "Ubuntu Mono", Monaco, Terminal; color: #dc322f; background-color: #eee8d5; }
+
+a { color: #d33682; font-weight: bold; }
+
+a:focus, a:hover { color: #2aa198; }
+
+h4, h5, h6, .lead, p > em { color: #586e75; }
+
+.lead:first-letter { color: #b58900; float: left; font-size: 5rem; line-height: 3rem; padding: 0 0.25rem 0 0; }
+
+h1 { color: #268bd2; font-size: 3.5rem; }
+
+h2, h3, h5 { color: #b58900; }
+
+h2, h3, h4, h5, h6 { font-family: "Ubuntu", "Helvetica", sans-serif; }
+
+p > strong, section > ol > li > strong { font-family: "Ubuntu", "Helvetica", sans-serif; font-size: 90%; font-weight: bolder; color: #6c71c4; }
+
+blockquote { padding-left: 3rem; }
+
+.bg-base2 { background-color: #eee8d5; }
+
+.yellow { color: #b58900; }
+
+.footer { position: absolute; bottom: 0; width: 100%; height: 3rem; line-height: 3rem; /* Vertically center the text there */ background-color: #eee8d5; }
+.footer a { color: #268bd2; }
+.footer p { text-align: center; margin-bottom: 0; }
+@media (min-width: 576px) { .footer p { text-align: left; padding-left: 2rem; } }
+
+.contents h3 { font-family: "EB Garamond", "Times New Roman", serif; color: #586e75; }
+
+.btn-info { background-color: #eee8d5; border-color: #2aa198; color: #d33682; }
+
+.btn-info:hover { background-color: #fdf6e3; color: #2aa198; }
+
+.modal-content { background-color: #fdf6e3; }
+
+#splash { background-color: #fdf6e3; }
+#splash a { color: #268bd2; }
+#splash a:hover, #splash a:focus { color: #2aa198; }
+#splash h2, #splash h3 { font-family: "EB Garamond", "Times New Roman", serif; color: #586e75; }
+#splash .btn-primary { color: #fdf6e3; background-color: #268bd2; border-color: #2aa198; }
+#splash .btn-primary:hover, #splash .btn-primary:focus { color: #fdf6e3; background-color: #2aa198; border-color: #859900; }
+
+@media (min-width: 576px) { #splash { max-width: 675px; } }
+.bg-faded { background-color: #eee8d5; }
+
+.navbar-light .navbar-brand { color: rgba(38, 139, 210, 0.9); font-weight: normal; }
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover { color: rgba(211, 54, 130, 0.8); }
+.navbar-light .navbar-nav .nav-link { color: rgba(88, 110, 117, 0.5); }
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover { color: rgba(88, 110, 117, 0.9); }
+.navbar-light .navbar-toggler { font-size: 1rem; color: rgba(88, 110, 117, 0.9); }
+.navbar-light .dropdown-menu { background-color: #fdf6e3; color: #657b83; border-color: rgba(101, 123, 131, 0.5); }
+.navbar-light .dropdown-menu .dropdown-item { color: base00; }
+.navbar-light .dropdown-menu .dropdown-item:focus, .navbar-light .dropdown-menu .dropdown-item:hover { color: #586e75; background-color: #eee8d5; }
+.navbar-light .dropdown-menu .dropdown-item:active { color: #268bd2; background-color: #eee8d5; }
+
+#brand-name-small { display: inline-block; }
+
+#brand-name-big { display: none; }
+
+@media (min-width: 576px) { #brand-name-small { display: none; }
+  #brand-name-big { display: inline-block; } }
+div.highlighter-rouge { padding: 0 2rem; }
+
+pre.highlight { width: auto; padding: .5rem 1rem; }
+
+aside ul li a { color: #586e75; }
+aside ul li ul { list-style-type: none; }
+aside ul li ul a { color: #657b83; }

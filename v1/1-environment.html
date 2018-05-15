@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/1-environment" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Setting up the Environment | The JavaScripting English Major" />
+      <title>Setting up the Environment | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Setting up the Environment | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/1-environment" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/1-environment" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/1-environment","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Setting up the Environment</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>It’s possible to start JavaScripting just by opening your browser, but for the
+purposes of this course, we’re going to introduce two new pieces of software
+that work to make your programming life easier.</p>
+
+<p>This establishes a programming <strong>environment</strong>, which is a workflow in which
+multiple pieces of software work together in order to make reaching your goals
+as easy as possible. Many programming rely on IDEs, or integrated development
+environments, such as <a href="https://developer.apple.com/xcode/">Xcode</a> for writing
+MacOS and iOS apps or <a href="http://rstudio.com">R Studio</a> for writing in R. These
+are one-stop shops that try to handle the entirety of your project within one
+piece of software. We’ll reach a similar state with Atom, below, but not
+before first making a detour through Git.</p>
+
+<p>A key concept to application development is <strong>versioning</strong>. That is, by making
+use of a piece of software called a <strong>version control system</strong>, a project can
+work as though it has a time machine attached to it. But not just a time
+machine.</p>
+
+<p>Before moving forward, note that above I don’t refer to a “document” or even a
+“file.” Most of the homework you’ve ever turned in before for an English class
+has probably been a document, most likely written in Microsoft Word. In this
+environment, we’re not creating one document or one file. Instead, we’re
+working on one <strong>project</strong>, which is made up of many files, where each file
+contributes its own bit to the project as a whole. A website (or a webapp) is
+an example of a project—one that is made up, of course, of many documents. For
+example, on even the most basic website, the information on the front page
+could be saved in one file, and the information in the “About” page could be
+saved in another.</p>
+
+<p>Thinking in terms of <em>projects</em>, not documents, is perhaps the first vital
+leap for you to make. What we are building in this course is a website that is
+a project. As such, you will have a folder for your project, and everything in
+that folder will be under version control.</p>
+
+<section id="git">
+  <h2 id="s-git">Git</h2>
+
+  <p>The version control system we will use in this course is called
+<a href="https://git-scm.com/">Git</a>. Git is famously opaque, and, worse,
+a novice user (like us) uses about three commands all the time except when
+things go wrong. Luckily, when things go wrong, Git is often there to help us
+out. Nevertheless, Git deserves its reputation that leads to websites like “<a href="http://ohshitgit.com">Oh
+Shit, Git!</a>”</p>
+
+  <p>Git calls a project a <strong>repository</strong>, so in the context of using Git, I’ll do
+the same. A repository is a folder with files in it, like any regular folder
+of files you have on your computer. However it also has, hidden from view, a
+history of all the files in the folder. Git knows exactly when a file was
+added. It knows every change ever made to each file. It even knows about files
+that have been deleted, and it can resurrect them, if needed.</p>
+
+  <p>So far, this sounds like a backup system. And Git is <em>also</em> that. But it can
+do much more. For example, every change you record with Git, called a
+<strong>commit</strong>, also has a <strong>commit message</strong> attached to it, where you can leave
+a note for yourself (or a collaborator!) that tells you what you were thinking
+when you made a change. Why did you put this paragraph before that one? Read
+your old commit messages.</p>
+
+  <p>Additionally, Git lets you <strong>push</strong> your changes to a central version of the
+repository. This means that you can work on one computer, save your work,
+commit it, push it, and then, on another computer, <strong>pull</strong> the changes and get
+right back to work—with all that history still built in, even though you were
+working <em>on another computer!</em></p>
+
+  <p>That covers all of what we’ll be doing with Git in this course, and that is
+already a lot. But as you can see, the system of committing, pushing, and
+pulling means that collaboration becomes very easy. Additionally, Git allows
+for <strong>branching</strong>, where you create new branches for your project. Now Git is
+not only a time machine, but it’s also an interdimensional portal leading you
+to alternate universes. In one universe, your text could be written full of
+jokes. In another, the writing can be very serious.</p>
+
+</section>
+<section id="github">
+  <h2 id="s-github">GitHub</h2>
+
+  <p>For the purposes of this course, we will be using Git via the website
+<a href="http://github.com">GitHub</a>. GitHub will serve as the remote point to which
+you push your project, and GitHub will even, down the road, host the project.
+At the end of this course, you’ll have a web address including “github.io”
+that you can send to your friends and family to show off your progress.</p>
+
+  <p>In addition to being a user-friendlier face for the Git software, GitHub also
+includes features that expand what Git offers, such as built in discussion
+boards where users can discuss issues. We won’t be using that functionality in
+this class, but that should stand in to remind you that <em>things on GitHub are
+public by default</em>. Keep this in mind when you’re typing commit messages or
+working on your project: it’s all visible to anyone who has a look at your
+repository. Don’t let that scare you from using GitHub. Just keep it in mind.</p>
+
+  <h3 id="s-create-yourself-a-github-user">Create yourself a GitHub user</h3>
+
+  <p>The first step with GitHub is easy. Go to <a href="http://github.com">GitHub.com</a> and
+create an account. Choose the free plan. You should get an email, and once you
+verify it, you can click on the “Start a project” button.</p>
+
+  <p>If you’re a current student, you can
+<a href="https://education.github.com/discount_requests/new">request a discount</a> for
+GitHub. That discount entitles you to a limited number of private
+repositories.</p>
+
+  <h3 id="s-fork-the-course-repository">Fork the course repository</h3>
+
+  <p>In GitHub, anyone can access anyone else’s (public) repositories, or
+projects. And, what’s more, anyone can make an identical copy of that
+repository for their own use. This is called <strong>forking</strong>, and the next step is
+to fork the repository I have already made for this course.</p>
+
+  <p>While logged into GitHub, point your browser to:</p>
+
+  <p><a href="https://github.com/muziejus/javascripting-english-major-project"><code class="highlighter-rouge">https://github.com/muziejus/javascripting-english-major-project</code></a></p>
+
+  <p>Once that page loads, there should be a “Fork” button in the top-right corner.
+Click on that. If it asks you where to fork it, click on your user, and now
+the repository should appear in your account under this URL:</p>
+
+  <p><code class="highlighter-rouge">https://github.com/YOURUSERNAME/javascripting-english-major-project</code></p>
+
+  <p>Where it reads <code class="highlighter-rouge">YOURUSERNAME</code>, it should read, of course, the GitHub username
+you chose for yourself. Make a note of this URL, as you’ll need it in a few
+steps.</p>
+
+</section>
+<section id="Atom">
+  <h2 id="s-atom">Atom</h2>
+
+  <p>You’re probably used to writing your English homework in Microsoft Word or,
+maybe, Pages. Or maybe you use Google Docs. They are all fine word processors,
+and I’ve used them all. Actually, I’ve been using Microsoft Word since well
+before you were born, probably. But they all make two conceptual assumptions
+that go against the work we are doing in this course.</p>
+
+  <p>First, they deal with documents, not projects. Remember, in this course you
+have to think in terms of a project, not just in terms of a single document.
+Something like Word is great for a single document, like a business letter or
+five-page paper. When it comes to something with lots of moving parts, like a
+web project (or a dissertation…), it starts to creak.</p>
+
+  <p>Second, the big advance Word brought to the computing world was fusing what a
+document says along with how it looks.<sup id="fnref:form-vs-content"><a href="#fn:form-vs-content" class="footnote">1</a></sup> In Word, whatever the
+document looks like on your screen is a pretty good approximation of what it
+will look like in your printer.<sup id="fnref:wysiwyg"><a href="#fn:wysiwyg" class="footnote">2</a></sup> You can change fonts, font sizes,
+margins, and so on, for a single document, and when you print it, it will
+follow your instructions as closely as possible as it prints to a US Letter
+sheet of paper.<sup id="fnref:a4"><a href="#fn:a4" class="footnote">3</a></sup> This is, of course, because of the first assumption:
+you’re writing a document that is going to get printed.</p>
+
+  <p>We’re writing a website, however. And who knows what kind of device will be
+used to view it. Imagine if you write a page with 2-inch margins and visit it
+on a smartphone. You’ll see nothing but margins! When you’re writing for the
+web, you’re handing off a lot of decisions regarding how the content will look
+to the user, who could be using a giant monitor or a teeny smartphone to view
+your site. Of course, you still have <em>some</em> control over how things look. A
+lot, in fact.  But in order to do that, you have to rethink the basics of
+writing. You now have to focus on the content much more than the look.</p>
+
+  <h3 id="s-a-plain-text-editor">A plain text editor</h3>
+
+  <p>One way of “focusing on the content” is by stripping away a lot of the
+frippery that a program like Word provides. We won’t need something that can
+make charts or insert clip art. We won’t be changing fonts willy-nilly. And we
+definitely aren’t creating something that lives only to be printed out. We are
+creating, again, a <em>project</em>, not a document.</p>
+
+  <p>Furthermore, we will be writing code in addition to text. In your own project,
+you will be programming functions and writing paragraphs. The former requires
+simple text files that can be read by the JavaScript interpreter (also known
+as the browser). The latter will be converted into HTML, which means it has to
+be written in plain text that can be fed to the HTML renderer (also known as
+the browser). Instead of one <code class="highlighter-rouge">.docx</code> file, we will have <code class="highlighter-rouge">.js</code> files for our
+JavaScript programming and <code class="highlighter-rouge">.html</code> files for our HTML webpages. Finally, Git
+is much friendlier with regular text files (like <code class="highlighter-rouge">.js</code> or <code class="highlighter-rouge">.html</code> files) than
+it is with <code class="highlighter-rouge">.docx</code> files. You can use Git with Word, but then you’re basically
+just using it as a backup system, not as a version control system.</p>
+
+  <p>What we need, then, is a “plain text editor.” Something that just writes text,
+more or less agnostically. Though it’d be nice if maybe it colored the text
+certain ways when writing JavaScript or HTML. But let’s not jump ahead. You’ve
+probably used a plain text editor before, most notably the Notes application
+on your smartphone. Every personal computer has some kind of plain text editor
+installed, but we’ll install one that runs on nearly any personal computer,
+Atom.</p>
+
+  <h3 id="s-enter-atom">Enter Atom</h3>
+
+  <p><a href="http://atom.io">Atom</a> is a fully-featured text editor that can also serve as
+an IDE. It also has Git (and GitHub) support built in. This makes sense; it’s
+part of the GitHub ecosystem. Atom is a serious program with lots and lots of
+features. I’ll only be teaching a few here, but I’ll also teach a few more as
+the course goes on. It also does not behave like Word, which will take a bit
+of getting used to. Still, I hope that, for project-based work, you will see
+that it works much better than Word or a similar word processor.</p>
+
+  <p>You can download the software from the <a href="http://atom.io">Atom page</a>, and
+installation should be rather straightforward<sup id="fnref:atom-install"><a href="#fn:atom-install" class="footnote">4</a></sup>. Once you install it, when you
+open it, you will be greeted with a welcome tab and the welcome guide tab in a
+separate pane. Atom works on the visual metaphor of panes with tabs. You can
+change the widths of the panes and show and hide them with your mouse.
+Similarly, the tabs work like the tabs do in Chrome, for good
+reason.<sup id="fnref:atom-is-chrome"><a href="#fn:atom-is-chrome" class="footnote">5</a></sup></p>
+
+  <h3 id="s-start-customizing-with-packages">Start customizing with packages</h3>
+
+  <p>From the Welcome Guide, I recommend immediately clicking on “Install a
+Package.” Ben Balter has come up with a <a href="https://ben.balter.com/2016/12/23/atom-for-prose/">list of useful Atom packages for
+writing prose</a>, but I’ll
+mention the most useful ones here. Once you click on “Install a
+Package,” you can click on “Open Installer” and start installing packages by
+searching for them and then clicking the “Install” button.</p>
+
+  <ul>
+    <li>
+      <p><a href="https://atom.io/packages/file-icons"><code class="highlighter-rouge">file-icons</code></a>: this gives you pretty
+icons in the Atom sidebar and tabs. These visual cues are, in my experience,
+more useful than file name extensions.</p>
+    </li>
+    <li>
+      <p><a href="https://atom.io/packages/linter-jshint"><code class="highlighter-rouge">linter-jshint</code></a>: adds a linter
+based on <a href="http://jshint.com/docs/">JSHint</a> for JavaScript, meaning the Atom
+will warn you when the JavaScript you write has problems.</p>
+    </li>
+  </ul>
+
+  <p>For these, you have to type the name into the little search bar in the
+Install Packages part of the Settings tab. The linter may ask you to add some
+other packages to fulfill dependencies. That’s ok.</p>
+
+  <h3 id="s-continue-customizing-by-enabling-autosave">Continue customizing by enabling autosave</h3>
+
+  <p>Atom ships with autosave disabled by default. That’s probably not behavior
+you’re expecting, so you should enable it! After you’re done installing
+packages, you’ll be on the Settings tab, which has a few subcategories, like
+Core, Editor, and so on. Choose Packages. This gives a list of all the
+packages you have installed, as well as giving you a chance to configure them.
+Type <code class="highlighter-rouge">autosave</code> into the filter box at the top, and then click on “Settings”
+once the autosave package shows up under “Core Packages.”</p>
+
+  <p>Tick the box beside “Enabled” under settings, and now Atom will autosave any
+file as soon as you click away from its tab, even if you go to another
+application.</p>
+
+  <p>While the Settings tab is still open, click on “Core” and “Editor” and change
+things around these if you like. The defaults are pretty good, but you may
+want to change the “Font Family” in Editor. Type in the name of your preferred
+font, provided that it is installed. You can make the default text larger or
+smaller, and so on. One more setting to consider in Editor is “Soft Wrap.”
+With it off, your text will keep running off the side of the window as you
+type. Soft Wrap, like in Word or Notes, breaks lines so that everything fits
+inside the window.</p>
+
+  <p>Finally, under Themes, you can do some basic changing of the user
+interface, theme, and the syntax theme for the editor. Pick a light one or a
+dark one, whichever you think fits your personality. I personally use the
+solarized themes, based on Ethan Schoonover’s
+<a href="http://ethanschoonover.com/solarized">Solarized</a> precision color project.</p>
+
+  <h3 id="s-link-atom-to-github">Link Atom to GitHub</h3>
+
+  <p>Atom is written by the people at GitHub, so it’s pretty easy to link the two
+together. In fact, that’s the main reason I encourage you to install Atom. The
+Atom people have <a href="http://flight-manual.atom.io/using-atom/sections/github-package/">written a decent
+introduction</a>
+to most of what I describe here, so it’s useful to glance over at their
+screenshots, etc., if this part gets too confusing.</p>
+
+  <p>First, you have to get the URL of the repository you forked a few steps ago:</p>
+
+  <p><code class="highlighter-rouge">https://github.com/YOURUSERNAME/javascripting-english-major-project</code></p>
+
+  <p>Again, <code class="highlighter-rouge">YOURUSERNAME</code> should be replaced with your own GitHub username. Now
+add <code class="highlighter-rouge">.git</code> to the end of it, so you have:</p>
+
+  <p><code class="highlighter-rouge">https://github.com/YOURUSERNAME/javascripting-english-major-project.git</code></p>
+
+  <p>This is the URL you will need for cloning.</p>
+
+  <p>Second, return to Atom. Here, open up the command palette by going to the
+“Packages” menu, choosing “Command Palette” and then “Toggle.” In the little
+box that opens, type “git” and choose the option labeled “GitHub: Clone.” For
+“Clone from,” paste or type in the URL above ending in <code class="highlighter-rouge">.git</code> with your
+username. Atom will automatically save it to a GitHub folder it creates in
+your home folder, but you can change this location if you like.</p>
+
+  <p>Now, if you have the file-icons package installed, in the Projects pane, you
+should see a small book icon with your repository name beside it, and,
+underneath it, you should see a folder called <code class="highlighter-rouge">.git</code>, a file called
+<code class="highlighter-rouge">README.md</code>, and a few other files. These are the contents of your repository,
+and they are now on your computer.</p>
+
+  <p>Third, let’s make an explicit connection between GitHub and Atom. Open up the
+GitHub pane (“Packages” &gt; “GitHub” &gt; “Toggle GitHub Tab”), and you should now
+see a button asking you to log in or a message encouraging you to go to the
+<a href="http://github.atom.io/login">GitHub Atom login page</a>. If you don’t, make sure
+that your project is open and loaded in Atom. Otherwise, click on “Login” and
+then click on the web address, which will open a new page in your browser
+asking you for permission to have Atom talk to your GitHub account. Click on
+“Authorize atom” and then copy the extremely long code that appears. Paste it
+back into the GitHub pane back on Atom.</p>
+
+  <p>You should get a message saying “No pull request could be found for the
+branch master,” and so on. You’ve made the connection.</p>
+
+  <h3 id="s-make-a-change-stage-a-file-commit-and-push">Make a change, stage a file, commit, and push</h3>
+
+  <p>We’re in the homestretch now, but this section is the most important, because
+it’s a description of what you will be doing with Git in Atom most of the
+time. In the “Projects” tab, there should be a file called <code class="highlighter-rouge">README.md</code>. Double
+click on it, and it should open in a new tab. You should see some text that
+I’ve written. Go ahead and delete it all and type in something of your own,
+like your name and your goals for your project (it’s ok if they’re vague for
+now).</p>
+
+  <p>Just clicking away from the window should autosave the document, which you do
+by now opening the Git tab (“Packages” &gt; “GitHub” &gt; “Toggle Git Tab”). You
+will use this tab much more often than the GitHub tab, so it might be
+worthwhile to remember the keyboard shortcut, control-shift-9.</p>
+
+  <p>The Git tab is split into three horizontal sections, <strong>Unstaged</strong>, <strong>Staged</strong>, and
+<strong>Commit</strong>. Unstaged lists all the files you have saved but have not yet
+committed. If the icon beside the file is a green cross, that means it is a
+new file, never before saved to the repository. <code class="highlighter-rouge">README.md</code>, on the other
+hand, should appear in unstaged changes with a yellow box with a dot. That
+means that the file is in the repository, but changes have been made to it
+that have not yet been committed. Finally, if you were to delete a file, it
+would show up there with a red minus sign. Yes, in Git, a file is never truly
+deleted, remember.</p>
+
+  <p>If you click on one of the files in the Unstaged area, a new tab will open
+with a lot of green (and maybe some red) text. That shows everything you have
+added or removed from the file since its last commit. With <code class="highlighter-rouge">README.md</code>, it
+will be a lot of red and hopefully a lot of green.</p>
+
+  <p>Click on the “Stage All” button at the top of the Unstaged area to move all
+the files to the Staged area. Or, if you like, you can only move one file at a
+time. I usually try to commit things thematically. So if I make some changes
+on one file and totally unrelated changes to another file, I will make two
+separate commits. But if both are related (say I change the name of something
+in both places), then it can be one commit. There’s no right way to
+committing. Do what feels like a good balance between often enough to be
+useful yet infrequent enough so that you actually get work done.</p>
+
+  <p>Once files are in the Staged area, you can commit. That will take the files in
+the Staged area and log the changes to the files in the Git time machine.  Any
+changes you make backwards or forwards between commits doesn’t matter. Git
+only tracks commits, not individual saves.</p>
+
+  <p>Type in a useful commit message (like <code class="highlighter-rouge">Edit README</code>) in the Commit box and
+press “Commit.” The changes have been recorded.</p>
+
+  <p>The final step is pushing the changes up to GitHub. Once you have a commit,
+the up arrow at the bottom right corner of the Atom window will have a little
+“1” appear next to it. If you make another commit, that “1” will become a “2.”
+Once you’ve got enough commits and want to push, click on that arrow, and Atom
+will ask you for your GitHub username and password. Type them in, wait a
+minute, and then if you go to GitHub and refresh your repository, you will see
+the changes that you’ve made.<sup id="fnref:overpushing"><a href="#fn:overpushing" class="footnote">6</a></sup></p>
+
+  <h3 id="s-parting-atom-thoughts">Parting Atom thoughts</h3>
+
+  <p>There’s a whole lot going on in this section, but it’s mostly stuff you just
+have to do once to set up the environment. As I wrote above, Atom is a very
+heavy duty program that can do a whole lot more than what we will use it for.
+Whenever you get frustrated with Atom’s menus and the like, always remember
+that you can launch the command palette by typing command-shift-p on a Mac or
+control-shift-p on Windows. That brings up a small window that lets you type
+in whatever command you want to execute.</p>
+
+  <p>Also, Atom will be frustrating the first few times. Any new piece of software
+is. By the end of this course, though, I hope that you’ll see why I insisted
+on this unpleasantness at the beginning. And if you are interested in learning
+more about Atom, <a href="https://atom.io/docs">please have a look at their
+documentation</a>, that includes the <em>Flight Manual</em> book,
+and an introductory video.</p>
+
+</section>
+<section id="browser">
+  <h2 id="s-browser">Browser</h2>
+
+  <p>Our last step in this chapter is making sure your browser has a JavaScript
+console. I recommend against using Internet Explorer in this course for a
+number of reasons, so I’ll only give directions for Firefox, Chrome, and
+Safari.</p>
+
+  <ul>
+    <li>
+      <p>In
+<a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console">Firefox</a>, the console is hidden the “Tools” menu, under “Web Developer”
+and “Web Console” on the Mac. On Windows/Linux, it is in the “Web Developer”
+submenu of the “Firefox” menu. Or, type control-shift-k for Windows/Linux or
+command-option-k for Mac.</p>
+    </li>
+    <li>
+      <p>In
+<a href="https://developers.google.com/web/tools/chrome-devtools/console/">Chrome</a>,
+open the DevTools palette either by typing control-shift-j (Windows/Linux) or
+command-option-j (Mac). Or, find the tools in the Chrome menu (upper right,
+beside the address bar), under “More Tools” and “Developer Tools.” Once the
+DevTools palette opens, you can click on the “Console” tab.</p>
+    </li>
+    <li>
+      <p>In Safari, look in the “Develop” menu and choose “Show JavaScript Console.”
+Or type command-option-c.</p>
+    </li>
+  </ul>
+
+  <p>Newer browsers will behave similarly. Brave, for example, is based on Chrome,
+so the keyboard shortcut is the same. Incidentally <a href="https://brave.com">Brave</a>
+was co-founded by Brendan Eich, the man who invented JavaScript.</p>
+
+  <p>Whichever browser you’re using, the console looks more or less the same. It’s
+a large empty window with a <code class="highlighter-rouge">&gt;</code> at the
+bottom. This <code class="highlighter-rouge">&gt;</code> is called the “prompt.” Beside the prompt, type:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello, World!'</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Hit return. The console should respond with <code class="highlighter-rouge">Hello, World!</code>
+Throughout the rest of this course, when something needs to be typed at the
+prompt, I will include the <code class="highlighter-rouge">&gt;</code>. This time I skipped it, to make things a bit
+clearer for those who have never used a prompt before.</p>
+
+  <p>By typing the above, you’ve written your first bit of JavaScript. In other
+words, you’re ready for the <a href="/v1/2-calculator/">next chapter</a>
+after completing the exercises below.</p>
+
+</section>
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>Create a GitHub account.</li>
+    <li>Fork the blank repository for this course from
+<a href="https://github.com/muziejus/javascripting-english-major-project"><code class="highlighter-rouge">https://github.com/muziejus/javascripting-english-major-project</code></a>.</li>
+    <li>Install Atom on your computer with some useful packages.</li>
+    <li>Link Atom to your GitHub account.</li>
+    <li>Use Atom to clone the repository you forked.</li>
+    <li>Flesh out your hopes for your personal project in the <code class="highlighter-rouge">README.md</code> file and
+commit the changes.</li>
+    <li>Push your commit(s) from your computer up to GitHub.</li>
+  </ol>
+
+</section>
+<h2 id="s-footnotes">Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:form-vs-content">
+      <p>Of course, whether a text still means the same thing when it looks different is an unsettled question in literary study. <a href="#fnref:form-vs-content" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:wysiwyg">
+      <p>Microsoft Word was not, of course, the first “WYSIWYG” (“What You See Is What You Get”) word processor. It appeared around the same time as MacWrite did, and both of those applications were building on ideas established years earlier at Xerox. Nevertheless, as Windows began to gain dominance on the PC market, Word became ubiquitous, leaving it as the “default” example of a WYSIWYG word processor to this day. <a href="#fnref:wysiwyg" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:a4">
+      <p>Or A4 paper, if you’re outside the United States. <a href="#fnref:a4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:atom-install">
+      <p>There are two hiccups that will come up during installation when you aim to use git with Atom. On Macs, you will be prompted to install the command-line tools. It should work automagically, but if it doesn’t, see <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">this post</a>. On Windows, you need to install the <a href="https://gitforwindows.org">gitbash shell</a> and then <a href="https://help.github.com/articles/setting-your-username-in-git/#platform-windows">configure git</a> using gitbash. <a href="#fnref:atom-install" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:atom-is-chrome">
+      <p>Atom is, basically, a very customized version of Chrome that talks to a JavaScript server that you run in the background when you launch the application. <a href="#fnref:atom-is-chrome" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:overpushing">
+      <p>I, personally, overpush. I usually commit and immediately push, which is generally fine, but it can be embarrassing sometimes. Also, since the default means by which Atom pushes to GitHub asks you for your username and password, it makes sense to push only every few commits or so.  Find a balance that works for you, but remember to always finish your work before a break with a commit and a push, just in case! <a href="#fnref:overpushing" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/0-introduction">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/2-calculator">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

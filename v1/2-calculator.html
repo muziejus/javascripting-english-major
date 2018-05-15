@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/2-calculator" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="JavaScript Calculator | The JavaScripting English Major" />
+      <title>JavaScript Calculator | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="JavaScript Calculator | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/2-calculator" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/2-calculator" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/2-calculator","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>JavaScript Calculator</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>The <a href="/v1/1-environment/">last chapter</a> ended with the
+following, in the console:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">);</span>
+<span class="c1">//--&gt; Hello, World!</span>
+</code></pre></div></div>
+
+<p>Note that I have included the <code class="highlighter-rouge">&gt;</code> prompt in this example, along with the how
+the console responded to your single line of JavaScript, after the <code class="highlighter-rouge">//--&gt;</code>.
+There’s a lot going on in just this one example, but, briefly, <code class="highlighter-rouge">console.log()</code>
+is a way of using JavaScript to tell the console to output
+something.<sup id="fnref:consolelog"><a href="#fn:consolelog" class="footnote">1</a></sup> Before we get too carried away with writing
+JavaScript, however, I think it might be useful to learn a bit about
+JavaScript’s history.</p>
+
+<section id="hello-world">
+  <h2 id="s-hello-world-hello-javascript">Hello, World! Hello, JavaScript!</h2>
+
+  <p>I mentioned a few details about JavaScript’s history in the <a href="/v1/0-introduction/">FAQs</a>, but I’ll reiterate some of that now.</p>
+
+  <p>Programming languages inherit from previous programming languages. The
+writer(s) of a language will take parts they like from one language and mix it
+with parts they like from another, and then add their own, new additions that
+makes their language special. JavaScript is no different; in fact, JavaScript
+might be especially good at revealing its mixed parentage. But that means,
+concretely, that it helps to have a sense of the history of programming in
+general when understanding why JavaScript looks like it does today.</p>
+
+  <p>The <a href="http://www.dailymotion.com/video/x3dvbkg">fourth episode of the BBC show <em>Connections</em> draws a
+line</a> to computer programming that
+begins with the Roman era <a href="https://en.wikipedia.org/wiki/Barbegal_aqueduct_and_mill">Barbegal aqueduct and
+mill</a>. Sadly, James
+Burke concludes his wry take on advances in technology with punch cards, but
+he was also filming <em>Connections</em> in 1978. Nevertheless, Burke sees that the
+key to how computers work is related to how they <em>organize information</em>.  How
+to organize information is, not coincidentally, the first part of programming
+that we will learn in this chapter.</p>
+
+  <p>Speaking a few decades later, Douglas Crockford picks up the thread from where
+Burke ended it (punchcards) and moves us all the way up to JavaScript in two
+of his <em>Crockford on JavaScript</em> lectures, “<a href="https://www.youtube.com/embed/JxAXlJEmNMg">The Early
+Years</a>” and the first 20 minutes of
+“<a href="https://www.youtube.com/watch?v=RO1Wnu-xKoY">And Then There Was
+JavaScript</a>.” Although the
+lectures are aimed at people with some programming knowledge, meaning that
+they get pretty geeky, what Crockford does well is hammer home two key points
+in the way computing has evolved over time:</p>
+
+  <ul>
+    <li>The people who should be the first to recognize the value of an innovation
+(like programmers) are often the last.</li>
+    <li>Obsolete technologies fade away slowly.</li>
+  </ul>
+
+  <p>The implications of both points reveal why JavaScript has its quirks and why
+those quirks are here to stay.</p>
+
+  <p>The short version of Crockford’s history boils down to the fact that
+JavaScript was written over ten days by one man, <a href="http://en.wikipedia.org/wiki/Brendan_Eich">Brendan
+Eich</a>. Netscape wanted a scripting
+language for their web browser, Navigator, and Eich delivered. At the time,
+Java was positioned to be “the language for the web,” as we would be running
+Java applets on websites, so Netscape called Eich’s language “JavaScript,”
+despite the fact that JavaScript inherited nearly nothing substantial from
+Java.</p>
+
+  <p>Once Microsoft put their <em>own</em> version of JavaScript in Internet Explorer, it
+became clear that in order for JavaScript to be useful across the entire web,
+it would have to be standardized. This took time, and, what’s more,
+standardizing involved a process of maintaining compatibility. As a result,
+JavaScript, as Crockford is fond to point out, has a lot of bad parts that are
+here to stay. Nevertheless, he adds, it also has some <em>very good</em> parts. After
+all, back in 2001 Crockford called JavaScript “<a href="http://javascript.crockford.com/javascript.html">the world’s most misunderstood
+programming language</a>.” Yet
+now programmers are focusing more on these good parts (it helps that Crockford
+even wrote a book <a href="http://shop.oreilly.com/product/9780596517748.do">about JavaScript’s good
+parts</a>), which is part of
+what makes JavaScript so popular.</p>
+
+  <p>As Crockford likes to point out, JavaScript is many things to many people,
+allowing itself to be used in three different programming paradigms. It can be
+a <a href="https://en.wikipedia.org/wiki/Procedural_programming">procedural</a> language.
+It can be used as a
+<a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a> language.
+Or it can be used as an
+<a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented</a>
+language. Or all three in the same application. These are details that go
+beyond the scope of this course, but they gesture towards the idea that
+JavaScript is very flexible and very forgiving. This is part of why it’s so
+easy to learn. But it’s also why it’s so easy for programmers to cause trouble
+with it.<sup id="fnref:language-type"><a href="#fn:language-type" class="footnote">2</a></sup></p>
+
+  <p>Now that we’ve got a bit of an introduction to the language’s history and
+context out of the way, we can go back to the JavaScript console you learned
+to open in the <a href="/v1/1-environment/">last chapter</a> and start
+learning the language itself.</p>
+
+</section>
+<section id="data-types">
+  <h2 id="s-basic-data-types">Basic data types</h2>
+
+  <p>We hear the word “data” every day, but what, precisely, does it mean? If you
+had to draw a picture of “data,” what would it look like? We can say “data is
+information,” but doesn’t that just pass the buck, because now we have to ask
+what “information” means?</p>
+
+  <p>It maybe helps to remember that the word “data” is the plural version of the
+Latin word “datum.” A datum is a single piece of information, abstract as that
+sounds. It can be a number. It can be string of letters. It can be the answer
+to the question “true or false?” It can also be the <em>lack</em> of information.</p>
+
+  <p>Data can also be more complex. A datum can be a list or collection of other
+pieces of data, or it can be a process that takes some data and generates new
+data based on that data.</p>
+
+  <p>These six possibilities (and more exist) make up the six most important <strong>data
+types</strong> in JavaScript, namely <strong>number</strong>, <strong>string</strong>, <strong>boolean</strong>,
+<strong>null</strong> / <strong>undefined</strong>, <strong>array</strong> / <strong>object</strong>, and <strong>function</strong>. We’ll only be working with
+the first four types, the basic types, in this chapter.</p>
+
+  <h3 id="s-number">Number</h3>
+
+  <p>Numbers are precisely what they sound like—numbers. In JavaScript, it’s easy
+to use numbers, because you just type them as numbers. Numbers can have
+decimal points if they’re not integers. Try typing numbers into the console
+and see what happens:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="mi">9</span><span class="p">;</span>
+<span class="c1">//--&gt; 9</span>
+<span class="o">&gt;</span> <span class="mf">1.5</span><span class="p">;</span>
+<span class="c1">//--&gt; 1.5</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+<span class="c1">//--&gt; 9</span>
+</code></pre></div>  </div>
+
+  <p>Your console may look a bit different in what it returns (including
+<code class="highlighter-rouge">undefined</code> after <code class="highlighter-rouge">console.log(9);</code>), but we can ignore that for now.</p>
+
+  <p>But note also that I type a <code class="highlighter-rouge">;</code> at the end of every command. JavaScript is
+not very picky with semicolons, but it’s better to include them as a matter of
+habit. The semicolon comes at the end of a “statement,” which is a single
+instruction given to the console. <code class="highlighter-rouge">9;</code> just means “the number 9.”
+<code class="highlighter-rouge">console.log(9);</code> means “log the number 9 to the console.”</p>
+
+  <h3 id="s-string">String</h3>
+
+  <p>Strings are a bit trickier than numbers at first glance. They are any string
+of characters enclosed by double quotes.<sup id="fnref:quoting"><a href="#fn:quoting" class="footnote">3</a></sup> Have you used a string
+already in this course? Yes, <code class="highlighter-rouge">"Hello, World!"</code> is a string containing the
+characters <code class="highlighter-rouge">Hello, World!</code>. We can issue statements with strings in much the
+same way we did with numbers:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="s2">"Hello, World!"</span><span class="p">;</span>
+<span class="c1">//--&gt; "Hello, World!"</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">);</span>
+<span class="c1">//--&gt; Hello, World!</span>
+<span class="o">&gt;</span> <span class="s2">"World, I just wanted to say </span><span class="se">\"</span><span class="s2">Hi!</span><span class="se">\"</span><span class="s2"> 9 times!"</span><span class="p">;</span>
+<span class="c1">//--&gt; "World, I just wanted to say \"Hi!\" 9 times!"</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"World, I just wanted to say </span><span class="se">\"</span><span class="s2">Hi!</span><span class="se">\"</span><span class="s2"> 9 times!"</span><span class="p">);</span>
+<span class="c1">//--&gt; World, I just wanted to say "Hi!" 9 times!</span>
+</code></pre></div>  </div>
+
+  <p>Notice how strings can have double quotes inside of them, as long as you use a
+<code class="highlighter-rouge">\</code> (backslash) beforehand. What do you type if you want a backslash in the
+string? Notice also that when we use <code class="highlighter-rouge">console.log()</code>, the result does not
+have surrounding double quotes or the backslashes.</p>
+
+  <h3 id="s-boolean">Boolean</h3>
+
+  <p>A boolean is a value that is either <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. They are named after
+<a href="https://en.wikipedia.org/wiki/George_Boole">George Boole</a>, an English
+mathematician, and they are astonishingly useful in programming, because they
+allow programs to make decisions based on values, much like you might make a
+decision on where to get dinner based on a series of truth values. For
+example, say you eat burritos every day for dinner except Fridays, when there is
+a deal on falafel. You ask yourself the question, “Is today Friday?” If the
+answer is “yes” (<code class="highlighter-rouge">true</code>), then you go to the falafel joint. If the answer is
+“no” (<code class="highlighter-rouge">false</code>), you get a burrito.</p>
+
+  <p>Since booleans are only ever true or false, you refer to them in JavaScript
+using those two words:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//--&gt; true</span>
+<span class="o">&gt;</span> <span class="kc">false</span><span class="p">;</span>
+<span class="c1">//--&gt; false</span>
+<span class="o">&gt;</span> <span class="mi">9</span> <span class="o">===</span> <span class="mi">9</span><span class="p">;</span>
+<span class="c1">//--&gt; true</span>
+<span class="o">&gt;</span> <span class="mi">9</span> <span class="o">===</span> <span class="s2">"Hello, World!"</span><span class="p">;</span>
+<span class="c1">//--&gt; false</span>
+</code></pre></div>  </div>
+
+  <p>Notice that <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code> do <em>not</em> have double quotes around them. What
+would happen if they did? I have also introduced you to <code class="highlighter-rouge">===</code> in this code
+snippet. That is the “strict equal” <strong>comparison operator</strong>, and it is a way of
+asking the console a question.<sup id="fnref:strictequal"><a href="#fn:strictequal" class="footnote">4</a></sup> <code class="highlighter-rouge">9 === 9;</code> is the same as “Is the number nine
+the same thing as the number nine?” Because the answer is “yes,” the console
+responds <code class="highlighter-rouge">true</code>. In the next example, we’re asking the question, “Is the number
+nine the same thing as the string ‘Hello, World!’?” Since the answer is “no,”
+the console responds <code class="highlighter-rouge">false</code>.</p>
+
+  <p>Between numbers, strings, and booleans, we can start using JavaScript as a
+calculator, but one type remains.</p>
+
+  <h3 id="s-nullundefined">Null/Undefined</h3>
+
+  <p>Sometimes we deal with a lack of information, instead of information we
+understand as a datum. There are two main ways JavaScript understands that
+lack, through an object called <code class="highlighter-rouge">null</code> and a data type called <code class="highlighter-rouge">undefined</code>.</p>
+
+  <p><code class="highlighter-rouge">null</code> is an object that indicates the lack of information. Say you’re filling
+out a questionnaire online and you left the last few questions unanswered but
+still pressed “Submit.” The answered questions would be strings or numbers,
+probably. But how should the computer understand the unanswered questions? The number zero doesn’t
+seem right.  Nor does a blank string. In this case, it makes sense to register
+that lack of answers with <code class="highlighter-rouge">null</code>.</p>
+
+  <p><code class="highlighter-rouge">undefined</code>, on the other hand, is for information that we do not yet have.
+Using the questionnaire example again, all of the answers are <code class="highlighter-rouge">undefined</code>
+until you press “Submit” and send them to the computer, where it can then
+decide what to do with them, by turning them into strings, numbers, or just
+<code class="highlighter-rouge">null</code>.</p>
+
+  <p>The distinction is tricky, but now you’re definitely ready to start add up
+some numbers in JavaScript.</p>
+
+</section>
+<section id="javascript-as-a-calculator">
+  <h2 id="s-using-javascript-as-a-calculator">Using JavaScript as a calculator</h2>
+
+  <p>You learned a comparison operator in the previous section, <code class="highlighter-rouge">===</code>, and you’ll
+learn a few more in this section. You’ll also learn all five arithmetic
+operators. In fact, let’s start with them:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; 5</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; -1</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; 6</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+<span class="c1">//--&gt; 0.6666666666666666</span>
+</code></pre></div>  </div>
+
+  <p>As you can see, the arithmetic operators give numbers as answers. The
+comparison operators, like <code class="highlighter-rouge">===</code>, respond with <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">===</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span><span class="p">;</span>
+<span class="c1">//--&gt; false</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span><span class="p">;</span>
+<span class="c1">//--&gt; true</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//--&gt; false</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//--&gt; true</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//--&gt; false</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//--&gt; true</span>
+</code></pre></div>  </div>
+
+  <p>Programmers have figured out nifty ways to get around the difficulty of typing
+≥ and ≤!</p>
+
+  <p>Strings also have an operator <code class="highlighter-rouge">+</code>. It comes in very handy in web development:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="s2">"I had a thought, but… "</span> <span class="o">+</span> <span class="s2">"Oh yeah, I remember. Falafel on Fridays!"</span><span class="p">;</span>
+<span class="c1">//--&gt; "I had a thought, but… Oh yeah, I remember. Falafel on Fridays!"</span>
+</code></pre></div>  </div>
+
+  <p>What happens when you add a string to a number? How about a number to a
+string? Why?</p>
+
+  <p>A JavaScript calculator doesn’t sound terribly interesting, so let’s add one
+more wrinkle to it by introducing variables.</p>
+
+</section>
+<section id="calculator-understood-variables">
+  <h2 id="s-what-if-the-calculator-understood-variables">What if the calculator understood variables?</h2>
+
+  <p>Everything we have been doing above is fun for about three seconds. It is
+interesting to test edge cases (what happens when you multiply a number with a
+boolean?), of course, as that is a good way to understand the assumptions the
+language is making. But we’re building websites, not calculators.</p>
+
+  <p>Nevertheless, getting a bit of flexibility with the console is useful. Let’s
+expand on that, then, with the <code class="highlighter-rouge">let</code> statement, which lets us define
+variables. Type along in the console.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">burrito</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">burrito</span> <span class="o">=</span> <span class="s2">"Basically the best food around."</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">burrito</span><span class="p">);</span>
+<span class="c1">//--&gt; Basically the best food around.</span>
+</code></pre></div>  </div>
+
+  <p>In the first line, you <strong>defined</strong> a variable, <code class="highlighter-rouge">burrito</code>. In the second, you
+<strong>assigned</strong> to the variable the string, “Basically the best food around.”<sup id="fnref:let"><a href="#fn:let" class="footnote">5</a></sup></p>
+
+  <p>Then you tell the console to log the variable burrito, and it logs its value,
+<code class="highlighter-rouge">Basically the best food around.</code></p>
+
+  <p>Any of the data types you have learned about already you can assign to a
+variable, and we can define multiple variables at once. It’s generally good
+practice to define all your variables at the top, so you know what you will be
+working with in the future.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">magicNumber</span><span class="p">,</span> <span class="nx">secretNumber</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">magicNumber</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">secretNumber</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">secretNumber</span> <span class="o">+</span> <span class="nx">magicNumber</span><span class="p">;</span>
+<span class="c1">//--&gt; 19</span>
+<span class="o">&gt;</span> <span class="nx">secretNumber</span> <span class="o">===</span> <span class="nx">magicNumber</span><span class="p">;</span>
+<span class="c1">//--&gt; false</span>
+<span class="o">&gt;</span> <span class="nx">secretNumber</span> <span class="o">&gt;</span> <span class="nx">magicNumber</span><span class="p">;</span>
+<span class="c1">//--&gt; true</span>
+<span class="o">&gt;</span> <span class="nx">secretNumber</span> <span class="o">=</span> <span class="nx">secretNumber</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">//--&gt; 11</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">secretNumber</span><span class="p">);</span>
+<span class="c1">//--&gt; 11</span>
+</code></pre></div>  </div>
+
+  <p>These variables persist only for the duration of the console. If you close the
+console, then you’ll lose them. But the variables are also mutable,
+as you can see. <code class="highlighter-rouge">secretNumber</code> starts out assigned to the number 10, but
+then it becomes assigned to the number 11.</p>
+
+  <p>Let’s play a bit more with assigning variables:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">tipRate</span><span class="p">,</span> <span class="nx">bill</span><span class="p">,</span> <span class="nx">billPlusTip</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">tipRate</span> <span class="o">=</span> <span class="mf">0.20</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">bill</span> <span class="o">=</span> <span class="mf">10.00</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">billPlusTip</span> <span class="o">=</span> <span class="nx">bill</span> <span class="o">+</span> <span class="p">(</span><span class="nx">tipRate</span> <span class="o">*</span> <span class="nx">bill</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">billPlusTip</span><span class="p">);</span>
+<span class="c1">//--&gt; 12</span>
+<span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">question</span><span class="p">,</span> <span class="nx">burritos</span><span class="p">,</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">question</span> <span class="o">=</span> <span class="s2">"What is the best food around?</span><span class="err">\</span><span class="s2">n"</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">burritos</span> <span class="o">=</span> <span class="s2">"Delicious burritos"</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">burritos</span> <span class="o">+</span> <span class="s2">" are clearly the best!"</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">question</span><span class="p">,</span> <span class="nx">answer</span><span class="p">);</span>
+<span class="c1">//--&gt; What is the best food around?</span>
+<span class="c1">//--&gt; Delicious burritos are clearly the best!</span>
+</code></pre></div>  </div>
+
+  <p>There are two new things in this example: <code class="highlighter-rouge">\n</code> can be used to make a new line
+to make a new line, and now you see that <code class="highlighter-rouge">console.log()</code> can take multiple
+values in the parentheses, separated by commas.</p>
+
+  <p>Finally, this discussion of variables allows me to introduce one more
+operator, the <code class="highlighter-rouge">typeof</code> operator. If you get a variable, sometimes you don’t know
+what kind of data type it is. Yet as we have seen with <code class="highlighter-rouge">+</code>, it behaves
+differently depending on the data. Continuing with the variables in the
+previous example:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="k">typeof</span> <span class="nx">question</span><span class="p">;</span>
+<span class="c1">//--&gt; "string"</span>
+<span class="o">&gt;</span> <span class="k">typeof</span> <span class="nx">magicNumber</span><span class="p">;</span>
+<span class="c1">//--&gt; "number"</span>
+<span class="o">&gt;</span> <span class="k">typeof</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">//--&gt; "number"</span>
+<span class="o">&gt;</span> <span class="kd">let</span> <span class="nx">isItTrue</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="nx">isItTrue</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span>
+<span class="o">&gt;</span> <span class="k">typeof</span> <span class="nx">isItTrue</span><span class="p">;</span>
+<span class="c1">//--&gt; "boolean"</span>
+<span class="o">&gt;</span> <span class="k">typeof</span> <span class="nx">badTastingBurrito</span><span class="p">;</span>
+<span class="c1">//--&gt; "undefined"</span>
+</code></pre></div>  </div>
+
+  <p>As you can see, this example makes use of variables defined in earlier
+exercises, but it also refers to variable that has not yet been assigned (or
+even defined).</p>
+
+</section>
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>
+      <p>Get <code class="highlighter-rouge">console.log()</code> to log a string that includes a backslash.</p>
+    </li>
+    <li>
+      <p>What happens when you surround <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> with double quotes? Are
+they still booleans?</p>
+    </li>
+    <li>
+      <p>What happens when you add a string to a number? What about the reverse?
+Why?</p>
+    </li>
+    <li>
+      <p>Use the statements to find <code class="highlighter-rouge">billPlusTip</code> above but have the response from
+<code class="highlighter-rouge">console.log()</code> be “You should pay $12 because the service was good.”</p>
+    </li>
+  </ol>
+</section>
+
+<h2 id="s-footnotes">Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:consolelog">
+      <p>More precisely, <code class="highlighter-rouge">console</code> is a JavaScript object (similar to <code class="highlighter-rouge">window</code> or <code class="highlighter-rouge">document</code>, as we’ll see later) that refers to the console you have opened in your browser. <code class="highlighter-rouge">.log()</code> is a “method” specific to the <code class="highlighter-rouge">console</code> object that outputs whatever is in sent as a parameter (or, inside the <code class="highlighter-rouge">()</code>).  In our example, we sent the console a snippet of text, <code class="highlighter-rouge">"Hello, World!"</code>, and it returned it to us. <a href="#fnref:consolelog" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:language-type">
+      <p>In this course, most of the JavaScript will be procedural, which encourages a step-by-step way of thinking through a solution. Once we move to making maps with Leaflet, the more object-oriented aspects will emerge. JavaScript’s functional personality is its most powerful and appealing, but it strikes me as the most difficult to understand and teach. <a href="#fnref:language-type" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:quoting">
+      <p>Yes, JavaScript permits using single quotes as well, but you should use double quotes exclusively. <a href="#fnref:quoting" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:strictequal">
+      <p>JavaScript has a less strict equality comparison operator, but its behavior can be unexpected. It is considered one of JavaScript’s bad parts, and I won’t be teaching it in this course. <a href="#fnref:strictequal" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:let">
+      <p><code class="highlighter-rouge">let</code> is a statement that is not supported in all JavaScript consoles. If typing the above causes the console to complain <code class="highlighter-rouge">Uncaught SyntaxError: Unexpected identifier</code>, then you have one of those older consoles. The solution is, luckily, straightforward. For the duration of this course, where I instruct you to use <code class="highlighter-rouge">let</code>, you can use <code class="highlighter-rouge">var</code>, instead. <a href="#fnref:let" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/1-environment">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/3-programming">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

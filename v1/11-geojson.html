@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/11-geojson" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Starting a Geographical Data Project | The JavaScripting English Major" />
+      <title>Starting a Geographical Data Project | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Starting a Geographical Data Project | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/11-geojson" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/11-geojson" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/11-geojson","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Starting a Geographical Data Project</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>Typing up the coordinates for the <a href="/v1/10-leaflet#exercises">last homework
+assignment</a> was, I imagine, not a lot of fun. It’s also
+silly for me to assert, in the <a href="/v1/9-dataset">chapter before last</a>, that it’s
+important to separate data wrangling from programming logic, only to then have you
+run them together again. But the data structure for representing geographical
+<code class="highlighter-rouge">Object</code>s in JavaScript, <strong>GeoJSON</strong>, is complex enough to warrant its own
+chapter. That is this chapter, and in it we’ll be doing a bit of detective
+work on a short poem in order to generate our dataset.</p>
+
+<p>This chapter also marks the beginning of the end of the course, as we’ll be
+working on this dataset, and the “‘Could Be’ Project,” for the rest of the
+chapters. We’ve come so far in so short a time. In my class, you would already
+be starting on your own final project, so I use the “Could Be” Project as an
+opportunity to teach new techniques for building that project. If you want to
+see the “finished” project, have a <a href="/v1/examples/could-be.html">look here</a>. It’s
+not much because the text I’ve written is so thin, but you can at least see
+what you, too, will be capable of.</p>
+
+<section id="could-be">
+  <h2 id="s-langston-hughess-could-be">Langston Hughes’s “Could Be”</h2>
+
+  <p>The “Could Be” Project is a look at Langston Hughes’s poem, “Could
+Be.”<sup id="fnref:could-be"><a href="#fn:could-be" class="footnote">1</a></sup> The complete text is available at <a href="http://www.songofamerica.net/song/could-be">Song of
+America</a>, so I encourage you to
+read it there. In 16 lines of poetry, Hughes manages to refer to five
+different geographical spaces in the United States, with two of them being
+mentioned twice apiece. The places he mentions are:</p>
+
+  <ul>
+    <li>Hastings Street</li>
+    <li>Lenox Avenue</li>
+    <li>18th &amp; Vine</li>
+    <li>5th &amp; Mound</li>
+    <li>Rampart</li>
+  </ul>
+
+  <p>I was thinking about this poem in the Spring, and I wondered if mapping it
+might open up any sort of new interpretive angles into it. It’s also a good
+poem for teaching digital mapping, because the amount of data is small but
+important to the text as a whole. Your own projects will have considerably
+more data.</p>
+
+  <p>Yet in converting a poem into data, a scholar has to at the same time wonder
+how that data should look. Remember, data are captured, so what information
+should we capture when trying to represent this poem?</p>
+
+</section>
+<section id="geographical-data-structure">
+  <h2 id="s-geographical-data-structure">Geographical data structure</h2>
+
+  <p>For these five locations, clearly I need their names, so that I can tell them
+apart. I also need their coordinates, if I plan on mapping them. In other
+words, I’m already thinking about the data in terms of JavaScript <code class="highlighter-rouge">Object</code>s
+and properties. Every <code class="highlighter-rouge">Place</code> <code class="highlighter-rouge">Object</code> will have a <code class="highlighter-rouge">.name</code> property and a
+<code class="highlighter-rouge">.coordinates</code> property.  Better: it’ll have both a <code class="highlighter-rouge">.lat</code> property for its
+latitude and a <code class="highlighter-rouge">.lng</code> property for its longitude.</p>
+
+  <p>What else could I include? How about how many times each place is mentioned?
+OK, that’s a <code class="highlighter-rouge">.mentions</code> property. Then maybe the line number? OK, that’s the
+<code class="highlighter-rouge">.line</code> property. But wait, two places are mentioned twice. How will the
+<code class="highlighter-rouge">.line</code> property work there? Maybe <code class="highlighter-rouge">.line</code> should be an array, then, or
+<code class="highlighter-rouge">.lines</code>. Finally, if the place has a Wikipedia article related to it, we can
+include that link as the <code class="highlighter-rouge">.wikipedia</code> property.</p>
+
+  <p>A way of thinking about <code class="highlighter-rouge">Object</code>s and properties that might be familiar to you
+is as rows and columns in a spreadsheet. That is, each row is its own <code class="highlighter-rouge">Place</code>
+<code class="highlighter-rouge">Object</code>, and each column is a property associated with it. In fact, that’s
+what I did for this poem. It turns out that filling in the data is pretty easy
+for each property <em>except</em> <code class="highlighter-rouge">.lat</code>, <code class="highlighter-rouge">.lng</code>, and <code class="highlighter-rouge">.wikipedia</code>. Those require
+some digging.</p>
+
+</section>
+<section id="geo-sleuthing">
+  <h2 id="s-geo-sleuthing">Geo-sleuthing</h2>
+
+  <p>So how to fill in those coordinates? There are some immediate low-hanging
+fruit, luckily. Lenox Avenue clearly refers to the <a href="https://en.wikipedia.org/wiki/Lenox_Avenue">avenue that runs through
+Harlem</a>. Similarly, 18th &amp; Vine is
+a <a href="https://en.wikipedia.org/wiki/18th_and_Vine-Downtown_East,_Kansas_City">cradle of jazz in Kansas
+City</a>.
+Wikipedia even gives coordinates for the latter location, so I put those in
+the spreadsheet.</p>
+
+  <p>Lenox Avenue, on the other hand, is a long avenue. How can one point capture
+all of it? One option would be to draw a line, of course. The other option
+would be to arbitrarily select a point on the line. If you feed “Lenox Avenue”
+into Google Maps, for example, it makes that arbitrary decision for you and
+gives you coordinates between 127th and 128th Streets. That feels about right.</p>
+
+  <p>Rampart provides a different obstacle. It’s a reference to <a href="https://en.wikipedia.org/wiki/Rampart_Street">Rampart
+Street</a> in New Orleans, so that
+sorts out the <code class="highlighter-rouge">.wikipedia</code> property, but the coordinates Wikipedia gives are
+bonkers. They are for the intersection of St. Philip St. and N Prieur St.,
+about ten blocks away from Rampart. As the Wikipedia article notes, the
+intersection of Rampart and Canal was a center of African-American life in New
+Orleans, and as we’re already seeing, Hughes is referring to various urban
+centers of African-American life. So, instead, I drop a marker at that
+intersection and make note of those coordinates.</p>
+
+  <p>Hastings Street was the center of African-American life in Detroit’s <a href="https://en.wikipedia.org/wiki/Black_Bottom,_Detroit">Black
+Bottom</a> neighborhood, but
+there’s a problem. The street doesn’t really exist anymore, having been
+cleared away to make space for Interstate 75. I looked up old maps of Detroit
+and deduced the latitude and longitude for Hastings Street that way.</p>
+
+  <p>5th &amp; Mound is trickier still. It, too, doesn’t exist anymore, the
+intersection having been destroyed to make way, again, for Interstate 75.
+Nevertheless, 5th &amp; Mound had been part of Cincinnati’s <a href="https://en.wikipedia.org/wiki/West_End,_Cincinnati">West
+End</a>, which remains the
+most African-American area in the city. Not much is available about this
+neighborhood online, but the Cincinnati History Library and Archives provides
+a <a href="http://library.cincymuseum.org/starweb/photos/servlet.starweb?path=photos/photo-session.web">search
+tool</a>
+that lets the user browse their Kenyon Barr Collection, which features a
+series of creepy photos of the neighborhood, taken as the city was preparing
+to raze it to the ground. Furthermore, as Steven C. Tracy notes in a history
+of the Blues in Cincinnati, the Cotton Club, the most important venue for
+African-American entertainers, <a href="https://books.google.com/books?id=OGyWw-M5wFsC&amp;pg=PA89&amp;dq=%22the+cotton+club+was+the+most+important+club+in+cincinnati%22&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwi-3pfb8vLVAhVi4IMKHQHXAQgQ6AEIJjAA#v=onepage&amp;q=%22the%20cotton%20club%20was%20the%20most%20important%20club%20in%20cincinnati%22&amp;f=false">was only a block away, on 6th and
+Mound</a>.
+Either way, Mound Street still exists, as does 5th, but they no longer
+intersect. I extrapolated their intersection and added those coordinates to
+the dataset.</p>
+
+  <p>The completed dataset, small as it is, is <a href="https://docs.google.com/spreadsheets/d/1u3rlflUa6q4wAQMtqwh_-WYM2J2RIB8id4yzRNxojSM/edit?usp=sharing">available as a Google Sheets
+document</a>.
+Building out the data in a spreadsheet made the data entry straightforward,
+but, unfortunately, Leaflet can’t simply read a spreadsheet. We need an
+intermediate step.</p>
+
+</section>
+<section id="geojson-format">
+
+  <h2 id="s-the-geojson-format">The GeoJSON format</h2>
+
+  <p>You learned about JSON when working with Chaucer’s General Prologue back in
+<a href="/v1/9-dataset">Chapter 9</a>. A subset of it, <a href="http://geojson.org/">GeoJSON</a>, is a
+handy way to describe geographical data, one that Leaflet understands. In
+fact, we can describe our Hastings Street point in GeoJSON like this:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Feature"</span><span class="p">,</span>
+  <span class="s2">"geometry"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Point"</span><span class="p">,</span>
+    <span class="s2">"coordinates"</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">83.0370</span><span class="p">,</span> <span class="mf">42.3340</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Hastings Street"</span><span class="p">,</span>
+    <span class="s2">"html"</span><span class="p">:</span> <span class="s2">"Hastings Street"</span><span class="p">,</span>
+    <span class="s2">"tab"</span><span class="p">:</span> <span class="s2">"hastings-street"</span><span class="p">,</span>
+    <span class="s2">"mentions"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"lines"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
+    <span class="s2">"wikipedia"</span><span class="p">:</span> <span class="s2">"https://en.wikipedia.org/wiki/Black_Bottom,_Detroit"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+  <p>Our point is a <code class="highlighter-rouge">Feature</code> <code class="highlighter-rouge">Object</code> in GeoJSON. Notice, however, that the
+coordinates are flipped. Instead of <code class="highlighter-rouge">[lat, lng]</code>, like in Leaflet, the
+coordinates here are <code class="highlighter-rouge">[lng, lat]</code>. Instead of having an endless list of
+potential properties, the <code class="highlighter-rouge">Feature</code> <code class="highlighter-rouge">Object</code> has three, a <code class="highlighter-rouge">.type</code>, a
+<code class="highlighter-rouge">.geometry</code>, and its own <code class="highlighter-rouge">.properties</code> <code class="highlighter-rouge">Object</code>. That <code class="highlighter-rouge">Object</code>’s properties are
+where we can stash our own properties like <code class="highlighter-rouge">.wikipedia</code>. I made the <code class="highlighter-rouge">.lines</code>
+property an array by enclosing it in brackets. The <code class="highlighter-rouge">.tab</code> and <code class="highlighter-rouge">.html</code>
+properties will become important in <a href="/v1/14-events-popups">Chapter 14</a>.</p>
+
+  <p>With as small a dataset as the one we have for “Could Be,” generating a
+GeoJSON file “by hand” would not be too difficult. However, there are online
+tools that convert spreadsheets to GeoJSON. <a href="http://www.convertcsv.com/csv-to-geojson.htm">Convert
+CSV</a>, for example, lets you even
+paste in the data you copy from a spreadsheet. In the second step, you note
+whether the first row is column headers (typically yes), and in the third
+step, you mark which two columns feature latitudes and longitudes.</p>
+
+  <p>The result is available <a href="/v1/could-be.geo.json">here</a>. As you can see, the
+<code class="highlighter-rouge">Feature</code> <code class="highlighter-rouge">Object</code>s are collected into an array that is the <code class="highlighter-rouge">.features</code> property
+of a <code class="highlighter-rouge">FeatureCollection</code> <code class="highlighter-rouge">Object</code>.</p>
+</section>
+
+<section id="geojson-in-leaflet">
+  <h2 id="s-geojson-in-leaflet">GeoJSON in Leaflet</h2>
+
+  <p>It’s time to start putting all this into a real project. Create a file in your
+project in Atom, called <code class="highlighter-rouge">could-be.html</code>, and paste in this basic structure:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>“Could Be,” by Langston Hughes<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"</span> <span class="na">integrity=</span><span class="s">"sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="</span>
+   <span class="na">crossorigin=</span><span class="s">""</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"leaflet.css"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>“Could Be,” by Langston Hughes<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"could-be-map"</span> <span class="na">class=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.2.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"</span> <span class="na">integrity=</span><span class="s">"sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="</span> <span class="na">crossorigin=</span><span class="s">""</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"could-be.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>  </div>
+
+  <p>This is identical to the <code class="highlighter-rouge">leaflet.html</code>, except the content is a bit
+different, and it’s loading <code class="highlighter-rouge">could-be.js</code> instead of <code class="highlighter-rouge">leaflet.js</code>.
+Furthermore, the map’s <code class="highlighter-rouge">&lt;div&gt;</code> is called <code class="highlighter-rouge">#could-be-map</code>.</p>
+
+  <p>Set up <code class="highlighter-rouge">could-be.js</code> similarly to <code class="highlighter-rouge">leaflet.js</code>:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">tileLayer</span><span class="p">;</span>
+<span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s2">"could-be-map"</span><span class="p">);</span>
+<span class="nx">tileLayer</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s2">"https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"</span><span class="p">,</span> <span class="p">{</span>
+              <span class="na">attribution</span><span class="p">:</span> <span class="s2">"&amp;copy; &lt;a href='http://www.openstreetmap.org/copyright'&gt;OpenStreetMap&lt;/a&gt; &amp;copy; &lt;a href='http://carto.com/attribution'&gt;CARTO&lt;/a&gt;"</span><span class="p">,</span>
+              <span class="na">subdomains</span><span class="p">:</span> <span class="s2">"abcd"</span><span class="p">,</span>
+              <span class="na">maxZoom</span><span class="p">:</span> <span class="mi">18</span>
+            <span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">([</span><span class="mf">40.730833</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.9975</span><span class="p">],</span> <span class="mi">16</span><span class="p">);</span>
+</code></pre></div>  </div>
+
+  <p>Save and open <code class="highlighter-rouge">could-be.html</code> in the browser. If the map appears, go ahead and
+commit. You can load the GeoJSON just like we loaded regular JSON, using the
+jQuery <code class="highlighter-rouge">$.getJSON()</code> method. Now, Leaflet offers an <code class="highlighter-rouge">L.geoJSON()</code> method that
+would make adding the GeoJSON one line of code. But, trust me on this, it will
+be easier to do a bit of extra work here and avoid using that method. Instead,
+we’ll create an array of <code class="highlighter-rouge">object</code>s, <code class="highlighter-rouge">couldBeFeatures</code>, where each <code class="highlighter-rouge">object</code> has
+the properties of each of the GeoJSON features. So, add to
+<code class="highlighter-rouge">could-be.js</code>:</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Define the features array.</span>
+<span class="kd">let</span> <span class="nx">couldBeFeatures</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s2">"https://the-javascripting-english-major.org/v1/could-be.geo.json"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+  <span class="c1">// Define the Leaflet layer.</span>
+  <span class="kd">let</span> <span class="nx">couldBeLayer</span><span class="p">;</span>
+  <span class="c1">// Iterate over the .features property of the GeoJSON object to</span>
+  <span class="c1">// create an array of objects (features), with every object’s</span>
+  <span class="c1">// properties as noted.</span>
+  <span class="nx">couldBeFeatures</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">features</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
+    <span class="c1">// This return returns an object.</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+      <span class="na">html</span><span class="p">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">html</span><span class="p">,</span>
+      <span class="na">tab</span><span class="p">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">tab</span><span class="p">,</span>
+      <span class="na">mentions</span><span class="p">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">mentions</span><span class="p">,</span>
+      <span class="na">lines</span><span class="p">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">lines</span><span class="p">,</span>
+      <span class="na">wikipedia</span><span class="p">:</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">wikipedia</span><span class="p">,</span>
+      <span class="c1">// Create an L.latLng object out of the GeoJSON coordinates.</span>
+      <span class="c1">// Remember that in GeoJSON, the coordinates are reversed</span>
+      <span class="c1">// (longitude, then latitude).</span>
+      <span class="na">latLng</span><span class="p">:</span> <span class="nx">L</span><span class="p">.</span><span class="nx">latLng</span><span class="p">(</span><span class="nx">feature</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">coordinates</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
+  <span class="c1">// Now create a Leaflet feature group made up of markers for each</span>
+  <span class="c1">// object in couldBeFeatures.</span>
+  <span class="nx">couldBeLayer</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">featureGroup</span><span class="p">(</span><span class="nx">couldBeFeatures</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">(</span><span class="nx">feature</span><span class="p">.</span><span class="nx">latLng</span><span class="p">);</span>
+    <span class="p">})</span>
+  <span class="p">)</span>
+  <span class="c1">// Add the layer to the map.</span>
+  <span class="nx">couldBeLayer</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+  <span class="c1">// Redraw the map so that all the markers are visible.</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">fitBounds</span><span class="p">(</span><span class="nx">couldBeLayer</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">());</span>
+  <span class="c1">// Zoom out one level to give some padding.</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">zoomOut</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>  </div>
+
+  <p>Notice that, except for the  definition of <code class="highlighter-rouge">couldBeFeatures</code>, all of the
+Leaflet work is happening inside the callback function, because <code class="highlighter-rouge">$.getJSON()</code>
+is async.<sup id="fnref:global-layer"><a href="#fn:global-layer" class="footnote">2</a></sup> I also introduce three new methods here.
+<code class="highlighter-rouge">.getBounds()</code> returns the bounding box that contains the entirety of a layer,
+in this case our <code class="highlighter-rouge">couldBeLayer</code>.  That is fed as a parameter to
+<code class="highlighter-rouge">.fitBounds()</code>, which changes the map <code class="highlighter-rouge">Object</code>’s state to a new zoom level and
+center coordinate. Then I use the map <code class="highlighter-rouge">Object</code>’s <code class="highlighter-rouge">.zoomOut()</code> method to zoom
+out a smidge to make all the markers appear on the map. <code class="highlighter-rouge">couldBeLayer</code>, in the
+meantime, is a Leaflet feature group <code class="highlighter-rouge">Object</code>, as it is made up of several
+markers.</p>
+
+  <p>Save and reload. Your map should now show the whole United States and feature
+five markers, one over New York, one over Cincinnati, one over Kansas City,
+one over Detroit, and one over New Orleans. Otherwise, catch up with the work
+I have done so far <a href="/v1/examples/could-be11.html">over here</a> in oder to see what
+the project looks like.</p>
+
+</section>
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>Design the data structure of your own final project and begin collecting
+data for it in a spreadsheet.</li>
+    <li>Create new HTML and JavaScript documents for your project and get your own
+personal GeoJSON data, or at least as much as you have, plotted.</li>
+  </ol>
+
+  <h2 id="s-footnotes">Footnotes</h2>
+
+</section>
+<div class="footnotes">
+  <ol>
+    <li id="fn:could-be">
+      <p>Alba Newmann Holmes introduced me to this poem when presenting a paper, “‘Could Be’: Langston Hughes as Situationist Cartographer,” at a special session I convened at the <a href="https://moacir.com/talks/mla-15-geocritical-explorations-inside-the-text/">MLA Convention in 2015</a>. <a href="#fnref:could-be" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:global-layer">
+      <p><code class="highlighter-rouge">couldBeFeatures</code> is defined outside of the <code class="highlighter-rouge">.getJSON()</code> method. Defined the way it is, it has “global” scope, meaning that it will be available in later functions, as we’ll see in <a href="/v1/14-events-popups">Chapter 14</a>. <a href="#fnref:global-layer" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/10-leaflet">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/12-markdown">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>

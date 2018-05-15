@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:url" content="http://the-javascripting-english-major.org/v1/13-bootstrap" />
+    <meta property="og:type" content="website" />
+    
+      <meta property="og:title" content="Bootstrap Layout and Content | The JavaScripting English Major" />
+      <title>Bootstrap Layout and Content | The JavaScripting English Major</title>
+      <meta name="twitter:title" content="Bootstrap Layout and Content | The JavaScripting English Major" />
+    
+    <meta name="DC.title" content="The JavaScripting English Major" />
+    <meta name="DC.creator" content="Sá Pereira, Moacir P." />
+    <meta name="DC.description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="DC.type" content="Text">
+    <meta name="DC.created" content="2017-07-25">
+    <meta name="DC.date" content="2017-07-25">
+    <meta property="og:site_name" content="The JavaScripting English Major" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta property="og:image" content="http://i.imgur.com/7FNZU7I.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:url" content="https://the-javascripting-english-major.org/v1/13-bootstrap" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JSingEnglishMaj" />
+    <meta name="twitter:creator" content="@muziejus" />
+    <meta name="twitter:description" content="A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript." />
+    <meta name="twitter:image" content="http://i.imgur.com/Sh7MOqg.jpg" />
+    <link rel="canonical" href="https://the-javascripting-english-major.org/v1/13-bootstrap" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/v1/favicon-16x16.png">
+    <link rel="manifest" href="/v1/manifest.json">
+    <link rel="mask-icon" href="/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <script type="application/ld+json">
+    {"name":null,"description":"A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.","author":null,"@type":"WebPage","url":"https://the-javascripting-english-major.org/v1/13-bootstrap","image":null,"publisher":null,"headline":"The JavaScripting English Major","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/v1/assets/css/style.css?v=4d7e5e7dced98209cd960e9bf09167782dc05716">
+  </head>
+
+  <body>
+    <nav id="topNav" class="navbar navbar-toggleable-md fixed-top navbar-light bg-base2">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/v1/contents">
+    <img class="brand-img" alt=".js" src="/v1/assets/images/logo-no-border-sq.svg" width="35">
+    <span id="brand-name-small">The .JSing English Major</span>
+    <span id="brand-name-big">The JavaScripting English Major</span>
+  </a>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="chapters" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Chapters
+        </a>
+        <div class="dropdown-menu" aria-labelledby="chapters">
+          <a class="dropdown-item" href="/v1/0-introduction">0. Introduction</a>
+          <a class="dropdown-item" href="/v1/1-environment">1. Environment</a>
+          <a class="dropdown-item" href="/v1/2-calculator">2. JS Calculator</a>
+          <a class="dropdown-item" href="/v1/3-programming">3. Programming</a>
+          <a class="dropdown-item" href="/v1/4-functions">4. Functions</a>
+          <a class="dropdown-item" href="/v1/5-collections">5. Collections</a>
+          <a class="dropdown-item" href="/v1/6-abstraction">6. Abstraction</a>
+          <a class="dropdown-item" href="/v1/7-errors">7. Oops!</a>
+          <a class="dropdown-item" href="/v1/8-webpage">8. Webpage Writing</a>
+          <a class="dropdown-item" href="/v1/9-dataset">9. Datasets</a>
+          <a class="dropdown-item" href="/v1/10-leaflet">10. Leaflet</a>
+          <a class="dropdown-item" href="/v1/11-geojson">11. Starting a Project</a>
+          <a class="dropdown-item" href="/v1/12-markdown">12. Markdown</a>
+          <a class="dropdown-item" href="/v1/13-bootstrap">13. Layout and Content</a>
+          <a class="dropdown-item" href="/v1/14-events-popups">14. Events and Popups</a>
+          <a class="dropdown-item" href="/v1/15-go-live">15. Going Live</a>
+          <a class="dropdown-item" href="/v1/a-resources">A. Resources</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="help" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="help">
+          <a class="dropdown-item" href="/v1/help/map-to-1dot1">Map to v. 1.1</a>
+          <a class="dropdown-item" href="/v1/help/js-cheat-sheet">JavaScript Cheat Sheet</a>
+          <a class="dropdown-item" href="/v1/help/atom">Atom Help</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/v1/about" class="nav-link">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <h1>Bootstrap Layout and Content</h1>
+          <hr>
+          <center>
+            <h2 class="fa fa-spinner"></h2>
+          </center>
+        </aside>
+        <article class="col-md-8">
+          <p>In this chapter, I will show you part of how Bootstrap handles layout. This
+will let you better imagine the look of your project and help you consider if
+it’s the best way of presenting your information.</p>
+
+<section id="wireframing">
+  <h2 id="s-wireframing">Wireframing</h2>
+
+  <p>Web designers typically undergo a step called <strong>wireframing</strong>, which involves
+drawing what the layout or structure of a web page should be. This helps
+determine how the information is presented and how the various bits of
+information interact. Because this entanglement of information is the center
+of wireframing, there is no focus on fonts or colors or graphics.</p>
+
+  <p>Wireframing, in short, is a way of forcing the web author to answer the
+questions regarding what they want their website to do. What do they want
+their users to do. What kind of information do they want to expose.</p>
+
+  <p>For the “Could Be” Project, there are three clear containers of information
+that I want to present to the user. The first is the poem itself, in an
+interactive format. The second is the map, showing the five locations
+mentioned in the poem. And the third is a container showing the information I
+have researched on each location, perhaps with a picture.</p>
+
+  <p>The ideal user in my imagination reads the poem and clicks on a place. The map
+then zooms to that place, and the container fills with information about that
+location. But I also want the user to be able to click through the places
+without having to click on the poem.</p>
+
+  <p>In my head, the best way to achieve this is by having the poem on one side of
+the page, and having the map atop the location information container, which
+has a navigation bar atop it listing all five locations.  Bootstrap, luckily,
+has tools to help us visualize a simple structure like what is in my head.</p>
+
+</section>
+<section id="bootstrap-grid">
+  <h2 id="s-the-bootstrap-grid">The Bootstrap grid</h2>
+
+  <p>Grids help organize visual content. When items on the page (including a
+webpage) do not line up, the page can be confusing and tiring to read. In
+Bootstrap, when a <code class="highlighter-rouge">&lt;div&gt;</code> has the <code class="highlighter-rouge">.row</code> class, it triggers Bootstrap’s <a href="https://v4-alpha.getbootstrap.com/layout/grid/">grid
+system</a>, which generates a
+grid that is twelve columns wide, leaving us to distribute those columns as we
+like.</p>
+
+  <p>The great part about Bootstrap’s grid is that it resizes itself depending on
+the width of the browser. For example, what might be two columns on a laptop
+or tablet may appear as just one column (with both columns stacked atop each
+other) on a smartphone.</p>
+
+  <p>Each column in Bootstrap is typically also a <code class="highlighter-rouge">&lt;div&gt;</code> with a class that uses a
+<code class="highlighter-rouge">col-sz-n</code> syntax. Here, <code class="highlighter-rouge">sz</code> refers to the <strong>breakpoint</strong>, meaning at what
+size do the columns start spreading out. The breakpoints can be <code class="highlighter-rouge">sm</code> (phones
+that are in landscape mode), <code class="highlighter-rouge">md</code> (tablets), <code class="highlighter-rouge">lg</code> (desktops), and <code class="highlighter-rouge">xl</code> (large
+desktops). The <code class="highlighter-rouge">n</code>, on the other hand, is an integer between 1 and 12 that
+describes how many grid columns wide the <code class="highlighter-rouge">&lt;div&gt;</code> should be.</p>
+
+  <p>I rewrite part of <code class="highlighter-rouge">could-be.html</code> to make use of the grid system:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>“Could Be,” by Langston Hughes<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span> <span class="na">id=</span><span class="s">"poem"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Poem will go here<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span> <span class="na">id=</span><span class="s">"places-sidebar"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"could-be-map"</span> <span class="na">class=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Info on places, that is, the content,
+          will go here.<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>  </div>
+
+  <p>Save and reload, and now the page is clearly split up into three parts. What’s
+more, at small widths, the poem will appear above the map, instead of
+squeezing the map.</p>
+
+</section>
+<section id="tabbed-navigation">
+  <h2 id="s-building-tabbed-navigation">Building tabbed navigation</h2>
+
+  <p>The next step is designing that navigation element I want to use to show the
+five different places in the poem. We wrap the <a href="https://v4-alpha.getbootstrap.com/components/navs/#base-nav">navigation
+elements</a>, which
+are <code class="highlighter-rouge">&lt;a&gt;</code> tags, in a <code class="highlighter-rouge">&lt;nav&gt;</code> tag. Bootstrap’s classes do all the heavy
+lifting. The navigation for the <code class="highlighter-rouge">#content</code> section of our project page, then,
+will look like this, and it goes inside the <code class="highlighter-rouge">#content</code> <code class="highlighter-rouge">&lt;div&gt;</code>:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">"nav-tabs"</span> <span class="na">class=</span><span class="s">"nav nav-pills mt-3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link active"</span> <span class="na">href=</span><span class="s">"#introduction"</span><span class="nt">&gt;</span>Introduction<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#hastings-street"</span><span class="nt">&gt;</span>Hastings St.<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#lenox-avenue"</span><span class="nt">&gt;</span>Lenox Ave.<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#eighteenth-and-vine"</span><span class="nt">&gt;</span>18th <span class="ni">&amp;amp;</span> Vine<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#fifth-and-mound"</span><span class="nt">&gt;</span>5th <span class="ni">&amp;amp;</span> Mound<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#rampart"</span><span class="nt">&gt;</span>Rampart<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>  </div>
+
+  <p>The <code class="highlighter-rouge">.nav-pills</code> class means that Bootstrap will style this as though it were a
+bunch of “pills,” where the one with the <code class="highlighter-rouge">.active</code> class will be a different
+color. This will work just fine for how we want our design to look.
+Additionally, the <code class="highlighter-rouge">.mt-3</code> class is a <a href="https://v4-alpha.getbootstrap.com/utilities/spacing/">Bootstrap class that adds a
+<strong>margin</strong></a> to the
+top, to push the tabs away from the map above it.</p>
+
+  <p>Also notice that to create an ampersand (&amp;) in HTML, one has to type the
+unwieldy <code class="highlighter-rouge">&amp;amp;</code>. This also goes for typing things like <code class="highlighter-rouge">&lt;&gt;</code> (<code class="highlighter-rouge">&amp;lt;&amp;gt;</code>).
+Markdown, ahem, suffers from none of these problems.</p>
+
+  <p>Below the navigation list, we create the contents of each tab. Here we make
+use of more of Bootstrap’s built in classes.</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tab-content p-3"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tab-pane active"</span> <span class="na">id=</span><span class="s">"introduction"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span> <span class="nt">&lt;/section&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"hastings-street"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span> <span class="nt">&lt;/section&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"lenox-avenue"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span> <span class="nt">&lt;/section&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"eighteenth-and-vine"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span> <span class="nt">&lt;/section&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"fifth-and-mound"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span> <span class="nt">&lt;/section&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"rampart"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span> <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>  </div>
+  <p>The relationship between each <code class="highlighter-rouge">&lt;section&gt;</code>’s id and the <code class="highlighter-rouge">href</code> setting on the
+navigation list is how we connect the tabs to the content beneath.
+Furthermore, the <code class="highlighter-rouge">.p-3</code> class provides some <strong>padding</strong> for the inner content.
+Margins and padding are the two best ways to use CSS to control negative
+space.</p>
+
+  <p>In order to make the tab pills work their magic, however, we have to add some
+data attributes, so that Bootstrap’s JavaScript knows to treat the section as
+a set of tabs, so the navigation gets augmented to include that:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">"nav-tabs"</span> <span class="na">class=</span><span class="s">"nav nav-pills mt-3"</span> <span class="na">role=</span><span class="s">"tablist"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link active"</span> <span class="na">href=</span><span class="s">"#introduction"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Introduction<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#hastings-street"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Hastings St.<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#lenox-avenue"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Lenox Ave.<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#eighteenth-and-vine"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>18th <span class="ni">&amp;amp;</span> Vine<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#fifth-and-mound"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>5th <span class="ni">&amp;amp;</span> Mound<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#rampart"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Rampart<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div>  </div>
+
+  <p>Now, inside the <code class="highlighter-rouge">#content</code> block, you should have the <code class="highlighter-rouge">&lt;nav&gt;&lt;/nav&gt;</code> section as
+well as the <code class="highlighter-rouge">.tab-content</code> collection of <code class="highlighter-rouge">&lt;section&gt;</code>s. See how the <code class="highlighter-rouge">href=</code>
+attribute among the <code class="highlighter-rouge">.nav-link</code>s connects to the <code class="highlighter-rouge">id=</code> of the <code class="highlighter-rouge">.tab-panes</code>,
+as we’ll also wire the JavaScript to use those terms as well in the next
+section.</p>
+
+</section>
+<section id="markdown-sections">
+  <h2 id="s-populating-the-sections-with-markdown-content">Populating the sections with Markdown content</h2>
+
+  <p>The <code class="highlighter-rouge">&lt;section&gt;</code>s hold all of the content for this project are currently empty,
+so I will write one markdown file for each. I’ll then use a variation on the
+<code class="highlighter-rouge">$.ajax()</code> method we used in the <a href="/v1/12-markdown">previous chapter</a> to feed the
+content into the tabs. Importantly, however, every Markdown document has the
+same name as the id of its corresponding <code class="highlighter-rouge">&lt;section&gt;</code>. As a result, instead
+of having to write the same call to <code class="highlighter-rouge">$.ajax()</code> five times, we can write it
+once and loop over it by creating an array on the fly made up of the tab
+names. Remember that the <code class="highlighter-rouge">$.ajax()</code> method’s <code class="highlighter-rouge">.url</code> property must refer to a
+document on the internet (begins with <code class="highlighter-rouge">http://</code> or <code class="highlighter-rouge">https://</code>, so have a quick
+peek at <a href="/v1/15-go-live#going-live">chapter 15</a> to see how to setup your GitHub
+repository as its own mini webserver.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">md</span><span class="p">;</span>
+<span class="nx">md</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">markdownit</span><span class="p">({</span><span class="na">html</span><span class="p">:</span> <span class="kc">true</span><span class="p">}).</span><span class="nx">use</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">markdownitFootnote</span><span class="p">);</span>
+<span class="p">[</span><span class="s2">"hastings-street"</span><span class="p">,</span> <span class="s2">"eighteenth-and-vine"</span><span class="p">,</span>
+  <span class="s2">"fifth-and-mound"</span><span class="p">,</span> <span class="s2">"introduction"</span><span class="p">,</span>
+  <span class="s2">"lenox-avenue"</span><span class="p">,</span> <span class="s2">"rampart"</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">tab</span><span class="p">){</span>
+  <span class="c1">// Create a variable tab that has the name as a string.</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="c1">// tab + ".md" yields, for example, "rampart.md".</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s2">"http://the-javascripting-english-major.org/v1/examples/markdown/"</span> <span class="o">+</span> <span class="nx">tab</span> <span class="o">+</span> <span class="s2">".md"</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">markdown</span><span class="p">){</span>
+      <span class="kd">let</span> <span class="nx">html</span><span class="p">;</span>
+      <span class="nx">html</span> <span class="o">=</span> <span class="nx">md</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">markdown</span><span class="p">);</span>
+      <span class="c1">// "#rampart", for example.</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">"#"</span> <span class="o">+</span> <span class="nx">tab</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>  </div>
+
+  <p>The tabs now show the text for each place, as you can <a href="/v1/examples/could-be13.html">see
+here</a>.</p>
+
+</section>
+
+<section id="exercises">
+  <h2 id="s-exercises">Exercises</h2>
+
+  <ol>
+    <li>Draw (by hand) a wireframe for your web project. It can have multiple pages
+to show how the site reacts to different user interactions.</li>
+    <li>Populate some <code class="highlighter-rouge">&lt;section&gt;</code>s in your project with Markdown.</li>
+  </ol>
+
+</section>
+
+          <div class="row justify-content-between">
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/12-markdown">
+                Previous Chapter
+              </a>
+            
+            </div>
+            <div class="">
+            
+              <a class="btn btn-info" href="/v1/14-events-popups">
+                Next Chapter
+              </a>
+            
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer class="footer">
+  <p>
+    <small>© 2017, <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> by <a href="http://moacir.com" target="_blank">Moacir P. de Sá Pereira</a>.</small>
+  </p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/v1/assets/js/main.js"></script>
+
+
+  </body>
