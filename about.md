@@ -1,7 +1,6 @@
 ---
 layout: default
 title: About
-permalink: /about
 ---
 
 This course, *The JavaScripting English Major*, was created by [Moacir P. de Sá
