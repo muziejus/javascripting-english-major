@@ -14,7 +14,6 @@
           Chapters
         </a>
         <div class="dropdown-menu" aria-labelledby="chapters">
-          {% assign chapters = site.chapters | sort: "chapter-no" %}
           {% for chapter in chapters %}
             <a class="dropdown-item" href="{{ chapter.url }}">{{ chapter.chapter-no }}. {{ chapter.title }}</a>
           {% endfor %}
