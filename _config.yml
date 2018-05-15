@@ -69,14 +69,14 @@ collections:
     output: true
 defaults:
 - scope:
-  path: ""
-  type: chapters
-  value:
+    path: ""
+    type: chapters
+  values:
     layout: chapter
 - scope:
-  path: ""
-  type: appendices
-  value:
+    path: ""
+    type: appendices
+  values:
     layout: chapter
 
 
