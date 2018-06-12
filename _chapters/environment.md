@@ -6,18 +6,20 @@ summary: Version control with Git / Editing plain text with Atom / Launching a J
 
 It’s possible to start JavaScripting just by opening your browser, but for the
 purposes of this course, we’re going to introduce two new pieces of software
-that work to make your programming life easier.
+that work to make your programming life, if not easier, then at least more
+organized.
 
 This establishes a programming **environment**, which is a workflow in which
 multiple pieces of software work together in order to make reaching your goals
-as easy as possible. Many programming rely on IDEs, or integrated development
-environments, such as [Xcode](https://developer.apple.com/xcode/) for writing
-MacOS and iOS apps or [R Studio](http://rstudio.com) for writing in R. These
-are one-stop shops that try to handle the entirety of your project within one
-piece of software. We’ll reach a similar state with Atom, below, but not
-before first making a detour through Git.
+as straightforward and reproducible as possible. Many programmers rely on
+IDEs, or integrated development environments, such as
+[Xcode](https://developer.apple.com/xcode/) for writing MacOS and iOS apps or
+[R Studio](http://rstudio.com) for writing in R. These are one-stop shops that
+try to handle the entirety of your project within one piece of software. We’ll
+reach a similar state with Atom, below, but not before first making a detour
+through Git.
 
-A key concept to application development is **versioning**. That is, by making
+A key concept to programming is **versioning**. That is, by making
 use of a piece of software called a **version control system**, a project can
 work as though it has a time machine attached to it. But not just a time
 machine.
@@ -60,7 +62,9 @@ do much more. For example, every change you record with Git, called a
 **commit**, also has a **commit message** attached to it, where you can leave
 a note for yourself (or a collaborator!) that tells you what you were thinking
 when you made a change. Why did you put this paragraph before that one? Read
-your old commit messages.
+your old commit messages. Commits are like milestones, or like those points in
+video games where, if your character dies, you return to that point, not to
+the beginning of the game.
 
 Additionally, Git lets you **push** your changes to a central version of the
 repository. This means that you can work on one computer, save your work,
@@ -88,7 +92,7 @@ that you can send to your friends and family to show off your progress.
 
 In addition to being a user-friendlier face for the Git software, GitHub also
 includes features that expand what Git offers, such as built in discussion
-boards where users can discuss issues. We won’t be using that functionality in
+boards where users can discuss problems. We won’t be using that functionality in
 this class, but that should stand in to remind you that *things on GitHub are
 public by default*. Keep this in mind when you’re typing commit messages or
 working on your project: it’s all visible to anyone who has a look at your
