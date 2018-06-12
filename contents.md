@@ -13,11 +13,11 @@ If you want to see what you’ll be able to create by chapter 15, [look
 here](/examples/could-be.html). Also, the technical details and other
 information regarding this course are hidden on the “[About](/about)” page.
 
-{{ page.title }}
-
+{% comment %}
+Why do we have to reassign this?
+{% endcomment %}
+{% assign chapters = site.chapters | sort: "chapter-no" %}
 {% for chapter in chapters %}
-
-{{ chapter.title }}
 
 ## [{{ chapter.chapter-no}}. {{ chapter.title }}]({{ chapter.url }})
 
