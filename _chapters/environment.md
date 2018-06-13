@@ -41,6 +41,7 @@ a project. As such, you will have a folder for your project, and everything in
 that folder will be under version control.
 
 <section id="git">
+
 ## Git
 
 The version control system we will use in this course is called
@@ -82,6 +83,7 @@ jokes. In another, the writing can be very serious.
 
 </section>
 <section id="github">
+
 ## GitHub
 
 For the purposes of this course, we will be using Git via the website
