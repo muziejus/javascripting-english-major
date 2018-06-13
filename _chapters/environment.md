@@ -189,13 +189,14 @@ What we need, then, is a “plain text editor.” Something that just writes tex
 more or less agnostically. Though it’d be nice if maybe it colored the text
 certain ways when writing JavaScript or HTML. But let’s not jump ahead. You’ve
 probably used a plain text editor before, most notably the Notes application
-on your smartphone. Every personal computer has some kind of plain text editor
-installed, but we’ll install one that runs on nearly any personal computer,
-Atom.
+on your smartphone. But also when you send a text message or do nearly any
+typing on your phone, you’re using a text editor. All the same, every personal
+computer has some kind of plain text editor installed, but we’ll install one
+that runs on nearly any personal computer, Atom.
 
 ### Enter Atom
 
-[Atom](http://atom.io) is a fully-featured text editor that can also serve as
+[Atom](http://atom.io) is a fully-featured text editor that can serve as
 an IDE. It also has Git (and GitHub) support built in. This makes sense; it’s
 part of the GitHub ecosystem. Atom is a serious program with lots and lots of
 features. I’ll only be teaching a few here, but I’ll also teach a few more as
