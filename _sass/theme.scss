@@ -36,6 +36,13 @@ body {
 section {
   padding-top: 4rem;
   margin-top: -4rem;
+
+  img {
+    display: block;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    margin: auto;
+  }
 }
 
 code {
