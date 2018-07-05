@@ -22,6 +22,7 @@ JavaScript, however, I think it might be useful to learn a bit about
 JavaScript’s history.
 
 <section id="hello-world">
+
 ## Hello, World! Hello, JavaScript!
 
 I mentioned a few details about JavaScript’s history in the [FAQs]({{
@@ -98,13 +99,84 @@ easy to learn. But it’s also why it’s so easy for programmers to cause troub
 with it.[^language-type]
 
 Now that we’ve got a bit of an introduction to the language’s history and
-context out of the way, we can go back to the JavaScript console you learned
-to open in the [last chapter](/1-environment/) and start
-learning the language itself.
+context out of the way, Let’s learn how to make JavaScript appear in our
+browser.
 
+<section id="embedding-javascript">
+## Embedding JavaScript in a webpage
+
+In the previous chapter, I had you clone a project with Atom. We’ll be working
+with that project for the rest of this course, so let’s go over the project
+and get learn some key details.
+
+![Initial state of javascripting-english-major-project](https://i.imgur.com/tz4Lkme.png)
+
+This screenshot of Atom shows the two key panes, the Project pane and the
+editing pane. Currently, I’m editing `index.html`, and that’s the file we’re
+most interested in right now. But I’ll quickly explain what the other files
+do:
+
+* `.eslintrc.yml`: This file describes some rules for correcting our
+JavaScript on the fly. You won’t be using it.
+* `.gitignore`: This file tells Git what files to ignore. You won’t be using
+it.
+* `index.html`: This is a webpage, written in HTML. 
+* `README.md`: This is a file written in Markdown that is important for
+GitHub. You should have updated this in the previous chapter.
+* `scripts.js`: This is a JavaScript file that `index.html` loads. We will be
+using this file *a lot*.
+
+So we know how to open `index.html` in Atom. It’s right there in the
+screenshot. But how can we get it to open in a browser? That part is a little
+tricker. If you hover your mouse above the file name, however, Atom should
+print its **path**, or the route to the file:
+
+![Path to index.html](https://i.imgur.com/v4Theyk.png)
+
+On a Mac, it should look exactly like this, except with your username where
+mine says “moacir.” On Windows, the path will be a bit more complex. Now we
+need to tell the browser to open that file. In the File menu of your browser,
+you should select “Open File,” and it should prompt you with a box. Now, if
+you type <key>Cmd</key> <key>Shift</key> <key>H</key> on a Mac, it will take
+you to your **Home** folder, and you should see the “github” folder in there.
+Open that, then open the “javascripting-english-major-project” folder, and
+then, finally, “index.html.” 
+
+It’ll be boring, but your webpage will be there. You should be greeted with a
+blank white webpage with, in large text, “This is my project!”
+
+For the rest of this course, we will be using Atom *and* a web browser,
+so it’s time to get used to having both open at once. Back in Atom, change the
+text “This is my project!” to something else and save your change. Switch over
+to the browser and press the reload button. The text should change.
+
+Congratulations, you are now a web editor.[^html] 
+
+As a final step, open up the `scripts.js` file in Atom. Delete the `//` in
+front of line thirteen, and the line should light up something like this:
+
+```javascript
+$("#results-div").html("Hello from scripts.js!");
+```
+
+Save and reload the page in your browser. What happens now?
+
+Hopefully, your webpage now reads “Hello from scripts.js!”. Yet you didn’t
+change `index.html`. True, but as noted above, `index.html` loads in
+`scripts.js`, and `scripts.js` has this one line of JavaScript that causes the
+text to change. Specifically, this is a line of [jQuery](http://jquery.com),
+which is a bunch of shortcuts for writing JavaScript. In short, it tells the
+browser to find an element in the webpage with the `id` of `results-div` (the
+`#` is shorthand for “id of”) and to replace the HTML inside of it with
+whatever is inside the `html()` parentheses.
+
+We’ll be using this line of jQuery a lot, but it’s ok if you don’t completely
+understand how it works right now. Now, however, let’s move on to what sorts
+of things we can put inside those `html()` parentheses.
 </section>
-<section id="data-types">
-## Basic data types
+
+<section id="data-fundamentals">
+## Fundamentals of Data
 
 We hear the word “data” every day, but what, precisely, does it mean? If you
 had to draw a picture of “data,” what would it look like? We can say “data is
@@ -121,58 +193,47 @@ pieces of data, or it can be a process that takes some data and generates new
 data based on that data.
 
 These six possibilities (and more exist) make up the six most important **data
-types** in JavaScript, namely **number**, **string**, **boolean**,
-**null** / **undefined**, **array** / **object**, and **function**. We’ll only be working with
-the first four types, the basic types, in this chapter.
+types** in JavaScript, namely **number**, **string**, **boolean**, **null** /
+**undefined**, **array** / **object**, and **function**. We’ll only be working
+with the first four types, the fundamental types, in this chapter.
 
 ### Number
 
 Numbers are precisely what they sound like—numbers. In JavaScript, it’s easy
 to use numbers, because you just type them as numbers. Numbers can have
-decimal points if they’re not integers. Try typing numbers into the console
-and see what happens:
+decimal points if they’re not integers. Try typing numbers into the `html()`
+parentheses, save, reload, and see what happens:
 
 ```javascript
-> 9;
-//--> 9
-> 1.5;
-//--> 1.5
-> console.log(9);
-//--> 9
+$("#results-div").html(9);
 ```
 
-Your console may look a bit different in what it returns (including
-`undefined` after `console.log(9);`), but we can ignore that for now.
+Now try:
 
-But note also that I type a `;` at the end of every command. JavaScript is
-not very picky with semicolons, but it’s better to include them as a matter of
-habit. The semicolon comes at the end of a “statement,” which is a single
-instruction given to the console. `9;` just means “the number 9.”
-`console.log(9);` means “log the number 9 to the console.” 
+```javascript
+$("#results-div").html(9 + 10);
+```
+
+And, finally:
+
+```javascript
+$("#results-div").html(9 / 10);
+```
+
+This is a lot of work for a calculator, but it shows you that numbers behave,
+more or less, like you might expect them to.
 
 ### String
 
 Strings are a bit trickier than numbers at first glance. They are any string
 of characters enclosed by double quotes.[^quoting] Have you used a string
 already in this course? Yes, `"Hello, World!"` is a string containing the
-characters `Hello, World!`. We can issue statements with strings in much the
-same way we did with numbers:
+characters `Hello, World!`. Similarly, `"Hello from scripts.js!"` is a string.
+We can issue statements with strings in much the same way we did with numbers:
 
 ```javascript
-> "Hello, World!";
-//--> "Hello, World!"
-> console.log("Hello, World!");
-//--> Hello, World!
-> "World, I just wanted to say \"Hi!\" 9 times!";
-//--> "World, I just wanted to say \"Hi!\" 9 times!"
-> console.log("World, I just wanted to say \"Hi!\" 9 times!");
-//--> World, I just wanted to say "Hi!" 9 times!
+$("#results-div").html("This is just a boring string.");
 ```
-
-Notice how strings can have double quotes inside of them, as long as you use a
-`\` (backslash) beforehand. What do you type if you want a backslash in the
-string? Notice also that when we use `console.log()`, the result does not
-have surrounding double quotes or the backslashes.
 
 ### Boolean
 
@@ -190,27 +251,32 @@ Since booleans are only ever true or false, you refer to them in JavaScript
 using those two words:
 
 ```javascript
-> true;
-//--> true
-> false;
-//--> false
-> 9 === 9;
-//--> true
-> 9 === "Hello, World!";
-//--> false
+$("#results-div").html(true);
 ```
 
-Notice that `true` and `false` do *not* have double quotes around them. What
-would happen if they did? I have also introduced you to `===` in this code
-snippet. That is the “strict equal” **comparison operator**, and it is a way of
-asking the console a question.[^strictequal] `9 === 9;` is the same as “Is the number nine
-the same thing as the number nine?” Because the answer is “yes,” the console
-responds `true`. In the next example, we’re asking the question, “Is the number
-nine the same thing as the string ‘Hello, World!’?” Since the answer is “no,”
-the console responds `false`.
+Notice that `true` and `false` do *not* have double quotes around them. But `true` and `false` are more useful when you write truth tests. Try this:
 
-Between numbers, strings, and booleans, we can start using JavaScript as a
-calculator, but one type remains.
+```javascript
+$("#results-div").html(9 === 9);
+```
+
+Why does it respond `true`? In JavaScript, `===` is a **comparison operator**
+that we use in a truth test. That is, it compares what is on either side, and
+responds `true` or `false` on the result of the test. That is, `9 === 9`
+means, briefly, “is `9` the same thing as `9`?” Because they are the same,
+JavaScript outputs `true`, and that gets printed to the webpage. Of course, we
+know that `9` and `9` are the same thing, but pretty soon, we’ll have
+variables where we might not know. Or, even more importantly, maybe we want to
+make a decision based on the value, like “is today Friday?”
+
+```javascript
+$("#results-div").html(9 === 10);
+```
+
+We might expect this to print “false” to the webpage, but instead, nothing
+gets printed. Sometimes JavaScript is a bit unpredictable. Between numbers,
+strings, and booleans, we can start using JavaScript as a calculator, but one
+type remains.
 
 ### Null/Undefined
 
@@ -231,61 +297,26 @@ until you press “Submit” and send them to the computer, where it can then
 decide what to do with them, by turning them into strings, numbers, or just
 `null`.
 
-The distinction is tricky, but now you’re definitely ready to start add up
-some numbers in JavaScript.
+The distinction is tricky, but often you’ll end up with `null` or `undefined`
+in unexpected places, and it’s useful to know what they are.
 
 </section>
 <section id="javascript-as-a-calculator">
 ## Using JavaScript as a calculator
 
 You learned a comparison operator in the previous section, `===`, and you’ll
-learn a few more in this section. You’ll also learn all five arithmetic
-operators. In fact, let’s start with them:
+learn a few more in this section. The comparison operators, like `===`,
+respond with `true` or `false`. Try:
 
 ```javascript
-> 2 + 3;
-//--> 5
-> 2 - 3;
-//--> -1
-> 2 * 3;
-//--> 6
-> 2 / 3;
-//--> 0.6666666666666666
-```
-
-As you can see, the arithmetic operators give numbers as answers. The
-comparison operators, like `===`, respond with `true` or `false`:
-
-```javascript
-> 2 + 3 * 6 === (2 + 3) * 6;
-//--> false
-> 2 + 3 * 6 < (2 + 3) * 6;
-//--> true
-> 2 > 2;
-//--> false
-> 2 >= 2;
-//--> true
-> 2 < 2;
-//--> false
-> 2 <= 2;
-//--> true
+$("#results-div").html(2 + 3 * 6 < (2 + 3) * 6);
 ```
 
 Programmers have figured out nifty ways to get around the difficulty of typing
-≥ and ≤! 
+≥ and ≤ by using `>==` and `<==` instead. 
 
-Strings also have an operator `+`. It comes in very handy in web development:
-
-```javascript
-> "I had a thought, but… " + "Oh yeah, I remember. Falafel on Fridays!";
-//--> "I had a thought, but… Oh yeah, I remember. Falafel on Fridays!"
-```
-
-What happens when you add a string to a number? How about a number to a
-string? Why?
-
-A JavaScript calculator doesn’t sound terribly interesting, so let’s add one
-more wrinkle to it by introducing variables.
+OK, I take it all back. A JavaScript calculator doesn’t sound terribly
+interesting, so let’s add one more wrinkle to it by introducing variables.
 
 </section>
 <section id="calculator-understood-variables">
@@ -297,100 +328,59 @@ boolean?), of course, as that is a good way to understand the assumptions the
 language is making. But we’re building websites, not calculators.
 
 Nevertheless, getting a bit of flexibility with the console is useful. Let’s
-expand on that, then, with the `let` statement, which lets us define
-variables. Type along in the console.
+expand on that, then, with the `const` statement, which lets us define and
+assign variables. Type into `scripts.js`:
 
 ```javascript
-> let burrito;
-> burrito = "Basically the best food around.";
-> console.log(burrito);
-//--> Basically the best food around.
+const burrito = "Basically the best food around.";
+$("#results-div").html(burrito);
 ```
 
-In the first line, you **defined** a variable, `burrito`. In the second, you
-**assigned** to the variable the string, “Basically the best food around.”[^let]
+We’ve added a line above that tried and true line in `scripts.js`. Typically
+in JavaScript, a program moves downward, line-by-line. In the first line, you
+**defined** a variable, `burrito`, and **assigned** to it the string,
+“Basically the best food around.”[^let]
 
-Then you tell the console to log the variable burrito, and it logs its value,
-`Basically the best food around.`
+Then you tell jQuery to print the value assigned to the variable `burrito`,
+and it prints `Basically the best food around.`
 
 Any of the data types you have learned about already you can assign to a
-variable, and we can define multiple variables at once. It’s generally good
-practice to define all your variables at the top, so you know what you will be
-working with in the future.
+variable, and we can define multiple variables at once.
 
 ```javascript
-> let magicNumber, secretNumber;
-> magicNumber = 9;
-> secretNumber = 10;
-> secretNumber + magicNumber;
-//--> 19
-> secretNumber === magicNumber;
-//--> false
-> secretNumber > magicNumber;
-//--> true
-> secretNumber = secretNumber + 1;
-//--> 11
-> console.log(secretNumber);
-//--> 11
+const magicNumber = 9;
+const secretNumber = 10;
+$("#results-div").html(secretNumber + magicNumber);
 ```
-
-These variables persist only for the duration of the console. If you close the
-console, then you’ll lose them. But the variables are also mutable,
-as you can see. `secretNumber` starts out assigned to the number 10, but
-then it becomes assigned to the number 11.
 
 Let’s play a bit more with assigning variables:
 
 ```javascript
-> let tipRate, bill, billPlusTip;
-> tipRate = 0.20;
-> bill = 10.00;
-> billPlusTip = bill + (tipRate * bill);
-> console.log(billPlusTip);
-//--> 12
-> let question, burritos, answer;
-> question = "What is the best food around?\n";
-> burritos = "Delicious burritos";
-> answer = burritos + " are clearly the best!";
-> console.log(question, answer);
-//--> What is the best food around?
-//--> Delicious burritos are clearly the best!
+const tipRate = 0.20;
+const bill = 10.00;
+const billPlusTip = bill + (tipRate * bill);
+$("#results-div").html(billPlusTip);
 ```
 
-There are two new things in this example: `\n` can be used to make a new line
-to make a new line, and now you see that `console.log()` can take multiple
-values in the parentheses, separated by commas.
-
-Finally, this discussion of variables allows me to introduce one more
-operator, the `typeof` operator. If you get a variable, sometimes you don’t know
-what kind of data type it is. Yet as we have seen with `+`, it behaves
-differently depending on the data. Continuing with the variables in the
-previous example:
+And then:
 
 ```javascript
-> typeof question;
-//--> "string"
-> typeof magicNumber;
-//--> "number"
-> typeof 2;
-//--> "number"
-> let isItTrue;
-> isItTrue = 1 === 1;
-> typeof isItTrue;
-//--> "boolean"
-> typeof badTastingBurrito;
-//--> "undefined"
+const question = "What is the best food around?";
+const burritos = "Delicious burritos";
+const answer = burritos + " are clearly the best!";
+$("#results-div").html(question + "<br>" + answer);
 ```
 
-As you can see, this example makes use of variables defined in earlier
-exercises, but it also refers to variable that has not yet been assigned (or
-even defined).
+Again, these examples are pretty straightforward, but they’re doing important
+things. You see how you can define variables (like `billPlusTip` entirely
+within the context of other variables. Similarly, you see that you can use `+`
+to glue strings together, like `burritos` and `"are clearly the best!"`. And
+there is even bonus content: the HTML tag `<br>` creates a line break, which
+is why `question` and `answer` print on separate lines.
 
 </section>
 <section id="exercises">
 ## Exercises
-
-1. Get `console.log()` to log a string that includes a backslash.
 
 2. What happens when you surround `true` or `false` with double quotes? Are
    they still booleans?
@@ -398,8 +388,9 @@ even defined).
 6. What happens when you add a string to a number? What about the reverse?
    Why?
 
-7. Use the statements to find `billPlusTip` above but have the response from
-   `console.log()` be “You should pay $12 because the service was good.”
+7. Use the statements to find `billPlusTip` above but print “You should pay
+   $12 because the service was good.” to the webpage.
+
 </section>
 
 ## Footnotes
@@ -408,9 +399,15 @@ even defined).
 
 [^quoting]: Yes, JavaScript permits using single quotes as well, but you should use double quotes exclusively.
 
-[^strictequal]: JavaScript has a less strict equality comparison operator, but its behavior can be unexpected. It is considered one of JavaScript’s bad parts, and I won’t be teaching it in this course.  
-
-[^let]: `let` is a statement that is not supported in all JavaScript consoles. If typing the above causes the console to complain `Uncaught SyntaxError: Unexpected identifier`, then you have one of those older consoles. The solution is, luckily, straightforward. For the duration of this course, where I instruct you to use `let`, you can use `var`, instead.
+[^let]: `const` is a statement that is not supported in all JavaScript
+  consoles, but it should work in all “modern” browsers. Nevertheless, if the
+burrito example doesn’t print, open the JavaScript console while looking at
+your page, where you might see `Uncaught SyntaxError: Unexpected identifier`,
+then you have one of those older browsers. The best move is to upgrade
+browsers, but if you can’t, the second solution is, luckily,
+straightforward. For the duration of this course, where I instruct you to use
+`const`, you can use `var`, instead.
 
 [^consolelog]: More precisely, `console` is a JavaScript object (similar to `window` or `document`, as we’ll see later) that refers to the console you have opened in your browser. `.log()` is a “method” specific to the `console` object that outputs whatever is in sent as a parameter (or, inside the `()`).  In our example, we sent the console a snippet of text, `"Hello, World!"`, and it returned it to us.
 
+[^html]: Yes, you are now writing HTML without learning how to do it. The key grammar of the markup is clear from this example, though. HTML is made up of nested tags that look like this, for example: `<h1>` to open and `</h1>` to close. Some tags, like the `<meta>` and `<!doctype>` tags don’t need to be closed, but most do.  
