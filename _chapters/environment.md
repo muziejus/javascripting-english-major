@@ -418,9 +418,6 @@ console.log('Hello, World!');
 ```
 
 Hit return. The console should respond with `Hello, World!`
-Throughout the rest of this course, when something needs to be typed at the
-prompt, I will include the `>`. This time I skipped it, to make things a bit
-clearer for those who have never used a prompt before.
 
 By typing the above, you’ve written your first bit of JavaScript. In other
 words, you’re ready for the [next chapter](/2-calculator/)
