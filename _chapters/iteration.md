@@ -315,8 +315,57 @@ intermediate variables. You can use a combination of `return`s and chained
 methods to achieve your goals.
 
 </section>
+<section id="reduce">
+## Reduce
 
+One more method joins `.map()` and `.filter()` in the trio of important
+methods for iteration, and that’s `.reduce()`. Now `.map()`, again,
+manipulates an array to create a new array. Similarly, `.filter()` also
+returns an array, but a smaller one, based on passing a truth test. In
+contrast, `.reduce()` returns a single value, typically a number.
 
+Let’s say that at our party, we’ll only have cheese pizza. Too bad for the
+mushroom fans, but they’ll eat cheese, too. Now, our turtles each have a
+`.pizzaSlices` property that tells us how many slices of pizza they are going
+to eat. Assuming 8 slices per pizza, how many pizzas do we need to buy? Enter
+`.reduce()`, which will go to work on every value of the `.pizzaSlices`
+property, step-by-step, and add them together:
+
+```javascript
+const turtles = [
+  { name: "Leonardo", weapon: "katana", color: "blue", favPizza: "mushroom", pizzaSlices: 5 },
+  { name: "Donatello", weapon: "bō", color: "purple", favPizza: "mushroom", pizzaSlices: 3 },
+  { name: "Raphael", weapon: "sai", color: "red", favPizza: "cheese", pizzaSlices: 4 },
+  { name: "Michelangelo", weapon: "nunchaku", color: "orange", favPizza: "cheese", pizzaSlices: 7 }
+];
+const totalSlices = turtles.reduce(function(runningTotal, turtle){
+	return runningTotal + turtle.pizzaSlices;
+}, 0);
+$("#results-div").html("You will need to order " + (totalSlices / 8) + " pizzas to feed all the turtles.");
+```
+
+We put `totalSlices / 8` in parentheses just to make it a bit tidier and so
+the `+` operators don’t get confused. Now, where `.map()` and `.filter()` only
+have one variable appear, what we were calling `turtle` above, `.reduce()` has
+two, `runningTotal` and `turtle`. Here, `turtle` is the `Object` in the array,
+just like `turtle` in the previous examples. Hence, `turtle` has a
+`.pizzaSlices` property. 
+
+On the other hand, `runningTotal` is just what it sounds like, the running
+total. Every time through the array, the value of `turtle.pizzaSlices` is
+added to it, and it slowly grows. But where does it begin? That’s what that `,
+0` at the end indicates. That means “start at 0.”
+
+I won’t lie; `.reduce()` is tricky, and I, personally, don’t use it much. And
+when I do, I always have to look up the syntax again, because I can never
+remember if `runningTotal` or `turtle` (or whatever I’m calling them) goes
+first. But the intuition is important. You’re _reducing_ a list of values down
+to one. You’re boiling it down. And then you can use `.reduce()`, along with
+the array’s `.length` property, to calculate an average. In fact, let’s assign
+that for homework.
+
+</section>
+<section id="exercises">
 ## Exercises
 
 1. Given an array of `[1, 2, 3, 4]`, use `.map()` to create an array that is
@@ -329,4 +378,9 @@ methods to achieve your goals.
    `"string"[n]` gives you the nth value of of a string, use `.filter()` to
 create an array of *only* turtles whose names end in “o.”
 
+4. Assuming it’s only going to be you and the turtles at the party, and you’re
+   going to eat four slices of pizza, how many pizzas are you going to have to
+buy?
 
+5. What is the average number of slices of pizza a turtle eats?
+</section>
