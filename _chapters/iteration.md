@@ -327,7 +327,7 @@ contrast, `.reduce()` returns a single value, typically a number.
 Let’s say that at our party, we’ll only have cheese pizza. Too bad for the
 mushroom fans, but they’ll eat cheese, too. Now, our turtles each have a
 `.pizzaSlices` property that tells us how many slices of pizza they are going
-to eat. Assuming 8 slices per pizza, how many pizzas do we need to buy? Enter
+to eat. Assuming eight slices per pizza, how many pizzas do we need to buy? Enter
 `.reduce()`, which will go to work on every value of the `.pizzaSlices`
 property, step-by-step, and add them together:
 
