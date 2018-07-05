@@ -327,9 +327,8 @@ interesting to test edge cases (what happens when you multiply a number with a
 boolean?), of course, as that is a good way to understand the assumptions the
 language is making. But we’re building websites, not calculators.
 
-Nevertheless, getting a bit of flexibility with the console is useful. Let’s
-expand on that, then, with the `const` statement, which lets us define and
-assign variables. Type into `scripts.js`:
+So let’s expand on what we’ve already learned, then, with the `const`
+statement, which lets us define and assign variables. Type into `scripts.js`:
 
 ```javascript
 const burrito = "Basically the best food around.";
