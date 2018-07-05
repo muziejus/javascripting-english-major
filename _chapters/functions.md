@@ -4,21 +4,19 @@ title: Functions
 summary: Parameters / Scope / Recursion
 ---
 
-The [previous chapter](/3-programming) was very conceptual. Loops are tricky
-to get a hang of, but once you visualize how looping can solve problems,
-you’re definitely on your way to thinking algorithimically, which is to say,
-programmatically. This chapter is a bit more focused, but it builds on the
-idea of a **block** of code, like the loop or the if statement. Blocks in
-JavaScript are always surrounded by braces (`{}`), and that is true for
-**functions**, as well.
+The [previous chapter](/3-programming) was rather light, but it introduced
+`Object`s and arrays, which will be central to the programming we do from here
+on. For this chapter, we’ll be breaking out the braces (`{}`) again, but now
+in terms of a **block** of code. That is, we’ll be defining **functions**,
+which are compact, reusable snippets of programming.
 
 <section id="function-function">
 ## Function, function, what's your…
 
-Just as looping is useful because it automates repetitive tasks, functions
-break up your code into smaller pieces. This means that it’s easier to
-reason about your work abstractly and find problems. Additionally, functions
-also automate repetitive tasks, and that’s the way I’ll introduce them to you.
+Functions break up your code into smaller pieces. This means that it’s easier
+to reason about your work abstractly and find problems. Additionally,
+functions also automate repetitive tasks, and that’s the way I’ll introduce
+them to you.
 
 Imagine if you want your computer to make burritos. Wouldn’t it be great to
 just tell it “make a burrito” every time you wanted one, instead of saying
@@ -35,10 +33,9 @@ All those burrito-making instructions can be collapsed into a function. That
 might look something like:
 
 ```javascript
-// This code is for illustration only. It will crash your console.
+// This code is for illustration only. It will crash.
 //
-let makeABurrito;
-makeABurrito = function(){
+const makeABurrito = function(){
   prepareTortilla();
   addBeans();
   addOnionsAndCilantro();
@@ -47,69 +44,72 @@ makeABurrito = function(){
 }
 ```
 
-As you can see, there are syntactic similarities between functions and loops.
-Both use blocks with braces, and both have parentheses. In fact, this snippet
-of code is perfectly fine JavaScript. That’s because the `makeABurrito()`
-function does nothing but **call** other functions. We can imagine that a
-function like `prepareTortilla()` has even more specific steps inside it. But
-with the function in place, you just have to execute `makeABurrito()` once and
-be done with it. The internals of the function take care of everything else.
+As you can see, there are syntactic similarities between functions and
+`if(){}` statements. Both use blocks with braces, and both have parentheses.
+In fact, this snippet of code is perfectly fine JavaScript. That’s because the
+`makeABurrito()` function does nothing but **call** other functions. The only
+reason it will crash is because the inner functions (`prepareTortilla()`)
+aren’t defined. But we can imagine that a function like `prepareTortilla()`
+has even more specific steps inside it. But with the function in place, you
+just have to execute `makeABurrito()` once and be done with it. The internals
+of the function take care of everything else.
 
-Quickly before moving on, that line `// etc.` is a **comment**. Comments are
-very useful in programming because they can serve as little messages to
-yourself (or to other programmers) about what is going on in your program.
-In JavaScript, everything after two slashes (`//`) to the end of the line is
-**commented out**. If you want to comment out a whole section of multiple lines, begin
-it with `/*` and close it with `*/`. Or you can put a `//` in front of every
-line. I’ll start commenting the code I provide, where necessary.
+Quickly before moving on, that line `// etc.` is a **comment**. I mention
+comments in a comment in `scripts.js`, but now I’ll spell out what they are in
+the text, too. Comments are very useful in programming because they can serve
+as little messages to yourself (or to other programmers) about what is going
+on in your program.  In JavaScript, everything after two slashes (`//`) to the
+end of the line is **commented out**. If you want to comment out a whole
+section of multiple lines, begin it with `/*` and close it with `*/`. Or you
+can put a `//` in front of every line. I’ll start commenting the code I
+provide, where necessary. In Atom, you can quickly comment out (or uncomment,
+depending) a line of code by just typing <kbd>Cmd</kbd> <kbd>/</kbd> on Mac
+and <kbd>Ctrl</kbd> <kbd>/</kbd> on Windows.
 
 </section>
 <section id="parameters">
 ## Parameters
 
 Back to the function. Did you notice the parentheses that follow the function
-name? Where have you seen this kind of of syntax before? We’ve already gone
-over `prompt()`, for example, in the [previous chapter](/3-programming/), and
-that is, of course, a function.[^console] But recall how we typed it:
+name? Where have you seen this kind of of syntax before? 
 
 ```javascript
-let userInput;
-userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
+$("#results-div").html("This is a boring string.");
 ```
 
-The parentheses aren’t empty. Instead, they have two strings in them. From
-experience, we know that that the first string is what appears at the top of
-the prompt box, and the second string is what appears where we type our
-answer. We can abstract out the function, then, as `prompt(promptText,
-defaultText)`, where `promptText` and `defaultText` are two variables. And, in
-fact, if we were to rewrite the above as:
-
+Here we see the same syntax, but the parentheses aren’t empty. Instead, they
+have strings in them. Because I’ve told you this is so, we know that the above
+line of JavaScript replaces the contents of something with the id
+`results-div` with “This is a boring string.” But what I didn’t tell you
+until now is that this is actually two *functions*, chained together with the
+`.`. `$()` is shorthand for `jQuery()`, which is the jQuery **selector**
+function that we’ll learn about more later. Then, `.html()` is a function that
+replaces the HTML inside whatever the selector has selected. `"#results-div"`
+and `"This is a boring string."` are **parameters** we are **sending** to the
+function.[^arguments] And, in fact, we can (and have) replaced them with
+variables:
 
 ```javascript
-let promptText, defaultText, userInput;
-promptText = "What do you want to have for dinner?";
-defaultText = "Type your answer here.";
-userInput = prompt(promptText, defaultText);
+const selectedDiv = "#results-div";
+const newHtml = "This is a boring string.";
+$(selectedDiv).html(newHtml);
 ```
 
-It would work in exactly the same way. These two variables, `promptText` and
-`defaultText` are **parameters** that we **send** to the function.[^arguments] Giving
-functions parameters lets us change the internals of the function to let it
-react to specific instances. Now sometimes I want black beans in my burrito,
-and sometimes I want pinto beans. Let’s add a parameter to `makeABurrito()` to
-let us specify which beans to use on the fly:
+This works in exactly the same way.  Giving functions parameters lets us
+change the internals of the function to let it react to specific instances.
+Now sometimes I want black beans in my burrito, and sometimes I want pinto
+beans. Let’s add a parameter to `makeABurrito()` to let us specify which beans
+to use on the fly:
 
 ```javascript
 // This code is for illustration only. It will crash your console.
 //
-let makeABurrito;
-makeABurrito = function(beansVariable){
-  let beansResponse;
+const makeABurrito = function(beansVariable){
   prepareTortilla();
   addBeans();
   addOnionsAndCilantro();
-  beansResponse = "You ordered " + beansVariable + " beans. Good choice!";
-  $("#response").html(beansResponse);
+  const beansResponse = "You ordered " + beansVariable + " beans. Good choice!";
+  $("#results-div").html(beansResponse);
   // etc.
   rollUpTortilla();
 }
@@ -120,21 +120,20 @@ If we were to execute:
 ```javascript
 // This code is for illustration only. It will crash your console.
 //
-let blackBeans;
-blackBeans = "black";
+const blackBeans = "black";
 makeABurrito(blackBeans);
 ```
 
 We would see that the webpage would now read “You ordered black beans. Good
 choice!” Don’t actually try this, yet, though. Can you see why that is the
-case? We define a variable, `blackBeans` and assign it to the string `"black"`.
-Next, we send (or **pass**) that variable as a parameter to `makeABurrito()`.
-Now, inside the function, we see that it makes reference to a `beansVariable`,
-that has the value “black,” which it then prints in `#response`, like we did last
-chapter.
+case? We define a variable, `blackBeans` and assign it to the string
+`"black"`.  Next, we send (or **pass**) that variable as a parameter to
+`makeABurrito()`.  Now, inside the function, we see that it makes reference to
+a `beansVariable`, that has the value “black,” which it then prints in
+`#results-div`, like we did last chapter.
 
 But where did `beansVariable` come from? And how did it get set to “black”?
-There’s no `beansVariable = "black"`, after all. The answer is that the
+There’s no `const beansVariable = "black"`, after all. The answer is that the
 variable is defined at the same time as the function is. `makeABurrito =
 function(beansVariable){}` defines both the function, `makeABurrito()`, and
 the parameter, `beansVariable`, which can be used as a variable inside the
@@ -147,8 +146,7 @@ redefine the function as:
 ```javascript
 // This code is for illustration only. It will crash your console.
 //
-let makeABurrito;
-makeABurrito = function(beansVariable, tortillaVariable){
+const makeABurrito = function(beansVariable, tortillaVariable){
   prepareTortilla(tortillaVariable);
   addBeans(beansVariable);
   addOnionsAndCilantro();
@@ -158,28 +156,27 @@ makeABurrito = function(beansVariable, tortillaVariable){
 ```
 
 What would happen if you executed `makeABurrito("black", "whole wheat")`?
-Notice how this looks rather similar to `prompt(promptText, defaultText);`?
 
 </section>
 <section id="back-to-numbers">
 ## Back to numbers
 
-`makeABurrito()` is a great function, and it’s making me hungry, so let’s
-abandon it for a bit and go back to using numbers. Back in [Chapter
+`makeABurrito()` is a great function, and it’s making me hungry, but we can’t
+actually *use* it, because it relies on so many functions we haven’t defined.
+So let’s abandon it for a bit and go back to using numbers. Back in [Chapter
 2](/2-calculator), we made a tipping calculator. We can build on that example
-  with real, usable code.
+with real, usable code.
 
 First, what information do you need in order to know how much to tip? You need
 to know the `total` and the `tipRate`, which is a percentage, like 15 or 20%.
 The barebones function looks like this, then:
 
 ```javascript
-let tipCalculator;
-tipCalculator = function(total, tipRate){
+const tipCalculator = function(total, tipRate){
   // 1. Calculate the percentage of the total 
   // as a variable “tipAmount”
   //
-  // 2. Change #response to tell us the tip
+  // 2. Change #results-div to tell us the tip
   // amount.
 } 
 ```
@@ -191,13 +188,11 @@ math—an easy calculation. In the second step, it will tell us what the result
 of the calculation is.
 
 ```javascript
-let tipCalculator;
-tipCalculator = function(total, tipRate){
+const tipCalculator = function(total, tipRate){
   // step 1:
-  let tipAmount;
-  tipAmount = tipRate * total;
+  const tipAmount = tipRate * total;
   // and step 2:
-  $("#response").html("Your tip is $" + tipAmount);
+  $("#results-div").html("Your tip is $" + tipAmount);
 }; 
 
 // Now call (or “execute”) the function, passing a 
@@ -207,99 +202,126 @@ tipCalculator(50.00, 0.2);
 ```
 
 Save and reload, and the webpage should now inform you that you owe $10. If it
-does, commit. In the exercises, we’ll expand on this function.
+does, commit. In the exercises, we’ll expand on this function. Note, however,
+that that variable, `tipAmount`, only exists *inside* the `tipCalculator()`
+function. This is because, in JavaScript, variables defined with `const` are
+**scoped** to the block (whatever’s in `{}`) in which they’re defined.
+
+That is, just like a “scope” is used to see things that are far away (tele*scope*) or
+are really tiny (micro*scope*), in JavaScript, scope also has to do with
+visbility. Variables are only “visible” within the block. Of course, there’s a
+“master block” (actually called `window` on the browser) that holds whatever
+we’re writing in `scripts.js`, which is why when we define a variable on one
+line, it’s available on the next. 
+
+Scope is a tricky concept to get right, and even experienced programmers (or,
+at least, me) sometimes use variables that are out of scope. 
 
 </section>
-<section id="scope">
-## Scope
+<section id="methods">
+## Methods
 
-Alongside the idea of a function block, that is, the set of curly braces, we
-also have the idea of **scope**. Beginner programmers often get tripped up by
-scope, but that’s ok, so do veteran programmers. Note that though conditionals
-and loops also use blocks, they don’t affect scope in the same way.
+In the previous chapter, we learned that `Object`s have properties. That’s the
+most important thing about them. And we also learned that properties can be
+anything: a string, a number, a boolean, an array, another object. Anything.
 
-Just like a “scope” is used to see things that are far away (tele*scope*) or
-are really tiny (micro*scope*), in JavaScript, scope also has to do with
-visbility. Variables defined with the `let` keyword have block-level
-scope.[^var-let] That means:
+Even a function.
+
+For example, to return to `myBurritoObject`, you can add a new property:
 
 ```javascript
-> let global;
-> global = "🌏";
-> if (true) { console.log(global); };
-//--> 🌏
-> let globalFunction;
-> globalFunction = function(){ console.log(global); };
-> globalFunction();
-//--> 🌏
-```
-
-When we define `global`, it’s *visible* to us inside subsequent if statements
-and functions. But notice this:
-
-```javascript
-> let global;
-> global = "🌏";
-> if (true) {
-    let blocky;
-    blocky = "📓";
-    console.log("global is " + global);
-    console.log("blocky is " + blocky);
+// First, define and assign a variable for how 
+// spicy the burrito is.
+const myHabaneroSauceSquirts = 3;
+// Now assign the burrito object.
+const myBurritoObject = {
+  tortilla: "wheat",
+  guacamole: true,
+  beans: "pinto",
+  // Make use of the variable above.
+  habaneroSauceSquirts: myHabaneroSauceSquirts,
+  // Use the variable again in a function.
+  spiciness() {
+    if (myHabaneroSauceSquirts > 0 ){
+      alert("This is a spicy burrito!");
+    } else {
+      alert("This is a mild burrito.");
+    }
   }
-//--> global is 🌏
-//--> blocky is 📓
-> console.log("Wait, the value of blocky is really " + blocky + "?");
+};
+$("#results-div").html("Your burrito has " +
+  myBurritoObject.habaneroSauceSquirts +
+  " squirts of habanero.");
+myBurritoObject.spiciness();
 ```
 
-This last line will crash with a `ReferenceError`. `blocky`, it turns out, is
-only visible *within* the if statement block. Once the code leaves the `{}`,
-`blocky` is no longer available. The same works with functions:
+Save, and reload, and see what happens. If you’re told the burrito is spicy,
+commit. Now let’s have a look at the two new things I’m presenting here. The
+first is that I use a `.` to call a property with
+`myBurritoObject.habaneroSauceSquirts` and with `myBurritoObject.spiciness()`.
+This is called **dot-notation**, and it is a feature of `Object`s. If I wanted
+to get “wheat,” I could execute `myBurritoObject.tortilla`, for example. And,
+in the jQuery example we’ve been using all course, that’s what the `.` before
+`html()` does. `html()` is a *property* of the jQuery selector `Object`.
+
+When the property of an `Object` is a function, we call it a **method**.
+Hence, more correctly, `.html()` is a _method_ of the jQuery selector
+`Object`, and, in our example, `.spiciness()` is a method of the
+`myBurritoObject` `Object`.
+
+The next thing is that I define `.spiciness()` as a method by using the syntax
+above, where instead of a `:`, I use `()`, and then I wrap the method in `{}`,
+just like when defining a function.
+
+Now, we’ve seen that `myBurritoObject` has a method, `.spiciness()`. We’ve
+seen that `$()` has a method, `.html()`. But arrays have methods, too:
 
 ```javascript
-> let global;
-> global = "🌏";
-> let showMeABurrito = function(){
-    let burrito;
-    burrito = "🌯"; 
-    global = "I’m global!";
-    console.log("global is " + global);
-    console.log("burrito is " + burrito);
-  }
-> showMeABurrito();
-//--> global is I’m global!
-//--> burrito is 🌯
-> console.log(global);
-//--> I’m global!
-> console.log("Wait, the value of burrito is really " + burrito + "?");
+const turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
+$("#results-div").html(turtles.sort());
 ```
 
-Crash. Again. Sadly, `burrito is not defined`. But notice that `global` was
-changed inside the function, and that change persisted outside the
-function. `global` is visible—and, as a result, changeable (or
-**mutable**)—everywhere. But `burrito` is not.
+The `.sort()` method sorts the array in alphabetical order. But the result
+isn’t pretty. So let’s add the `.join()` method that all arrays have:
 
-As Molly Bloom asks, “who’s he when he’s at home?” and we may, also, ask,
-“where are we when we’re in the console?” That is, if `burrito` is defined in
-the function block, where on earth is `global` defined? Even though we talk
-about typing “in” the console, we’re actually always within a special object
-called `window`. It is the [window of the
-browser](https://www.w3schools.com/jsref/obj_window.asp), and when we open up
-the console, we’re getting closer access to that window. In fact, `prompt()`
-and `alert()`, two functions you’ve already seen, are actually **methods** that
-belong to `window`; `window.alert()` and `alert()` will do the same thing. But
-more on methods [next chapter](/5-collections). The `window` is typically
-ignored, as it’s the frame that is unavoidable. Its ubiquity gives it the
-privilege of being silent.
+```javascript
+const turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
+$("#results-div").html(turtles.sort().join(", "));
+```
 
-Back to the purpose of this section. Scope helps you keep your code tidy,
-because there is less risk of variables’ being accessed where they shouldn’t
-be. Just remember, whenever you type `let` to define a variable inside a
-function, that variable is only available inside that function.
+`.join()` takes an array and turns it into a string, using whatever you *pass*
+`.join()` as the glue between array items. In our case, that’s “, ”, which
+turns “LeonardoDonatelloRaphaelMichelangelo” into “Leonardo, Donatello,
+Raphael, Michelangelo.”
 
-In closing, functions are powerful things, as we can see. And though,
-ultimately, the goals of this course are not to write code that is as modular
-as the use of functions would make possible, you will still be typing the word
-`function` a lot.
+There was one other trick here, I did **method chaining**, which is when you
+add a method to the end of another method. Because the result of `.sort()` is
+an array just like `turtles` is an array, then it has the builtin method
+`.join()` just like `turtles` does. Try inserting a `.reverse()` in between
+`.sort()` and `.join()`. What happens?
+</section>
+
+<section id="strings-like-arrays">
+## Strings as arraylike things
+
+Strings, too, have methods and properties. And they can behave array-ishly.
+I’ll mention a few here, because manipulating strings (or “text”) is a vital
+feature of writing web pages.
+
+```javascript
+const string = "This is a string.";
+// Strings have indices and lengths, just like arrays:
+const firstLetter = string[0];
+// firstLetter is "T"
+const stringLength = string.length;
+// stringLength is 17
+//
+// Strings also have methods, just like arrays:
+const upperCaseString = string.toUpperCase();
+// upperCaseString is "THIS IS A STRING."
+const replacedString = string.replace("string", "pipe");
+// replacedString is "This is a pipe."
+```
 
 </section>
 <section id="exercises">
@@ -312,8 +334,4 @@ as the use of functions would make possible, you will still be typing the word
 
 ## Footnotes
 
-[^console]: `console.log()` also looks like a function, but as I mentioned back in [chapter 2](2-calculator/#fn:consolelog), `.log()` is a method belonging to the `console` object. 
-
 [^arguments]: Parameters are also often called **arguments**, but to my ears, that term is more opaque.
-
-[^var-let]: This is one difference between `var` and `let`, but I’m not teaching `var` except for those of you with old browsers. Other than the slightly contrived examples in this section, my examples won’t be making a lot of use of block-scoping.

@@ -1,7 +1,7 @@
 ---
 chapter-no: 2
 title: JavaScript Calculator
-summary: Introduction to JavaScript / Basic data types / Using JavaScript as a calculator / Assigning variables
+summary: Introduction to JavaScript / Embedding JavaScript in a Webpage / Foundations of Data / Using JavaScript as a calculator / Assigning variables
 ---
 
 
@@ -221,12 +221,12 @@ $("#results-div").html(9 / 10);
 ```
 
 This is a lot of work for a calculator, but it shows you that numbers behave,
-more or less, like you might expect them to.
+more or less, like you might expect them to.[^number-operators]
 
 ### String
 
 Strings are a bit trickier than numbers at first glance. They are any string
-of characters enclosed by double quotes.[^quoting] Have you used a string
+of characters enclosed by double quotes. Have you used a string
 already in this course? Yes, `"Hello, World!"` is a string containing the
 characters `Hello, World!`. Similarly, `"Hello from scripts.js!"` is a string.
 We can issue statements with strings in much the same way we did with numbers:
@@ -384,8 +384,7 @@ is why `question` and `answer` print on separate lines.
 2. What happens when you surround `true` or `false` with double quotes? Are
    they still booleans?
 
-6. What happens when you add a string to a number? What about the reverse?
-   Why?
+6. What happens when you add a string to a number? Why?
 
 7. Use the statements to find `billPlusTip` above but print “You should pay
    $12 because the service was good.” to the webpage.
@@ -396,17 +395,11 @@ is why `question` and `answer` print on separate lines.
 
 [^language-type]: In this course, most of the JavaScript will be procedural, which encourages a step-by-step way of thinking through a solution. Once we move to making maps with Leaflet, the more object-oriented aspects will emerge. JavaScript’s functional personality is its most powerful and appealing, but it strikes me as the most difficult to understand and teach.
 
-[^quoting]: Yes, JavaScript permits using single quotes as well, but you should use double quotes exclusively.
-
-[^let]: `const` is a statement that is not supported in all JavaScript
-  consoles, but it should work in all “modern” browsers. Nevertheless, if the
-burrito example doesn’t print, open the JavaScript console while looking at
-your page, where you might see `Uncaught SyntaxError: Unexpected identifier`,
-then you have one of those older browsers. The best move is to upgrade
-browsers, but if you can’t, the second solution is, luckily,
-straightforward. For the duration of this course, where I instruct you to use
-`const`, you can use `var`, instead.
+[^let]: `const` is a statement that is not supported in all JavaScript consoles, but it should work in all “modern” browsers. Nevertheless, if the burrito example doesn’t print, open the JavaScript console while looking at your page, where you might see `Uncaught SyntaxError: Unexpected identifier`, then you have one of those older browsers. The best move is to upgrade browsers, but if you can’t, the second solution is, luckily, straightforward. For the duration of this course, where I instruct you to use `const`, you can use `var`, instead.
 
 [^consolelog]: More precisely, `console` is a JavaScript object (similar to `window` or `document`, as we’ll see later) that refers to the console you have opened in your browser. `.log()` is a “method” specific to the `console` object that outputs whatever is in sent as a parameter (or, inside the `()`).  In our example, we sent the console a snippet of text, `"Hello, World!"`, and it returned it to us.
 
 [^html]: Yes, you are now writing HTML without learning how to do it. The key grammar of the markup is clear from this example, though. HTML is made up of nested tags that look like this, for example: `<h1>` to open and `</h1>` to close. Some tags, like the `<meta>` and `<!doctype>` tags don’t need to be closed, but most do.  
+
+[^number-operators]: JavaScript uses the expected `+`, `-`, `*`, and `/` operators for basic arithmetic. It also has a **modulo** operator, `%`, that returns what in grade school we learned to call the “remainder.” It’s useful for a bunch of things, like telling if a number is odd or even. Since every even number is divisible by 2, that means it has a remainder of 0. Hence, we know that if `someNumber % 2;` yields `0`, then `someNumber` must be even. More complicated mathematical operations, like square roots, require using the `Math` object. To get the square root of `someNumber`, we use `Math.sqrt(someNumber);`. You can read more about `Math` at the [Mozilla Developer
+Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math).

@@ -1,7 +1,7 @@
 ---
-chapter-no: 5
-title: Collections of Data
-summary: Arrays / `Object`s / Methods / Strings as arraylike things
+chapter-no: 3
+title: Collections and Control
+summary: `Object`s / Arrays / Control flow / If statements
 ---
 
 “Data,” you may recall, is a plural. Just like “bacteria” is a collection of
@@ -12,240 +12,264 @@ been using that number with other numbers, of course, but not as a collection
 of information. 
 
 A collection of information combines to form something larger than it itself.
-Perhaps the easiest collection to think of in programming terms is a list,
-like, say, a to-do list. The items on the list don’t interact with each other,
-necessarily (what does “schedule dentist appointment” have to do with “buy
-kitty litter”?), but, in a list, they can be ordered and shuffled around.
-Furthermore, by being in a list, each chore is exposed to **iterability**, the
-ability to loop over them.
+In this chapter, we’ll be learning about two of those collection forms,
+**`Object`s** and **arrays**. Throughout this course, I refer to the former as
+`Object`s just to underscore how vital they are to programming. They won’t
+seem terribly important at first, but we’ll see their power grow alongside the
+chapter numbers.
 
-Iterability it a crucial concept in programming. We’ve already seen it in
-action with while and for loops, but with collections of data, it becomes even
-more powerful. Let’s take another list, a list of friends. It’s your birthday,
-and you want to invite them to a party. But you also want the invitations to
-be “personalized.” You could iterate over (loop over) your list, get your
-friends’ first names, and then use that name in an email that opens “Dear
-FIRST_NAME.” They each get the same email, but the first name matches their
-own.
+Then, because we don’t yet know a lot about how to make `Object`s and arrays
+show their power, we’ll learn about control flow and put the `===` truth test
+to use.
+
+<section id="objects">
+## `Object`s
+
+Two rules: 
+
+1. in JavaScript, an `Object` is a collection of data that **has properties**
+
+2. in JavaScript, an `Object` is defined inside `{}` (“braces,” in American
+   English). 
+
+Freeze these two into your head. `Object`s have properties, and they’re
+defined in braces. We’ll see braces used elsewhere in JavaScript, alas, but
+you should be able to recognize the difference. So let’s define an `Object`:
+
+```javascript
+const myBurritoObject = {
+  tortilla: "wheat",
+  guacamole: true,
+  beans: "pinto",
+  habaneroSauceSquirts: 3
+  };
+$("#results-div").html(myBurritoObject["tortilla"]);
+```
+
+What prints? Hopefully, “wheat.” That is, we have defined an `Object` and
+alongside defined four properties: `tortilla`, `guacamole`, `beans`, and
+`habaneroSauceSquirts`. And we assigned the string `"wheat"` to the `tortilla`
+property. Properties can be named nearly anything, and they can be assigned
+nearly anything, including, of course, other `Object`s. Here we assign
+strings, a boolean, and a number. 
+
+An `Object` by itself doesn’t seem so special, but it formalizes a data
+structure, which is to say, it provides a blueprint for how a website talks
+about certain things. For example, say your website was for burrito
+deliveries. Every burrito ordered would be an `Object`, and an order would
+come in as a list (or, ahem, _array_) of `Object`s, and you could see how many
+need guacamole, which beans are more popular, pinto or black, and so on. That
+is, not only do the properties inhere _within_ the `Object`, but they allow us
+to organize or work with several `Objects`.
+
+For example, assume a web map that shows a bunch of points. We can think of
+that as a list (_array_) of `Object`s, where each `Object` has a `latitude`
+property and a `longitude` property. And maybe it has a `color` property to
+tell the browser what color the dot should be. And then a `radius` property
+for how big… and so on.
+</section>
 
 <section id="arrays">
 ## Arrays
 
-In JavaScript, the simplest list data structure is called an **array**. Arrays
-are common in programming languages, and they are typically designed to be
-extremely fast at sorting and iterating. In JavaScript, we’re not so lucky;
-arrays don’t offer the same kind of speed benefits. Still, they are crucial,
-and we’ll be seeing them a lot from now on.
-
-Simply put, an array is a set of pieces of data surrounded by brackets (`[]`).
-The following are all valid arrays, and type them into your `scripts.js` (you
-can delete everything from the previous chapter):
+If `Object`s are defined with braces (`{}`), an array is a list of pieces of
+information surrounded by `[]`, or “brackets,” in American English.  The
+following are all valid arrays, and you can type them into your `scripts.js`:
 
 ```javascript
-let arrayOfStrings, arrayOfNumbers, arrayMixed;
-arrayOfStrings = ["a", "b", "c"];
-arrayOfNumbers = [1, 2, 3];
-arrayMixed = ["a", 1, null, true, arrayOfNumbers, [4.5, 5.6]];
+const arrayOfStrings = ["a", "b", "c"];
+const arrayOfNumbers = [1, 2, 3];
+const arrayMixed = ["a", null, true, arrayOfNumbers, [4.5, 5.6], { tortilla: "wheat" }];
 ```
 
 Notice that you are not limited to a single data type in an array. Strings,
-numbers, `null`, `true`, variables, and even other arrays can be used as the
-contents of arrays. Later on, when we start building maps, we will have
-at least one array made up of geographical points. 
+numbers, `null`, `true`, variables, `Object`s, and even other arrays can be
+used as the contents of arrays. 
 
 Each item in an array can be accessed by its **index**, which is an integer
 unique to that item. The indices begin with 0, which is confusing for
 beginners. So if you add to the above:
 
 ```javascript
-$("#response").html(arrayOfStrings[2]);
+$("#results-div").html(arrayOfStrings[2]);
 ```
 
-`#response` will read “c.” The third value of the array is `"c"`, but its index
+`#results-div` will read “c.” The third value of the array is `"c"`, but its index
 is 2, because the index begins with 0. So to get “a,” we would call
-`$("#response").html(arrayOfStrings[0]);`. We are interested in the zeroth
+`$("#results-div").html(arrayOfStrings[0]);`. We are interested in the zeroth
 value. Again, I know this is confusing, but you will get the hang of it with
 practice, and then you can join that exclusive club of people who make jokes
 about zero-based numbering.
 
+For now, that's about all you need to know about arrays: how to make them and
+how to access a particular member. But when we get to looping, then arrays
+will truly shine, especially in concert with `Object`s. So let’s start
+thinking a bit more big-time.
 </section>
-<section id="objects">
-## Objects
 
-Above, when I mentioned that arrays are a bit peculiar in JavaScript, that is
-because arrays are a simplified version of the JavaScript **object**.  Because
-“object” is such a common word in English, in this text, from now on, when you
-see `Object`, you know that I mean, specifically, this generic JavaScript data
-type. Where arrays are pieces of data surrounded by brackets, `Object`s are
-surrounded by braces (`{}`). Similarly, while arrays have indices, `Object`s
-have **properties**. Let’s define an `Object`.
+<section id="control-flow">
+## Control flow
 
-```javascript
-let myBurritoObject;
-myBurritoObject = {
-  tortilla: "wheat",
-  guacamole: true,
-  beans: "pinto",
-  habaneroSauceSquirts: 3
-  };
-// and let’s access a property
-$("#response").html(myBurritoObject["tortilla"]);
+**Control flow** is an idea you’ve probably seen before, like in flow charts.
+They’re all over social media and often funny. In a flow chart, you start from
+some position and answer questions. Depending on the answers to those
+questions, you end up in a certain location. Other answers lead you somewhere
+else. But the idea is that you are interacting with information, in that you
+are being provided a prompt for some input, and your input directs what
+happens.
+
+Let’s sketch out a toy program to begin illustrating control flow in a
+program.
+
+We want to write a program that asks the user what they want for dinner. If
+they answer “burrito,” the program congratulates their choice. If they answer
+anything else, the program scolds them for not wanting a burrito. What might
+that look like in **pseudocode** (pretend programming that’s not a real
+language)? Let’s try it out while also using some JavaScript we already know.
+
+First, the program needs to get the information from the user, so we need some
+kind of input. Let’s save that as a variable.
+
 ```
-
-With an array, we call it using the syntax `arrayName[indexNumber]`. With an
-`Object`, we replace the index with a property. But we can do even better:
-
-```javascript
-$("#response").html(myBurritoObject.tortilla);
-```
-
-It’s much more succinct to use **dot-notation** to access
-properties.[^dot-notation] In fact, for the rest of this text, whenever I
-refer to a property, I’ll refer to it as a `.property`. Properties are
-especially useful because arrays have them as well. For example, every array
-has a `.length` property:
-
-```javascript
-let arrayOfStrings;
-arrayOfStrings = ["a", "b", "c"];
-$("#response").html(arrayOfStrings.length);
-```
-
-This will print “3,” because the value of that array’s `.length` property, or
-its length, is three. So even though the largest *index* value in the array is
-2, its length is 3.
-
-`Object`s can contain other `Object`s, of course, but we really start cooking when
-we build arrays of `Object`s. Those points on a map I mentioned before? They
-will be an array of `Object`s, where each `Object` has properties that give its
-place name and its coordinates. 
-
-</section>
-<section id="methods">
-## Methods
-
-JavaScript, like Ruby, is famous because in both languages, *everything* is an
-`Object`. Objects are `Object`s, arrays are `Object`s, strings are `Object`s (in that
-they have properties, as we’ll see below), `null` is an `Object`, and even
-functions are `Object`s. Since a property of an `Object` can be any other kind of
-`Object`, that means that a property can even be a function. For example, to
-return to `myBurritoObject`, you can add a new property:
-
-```javascript
-let myHabaneroSauceSquirts, myBurritoObject;
-// First, define and assign a variable for how 
-// spicy the burrito is.
-myHabaneroSauceSquirts = 3;
-// Now assign the burrito object.
-myBurritoObject = {
-  tortilla: "wheat",
-  guacamole: true,
-  beans: "pinto",
-  // Make use of the variable above.
-  habaneroSauceSquirts: myHabaneroSauceSquirts,
-  // Use the variable again in a function.
-  spiciness: function(){
-    if (myHabaneroSauceSquirts > 0 ){
-      alert("This is a spicy burrito!");
-    } else {
-      alert("This is a mild burrito.");
-    }
-  }
-};
-$("#response").html("Your burrito has " +
-  myBurritoObject.habaneroSauceSquirts +
-  " squirts of habanero.");
-myBurritoObject.spiciness();
-```
-
-Save, and reload, and see what happens. If you’re told the burrito is spicy,
-commit. Now let’s have a look at the two new things I’m presenting here. The
-property here, `.spiciness` is actually a function, and it is defined in a way
-similar to how we have been defining functions all along. That is, all along
-we have been writing **anonymous functions**. They are anonymous in that they
-are ephemeral. They exist and then they’re gone. When we create a function
-like:
-
-```javascript
-let makeABurrito = function(){
-  // Do stuff.
-};
-```
-
-The `function(){}` part of it disappears into the variable `makeABurrito`. We
-can then resurrect it using `makeABurrito()`. In `.spiciness`, however, we are
-assigning the function to a *property*, not even a variable. Later, we will
-make even more ephemeral anonymous functions, where the function gets
-called, executed, and then disappears, without even a variable or property to
-resurrect it. But anonymous functions pop up all over the place in JavaScript,
-which is why I promised last chapter that you would be typing `function` a
-lot.
-
-When properties are functions, they are called **methods**. Methods are built
-into the `Object`. To use an example we’ve already seen, every `console` `Object`
-has the `.log()` method built in. Arrays also have a series of useful methods:
-
-```javascript
-let turtles, sortedTurtles, reversedTurtles, turtleNames;
-turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];
-sortedTurtles = turtles.sort();
-// sortedTurtles is:
-// ["Donatello", "Leonardo", "Michelangelo", "Raphael"]
-reversedTurtles = turtles.reverse();
-// reversedTurtles is: 
-// ["Raphael", "Michelangelo", "Donatello", "Leonardo"]
-turtleNames = turtles.join(" ");
-// turtleNames is "Leonardo Donatello Raphael Michelangelo"
-turtles.push("Splinter");
-// turtles is now: 
-// ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"]
-turtles.pop();
-// back to ["Leonardo", "Donatello", "Raphael", "Michelangelo"]
-```
-
-Note that `.sort()`, `.reverse()`, and `.join()` do not change the value of
-`turtles`. Instead, we define new variables, `sortedTurtles`,
-`reversedTurtles`, and `turtleNames`. Then we assign to those variables two
-new arrays and a string. `.pop()` and `.push()`, however, *do* change
-`turtles`. 
-
-</section>
-<section id="strings-like-arrays">
-## Strings as arraylike things
-
-Because everything is an `Object`, that includes strings. Strings can behave a
-bit like arrays, but they also, as `Object`s, have properties and methods. I’ll
-mention a few here, because manipulating strings (or “text”) is a vital
-feature of writing web pages.
-
-```javascript
-let string, firstLetter, stringLength;
-string = "This is a string.";
-// Strings have indices and lengths, just like arrays:
-firstLetter = string[0];
-// firstLetter is "T"
-stringLength = string.length;
-// stringLength is 17
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
 //
-// Strings also have methods, just like arrays:
-let upperCaseString, replacedString;
-upperCaseString = string.toUpperCase();
-// upperCaseString is "THIS IS A STRING."
-replacedString = string.replace("string", "pipe");
-// replacedString is "This is a pipe."
+const userInput;
+userInput = prompt_the_user_for_what_they_want_for_dinner;
 ```
 
+We have a variable now, `userInput`, that has whatever the user has input. Now
+let’s test that variable, using the `===` operator you’ve already learned.
+
+```
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
+//
+if userInput === "burrito";
+  then $("#results-div").html("Brilliant choice!");
+```
+
+OK. But what if the input *isn’t* “burrito”?
+
+```
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
+//
+if userInput !== "burrito";
+  then $("#results-div").html("Don’t you want a burrito?");
+```
+
+Here I’m using the negation operator `!==`. It’s the same as `===`, but its
+inverse.
+
+And that’s it. We have our program. The JavaScript, as we’ll see, isn’t so
+terribly different from this code we already have. But the intuition here is
+to see that the program is making a decision based on the value assigned to a
+variable. Previously, we’ve just been defining variables and then printing
+their values to our webpage with a little manipulation here and there. Now,
+however, we’re directing traffic. We’re directing the flow of information. 
+
+If the user only ever wants a burrito, two things happen: first, we know the
+user has excellent taste. Second, however, is that the code for scolding never
+gets run. It’s an information path that never gets taken. But computers are
+very literal and kind of dumb. They can’t roll with unexpected information, so
+we need to spell out, in detail, every move that could be made. This is
+especially important in error handling, as we’ll see in later chapters.
+
 </section>
-<section id="exercises">
-## Exercises
+<section id="if-statements">
+## If statements
 
-1. Write a function that always returns the last item in whatever array you
-   pass it.
-1. Numbers also have methods and properties. Look them up at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) and change your webpage so that it asks for a number and tells you if it is an integer or not.
+Back to the pseudocode, however. We used an “if / then” statement in it, which
+is an example of a **conditional statement**. That means that it behaves in a
+certain way depending on a condition. From the example above, we can read
 
+```
+// THIS IS PSEUDOCODE. It is for illustration only. It will crash.
+//
+if userInput === "burrito";
+  then $("#results-div").html("Brilliant choice!");
+```
+
+As “If the condition that the variable `userInput` is equivalent to the string
+‘burrito’ is true, then print the string ‘Brilliant choice!’ to the webpage.”
+
+That’s a mouthful, but it is actually three distinct steps:
+
+1. The test of whether `userInput` is equivalent to the string “burrito.”
+2. If the test in 1. is `true`, then the condition in the if statement is met,
+   so we can go on to 3.
+3. print the string “Brilliant choice!”
+
+Now, JavaScript’s syntax is different from the pseudocode above. First, there
+is no `then` statement. Instead, that `then` is replaced with braces (`{}`).
+Everything within the braces gets executed if the truth test (`userInput ===
+"burrito"`) returns `true`. And the truth test itself is surrounded by
+parentheses. Generically, then, it looks like this:
+
+```javascript
+// This code is for illustration only. It will crash your console.
+//
+if ( truth_test ) {
+  do_things_if_the_test_returns_true;
+}
+```
+
+Note where the semicolons are (and are not!) in this example. Now we can fill
+it out with some of our toy program. We know that `do_things…` is actually 
+`$("#results-div").html("Brilliant choice!")`, so we can put that in. As for
+`truth_test`, let’s just put in `true` for now.
+
+```javascript
+if ( true ) {
+  $("#results-div").html("Brilliant choice!");
+}
+```
+
+Type this into `scripts.js`, save, and then reload your webpage. You should
+get “Brilliant choice!” printed to the webpage. Now replace `true` with
+`false`. What happens? Why?
+
+Now you can add some complexity, this time using the variable `userInput`:
+
+```javascript
+const userInput = "burrito";
+if ( userInput === "burrito" ) {
+  $("#results-div").html("Brilliant choice!");
+}
+```
+
+Notice where you have to use `=` (which *assigns* a value to a variable) and
+where you have to use `===` (which *tests* whether something is true). If you
+type this in `scripts.js`, again it should congratulate you. If you replace the
+second line with `userInput = "samosa";`, what happens? Why?
+
+In our program, we had a second condition, which would scold the user if they
+didn’t want a burrito. That’s pretty straightforward to write:
+
+```javascript
+const userInput = "samosa";
+if ( userInput !== "burrito" ) {
+  $("#results-div").html("Don’t you want a burrito?");
+} else {
+  $("#results-div").html("Don’t you want a burrito?");
+}
+```
+
+Now, we can see this as “if the truth test is true, then print ‘Brilliant
+choice!’ Otherwise, respond ‘Don’t you want a burrito?’” If you type this
+snippet into `scripts.js`, you’ll see that it scolds you. What do you have to
+change so that it congratulates you?
+
+The last part of our pseudocode is handling user input. That is, where does
+the value for `userInput` come from? It’s possible to do something like this
+instead of the first line:
+
+```javascript
+const userInput = prompt("What do you want to eat for lunch?");
+```
+
+And then run the rest of the program, but `prompt()` doesn’t work on all
+browsers, and the focus of this course is using JavaScript to tell stories,
+not ask for information. We provide the information already.
+
+We have one step left before you have all the basics of JavaScript, so relax
+on this shorter chapter that has no homework.
 </section>
-
-## Footnotes
-
-[^dot-notation]: Dot-notation does not work, however, for index values. `arrayOfStrings.1` will cause an error.
-
