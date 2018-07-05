@@ -22,6 +22,7 @@ twitter:
 logo: /apple-touch-icon.png
 host-full: http://the-javascripting-english-major.org
 exclude: 
+ - screenshots
  - cheat_sheet
  - Gemfile
  - Gemfile.lock
