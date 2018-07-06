@@ -1,7 +1,7 @@
 ---
 chapter-no: 3
 title: Collections and Control
-summary: `Object`s / Arrays / Control flow / If statements
+summary: "`Object`s / Arrays / Control flow / If statements"
 ---
 
 “Data,” you may recall, is a plural. Just like “bacteria” is a collection of
