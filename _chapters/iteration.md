@@ -31,10 +31,10 @@ Let’s start the chapter off with an array of `Object`s. Type this into
 
 ```javascript
 const turtles = [
-  { name: "Leonardo", weapon: "katana", color: "blue", favPizza: "mushroom", pizzaSlices: 5 },
-  { name: "Donatello", weapon: "bō", color: "purple", favPizza: "mushroom", pizzaSlices: 3 },
-  { name: "Raphael", weapon: "sai", color: "red", favPizza: "cheese", pizzaSlices: 4 },
-  { name: "Michelangelo", weapon: "nunchaku", color: "orange", favPizza: "cheese", pizzaSlices: 7 }
+  { name: "Leonardo", weapon: "katana", favPizza: "mushroom", pizzaSlices: 5 },
+  { name: "Donatello", weapon: "bō", favPizza: "mushroom", pizzaSlices: 3 },
+  { name: "Raphael", weapon: "sai", favPizza: "cheese", pizzaSlices: 4 },
+  { name: "Michelangelo", weapon: "nunchaku", favPizza: "cheese", pizzaSlices: 7 }
 ];
 ```
 
@@ -72,6 +72,27 @@ an array. The Donatello `Object` is the “oneth” member of the array (they
 start with 0!), so `turtles[1]` gives us the Donatello `Object`. Now because
 that `Object` has a `.name` property, we can _call_ it and get the string
 `"Donatello"`. That then gets passed to `partyInvite()` and so on.
+
+Let’s make one last change to `partyInvite()` that will leverage what
+JavaScript calls **template literals**:
+
+```javascript
+const partyInvite = function(name){
+  return `Dear ${name},<br>
+    Please come to my party tomorrow.`;
+};
+```
+
+Notice what has changed here. First, the string is introduced with a backtick
+(the key probably in the top left of your keyboard). Next, instead of
+stitching strings and variables together with `+`, we have one string, called
+a template literal. And *inside*, using the `${variableName}` syntax, the
+variable is evaluated when printed.
+
+Template literals are superior to gluing strings and variables together for a
+bunch of reasons, readability most important. But, they also let you *break
+lines* when writing a string, which regular string literals (with `""`) don’t
+let you do. So I’ll use these from now on.[^template-literal]
 
 But how can we invite all four turtles at once?
 
@@ -174,22 +195,21 @@ $("#results-div").html(turtleNames.join(", "));
 Even though `turtleNames` is no longer an appropriate name for the array we
 get, `["katana", "bō", "sai", "nunchaku"]`, the computer doesn’t care.
 
-What about colors?
-
 So, back to our party invitations: how do we invite each turtle to our party?
 Here’s the full `scripts.js`:
 
 ```javascript
 // define the list of turtles
 const turtles = [
-  { name: "Leonardo", weapon: "katana", color: "blue", favPizza: "mushroom", pizzaSlices: 5 },
-  { name: "Donatello", weapon: "bō", color: "purple", favPizza: "mushroom", pizzaSlices: 3 },
-  { name: "Raphael", weapon: "sai", color: "red", favPizza: "cheese", pizzaSlices: 4 },
-  { name: "Michelangelo", weapon: "nunchaku", color: "orange", favPizza: "cheese", pizzaSlices: 7 }
+  { name: "Leonardo", weapon: "katana", favPizza: "mushroom", pizzaSlices: 5 },
+  { name: "Donatello", weapon: "bō", favPizza: "mushroom", pizzaSlices: 3 },
+  { name: "Raphael", weapon: "sai", favPizza: "cheese", pizzaSlices: 4 },
+  { name: "Michelangelo", weapon: "nunchaku", favPizza: "cheese", pizzaSlices: 7 }
 ];
 // define the party invitation function
 const partyInvite = function(name){
-  return "Dear " + name + ",<br>Please come to my party tomorrow.";
+  return `Dear ${name},<br>
+    Please come to my party tomorrow.`;
 };
 // get the turtles’ names
 const turtleNames = turtles.map(function(turtle){
@@ -212,17 +232,21 @@ weapons at home. Now things get interesting:
 ```javascript
 // define the list of turtles. This is the same.
 const turtles = [
-  { name: "Leonardo", weapon: "katana", color: "blue", favPizza: "mushroom", pizzaSlices: 5 },
-  { name: "Donatello", weapon: "bō", color: "purple", favPizza: "mushroom", pizzaSlices: 3 },
-  { name: "Raphael", weapon: "sai", color: "red", favPizza: "cheese", pizzaSlices: 4 },
-  { name: "Michelangelo", weapon: "nunchaku", color: "orange", favPizza: "cheese", pizzaSlices: 7 }
+  { name: "Leonardo", weapon: "katana", favPizza: "mushroom", pizzaSlices: 5 },
+  { name: "Donatello", weapon: "bō", favPizza: "mushroom", pizzaSlices: 3 },
+  { name: "Raphael", weapon: "sai", favPizza: "cheese", pizzaSlices: 4 },
+  { name: "Michelangelo", weapon: "nunchaku", favPizza: "cheese", pizzaSlices: 7 }
 ];
 // define the party invitation function
 const partyInvite = function(name, weapon){
-  return "Dear " + name + ",<br>Please come to my party tomorrow. It is a
-peace party, so please leave your " + weapon + " at home.";
+  return `Dear ${name},<br>
+    Please come to my party tomorrow. 
+    It is a peace party, so please 
+    leave your ${weapon} at home.`;
 };
 ```
+
+(Note that you can’t break lines when composing strings!)
 
 Suddenly, `turtleNames` is insufficient. How do we get a value for `weapon`
 into the `partyInvite()` function? We continue:
@@ -268,10 +292,10 @@ turtles? We would use `.filter()`:
 
 ```javascript
 const turtles = [
-  { name: "Leonardo", weapon: "katana", color: "blue", favPizza: "mushroom", pizzaSlices: 5 },
-  { name: "Donatello", weapon: "bō", color: "purple", favPizza: "mushroom", pizzaSlices: 3 },
-  { name: "Raphael", weapon: "sai", color: "red", favPizza: "cheese", pizzaSlices: 4 },
-  { name: "Michelangelo", weapon: "nunchaku", color: "orange", favPizza: "cheese", pizzaSlices: 7 }
+  { name: "Leonardo", weapon: "katana", favPizza: "mushroom", pizzaSlices: 5 },
+  { name: "Donatello", weapon: "bō", favPizza: "mushroom", pizzaSlices: 3 },
+  { name: "Raphael", weapon: "sai", favPizza: "cheese", pizzaSlices: 4 },
+  { name: "Michelangelo", weapon: "nunchaku", favPizza: "cheese", pizzaSlices: 7 }
 ];
 const mushroomFans = turtles.filter(function(turtle){
   return turtle.favPizza === "mushroom";
@@ -333,23 +357,23 @@ property, step-by-step, and add them together:
 
 ```javascript
 const turtles = [
-  { name: "Leonardo", weapon: "katana", color: "blue", favPizza: "mushroom", pizzaSlices: 5 },
-  { name: "Donatello", weapon: "bō", color: "purple", favPizza: "mushroom", pizzaSlices: 3 },
-  { name: "Raphael", weapon: "sai", color: "red", favPizza: "cheese", pizzaSlices: 4 },
-  { name: "Michelangelo", weapon: "nunchaku", color: "orange", favPizza: "cheese", pizzaSlices: 7 }
+  { name: "Leonardo", weapon: "katana", favPizza: "mushroom", pizzaSlices: 5 },
+  { name: "Donatello", weapon: "bō", favPizza: "mushroom", pizzaSlices: 3 },
+  { name: "Raphael", weapon: "sai", favPizza: "cheese", pizzaSlices: 4 },
+  { name: "Michelangelo", weapon: "nunchaku", favPizza: "cheese", pizzaSlices: 7 }
 ];
 const totalSlices = turtles.reduce(function(runningTotal, turtle){
 	return runningTotal + turtle.pizzaSlices;
 }, 0);
-$("#results-div").html("You will need to order " + (totalSlices / 8) + " pizzas to feed all the turtles.");
+$("#results-div").html(`You will need to order 
+  ${totalSlices / 8} pizzas to feed all the turtles.`);
 ```
 
-We put `totalSlices / 8` in parentheses just to make it a bit tidier and so
-the `+` operators don’t get confused. Now, where `.map()` and `.filter()` only
-have one variable appear, what we were calling `turtle` above, `.reduce()` has
-two, `runningTotal` and `turtle`. Here, `turtle` is the `Object` in the array,
-just like `turtle` in the previous examples. Hence, `turtle` has a
-`.pizzaSlices` property. 
+We put `totalSlices / 8` in another template literal. Pretty neat!  Now, where
+`.map()` and `.filter()` only have one variable appear, what we were calling
+`turtle` above, `.reduce()` has two, `runningTotal` and `turtle`. Here,
+`turtle` is the `Object` in the array, just like `turtle` in the previous
+examples. Hence, `turtle` has a `.pizzaSlices` property. 
 
 On the other hand, `runningTotal` is just what it sounds like, the running
 total. Every time through the array, the value of `turtle.pizzaSlices` is
@@ -384,3 +408,8 @@ buy?
 
 5. What is the average number of slices of pizza a turtle eats?
 </section>
+
+[^template-literal]: If `const` doesn’t work on your browser, then it’s likely
+  that template literals won’t, either. The recommendation is to update your
+browser, but if that’s not possible, then you can keep using the `"string" +
+variable + "string"` syntax.
