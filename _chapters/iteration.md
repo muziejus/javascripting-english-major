@@ -246,8 +246,6 @@ const partyInvite = function(name, weapon){
 };
 ```
 
-(Note that you can’t break lines when composing strings!)
-
 Suddenly, `turtleNames` is insufficient. How do we get a value for `weapon`
 into the `partyInvite()` function? We continue:
 
