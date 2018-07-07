@@ -26,7 +26,7 @@ $("aside").append(function(){
 // add lead to first paragraph.
 $("article p").first().addClass("lead");
 
-$("div.highlight").after("<div><a href='#' class='code-copier'>Copy</a></div>");
+$("div.highlight").after("<div class='code-copier-div'><a href='#' class='code-copier'>Copy code to clipboard — <i class='fa fa-copy'></i></a></div>");
 
 $(".code-copier").click(function(e){
   e.preventDefault();
