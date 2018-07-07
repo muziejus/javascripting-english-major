@@ -26,4 +26,15 @@ $("aside").append(function(){
 // add lead to first paragraph.
 $("article p").first().addClass("lead");
 
+$("div.highlight").after("<div><a href='#' class='code-copier'>Copy</a></div>");
+
+$(".code-copier").click(function(e){
+  e.preventDefault();
+  const tmp = $("<textarea>");
+  $("body").append(tmp);
+  tmp.val($( this ).parent().prev().text()).select();
+  document.execCommand("copy");
+  tmp.remove();
+});
+
 
