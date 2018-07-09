@@ -1,29 +1,26 @@
 ---
 chapter-no: 7
 title: Oops!
-summary:  JSHint / Mistakes / User error
+summary:  Try & Catch / ESLint / Mistakes / User error
 ---
 
+That previous chapter was a lot of conceptual work, I think, and for a lot of
+it, you were flying blind. That is, if you made a mistake in your code, there
+wasn’t much you could do about it, other than reload the webpage and say “OK,
+it’s still not working.” That’s very frustrating, and, what’s more, it’s not
+very useful moving forward, when you’ll be encouraged to start trying things
+out on your own and building your own project while using this text only as a
+template. So let’s learn how to handle errors.
 
-Typically in an introduction to programming course, about here is where we
-would start drilling down deeper into how `Object`s work, the idea being that
-creating our own `Object`s that have built-in methods, etc., would be rather
-useful. Abstractly, that is certainly the case. But since we’re moving ahead
-to a very specific goal, learning about how to create `Object` prototypes and
-the like can be saved for a different course.[^haverbeke]
-
-Instead, we’ll close out this first half of the course by talking about
-mistakes. They happen in programming. Sometimes they’re simple mistakes, like
+Mistakes. They happen in programming. Sometimes they’re simple mistakes, like
 typos, that can break programs. Luckily, those tend to be easy to spot.
 Sometimes they are conceptual errors that arise from making erroneous
-assumptions about the data, like the `.pop().reverse()` example in the
-[previous chapter](/6-abstraction). Those are a bit trickier to solve, but
-it’s possible.
+assumptions about the data. Those are a bit trickier to solve, but it’s
+possible.
 
 Then there’s the issue of dealing with users giving you bad data, and
-defending against that. Every time we have used the `prompt()` function so
-far, we have made assumptions about what the user was going to type in, like a
-number. In the real world, users find miraculous ways to break programs
+defending against that. Though we’re not dealing with user input in this
+course, in the real world, users find miraculous ways to break programs
 (sometimes maliciously, but sometimes not). Even something as simple as
 entering a name can break a program; when I type in my name into many systems,
 I get errors, telling me my name has too many words. That means that the
@@ -32,144 +29,205 @@ Unfortunately, my name isn’t wrong; it’s their assumption about what a name
 looks like that is. But that programmers are not particularly empathetic and
 attuned to the wide variety of the world around them is nothing new. Anyway… 
 
-Let’s look at the first line of defense, typing errors.
+Let’s look at the first line of defense, JavaScript’s own built-in error
+handling.
 
-<section id="jshint">
-## JSHint
+<section id="try-catch">
+## Try & Catch
+
+JavaScript lets you `try` out some code in safety without taking everything
+down. If there is an error, it `catch`es the error, and then you can do
+something with it. So let’s create a `try` sandbox out of `scripts.js`. Load
+it up and paste this in:
+
+```javascript
+// script.js for The JavaScripting English Major
+//
+// This is a JavaScript file where you can type up your JavaScript
+// that will get processed by the file index.html, as you can see
+// on line 16 of index.html. Lines 13–15 of that file import the
+// jQuery library (https://jquery.com/), which means you use
+// jQuery in this file.
+//
+// Because these lines begin with “//,” they are commented out,
+// that is, ignored by the browser. Hence, in order to rewrite the
+// contents of the “results-div,” you can uncomment the line below:
+try {
+
+  $("#results-div").html("This is a boring string.");
+
+}
+catch(error) {
+  $("#error-div")
+    .css("border", "1px solid red")
+    .css("padding", "1rem");
+  $("#error-div").html(`There was an error: ${error}.`);
+}
+```
+
+If you save and reload your webpage, everything should work fine. But now
+change line 14 to `$("#results-div").html(undefinedVariable);`. Save and reload
+your webpage. Now what happens?
+
+There should be an error printed to your webpage, specifically: “There was an
+error: ReferenceError: undefinedVariable is not defined.” And that error
+should be surrounded by a pretty red border. So what’s going on here?
+
+First, we’re trying some code. When you had `"This is a boring string."`,
+there was no error, because everything was working correctly. the jQuery
+method `.html()` is waiting for a string (or a function or a number), and we
+gave it that. However, `undefinedVariable` is *not* a string. It’s a variable.
+But still, if it were assigned to a string, it would still work. But it’s
+assigned to nothing. It is **undefined**. Hence, the `.html()` method can’t
+work with it, and JavaScript **throws** an error.
+
+Where does that error go? Well, if something is _thrown_, then it must get
+_caught_, and that’s where the `catch` block comes in. That block catches the
+error, as the variable `error`, and then does two things with it. First, it
+does some jQuery magic (using the `.css()` method) to add that red border and
+some padding to the HTML entity with the id `error-div`. Then, it simply
+prints “There was an error:” along with the contents of the error it caught.
+
+Now, `try` and `catch` are brilliant if you’re making *programming* mistakes.
+But they won’t help you if you’re making *typing* mistakes. That is, if you
+forget to close a parenthesis or a set of `""`, your program will simply crash
+and no amount of `catch`ing will save you. But here, your linter is your
+friend.
+
+<section id="eslint">
+## ESLint
 
 Back in [chapter 1](/1-environment/), I had you install the
-[`linter-jshint`](https://atom.io/packages/linter-jshint) package into Atom. A
+[`linter-eslint`](https://atom.io/packages/linter-eslint) package into Atom. A
 linter cleans out the lint from code, ensuring that the code is clean and
 lean. The linter has, then, two tasks. The first is to ensure a consistent
 style to your programming. For example, the linter can complain whenever you
 are using single quotes instead of double quotes to quote a string. But the
 linter can also catch syntax errors, that is, errors that will simply break
-JavaScript. Open up the `scripts.js` file in Atom, and type this in the last
-two lines:
+JavaScript. Open up `scripts.js` file in Atom, and type this line inside
+the `try` block (that is inside `try{` and the `}` right before `catch`):
 
 ```javascript
-let brokenVariable;
-brokenVariable = "This will be broken';
+const brokenVariable = "This will be broken';
 ```
 
-Little red dots will appear near that last line, complaining about an “Unclosed
-string” and a “Missing semicolon.” That is because you typed a single quote
-when JavaScript was expecting a double quote.
+A little red dot will appear to the left of that line, and your code should even
+flood with ugly white on red text. The red dot means that the linter found an
+error on that line, and it underlined that error with a squiggly red line. If
+you hover your mouse near that squiggly line, the linter should show a brief
+message about an “Unterminated string constant (Fatal)” like in this image:
 
-JSHint is set to be pretty strict, and the errors the linter throws up are
-meant to be annoying enough to change how you write your code to fix them.
-It’s hard to believe there was a time when writing code didn’t benefit from
-linters, and you could spend hours looking at your code trying to figure out
-why it didn’t run. Not didn’t *work*, mind, but didn’t even *run*.
+![Unterminated string constant error](https://i.imgur.com/ybcWhq2.png)
+
+All this because you typed a single quote when JavaScript was expecting a
+double quote. Change it to a double quote, and the garish white on red text
+will disappear:
+
+![Style errors](https://i.imgur.com/1Oq6DRd.png)
+
+But we now have *two* red dots, one on line 14 and one on line 15. Hover over
+the squiggly red lines. Do you understand the errors?
+
+The first error, “‘undefinedVariable’ is not defined,” is the same error we
+were `catch`ing up above. We saw how while that is an error, it doesn’t take
+*everything* down, like the “unterminated string constant” error did.
+
+The second error is a bit more subtle. It reads, “‘brokenVariable’ is assigned
+a value but never used.” But so what? That’s not crashing JavaScript. So we
+defined and assigned a variable but never used it. Big deal! In fact, if you
+change that reference to `undefinedVariable` back to `"This is a boring
+string."`, save, and reload your webpage, you’ll see that everything is
+working fine. No errors appear on the webpage.
+
+This is because assigning a value to a variable, while not an *error*, per se,
+is still a coding fashion faux pas. A coding party foul, perhaps. It doesn’t break
+the program, but it’s sloppy. It is, in other words, an error of **style**.
+
+ESLint is set to be pretty strict, so it even flags these style errors as
+errors, and those red dots are meant to be annoying enough to change how you
+write your code to fix them.  It’s hard to believe there was a time when
+writing code didn’t benefit from linters, and you could spend hours looking at
+your code trying to figure out why it didn’t run. Not didn’t *work*, mind, but
+didn’t even *run*.
+
+Now we have software saying our code isn’t pretty enough. Works for me!
 
 </section>
-<section id="mistakes">
-## Mistakes
+<section id="inspect">
+
+## Inspecting Objects
+
+Often an error arises because we make assumptions about our data that are
+wrong. Like we think something is an `Object`, when really it’s an array. It’s
+often useful, then, to have a sort of “sanity test” that we can use on the
+fly. JavaScript has a built-in means of representing data as plain text,
+called **JSON**, and we’ll learn more about it in later chapters. Here,
+briefly, I can just say that it turns something like an array into a
+“stringified” version of itself. So, inside your `try{ }` block (lines 13–15)
+in `scripts.js`, paste in our turtles again and let’s just print that array of
+objects to our page:
+
+```javascript
+const turtles = [
+  { name: "Leonardo", weapon: "katana", favPizza: "mushroom", pizzaSlices: 5 },
+  { name: "Donatello", weapon: "bō", favPizza: "mushroom", pizzaSlices: 3 },
+  { name: "Raphael", weapon: "sai", favPizza: "cheese", pizzaSlices: 4 },
+  { name: "Michelangelo", weapon: "nunchaku", favPizza: "cheese", pizzaSlices: 7 }
+];
+
+$("#results-div").html(turtles);
+```
+
+What prints? If everything went “correctly,” absolutely nothing. Nothing
+prints. And why should it? We’re asking JavaScript to render an object as a
+string. But what does that even mean? Yet, at the same time, we *typed* it
+using letters. Shouldn’t we be able to see that, somehow? Enter JSON.
+
+The JSON `Object` has a method, `.stringify()`, that turns an `Object` (which
+includes an array) into a string. Then we can ask JavaScript to print *that*.
+So now change the last line above to:
+
+```javascript
+$("#results-div").html(JSON.stringify(turtles, null, 2));
+```
+
+That `null` and `2` mean, respectively, what to replace with (nothing), and
+how much space to indent (two spaces). Save and reload your webpage. Now you
+should see something that kind of looks like what you typed in. Of course,
+it’s all unhelpfully printed on one line, but that’s HTML’s fault. So let’s
+have HTML respect newlines and spaces by using the `<pre>` tag:
+
+```javascript
+$("#results-div").html(`<pre>${JSON.stringify(turtles, null, 2)}</pre>`);
+```
+
+Save and reload. By enclosing our stringified array in those `<pre>` tags, the
+website prints the array as pretty code. In fact, the code blocks you see in
+this very text are just `<pre>` blocks.
+
+Now, there are limits to `JSON.stringify()`. Most importantly, it won’t print
+methods that objects may have. But functions and methods (remember, they’re
+the same thing…) don’t really change on the fly. When you write a method,
+that’s that. But if you’re using `.map()` or `.filter()` to create new arrays,
+and they’re not working right, it’s useful to **inspect** your array using
+`JSON.stringify()`. If you get something like `[undefined, undefined,
+undefined, undefined]`, you’ve made a mistake somewhere for sure! I  use this
+technique all. the. time. Partly since I often don’t get all my logic right on
+the first try. That takes years more experience than even I have…
+
+</section>
+
+<section id="errors">
+## Common Errors
+
+var str = JSON.stringify(obj, null, 2);
 
 Since the linter handles syntax errors, we’re not as likely to run into those
 when coding. That’s great, because it lets us spend more time on more
-complicated mistakes. Let’s revisit the `.pop().reverse()` error from last
-chapter. Go ahead and make sure your `scripts.js` file looks like this:
+complicated mistakes. 
 
-```javascript
-let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
-turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
-// oops. let's pop() Splinter off before reversing…
-reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
-$("#response").html(reversedTurtlesWithoutSplinter);
-```
 
-How could we have debugged this? It turns out, in fact, that `console.log()`
-is there more for debugging than it is for what we’ve been using it for
-throughout this course. It’s the console that tells us why we have the error,
-after all. It says, `TypeError`, and though that is a relatively clear error
-if you know the language deeply, it’s not clear for beginners. But the
-console is helpful in telling us that the error is on line 3.
 
-In solving the problem, we can try to turn it into English:
-
-1. We are creating a variable named `reversedTurtlesWithoutSplinter`.
-1. We want to assign to the variable the `turtlesWithSplinter` array, but
-   without `"Splinter"` and reversed.
-1. To get rid of `"Splinter"`, we use the `.pop()` method.
-1. To reverse the array, we use the `.reverse()` method.
-
-What are our assumptions here? In the first step, we are assuming that there
-isn’t already a variable defined called `reversedTurtlesWithoutSplinter`.
-Since the only JavaScript other than jQuery that the page is loading is
-`scripts.js`, we know that isn’t the problem. Similarly, JSHint would have
-caught the error if we were defining (with `let`) a variable that had already
-been defined. So we know the first step is clear.
-
-In the second step, we’re assuming that the `turtlesWithSplinter` variable
-exists and that it’s an array. Again, since we just defined it two lines
-earlier, let’s assume that’s not the problem for now.
-
-Here the assumptions start causing problems. We assume in step three that
-`.pop()` will remove `"Splinter"` from the array. So let’s break that off into
-a separate step, comment out the line that is creating the error and the jQuery line, and have the console tell us what `turtlesWithoutSplinter` equals:
-
-```javascript
-let turtlesWithSplinter, turtlesWithoutSplinter, reversedTurtlesWithoutSplinter;
-turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
-// oops. let's pop() Splinter off before reversing…
-turtlesWithoutSplinter = turtlesWithSplinter.pop();
-console.log(turtlesWithoutSplinter);
-//--> Splinter
-//reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();
-//$("#response").html(reversedTurtlesWithoutSplinter);
-```
-
-Save, reload, and the console now reads `Splinter`. At least it’s not
-causing errors.
-
-But this shows us why we had the error. `turtlesWithoutSplinter` does *not*
-equal the array, as we thought it might. Instead, it’s just a single string,
-`"Splinter"`. We made a bad assumption, and now we have to solve it. Two
-techniques work here. The first is to `.pop()` the array, and then create a
-new array that is the popped array, but reversed:
-
-```javascript
-let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
-turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
-// oops. let's pop() Splinter off before reversing…
-turtlesWithSplinter.pop();
-// turtlesWithSplinter is now, paradoxically, without Splinter.
-// Now define a new array that is reversed.
-reversedTurtlesWithoutSplinter = turtlesWithSplinter.reverse();
-$("#response").html(reversedTurtlesWithoutSplinter);
-```
-
-We get the result we want. However, there is another way to do this, by
-avoiding `.pop()` entirely:
-
-```javascript
-let turtlesWithSplinter, reversedTurtlesWithoutSplinter;
-turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];
-// Use .filter() instead of .pop().
-reversedTurtlesWithoutSplinter = turtlesWithSplinter.filter(function(turtle){
-  // What is the value of turtle?
-  console.log(turtle);
-  return turtle !== "Splinter";
-}).reverse();
-$("#response").html(reversedTurtlesWithoutSplinter);
-```
-
-This is much tidier because it does not make the assumption, as `.pop()` does,
-that `"Splinter"` is the last value. Instead, it uses `.filter()` to return
-all the strings that *do not* match `"Splinter"`. That’s what `!==` means. So
-we get an array of all the strings except `"Splinter"`, and that happens to be
-our turtles array, which we can then reverse with no difficulty and print to
-the webpage.
-
-The trick here is to break down the program into tiny pieces and to test our
-assumptions, making use of `console.log()` to keep us sane, so we know what
-the program is doing. Writing these little tests is completely normal and
-actually good practice. In fact, if this were a more rigorous course, I would
-be teaching [test-driven
-development](https://en.wikipedia.org/wiki/Test-driven_development), where you
-write the tests first, and then only write code that makes the tests pass. But
-that takes us to the final part, dealing with users.
 
 </section>
 <section id="users">
@@ -245,10 +303,10 @@ this:
 let promptValue;
 promptValue = prompt("Type in a number, please");
 if (isNaN(promptValue) === true) {
-	alert("The value you submitted is not a number");
+  alert("The value you submitted is not a number");
 } else {
-	// Do the calculations on promptValue knowing it
-	// will behave like a number and move on from here.
+  // Do the calculations on promptValue knowing it
+  // will behave like a number and move on from here.
 }
 ```
 
