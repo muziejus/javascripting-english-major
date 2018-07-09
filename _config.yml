@@ -56,7 +56,7 @@ kramdown:
   auto_id_prefix: s-
   parse_block_html: true
   syntax_highlighter: rouge
-  .syntax_highlighter_opts:
+  syntax_highlighter_opts:
     block:
       line_numbers: true
       start_line: 1

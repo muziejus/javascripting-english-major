@@ -32,7 +32,7 @@ $(".code-copier").click(function(e){
   e.preventDefault();
   const tmp = $("<textarea>");
   $("body").append(tmp);
-  tmp.val($( this ).parent().prev().text()).select();
+  tmp.val($( this ).parent().prev().find(".rouge-code").text()).select();
   document.execCommand("copy");
   tmp.remove();
 });
