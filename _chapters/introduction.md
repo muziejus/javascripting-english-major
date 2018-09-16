@@ -76,7 +76,7 @@ implicitly, and this reference right here to ES6 is the only such reference in
 the entire course. Nevertheless, this course is based on Marijn Haverbeke’s
 [*Eloquent JavaScript*](http://eloquentjavascript.net), which is written more
 for a programmer in mind. The order in which I present concepts is, not
-coincidentally, similar to Haberbeke’s, meaning the book is a useful
+coincidentally, similar to Haverbeke’s, meaning the book is a useful
 companion.
 
 My own practice reveals the need I serve with this course. Most programming
