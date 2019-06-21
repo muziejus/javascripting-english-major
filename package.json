@@ -1,0 +1,75 @@
+{
+  "name": "javascripting-english-major",
+  "version": "2.0.0",
+  "description": "A 15-session course that teaches humanities undergraduates how to write their own web-based project using JavaScript.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": "git@github.com:muziejus/javascripting-english-major.git",
+  "author": "Moacir P. de Sá Pereira <moacir.p@columbia.edu> (http://moacir.com)",
+  "license": "GPL-3.0",
+  "private": true,
+  "dependencies": {
+    "gatsby": "^2.10.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "envs": [
+      "amd",
+      "browser"
+    ],
+    "globals": [],
+    "prettier": true,
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "space": 2,
+    "rules": {
+      "require-await": 0,
+      "no-unused-expressions": 0,
+      "chai-friendly/no-unused-expressions": 2,
+      "import/no-unresolved": 0,
+      "import/no-extraneous-dependencies": 1,
+      "ember-data-sync-relationships/no-async-relationships": "warn"
+    },
+    "overrides": [
+      {
+        "files": "tests/**/*-test.js",
+        "envs": [
+          "mocha"
+        ],
+        "rules": {
+          "prefer-arrow-callback": 0
+        }
+      },
+      {
+        "files": [
+        ],
+        "parserOptions": {
+          "sourceType": "script",
+          "ecmaVersion": 2015
+        },
+        "envs": [
+          "node"
+        ]
+      }
+    ]
+  },
+  "prettier": {
+    "singleQuote": false,
+    "bracketSpacing": true
+  },
+}
