@@ -71,5 +71,5 @@
   "prettier": {
     "singleQuote": false,
     "bracketSpacing": true
-  },
+  }
 }
