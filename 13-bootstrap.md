@@ -186,7 +186,7 @@ md = window.markdownit({html: true}).use(window.markdownitFootnote);
   // Create a variable tab that has the name as a string.
   $.ajax({
     // tab + ".md" yields, for example, "rampart.md".
-    url: "http://the-javascripting-english-major.org/examples/markdown/" + tab + ".md",
+    url: "https://the-javascripting-english-major.org/examples/markdown/" + tab + ".md",
     success: function(markdown){
       let html;
       html = md.render(markdown);
