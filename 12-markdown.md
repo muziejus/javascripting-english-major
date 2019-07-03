@@ -132,7 +132,7 @@ let md;
 md = window.markdownit({html: true}).use(window.markdownitFootnote);
 // Load the Markdown file with jQuery.
 $.ajax({
-  url: "http://the-javascripting-english-major.org/examples/markdown/hastings-street.md",
+  url: "https://the-javascripting-english-major.org/examples/markdown/hastings-street.md",
   success: function(markdown){
     // Convert the Markdown to HTML.
     let html;
