@@ -17,6 +17,7 @@
   "private": true,
   "dependencies": {
     "gatsby": "^2.10.0",
+    "gatsby-source-filesystem": "^2.1.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -55,8 +56,7 @@
         }
       },
       {
-        "files": [
-        ],
+        "files": [],
         "parserOptions": {
           "sourceType": "script",
           "ecmaVersion": 2015
