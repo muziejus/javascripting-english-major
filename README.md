@@ -1,5 +1,8 @@
 # The JavaScripting English Major
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7636100.svg)](https://doi.org/10.5281/zenodo.7636100)
+
+
 This repository hosts the course *The JavaScripting English Major*, by me,
 [Moacir P. de Sá Pereira](http://moacir.com). It is served (via GitHub pages)
 at
